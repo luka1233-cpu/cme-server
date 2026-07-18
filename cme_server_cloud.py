@@ -42,6 +42,9 @@ def run_engine():
     """Pokreće CME engine i upisuje JSON-ove u /tmp/cme_output/"""
     print(f"[engine] Pokretanje engine-a u {datetime.now(timezone.utc).isoformat()}")
     try:
+        # Postavi FMP_API_KEY u environment pre importa (macro_collector ga čita globalno)
+        os.environ["FMP_API_KEY"] = FMP_API_KEY
+
         # Postavi output dir na /tmp
         import engine.collectors.macro_collector as mc
         import engine.collectors.cot_collector as cc
@@ -49,9 +52,11 @@ def run_engine():
         import engine.engines.macro_engine as me
         import engine.engines.gold_engine as ge
 
-        # Override OUTPUT_DIR u svim modulima
+        # Override FMP_API_KEY i OUTPUT_DIR u svim modulima
+        mc.FMP_API_KEY = FMP_API_KEY
         mc.OUTPUT_DIR = OUTPUT_DIR
         cc.OUTPUT_DIR = OUTPUT_DIR
+        yc.FMP_API_KEY = FMP_API_KEY
         yc.OUTPUT_DIR = OUTPUT_DIR
         me.OUTPUT_DIR = OUTPUT_DIR
         ge.OUTPUT_DIR = OUTPUT_DIR
