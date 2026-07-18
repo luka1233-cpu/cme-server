@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MME — Macro Momentum Engine</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@400;500&display=swap');
+:root {
+  --bg:#080810;--bg2:#0e0e1a;--bg3:#13131f;--bg4:#1a1a2a;
+  --bd:#1f1f32;--bd2:#2a2a42;
+  --tx:#ddddf0;--tx2:#7777a0;--tx3:#444468;
+  --grn:#00d4a0;--gbg:rgba(0,212,160,.07);--gbd:rgba(0,212,160,.18);
+  --red:#ff4060;--rbg:rgba(255,64,96,.07);--rbd:rgba(255,64,96,.18);
+  --amb:#f5a623;--abg:rgba(245,166,35,.07);--abd:rgba(245,166,35,.2);
+  --yel:#f5d923;--ybg:rgba(245,217,35,.07);--ybd:rgba(245,217,35,.18);
+  --blu:#4a9eff;--bbg:rgba(74,158,255,.07);
+  --pur:#b97aff;--pbg:rgba(185,122,255,.08);--pbd:rgba(185,122,255,.2);
+  --mono:'JetBrains Mono',monospace;--sans:'Inter',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:var(--sans);font-size:13px;line-height:1.5}
+.hdr{background:var(--bg2);border-bottom:1px solid var(--bd);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50}
+.logo{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--pur);letter-spacing:.05em}
+.logo em{color:var(--tx2);font-style:normal;font-weight:300}
+.hdr-meta{display:flex;align-items:center;gap:16px}
+.hdr-item{font-family:var(--mono);font-size:10px;color:var(--tx2)}
+.hdr-item strong{color:var(--tx);font-weight:500}
+.dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--pur);margin-right:5px;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes newsAlert{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(255,64,96,0)}50%{opacity:.7;box-shadow:0 0 8px 3px rgba(255,64,96,.5)}}
+@keyframes newsAlertGrn{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,212,160,0)}50%{opacity:.7;box-shadow:0 0 8px 3px rgba(0,212,160,.5)}}
+.news-alert-bear{animation:newsAlert 1.2s ease infinite;border:1px solid var(--red)!important;background:var(--rbg)!important;color:var(--red)!important;font-family:var(--mono);font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:.04em}
+.news-alert-bull{animation:newsAlertGrn 1.2s ease infinite;border:1px solid var(--grn)!important;background:var(--gbg)!important;color:var(--grn)!important;font-family:var(--mono);font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:.04em}
+.lang-btn{font-family:var(--mono);font-size:10px;font-weight:600;background:var(--bg4);border:1px solid var(--bd2);color:var(--tx2);padding:4px 12px;border-radius:4px;cursor:pointer;letter-spacing:.06em;transition:all .15s}
+.lang-btn:hover{color:var(--tx);border-color:var(--tx2)}
+.lang-select{font-family:var(--mono);font-size:11px;font-weight:600;background:var(--bg4);border:1px solid var(--bd2);color:var(--tx);padding:5px 10px;border-radius:4px;cursor:pointer;letter-spacing:.02em;outline:none}
+.lang-select:hover{border-color:var(--pur)}
+.lang-select option{background:var(--bg2);color:var(--tx)}
+.wrap{max-width:1480px;margin:0 auto;padding:20px 24px 40px}
+.sec{margin-bottom:28px}
+.sec-hdr{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.sec-title{font-family:var(--mono);font-size:10px;font-weight:500;color:var(--tx2);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.sec-rule{flex:1;height:1px;background:var(--bd)}
+.sec-tag{font-family:var(--mono);font-size:10px;color:var(--tx3);background:var(--bg4);border:1px solid var(--bd);padding:1px 8px;border-radius:3px;white-space:nowrap}
+.banner{background:var(--pbg);border:1px solid var(--pbd);border-radius:8px;padding:10px 16px;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.banner-icon{font-size:16px}
+.banner-text{font-size:11px;color:var(--tx2)}
+.banner-text strong{color:var(--pur)}
+.ccy-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:1100px){.ccy-grid{grid-template-columns:repeat(2,1fr)}}
+.ccy-card{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:14px;position:relative;overflow:hidden;transition:border-color .2s}
+.ccy-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.ccy-card.c-sbull::after,.ccy-card.c-bull::after,.ccy-card.c-wbull::after{background:var(--grn)}
+.ccy-card.c-neut::after{background:var(--tx3)}
+.ccy-card.c-wbear::after,.ccy-card.c-bear::after{background:var(--amb)}
+.ccy-card.c-sbear::after{background:var(--red)}
+.ccy-card:hover{border-color:var(--bd2)}
+.ccy-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
+.ccy-sym{font-family:var(--mono);font-size:22px;font-weight:600}
+.ccy-sym.sbull{color:var(--grn)}
+.ccy-sym.bull{color:var(--grn)}
+.ccy-sym.wbull{color:var(--yel)}
+.ccy-sym.neut{color:var(--tx2)}
+.ccy-sym.wbear{color:var(--amb)}
+.ccy-sym.bear{color:var(--amb)}
+.ccy-sym.sbear{color:var(--red)}
+.ccy-pct{font-family:var(--mono);font-size:10px;color:var(--tx2);margin-top:2px}
+.ccy-score{font-family:var(--mono);font-size:28px;font-weight:600;line-height:1}
+.ccy-score.pos{color:var(--grn)}.ccy-score.neg{color:var(--red)}.ccy-score.zer{color:var(--tx2)}
+.bias-row{display:flex;align-items:center;margin-bottom:8px}
+.bias-badge{font-family:var(--mono);font-size:11px;font-weight:600;padding:3px 10px;border-radius:4px;letter-spacing:.03em}
+.bb-sbull{background:var(--gbg);color:var(--grn);border:1px solid var(--gbd)}
+.bb-bull{background:var(--gbg);color:var(--grn);border:1px solid var(--gbd)}
+.bb-wbull{color:var(--yel);background:var(--ybg);border-color:var(--ybd)}
+.bb-neut{background:var(--bg4);color:var(--tx2);border:1px solid var(--bd2)}
+.bb-wbear{background:var(--abg);color:var(--amb);border:1px solid var(--abd)}
+.bb-bear{background:var(--abg);color:var(--amb);border:1px solid var(--abd)}
+.bb-sbear{background:var(--rbg);color:var(--red);border:1px solid var(--rbd)}
+.strength-row{display:flex;align-items:center;gap:6px;margin-bottom:8px}
+.str-label{font-family:var(--mono);font-size:9px;color:var(--tx2);letter-spacing:.06em;width:52px}
+.str-blocks{display:flex;gap:2px}
+.str-block{width:10px;height:10px;border-radius:2px;background:var(--bg4);border:1px solid var(--bd2)}
+.str-block.f-grn{background:var(--grn);border-color:var(--grn)}
+.str-block.f-amb{background:var(--amb);border-color:var(--amb)}
+.str-block.f-red{background:var(--red);border-color:var(--red)}
+.str-pct{font-family:var(--mono);font-size:10px;font-weight:600}
+.badges{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:8px}
+.bdg{font-family:var(--mono);font-size:9px;font-weight:500;padding:2px 6px;border-radius:3px;letter-spacing:.04em;text-transform:uppercase}
+.bdg-pur{background:var(--pbg);color:var(--pur);border:1px solid var(--pbd)}
+.bdg-amb{background:var(--abg);color:var(--amb);border:1px solid var(--abd)}
+.factors{border-top:1px solid var(--bd);padding-top:8px;display:flex;flex-direction:column;gap:3px;margin-bottom:8px}
+.frow{display:flex;justify-content:space-between;align-items:center}
+.fn{font-family:var(--mono);font-size:10px;color:var(--tx2)}
+.fv{font-family:var(--mono);font-size:11px;font-weight:600}
+.fv.p{color:var(--grn)}.fv.n{color:var(--red)}.fv.z{color:var(--tx3)}
+.why-note{font-size:10px;color:var(--tx2);border-top:1px solid var(--bd);padding-top:8px;line-height:1.5;font-style:italic}
+.tbl-wrap{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;overflow:hidden}
+table{width:100%;border-collapse:collapse}
+thead tr{background:var(--bg3)}
+th{padding:8px 12px;text-align:left;font-family:var(--mono);font-size:9px;font-weight:500;color:var(--tx2);letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--bd);white-space:nowrap}
+td{padding:8px 12px;border-bottom:1px solid var(--bd);font-family:var(--mono);font-size:11px;vertical-align:middle}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--bg3)}
+.t-pos{color:var(--grn);font-weight:600}.t-neg{color:var(--red);font-weight:600}
+.t-amb{color:var(--amb)}.t-dim{color:var(--tx2)}
+.conf-track{flex:1;height:3px;background:var(--bg4);border-radius:2px;overflow:hidden}
+.conf-fill{height:100%;border-radius:2px}
+.cf-hi{background:var(--grn)}.cf-mid{background:var(--amb)}.cf-lo{background:var(--red)}
+.conf-num{font-family:var(--mono);font-size:10px;font-weight:600}
+.cn-hi{color:var(--grn)}.cn-mid{color:var(--amb)}.cn-lo{color:var(--red)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.ccy-card{animation:fadeUp .25s ease both}
+</style>
+</head>
+<body>
+<script>
+// ══════════════════════════════════════════════════════════
+// DATA — Heatmap + Retail Sentiment only, NO COT
+// ══════════════════════════════════════════════════════════
+const DATA = {
+  currencies: {
+    USD: { heatmap:100, retailLong:62, note_sr:"Heatmap potpuno bullish. Retail nije ekstreman — blaga potvrda.",     note_en:"Heatmap fully bullish. Retail not extreme — mild confirmation." },
+    EUR: { heatmap:33,  retailLong:63, note_sr:"Heatmap bearish. Retail 63% long je blagi kontra signal.",            note_en:"Heatmap bearish. Retail 63% long is a mild contra signal." },
+    GBP: { heatmap:40,  retailLong:65, note_sr:"Heatmap bearish. Retail 65% long pojačava kontra potvrdu.",           note_en:"Heatmap bearish. Retail 65% long strengthens contra confirmation." },
+    JPY: { heatmap:100, retailLong:21, note_sr:"Heatmap potpuno bullish. Retail 79% short = jak kontra signal — visok Confidence.", note_en:"Heatmap fully bullish. Retail 79% short = strong contra signal — high Confidence." },
+    CHF: { heatmap:71,  retailLong:52, note_sr:"Heatmap bullish. Retail neutralan — bez uticaja na Confidence.",      note_en:"Heatmap bullish. Retail neutral — no impact on Confidence." },
+    CAD: { heatmap:71,  retailLong:14, note_sr:"Heatmap bullish. Retail 86% short = jak kontra signal — visok Confidence.", note_en:"Heatmap bullish. Retail 86% short = strong contra signal — high Confidence." },
+    AUD: { heatmap:40,  retailLong:70, note_sr:"Heatmap bearish. Retail 70% long = ekstreman u istom smeru — gomila prenatrpana, Confidence pada.", note_en:"Heatmap bearish. Retail 70% long = extreme same direction — crowded, Confidence drops." },
+    NZD: { heatmap:57,  retailLong:12, note_sr:"Heatmap blago bullish. Retail 88% short = ekstreman kontra — visok Confidence.", note_en:"Heatmap mildly bullish. Retail 88% short = extreme contra — high Confidence." },
+  },
+  pairs: [
+    {base:'GBP',quote:'USD'},{base:'AUD',quote:'USD'},{base:'GBP',quote:'JPY'},
+    {base:'AUD',quote:'JPY'},{base:'EUR',quote:'USD'},{base:'NZD',quote:'USD'},
+    {base:'USD',quote:'JPY'},{base:'USD',quote:'CAD'},{base:'USD',quote:'CHF'},
+    {base:'EUR',quote:'JPY'},{base:'GBP',quote:'AUD'},{base:'NZD',quote:'JPY'},
+    {base:'AUD',quote:'NZD'},{base:'EUR',quote:'GBP'},
+  ],
+};
+
+// ══════════════════════════════════════════════════════════
+// SCORING ENGINE — Heatmap = Bias, Retail = Confidence only
+// ══════════════════════════════════════════════════════════
+function heatmapScore(hm){
+  // Zonsko skaliranje, konzistentno sa CME pristupom
+  if (hm>=90) return  50;
+  if (hm>=75) return  35;
+  if (hm>=60) return  20;
+  if (hm>=50) return  10;
+  if (hm>=40) return -10;
+  if (hm>=25) return -20;
+  if (hm>=10) return -35;
+  return -50;
+}
+function heatmapBias(hm){
+  if (hm >= 80) return 'sbull';
+  if (hm >= 65) return 'bull';
+  if (hm >= 55) return 'wbull';
+  if (hm >  44) return 'neut';
+  if (hm >= 35) return 'wbear';
+  if (hm >= 20) return 'bear';
+  return 'sbear';
+}
+function retailModifier(retailLong, hmBias){
+  // Retail NIKAD ne menja Bias — samo Confidence
+  if (hmBias === 'neut') return { delta: 0, type: 'neutral' };
+  const hmBull = hmBias === 'sbull' || hmBias === 'wbull';
+  const retailBull = retailLong > 50;
+  const extreme = retailBull ? retailLong : (100 - retailLong);
+  const sameDirection = retailBull === hmBull;
+
+  if (extreme >= 70) {
+    if (sameDirection) {
+      return { delta: -15, type: 'crowded' };
+    } else {
+      return { delta: +15, type: 'contra-extreme' };
+    }
+  }
+  if (!sameDirection) return { delta: +5, type: 'mild-contra' };
+  return { delta: 0, type: 'neutral' };
+}
+function calcCcy(d){
+  const hmScore = heatmapScore(d.heatmap);
+  const bias = heatmapBias(d.heatmap);
+  const retail = retailModifier(d.retailLong, bias);
+  let conf = 60;
+  const hmStrength = Math.abs(d.heatmap - 50);
+  conf += Math.round(hmStrength * 0.4);
+  conf += retail.delta;
+  conf = Math.max(30, Math.min(98, conf));
+
+  // News Impulse — direktno menja Score (bez bias-flip zastite jer nema COT-a)
+  // Filozofija MME: vesti su ekonomski podaci koji se uklapaju u Heatmap logiku
+  const newsRaw = newsImpulseForCcy(d._ccy || '');
+  const news = newsRaw.total;
+  const finalScore = hmScore + news;
+
+  return { hmScore, bias, retail, conf, news, newsContrib: newsRaw.contributions, finalScore, _heatmapRaw: d.heatmap };
+}
+
+// ══════════════════════════════════════════════════════════
+// NEWS IMPULSE — ucitava se iz news.json (deljeni sa CME-om)
+// U MME vesti direktno menjaju Score bez bias-flip zastite —
+// Heatmap je jedini driver, vesti su ekonomski podaci koji
+// se prirodno uklapaju u makro logiku.
+// ══════════════════════════════════════════════════════════
+let NEWS_DATA = { news: [], generatedAt: null };
+
+async function loadNewsJson(){
+  const statusEl = document.getElementById('news-status');
+  try {
+    const res = await fetch('news.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('news.json not found');
+    NEWS_DATA = await res.json();
+    if (statusEl) {
+      const ts = NEWS_DATA.generatedAt
+        ? new Date(NEWS_DATA.generatedAt).toLocaleString('sr-Latn-RS', {day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})
+        : '—';
+      statusEl.textContent = `📰 ${NEWS_DATA.news.length} (${ts})`;
+    }
+  } catch(e) {
+    console.warn('[news] Could not load news.json', e.message);
+    NEWS_DATA = { news: [], generatedAt: null };
+    if (statusEl) statusEl.textContent = '📰 N/A';
+  }
+}
+
+function newsImpulseForCcy(ccy){
+  let total = 0;
+  const contributions = [];
+  for (const item of NEWS_DATA.news){
+    if (item.ccy !== ccy) continue;
+    const pts = item.impulse;
+    if (!pts) continue;
+    total += pts;
+    contributions.push({ item, pts });
+  }
+  total = Math.max(-15, Math.min(15, Math.round(total)));
+  return { total, contributions };
+}
+
+function newsChangedBias(s){
+  if (!s.news || s.news === 0) return null;
+  const baseBk = heatmapBias(s._heatmapRaw || 50); // Bias bez vesti
+  const finalBk = heatmapBias((s._heatmapRaw || 50) + (s.news || 0));
+  if (baseBk === finalBk) return null;
+  const ORDER = ['sbear','wbear','neut','wbull','sbull'];
+  const baseIdx = ORDER.indexOf(baseBk);
+  const finalIdx = ORDER.indexOf(finalBk);
+  return finalIdx > baseIdx ? 'bull' : 'bear';
+}
+
+function newsContribDesc(contributions){
+  if (!contributions || !contributions.length) return '';
+  return contributions.map(c=>{
+    const item = c.item;
+    const sign = c.pts > 0 ? '+' : '';
+    const dayLabel = item.daysAgo===0 ? 'danas' : `pre ${item.daysAgo}d`;
+    const dateStr = item.date ? new Date(item.date).toLocaleDateString('sr-Latn-RS', {day:'2-digit',month:'2-digit',year:'numeric'}) : '';
+    const eventLabel = item.eventName ? ` — ${item.eventName}` : '';
+    return `${item.type}${eventLabel} ${item.actual} vs ${item.forecast??item.previous} (${dayLabel}${dateStr?', '+dateStr:''}, ${sign}${c.pts})`;
+  }).join(' · ');
+}
+
+// ══════════════════════════════════════════════════════════
+// i18n — isti set jezika kao TradeGuard (8): EN ES DE FR SR IT ZH RU
+// ══════════════════════════════════════════════════════════
+const I18N = {
+  sr: {
+    updated:'Ažurirano', secMomentum:'Macro Bias', secAll:'Svi parovi — rangirano',
+    thPair:'Par', thQuality:'Retail Signal',
+    bannerText:'<strong>Macro Momentum Engine</strong> — Bias određuje isključivo Heatmap. Retail Sentiment je Confidence modifier, nikad ne menja smer.',
+    biasLabel:{sbull:'🟢 Strong Bull',bull:'🟢 Bull',wbull:'🟡 Weak Bull',neut:'⚪ Neutral',wbear:'🟠 Weak Bear',bear:'🔴 Bear',sbear:'🔴 Strong Bear'},
+    factorHeatmap:'Heatmap Score', factorRetail:'Retail Modifier',
+    retailContraExtreme:'🟢 Kontra ekstrem (+15)',
+    retailCrowded:'🟠 Prenatrpano (-15)',
+    retailMildContra:'🟡 Blaga kontra (+5)',
+    retailNeutral:'⚪ Neutralno (0)',
+    bLong:'BULLISH',bShort:'BEARISH',bNeutral:'NEUTRAL',
+    longPct:'Heatmap%', retailPct:'Retail Long%',
+    dateLocale:'sr-Latn-RS', flag:'🇷🇸', name:'Srpski',
+  },
+  en: {
+    updated:'Updated', secMomentum:'Macro Bias', secAll:'All pairs — ranked',
+    thPair:'Pair', thQuality:'Retail Signal',
+    bannerText:'<strong>Macro Momentum Engine</strong> — Bias is determined solely by Heatmap. Retail Sentiment is a Confidence modifier, never changes direction.',
+    biasLabel:{sbull:'🟢 Strong Bull',bull:'🟢 Bull',wbull:'🟡 Weak Bull',neut:'⚪ Neutral',wbear:'🟠 Weak Bear',bear:'🔴 Bear',sbear:'🔴 Strong Bear'},
+    factorHeatmap:'Heatmap Score', factorRetail:'Retail Modifier',
+    retailContraExtreme:'🟢 Contra extreme (+15)',
+    retailCrowded:'🟠 Crowded (-15)',
+    retailMildContra:'🟡 Mild contra (+5)',
+    retailNeutral:'⚪ Neutral (0)',
+    bLong:'BULLISH',bShort:'BEARISH',bNeutral:'NEUTRAL',
+    longPct:'Heatmap%', retailPct:'Retail Long%',
+    dateLocale:'en-GB', flag:'🇬🇧', name:'English',
+  },
+  es: {
+    updated:'Actualizado', secMomentum:'Macro Bias', secAll:'Todos los pares — clasificados',
+    thPair:'Par', thQuality:'Señal Retail',
+    bannerText:'<strong>Macro Momentum Engine</strong> — El Bias lo determina únicamente el Heatmap. El Retail Sentiment es un modificador de Confidence, nunca cambia la dirección.',
+    biasLabel:{sbull:'🟢 Alcista fuerte',bull:'🟢 Alcista',wbull:'🟡 Alcista débil',neut:'⚪ Neutral',wbear:'🟠 Bajista débil',bear:'🔴 Bajista',sbear:'🔴 Bajista fuerte'},
+    factorHeatmap:'Heatmap Score', factorRetail:'Modificador Retail',
+    retailContraExtreme:'🟢 Contra extremo (+15)',
+    retailCrowded:'🟠 Saturado (-15)',
+    retailMildContra:'🟡 Contra leve (+5)',
+    retailNeutral:'⚪ Neutral (0)',
+    bLong:'ALCISTA',bShort:'BAJISTA',bNeutral:'NEUTRAL',
+    longPct:'Heatmap%', retailPct:'Retail Long%',
+    dateLocale:'es-ES', flag:'🇪🇸', name:'Español',
+  },
+  de: {
+    updated:'Aktualisiert', secMomentum:'Macro Bias', secAll:'Alle Paare — Rangliste',
+    thPair:'Paar', thQuality:'Retail-Signal',
+    bannerText:'<strong>Macro Momentum Engine</strong> — Der Bias wird ausschließlich durch die Heatmap bestimmt. Retail Sentiment ist ein Confidence-Modifikator und ändert nie die Richtung.',
+    biasLabel:{sbull:'🟢 Stark Bullisch',bull:'🟢 Bullisch',wbull:'🟡 Schwach Bullisch',neut:'⚪ Neutral',wbear:'🟠 Schwach Bärisch',bear:'🔴 Bärisch',sbear:'🔴 Stark Bärisch'},
+    factorHeatmap:'Heatmap Score', factorRetail:'Retail-Modifikator',
+    retailContraExtreme:'🟢 Kontra-Extrem (+15)',
+    retailCrowded:'🟠 Überfüllt (-15)',
+    retailMildContra:'🟡 Leichte Kontra (+5)',
+    retailNeutral:'⚪ Neutral (0)',
+    bLong:'BULLISCH',bShort:'BÄRISCH',bNeutral:'NEUTRAL',
+    longPct:'Heatmap%', retailPct:'Retail Long%',
+    dateLocale:'de-DE', flag:'🇩🇪', name:'Deutsch',
+  },
+  fr: {
+    updated:'Mis à jour', secMomentum:'Macro Bias', secAll:'Toutes les paires — classées',
+    thPair:'Paire', thQuality:'Signal Retail',
+    bannerText:'<strong>Macro Momentum Engine</strong> — Le Bias est déterminé uniquement par la Heatmap. Le Retail Sentiment est un modificateur de Confidence, il ne change jamais la direction.',
+    biasLabel:{sbull:'🟢 Fortement Haussier',bull:'🟢 Haussier',wbull:'🟡 Faiblement Haussier',neut:'⚪ Neutre',wbear:'🟠 Faiblement Baissier',bear:'🔴 Baissier',sbear:'🔴 Fortement Baissier'},
+    factorHeatmap:'Heatmap Score', factorRetail:'Modificateur Retail',
+    retailContraExtreme:'🟢 Contra extrême (+15)',
+    retailCrowded:'🟠 Surchargé (-15)',
+    retailMildContra:'🟡 Contra léger (+5)',
+    retailNeutral:'⚪ Neutre (0)',
+    bLong:'HAUSSIER',bShort:'BAISSIER',bNeutral:'NEUTRE',
+    longPct:'Heatmap%', retailPct:'Retail Long%',
+    dateLocale:'fr-FR', flag:'🇫🇷', name:'Français',
+  },
+  it: {
+    updated:'Aggiornato', secMomentum:'Macro Bias', secAll:'Tutte le coppie — classificate',
+    thPair:'Coppia', thQuality:'Segnale Retail',
+    bannerText:'<strong>Macro Momentum Engine</strong> — Il Bias è determinato esclusivamente dalla Heatmap. Il Retail Sentiment è un modificatore di Confidence, non cambia mai la direzione.',
+    biasLabel:{sbull:'🟢 Fortemente Rialzista',bull:'🟢 Rialzista',wbull:'🟡 Debolmente Rialzista',neut:'⚪ Neutrale',wbear:'🟠 Debolmente Ribassista',bear:'🔴 Ribassista',sbear:'🔴 Fortemente Ribassista'},
+    factorHeatmap:'Heatmap Score', factorRetail:'Modificatore Retail',
+    retailContraExtreme:'🟢 Contro estremo (+15)',
+    retailCrowded:'🟠 Affollato (-15)',
+    retailMildContra:'🟡 Contro lieve (+5)',
+    retailNeutral:'⚪ Neutrale (0)',
+    bLong:'RIALZISTA',bShort:'RIBASSISTA',bNeutral:'NEUTRALE',
+    longPct:'Heatmap%', retailPct:'Retail Long%',
+    dateLocale:'it-IT', flag:'🇮🇹', name:'Italiano',
+  },
+  zh: {
+    updated:'更新于', secMomentum:'宏观偏向', secAll:'所有货币对 — 排名',
+    thPair:'货币对', thQuality:'散户信号',
+    bannerText:'<strong>宏观动能引擎</strong> — 偏向（Bias）仅由热力图（Heatmap）决定。散户情绪（Retail Sentiment）只是置信度修正因子，永远不会改变方向。',
+    biasLabel:{sbull:'🟢 强烈看涨',bull:'🟢 看涨',wbull:'🟡 弱看涨',neut:'⚪ 中性',wbear:'🟠 弱看跌',bear:'🔴 看跌',sbear:'🔴 强烈看跌'},
+    factorHeatmap:'热力图得分', factorRetail:'散户修正',
+    retailContraExtreme:'🟢 反向极端 (+15)',
+    retailCrowded:'🟠 拥挤 (-15)',
+    retailMildContra:'🟡 轻度反向 (+5)',
+    retailNeutral:'⚪ 中性 (0)',
+    bLong:'看涨',bShort:'看跌',bNeutral:'中性',
+    longPct:'热力图%', retailPct:'散户多头%',
+    dateLocale:'zh-CN', flag:'🇨🇳', name:'中文',
+  },
+  ru: {
+    updated:'Обновлено', secMomentum:'Макро Bias', secAll:'Все пары — рейтинг',
+    thPair:'Пара', thQuality:'Розничный сигнал',
+    bannerText:'<strong>Macro Momentum Engine</strong> — Bias определяется исключительно Heatmap. Retail Sentiment — это модификатор Confidence, который никогда не меняет направление.',
+    biasLabel:{sbull:'🟢 Сильный бычий',bull:'🟢 Бычий',wbull:'🟡 Слабый бычий',neut:'⚪ Нейтральный',wbear:'🟠 Слабый медвежий',bear:'🔴 Медвежий',sbear:'🔴 Сильный медвежий'},
+    factorHeatmap:'Heatmap Score', factorRetail:'Розничный модификатор',
+    retailContraExtreme:'🟢 Контр-экстрим (+15)',
+    retailCrowded:'🟠 Перегружено (-15)',
+    retailMildContra:'🟡 Лёгкий контр (+5)',
+    retailNeutral:'⚪ Нейтрально (0)',
+    bLong:'БЫЧИЙ',bShort:'МЕДВЕЖИЙ',bNeutral:'НЕЙТРАЛЬНО',
+    longPct:'Heatmap%', retailPct:'Retail Long%',
+    dateLocale:'ru-RU', flag:'🇷🇺', name:'Русский',
+  },
+};
+let lang='sr';
+const t=(k,...a)=>{const v=I18N[lang][k];return typeof v==='function'?v(...a):v};
+function updateStaticI18n(){
+  document.querySelectorAll('[data-i18n]').forEach(el=>el.innerHTML=t(el.dataset.i18n));
+  const cetStr=new Date().toLocaleString(t('dateLocale'),{timeZone:'Europe/Belgrade',day:'2-digit',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'});
+  document.getElementById('hdr-week').textContent=cetStr;
+  const sel=document.getElementById('lang-select');
+  if(sel) sel.value=lang;
+}
+function setLang(newLang){
+  lang=newLang;
+  updateStaticI18n();renderAll();
+}
+
+const fmt=v=>(v>0?'+':'')+v;
+const cfCls=c=>c>=80?'hi':c>=60?'mid':'lo';
+
+function retailLabel(type){
+  if(type==='contra-extreme') return t('retailContraExtreme');
+  if(type==='crowded') return t('retailCrowded');
+  if(type==='mild-contra') return t('retailMildContra');
+  return t('retailNeutral');
+}
+
+function strengthBlocks(conf){
+  const filled=Math.round(conf/20);
+  const cls=conf>=80?'f-grn':conf>=60?'f-amb':'f-red';
+  const ncls=conf>=80?'cn-hi':conf>=60?'cn-mid':'cn-lo';
+  return`<div class="strength-row">
+    <span class="str-label">CONF</span>
+    <div class="str-blocks">${[1,2,3,4,5].map(i=>`<div class="str-block ${i<=filled?cls:''}"></div>`).join('')}</div>
+    <span class="str-pct ${ncls}">${conf}%</span>
+  </div>`;
+}
+
+function renderCcyCard(ccy,d,s){
+  const displayScore = s.finalScore;
+  const sc=displayScore>0?'pos':displayScore<0?'neg':'zer';
+  // Bias se racuna iz finalScore (sa vest uticajem) za MME — vesti direktno menjaju Bias
+  const displayBias = heatmapBias(d.heatmap + (s.news||0));
+  let badges='';
+  if(s.retail.type==='contra-extreme') badges+=`<span class="bdg bdg-pur">${retailLabel(s.retail.type)}</span>`;
+  else if(s.retail.type==='crowded') badges+=`<span class="bdg bdg-amb">${retailLabel(s.retail.type)}</span>`;
+  const biasChange = newsChangedBias(s);
+  if (biasChange) {
+    const alertCls = biasChange === 'bear' ? 'news-alert-bear' : 'news-alert-bull';
+    const arrow = biasChange === 'bear' ? '↓' : '↑';
+    badges += `<span class="${alertCls}">⚡ VEST PROMENILA BIAS ${arrow}</span>`;
+  }
+  const noteText=lang==='sr'?d.note_sr:d.note_en;
+  return`<div class="ccy-card c-${displayBias}">
+    <div class="ccy-top">
+      <div><div class="ccy-sym ${displayBias}">${ccy}</div>
+      <div class="ccy-pct">${t('longPct')} ${d.heatmap}% · ${t('retailPct')} ${d.retailLong}%</div></div>
+      <div style="text-align:right"><div class="ccy-score ${sc}">${fmt(displayScore)}</div></div>
+    </div>
+    <div class="bias-row"><span class="bias-badge bb-${displayBias}">${t('biasLabel')[displayBias]}</span></div>
+    ${strengthBlocks(s.conf)}
+    ${badges?`<div class="badges">${badges}</div>`:''}
+    <div class="factors">
+      <div class="frow"><span class="fn">${t('factorHeatmap')} (${d.heatmap}%)</span><span class="fv ${s.hmScore>0?'p':s.hmScore<0?'n':'z'}">${fmt(s.hmScore)}</span></div>
+      <div class="frow"><span class="fn">${t('factorRetail')}</span><span class="fv ${s.retail.delta>0?'p':s.retail.delta<0?'n':'z'}">${fmt(s.retail.delta)}</span></div>
+      ${s.news!==0?`<div class="frow"><span class="fn">📰 News Impulse</span><span class="fv ${s.news>0?'p':'n'}">${fmt(s.news)}</span></div>
+      <div style="font-size:9px;color:var(--tx2);margin:-1px 0 3px;font-style:italic">↳ ${newsContribDesc(s.newsContrib)}</div>`:''}
+    </div>
+    <div class="why-note">${noteText}</div>
+  </div>`;
+}
+
+function buildPairResults(scores){
+  return DATA.pairs.map(p=>{
+    const bs=scores[p.base], qs=scores[p.quote];
+    if(!bs||!qs) return null;
+    const ps = bs.finalScore - qs.finalScore; // koristi finalScore koji ukljucuje News Impulse
+    const pc = Math.round((bs.conf+qs.conf)/2);
+    const pbk = ps>10?'bull':ps<-10?'bear':'neut';
+    return {...p, display:p.base+p.quote, ps, pc, bs, qs, pbk};
+  }).filter(Boolean).sort((a,b)=>Math.abs(b.ps)-Math.abs(a.ps));
+}
+
+function renderTable(scores){
+  const all=buildPairResults(scores);
+  return all.map((p,i)=>{
+    const cf=cfCls(p.pc);
+    const isLong=p.ps>=0;
+    const biasCls=p.ps>10?'t-pos':p.ps<-10?'t-neg':'t-dim';
+    const w=Math.min(46,Math.abs(p.ps)/2);
+    const barHtml=p.ps>=0?`<div style="position:absolute;left:50%;height:100%;background:var(--grn);border-radius:2px;width:${w}%"></div>`:`<div style="position:absolute;right:50%;height:100%;background:var(--red);border-radius:2px;width:${w}%"></div>`;
+    const bRetail = retailLabel(p.bs.retail.type);
+    const qRetail = retailLabel(p.qs.retail.type);
+    return`<tr>
+      <td class="t-dim">${i+1}</td>
+      <td style="font-weight:600">${p.display}</td>
+      <td style="color:${p.bs.finalScore>=0?'var(--grn)':'var(--red)'}">${fmt(p.bs.finalScore)}</td>
+      <td style="color:${p.qs.finalScore>=0?'var(--grn)':'var(--red)'}">${fmt(p.qs.finalScore)}</td>
+      <td class="${p.ps>=0?'t-pos':'t-neg'}">${fmt(p.ps)}</td>
+      <td><div style="width:70px;height:4px;background:var(--bg4);border-radius:2px;position:relative;overflow:hidden">${barHtml}</div></td>
+      <td><span class="cn-${cf}" style="font-family:var(--mono);font-size:10px;font-weight:600">${p.pc}%</span></td>
+      <td class="${biasCls}" style="font-size:10px">${p.ps>10?t('bLong'):p.ps<-10?t('bShort'):t('bNeutral')}</td>
+      <td style="font-size:9px;color:var(--tx2)">${p.base}: ${bRetail}<br>${p.quote}: ${qRetail}
+        ${(()=>{
+          let n='';
+          const bBC=newsChangedBias(p.bs), qBC=newsChangedBias(p.qs);
+          if(bBC){const arrow=bBC==='bear'?'↓':'↑';n+=`<br><span class="${bBC==='bear'?'news-alert-bear':'news-alert-bull'}">⚡ ${p.base} BIAS ${arrow}</span>`;}
+          if(qBC){const arrow=qBC==='bear'?'↓':'↑';n+=`<br><span class="${qBC==='bear'?'news-alert-bear':'news-alert-bull'}">⚡ ${p.quote} BIAS ${arrow}</span>`;}
+          if(p.bs.newsContrib&&p.bs.newsContrib.length) p.bs.newsContrib.forEach(c=>{const sign=c.pts>0?'+':'';n+=`<br><span style="color:var(--blu)">📰 ${p.base}: ${c.item.eventName||c.item.type} → ${sign}${c.pts}</span>`;});
+          if(p.qs.newsContrib&&p.qs.newsContrib.length) p.qs.newsContrib.forEach(c=>{const sign=c.pts>0?'+':'';n+=`<br><span style="color:var(--blu)">📰 ${p.quote}: ${c.item.eventName||c.item.type} → ${sign}${c.pts}</span>`;});
+          return n;
+        })()}
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function renderAll(){
+  const scores={};
+  for(const[k,d]of Object.entries(DATA.currencies)){
+    d._ccy = k; // pass currency key so calcCcy can look up news
+    scores[k]=calcCcy(d);
+  }
+  document.getElementById('ccy-grid').innerHTML=Object.entries(DATA.currencies).map(([k,d])=>renderCcyCard(k,d,scores[k])).join('');
+  document.getElementById('tbl-tbody').innerHTML=renderTable(scores);
+}
+
+document.addEventListener('DOMContentLoaded', async ()=>{
+  updateStaticI18n();
+  await loadNewsJson();
+  renderAll();
+});
+</script>
+
+<header class="hdr">
+  <div class="logo">MME <em>/ Macro Momentum Engine</em></div>
+  <div class="hdr-meta">
+    <div class="hdr-item"><span class="dot"></span><span data-i18n="updated"></span>: <strong id="hdr-week"></strong></div>
+    <div class="hdr-item" id="news-status" style="color:var(--tx2)">📰 —</div>
+    <select id="lang-select" class="lang-select" onchange="setLang(this.value)">
+      <option value="sr">🇷🇸 Srpski</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="es">🇪🇸 Español</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="zh">🇨🇳 中文</option>
+      <option value="ru">🇷🇺 Русский</option>
+    </select>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="banner">
+    <div class="banner-icon">🧭</div>
+    <div class="banner-text" data-i18n="bannerText"></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-hdr">
+      <div class="sec-title" data-i18n="secMomentum"></div>
+      <div class="sec-rule"></div>
+      <div class="sec-tag">Heatmap = Bias · Retail = Confidence</div>
+    </div>
+    <div class="ccy-grid" id="ccy-grid"></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-hdr">
+      <div class="sec-title" data-i18n="secAll"></div>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th>#</th><th data-i18n="thPair"></th><th>Base HM</th><th>Quote HM</th>
+          <th>Spread</th><th>Bar</th><th>Conf</th><th>Bias</th><th data-i18n="thQuality"></th>
+        </tr></thead>
+        <tbody id="tbl-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

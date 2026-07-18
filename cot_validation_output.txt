@@ -1,0 +1,74 @@
+COT VALIDACIJA — 320 ned., horizont 4w, prag 5.0pp
+
+── EUR: obradjeno
+── GBP: obradjeno
+── AUD: obradjeno
+── NZD: obradjeno
+── JPY: obradjeno
+── CHF: obradjeno
+── CAD: obradjeno
+
+==============================================================================
+TEST A — STVARNI CME COT BLOK  (cotMom + tq + weekly)  vs  sirovi delta6w
+==============================================================================
+                                hit       %       z        p
+  legacy · delta6w (sirovi) 596/1301   45.8%  -3.02σ   0.0025  ◄ ANTI
+  legacy · CME COT BLOK    748/1598   46.8%  -2.55σ    0.011  ◄ ANTI
+
+  levFunds · delta6w (sirovi) 612/1378   44.4%  -4.15σ  3.3e-05  ◄ ANTI
+  levFunds · CME COT BLOK  725/1602   45.3%  -3.80σ  0.00015  ◄ ANTI
+
+  assetMgr · delta6w (sirovi) 586/1227   47.8%  -1.57σ     0.12  
+  assetMgr · CME COT BLOK  760/1602   47.4%  -2.05σ     0.04  ◄ ANTI
+
+==============================================================================
+TEST B — WALK-FORWARD  (starija polovina vs novija polovina)
+==============================================================================
+  ── legacy ──
+     starija 2020-07→2023-07 316/650    48.6%  -0.71σ     0.48  
+     novija  2023-07→2026-06 280/651    43.0%  -3.57σ  0.00036  ◄ ANTI
+
+  ── levFunds ──
+     starija 2020-07→2023-06 336/689    48.8%  -0.65σ     0.52  
+     novija  2023-06→2026-06 276/689    40.1%  -5.22σ  1.8e-07  ◄ ANTI
+
+  ── assetMgr ──
+     starija 2020-07→2023-07 288/613    47.0%  -1.49σ     0.14  
+     novija  2023-07→2026-06 298/614    48.5%  -0.73σ     0.47  
+
+==============================================================================
+TEST C — PERCENTIL / EKSTREMI  (rolling 3g, bez gledanja unapred)
+==============================================================================
+  Hipoteza: ekstrem je KONTRARIAN — prenatrpano long -> cena pada.
+  'hit' ovde = da li se cena okrenula PROTIV ekstrema.
+
+  ── legacy ──
+     percentil >95 (long)   66/105    62.9%   2.63σ   0.0084  ◄ EDGE  pros.prinos -0.56%
+     percentil <5  (short)  92/163    56.4%   1.64σ      0.1    pros.prinos +0.43%
+     OBA ekstrema          158/268    59.0%   2.93σ   0.0034  ◄ EDGE
+
+  ── levFunds ──
+     percentil >95 (long)   59/112    52.7%   0.57σ     0.57    pros.prinos -0.11%
+     percentil <5  (short)  80/127    63.0%   2.93σ   0.0034  ◄ EDGE  pros.prinos +0.68%
+     OBA ekstrema          139/239    58.2%   2.52σ    0.012  ◄ EDGE
+
+  ── assetMgr ──
+     percentil >95 (long)   48/77     62.3%   2.17σ     0.03  ◄ EDGE  pros.prinos -0.40%
+     percentil <5  (short) 107/189    56.6%   1.82σ    0.069    pros.prinos +0.53%
+     OBA ekstrema          155/266    58.3%   2.70σ    0.007  ◄ EDGE
+
+
+KAKO CITATI
+  σ = koliko standardnih devijacija od nasumicnog (50%). |σ|>2 = znacajno.
+  ◄ EDGE  = model ima informaciju u tom smeru
+  ◄ ANTI  = model je znacajno POGRESAN (okrenut bi radio)
+  bez oznake = sum, nema signala
+
+  TEST A: da li ceo CME blok radi bolje od sirove delte?
+  TEST B: ako je efekat u OBE polovine -> prava osobina, ne rezim.
+          Ako je samo u jednoj -> artefakt, ne diramo nista.
+  TEST C: ako ekstremi imaju edge a smer nema -> COT treba koristiti
+          kao kontrarian na ekstremima, ne kao trend-follow na smeru.
+
+
+[ispis sacuvan u: D:\Firefox\CME\cot_validation_output.txt]

@@ -1,0 +1,51 @@
+{
+  "generatedAt": "2026-07-17T20:54:19.290081+00:00",
+  "daysBack": 7,
+  "news": [
+    {
+      "ccy": "USD",
+      "type": "CPI_YOY",
+      "eventName": "CPI YoY (Jun)",
+      "impact": "high",
+      "actual": 3.5,
+      "forecast": 3.8,
+      "previous": 4.2,
+      "date": "2026-07-14 12:30:00",
+      "daysAgo": 3,
+      "surpriseDiff": -0.3,
+      "impulseBase": -5.0,
+      "impulse": -1.25,
+      "decay": 0.25
+    },
+    {
+      "ccy": "USD",
+      "type": "CPI_MOM",
+      "eventName": "CPI MoM (Jun)",
+      "impact": "high",
+      "actual": -0.4,
+      "forecast": -0.1,
+      "previous": 0.5,
+      "date": "2026-07-14 12:30:00",
+      "daysAgo": 3,
+      "surpriseDiff": -0.3,
+      "impulseBase": -10.0,
+      "impulse": -2.5,
+      "decay": 0.25
+    },
+    {
+      "ccy": "USD",
+      "type": "CPI_MOM",
+      "eventName": "Core CPI MoM (Jun)",
+      "impact": "high",
+      "actual": 0.0,
+      "forecast": 0.2,
+      "previous": 0.2,
+      "date": "2026-07-14 12:30:00",
+      "daysAgo": 3,
+      "surpriseDiff": -0.2,
+      "impulseBase": -6.67,
+      "impulse": -1.67,
+      "decay": 0.25
+    }
+  ]
+}

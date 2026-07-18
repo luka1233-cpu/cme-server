@@ -1,0 +1,496 @@
+{
+  "generatedAt": "2026-07-17T20:54:34.439754+00:00",
+  "reportDate": "2026-07-07",
+  "scoreModel": "legacy",
+  "modelsAvailable": [
+    "legacy",
+    "levFunds",
+    "assetMgr"
+  ],
+  "note": "Sva tri modela se povlace; score koristi scoreModel (COT_MODEL u indicator_config.py). XAU ima samo legacy — zlato nije u TFF izvestaju.",
+  "currencies": {
+    "USD": {
+      "longPct": 63.1,
+      "longPct6wAgo": 51.0,
+      "deltaPct6w": 12,
+      "dLong": -603,
+      "dShort": -856,
+      "tqConsistent": 4,
+      "netPosition": 13269,
+      "percentile3y": 78,
+      "historyWeeks": 160,
+      "reportDate": "2026-07-07",
+      "model": "legacy",
+      "models": {
+        "legacy": {
+          "longPct": 63.1,
+          "longPct6wAgo": 51.0,
+          "deltaPct6w": 12,
+          "dLong": -603,
+          "dShort": -856,
+          "tqConsistent": 4,
+          "netPosition": 13269,
+          "percentile3y": 78,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        },
+        "levFunds": {
+          "longPct": 43.5,
+          "longPct6wAgo": 32.2,
+          "deltaPct6w": 11,
+          "dLong": -674,
+          "dShort": -1800,
+          "tqConsistent": 3,
+          "netPosition": -4454,
+          "percentile3y": 43,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        },
+        "assetMgr": {
+          "longPct": 95.6,
+          "longPct6wAgo": 89.9,
+          "deltaPct6w": 6,
+          "dLong": 290,
+          "dShort": -1073,
+          "tqConsistent": 4,
+          "netPosition": 21424,
+          "percentile3y": 98,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        }
+      },
+      "lfAmDivergence": {
+        "lfDelta": 11,
+        "amDelta": 6,
+        "opposed": false,
+        "gap": 5
+      }
+    },
+    "EUR": {
+      "longPct": 48.2,
+      "longPct6wAgo": 53.5,
+      "deltaPct6w": -5,
+      "dLong": -12228,
+      "dShort": 5098,
+      "tqConsistent": 4,
+      "netPosition": -16227,
+      "percentile3y": 12,
+      "historyWeeks": 160,
+      "reportDate": "2026-07-07",
+      "model": "legacy",
+      "models": {
+        "legacy": {
+          "longPct": 48.2,
+          "longPct6wAgo": 53.5,
+          "deltaPct6w": -5,
+          "dLong": -12228,
+          "dShort": 5098,
+          "tqConsistent": 4,
+          "netPosition": -16227,
+          "percentile3y": 12,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        },
+        "levFunds": {
+          "longPct": 39.7,
+          "longPct6wAgo": 51.7,
+          "deltaPct6w": -12,
+          "dLong": -14807,
+          "dShort": -1990,
+          "tqConsistent": 4,
+          "netPosition": -45461,
+          "percentile3y": 1,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        },
+        "assetMgr": {
+          "longPct": 68.1,
+          "longPct6wAgo": 72.2,
+          "deltaPct6w": -4,
+          "dLong": 7468,
+          "dShort": 8708,
+          "tqConsistent": 5,
+          "netPosition": 253918,
+          "percentile3y": 21,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        }
+      },
+      "lfAmDivergence": {
+        "lfDelta": -12,
+        "amDelta": -4,
+        "opposed": false,
+        "gap": 8
+      }
+    },
+    "GBP": {
+      "longPct": 25.2,
+      "longPct6wAgo": 32.7,
+      "deltaPct6w": -8,
+      "dLong": 7415,
+      "dShort": -6829,
+      "tqConsistent": 4,
+      "netPosition": -87903,
+      "percentile3y": 2,
+      "historyWeeks": 160,
+      "reportDate": "2026-07-07",
+      "model": "legacy",
+      "models": {
+        "legacy": {
+          "longPct": 25.2,
+          "longPct6wAgo": 32.7,
+          "deltaPct6w": -8,
+          "dLong": 7415,
+          "dShort": -6829,
+          "tqConsistent": 4,
+          "netPosition": -87903,
+          "percentile3y": 2,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        },
+        "levFunds": {
+          "longPct": 59.2,
+          "longPct6wAgo": 64.9,
+          "deltaPct6w": -6,
+          "dLong": 5563,
+          "dShort": 3857,
+          "tqConsistent": 4,
+          "netPosition": 17979,
+          "percentile3y": 15,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        },
+        "assetMgr": {
+          "longPct": 8.2,
+          "longPct6wAgo": 16.4,
+          "deltaPct6w": -8,
+          "dLong": 1849,
+          "dShort": -11201,
+          "tqConsistent": 5,
+          "netPosition": -143257,
+          "percentile3y": 2,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        }
+      },
+      "lfAmDivergence": {
+        "lfDelta": -6,
+        "amDelta": -8,
+        "opposed": false,
+        "gap": 2
+      }
+    },
+    "JPY": {
+      "longPct": 32.2,
+      "longPct6wAgo": 33.2,
+      "deltaPct6w": -1,
+      "dLong": 375,
+      "dShort": -30939,
+      "tqConsistent": 5,
+      "netPosition": -123778,
+      "percentile3y": 16,
+      "historyWeeks": 160,
+      "reportDate": "2026-07-07",
+      "model": "legacy",
+      "models": {
+        "legacy": {
+          "longPct": 32.2,
+          "longPct6wAgo": 33.2,
+          "deltaPct6w": -1,
+          "dLong": 375,
+          "dShort": -30939,
+          "tqConsistent": 5,
+          "netPosition": -123778,
+          "percentile3y": 16,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        },
+        "levFunds": {
+          "longPct": 32.7,
+          "longPct6wAgo": 35.6,
+          "deltaPct6w": -3,
+          "dLong": -2447,
+          "dShort": -27764,
+          "tqConsistent": 4,
+          "netPosition": -90083,
+          "percentile3y": 9,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        },
+        "assetMgr": {
+          "longPct": 37.6,
+          "longPct6wAgo": 35.1,
+          "deltaPct6w": 3,
+          "dLong": 2210,
+          "dShort": -17830,
+          "tqConsistent": 3,
+          "netPosition": -48653,
+          "percentile3y": 21,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        }
+      },
+      "lfAmDivergence": {
+        "lfDelta": -3,
+        "amDelta": 3,
+        "opposed": true,
+        "gap": 6
+      }
+    },
+    "CHF": {
+      "longPct": 18.0,
+      "longPct6wAgo": 14.4,
+      "deltaPct6w": 4,
+      "dLong": 2586,
+      "dShort": 1042,
+      "tqConsistent": 4,
+      "netPosition": -37414,
+      "percentile3y": 27,
+      "historyWeeks": 160,
+      "reportDate": "2026-07-07",
+      "model": "legacy",
+      "models": {
+        "legacy": {
+          "longPct": 18.0,
+          "longPct6wAgo": 14.4,
+          "deltaPct6w": 4,
+          "dLong": 2586,
+          "dShort": 1042,
+          "tqConsistent": 4,
+          "netPosition": -37414,
+          "percentile3y": 27,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        },
+        "levFunds": {
+          "longPct": 37.6,
+          "longPct6wAgo": 35.9,
+          "deltaPct6w": 2,
+          "dLong": 2745,
+          "dShort": 297,
+          "tqConsistent": 3,
+          "netPosition": -7218,
+          "percentile3y": 30,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        },
+        "assetMgr": {
+          "longPct": 12.1,
+          "longPct6wAgo": 11.7,
+          "deltaPct6w": 0,
+          "dLong": -75,
+          "dShort": 1904,
+          "tqConsistent": 2,
+          "netPosition": -43308,
+          "percentile3y": 11,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        }
+      },
+      "lfAmDivergence": {
+        "lfDelta": 2,
+        "amDelta": 0,
+        "opposed": true,
+        "gap": 2
+      }
+    },
+    "CAD": {
+      "longPct": 13.4,
+      "longPct6wAgo": 30.5,
+      "deltaPct6w": -17,
+      "dLong": -6423,
+      "dShort": 15897,
+      "tqConsistent": 6,
+      "netPosition": -173126,
+      "percentile3y": 7,
+      "historyWeeks": 160,
+      "reportDate": "2026-07-07",
+      "model": "legacy",
+      "models": {
+        "legacy": {
+          "longPct": 13.4,
+          "longPct6wAgo": 30.5,
+          "deltaPct6w": -17,
+          "dLong": -6423,
+          "dShort": 15897,
+          "tqConsistent": 6,
+          "netPosition": -173126,
+          "percentile3y": 7,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        },
+        "levFunds": {
+          "longPct": 23.5,
+          "longPct6wAgo": 31.8,
+          "deltaPct6w": -8,
+          "dLong": 1793,
+          "dShort": -351,
+          "tqConsistent": 4,
+          "netPosition": -85957,
+          "percentile3y": 7,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        },
+        "assetMgr": {
+          "longPct": 21.3,
+          "longPct6wAgo": 41.8,
+          "deltaPct6w": -20,
+          "dLong": -10479,
+          "dShort": 16620,
+          "tqConsistent": 6,
+          "netPosition": -108343,
+          "percentile3y": 21,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        }
+      },
+      "lfAmDivergence": {
+        "lfDelta": -8,
+        "amDelta": -20,
+        "opposed": false,
+        "gap": 12
+      }
+    },
+    "AUD": {
+      "longPct": 42.7,
+      "longPct6wAgo": 65.2,
+      "deltaPct6w": -22,
+      "dLong": -5826,
+      "dShort": 1125,
+      "tqConsistent": 6,
+      "netPosition": -24651,
+      "percentile3y": 68,
+      "historyWeeks": 160,
+      "reportDate": "2026-07-07",
+      "model": "legacy",
+      "models": {
+        "legacy": {
+          "longPct": 42.7,
+          "longPct6wAgo": 65.2,
+          "deltaPct6w": -22,
+          "dLong": -5826,
+          "dShort": 1125,
+          "tqConsistent": 6,
+          "netPosition": -24651,
+          "percentile3y": 68,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        },
+        "levFunds": {
+          "longPct": 66.7,
+          "longPct6wAgo": 75.3,
+          "deltaPct6w": -9,
+          "dLong": -4836,
+          "dShort": -2742,
+          "tqConsistent": 3,
+          "netPosition": 29683,
+          "percentile3y": 82,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        },
+        "assetMgr": {
+          "longPct": 36.9,
+          "longPct6wAgo": 56.7,
+          "deltaPct6w": -20,
+          "dLong": -1258,
+          "dShort": -3162,
+          "tqConsistent": 5,
+          "netPosition": -37303,
+          "percentile3y": 59,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        }
+      },
+      "lfAmDivergence": {
+        "lfDelta": -9,
+        "amDelta": -20,
+        "opposed": false,
+        "gap": 11
+      }
+    },
+    "NZD": {
+      "longPct": 12.5,
+      "longPct6wAgo": 20.3,
+      "deltaPct6w": -8,
+      "dLong": -662,
+      "dShort": 1247,
+      "tqConsistent": 4,
+      "netPosition": -65189,
+      "percentile3y": 0,
+      "historyWeeks": 160,
+      "reportDate": "2026-07-07",
+      "model": "legacy",
+      "models": {
+        "legacy": {
+          "longPct": 12.5,
+          "longPct6wAgo": 20.3,
+          "deltaPct6w": -8,
+          "dLong": -662,
+          "dShort": 1247,
+          "tqConsistent": 4,
+          "netPosition": -65189,
+          "percentile3y": 0,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        },
+        "levFunds": {
+          "longPct": 18.2,
+          "longPct6wAgo": 29.9,
+          "deltaPct6w": -12,
+          "dLong": -491,
+          "dShort": 1425,
+          "tqConsistent": 4,
+          "netPosition": -27201,
+          "percentile3y": 1,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        },
+        "assetMgr": {
+          "longPct": 11.4,
+          "longPct6wAgo": 15.4,
+          "deltaPct6w": -4,
+          "dLong": 1193,
+          "dShort": 1551,
+          "tqConsistent": 4,
+          "netPosition": -57568,
+          "percentile3y": 4,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        }
+      },
+      "lfAmDivergence": {
+        "lfDelta": -12,
+        "amDelta": -4,
+        "opposed": false,
+        "gap": 8
+      }
+    },
+    "XAU": {
+      "longPct": 85.6,
+      "longPct6wAgo": 81.2,
+      "deltaPct6w": 4,
+      "dLong": 4094,
+      "dShort": 3867,
+      "tqConsistent": 3,
+      "netPosition": 194246,
+      "percentile3y": 39,
+      "historyWeeks": 160,
+      "reportDate": "2026-07-07",
+      "model": "legacy",
+      "models": {
+        "legacy": {
+          "longPct": 85.6,
+          "longPct6wAgo": 81.2,
+          "deltaPct6w": 4,
+          "dLong": 4094,
+          "dShort": 3867,
+          "tqConsistent": 3,
+          "netPosition": 194246,
+          "percentile3y": 39,
+          "historyWeeks": 160,
+          "reportDate": "2026-07-07"
+        }
+      }
+    }
+  }
+}
