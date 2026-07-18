@@ -19,7 +19,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 OUTPUT_DIR = Path(__file__).parent.parent / "output"
-FMP_API_KEY = os.environ.get("FMP_API_KEY", "")
+FMP_API_KEY = ""  # postavlja se dinamički
 
 # Prag promene 2Y prinosa (u procentnim poenima) da bi trend bio znacajan.
 # Kalibrisano konzervativno: 0.10pp preko prozora = znacajan pomak.
@@ -28,17 +28,18 @@ DEFAULT_YIELD_THRESHOLD = 0.10
 TREND_WINDOW_DAYS = 30   # kalendarskih dana unazad za trend
 
 
-def fetch_treasury(days_back: int = 40) -> list[dict]:
+def fetch_treasury(api_key: str = "", days_back: int = 40) -> list[dict]:
+    key = api_key or FMP_API_KEY or os.environ.get("FMP_API_KEY", "")
     today = datetime.now(timezone.utc).date()
     start = today - timedelta(days=days_back)
     params = {
         "from": start.isoformat(),
         "to": today.isoformat(),
-        "apikey": FMP_API_KEY,
+        "apikey": key,
     }
     url = "https://financialmodelingprep.com/stable/treasury-rates?" + \
           urllib.parse.urlencode(params)
-    print(f"[yield] Fetching: {url.replace(FMP_API_KEY, '***')}")
+    print(f"[yield] Fetching treasury rates...")
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
         with urllib.request.urlopen(req, timeout=20) as resp:
@@ -110,10 +111,11 @@ def compute_2y_trend(rows: list[dict], threshold: float = DEFAULT_YIELD_THRESHOL
 
 
 def collect(threshold: float = DEFAULT_YIELD_THRESHOLD) -> dict | None:
-    if not FMP_API_KEY:
+    key = FMP_API_KEY or os.environ.get("FMP_API_KEY", "")
+    if not key:
         print("[yield] FMP_API_KEY nije postavljen — preskacem yield.")
         return None
-    rows = fetch_treasury()
+    rows = fetch_treasury(key)
     if not rows:
         return None
     trend = compute_2y_trend(rows, threshold)

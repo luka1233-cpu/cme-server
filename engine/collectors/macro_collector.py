@@ -13,7 +13,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from .indicator_config import preferred_score
 
-FMP_API_KEY = os.environ.get("FMP_API_KEY", "")
+FMP_API_KEY = ""  # postavlja se dinamički iz env ili iz cloud servera
 OUTPUT_DIR  = Path(__file__).parent.parent / "output"
 DAYS_BACK   = 90
 
@@ -203,10 +203,11 @@ def collect(as_of: str | None = None) -> dict:
            rekonstrukciju — filtrira event-e na release_date <= as_of
            (kao da je taj dan "danas"). None = normalno ponasanje (zakljucano V1).
     """
-    if not FMP_API_KEY:
+    key = FMP_API_KEY or os.environ.get("FMP_API_KEY", "")
+    if not key:
         raise ValueError("FMP_API_KEY nije postavljen.")
 
-    raw_events = fetch_calendar(FMP_API_KEY, DAYS_BACK)
+    raw_events = fetch_calendar(key, DAYS_BACK)
     if not raw_events:
         return {}
 
