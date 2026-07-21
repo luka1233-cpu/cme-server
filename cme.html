@@ -233,7 +233,7 @@ const CME_BUILD = "2026-07-12";
 async function loadNewsJson(){
   const statusEl = document.getElementById('news-status');
   try {
-    const res = await fetch('news.json', { cache: 'no-store' });
+    const res = await fetch('https://raw.githubusercontent.com/luka1233-cpu/cme-server/main/news.json');
     if (!res.ok) throw new Error('news.json not found');
     NEWS_DATA = await res.json();
     LOAD_STATUS.news = true;
@@ -366,8 +366,24 @@ function calcCcy(ccy, d) {
   const penalty = cl === 'strong' ? -10 : cl === 'mild' ? -5 : 0; // samo za prikaz badge-a
   const rotation = Math.abs(d.dLong)>=1000 && Math.abs(d.dShort)>=1000
                    && Math.sign(d.dLong) !== Math.sign(d.dShort);
+  // ── COT Level/Momentum Score (za COT tab — single source of truth) ──
+  const _lp  = d.longPct != null ? d.longPct : 50;
+  const _pct = d.percentile3y != null ? d.percentile3y : null;
+  const levelScore    = Math.round((((_lp-50)*2) + (_pct!=null?(_pct-50)*2:0)) / 2);
+  const _tqFactor     = (d.tqConsistent != null ? d.tqConsistent : 3) / 6;
+  const _deltaScore   = Math.max(-100, Math.min(100, delta * 2));
+  const _weeklyNet    = (d.dLong||0) - (d.dShort||0);
+  const _weeklyNorm   = _weeklyNet > 0 ? Math.min(20, _weeklyNet/5000*100) : Math.max(-20, _weeklyNet/5000*100);
+  const momentumScore = Math.round((0.8 * _deltaScore + 0.2 * _weeklyNorm) * _tqFactor);
+  // COT trend
+  const _delta = delta || 0;
+  const _tqv   = d.tqConsistent || 3;
+  const cotTrendKey = _delta>5&&_tqv>=4?'up' : _delta<-5&&_tqv>=4?'down' : Math.abs(_delta)<=2?'flat' : _delta>0?'up_mild':'down_mild';
+
   return { cotMom, tq, weekly, hm, news, newsContrib: newsRaw.contributions,
            baseScore, penalty, score, conf,
+           levelScore, momentumScore, cotTrendKey,
+           longPct: d.longPct, deltaPct6w: delta, tqConsistent: d.tqConsistent, percentile3y: d.percentile3y,
            rotation, xBull: d.longPct>85, xBear: d.longPct<15, bull: score>=0 };
 }
 
@@ -451,6 +467,30 @@ const I18N = {
     penaltyStrong:'Jak konflikt',penaltyMild:'Blagi konflikt',
     penaltyText:(p,l)=>`Conflict Penalty: ${p} poena (${l}) · Confidence umanjen`,
     dateLocale:'sr-Latn-RS',
+    tabCot:'📈 COT',
+    cotTitle:'COT — Institucionalno Pozicioniranje',
+    cotSub:'Automatski · CFTC Socrata · ažurira se petkom',
+    cotLevel:'Level Score', cotMom:'Momentum Score', cotFinal:'COT Score',
+    cotLong:'Long%', cotPct:'Percentil 3Y', cotTrend:'Trend',
+    cotBias:'COT Bias', cotNoData:'Nema COT podataka.',
+    cotDrivers:'Pokretači',
+    tabFundamental:'🎬 Fund. Replay',
+    fundReplayTitle:'Fundamental Replay',
+    fundPrevDay:'◀ Preth. dan', fundNextDay:'Sledeći dan ▶',
+    fundJump:'Idi na datum', fundNoPair:'Izaberi par',
+    fundNoSnap:'Nema snapshota za ovaj datum.',
+    fundNoFund:'Ovaj snapshot nema fundamentalne kategorije (snimljen pre v2).',
+    fundOverall:'Ukupno', fundBias:'Fundamentalni Bias',
+    fundConf:'Pouzd.',fundBuy:'KUPI',fundSell:'PRODAJ',fundNeut:'NEUTRAL',
+    tabCme:'📊 CME', tabHeatmap:'🌡 Ekonomski Heatmap', tabHistory:'📅 Istorija',
+    tabFundamental:'📈 Fund. Istorija', tabAi:'🤖 AI Chat',
+    fundTitle:'Fundamentalna Istorija',
+    fundSub:'Heatmap (makro) + COT pozicioniranje kroz vreme',
+    fundDate:'Datum:', fundAvail:'datuma dostupno',
+    fundLoading:'Učitavam...', fundNoData:'Nema podataka za',
+    fundNoHistory:'Nema istorije još.',
+    fundHeatmap:'Heatmap %', fundCot:'COT Long%', fundDelta:'Δ 6w',
+    fundNote:'Heatmap >55 = bullish fundament · COT delta = 6-nedeljni trend institucija',
   },
   en: {
     updated:'Updated', secRegime:'Market Regime', secMomentum:'Currency Momentum',
@@ -484,6 +524,30 @@ const I18N = {
     penaltyStrong:'Strong conflict',penaltyMild:'Mild conflict',
     penaltyText:(p,l)=>`Conflict Penalty: ${p} pts (${l}) · Confidence reduced`,
     dateLocale:'en-GB',
+    tabCot:'📈 COT',
+    cotTitle:'COT — Institutional Positioning',
+    cotSub:'Automatic · CFTC Socrata · updates Friday',
+    cotLevel:'Level Score', cotMom:'Momentum Score', cotFinal:'COT Score',
+    cotLong:'Long%', cotPct:'Percentile 3Y', cotTrend:'Trend',
+    cotBias:'COT Bias', cotNoData:'No COT data.',
+    cotDrivers:'Drivers',
+    tabFundamental:'🎬 Fund. Replay',
+    fundReplayTitle:'Fundamental Replay',
+    fundPrevDay:'◀ Prev day', fundNextDay:'Next day ▶',
+    fundJump:'Jump to date', fundNoPair:'Select a pair',
+    fundNoSnap:'No snapshot for this date.',
+    fundNoFund:'This snapshot has no fundamental categories (recorded before v2).',
+    fundOverall:'Overall', fundBias:'Fundamental Bias',
+    fundConf:'Conf.',fundBuy:'BUY',fundSell:'SELL',fundNeut:'NEUTRAL',
+    tabCme:'📊 CME', tabHeatmap:'🌡 Economic Heatmap', tabHistory:'📅 History',
+    tabFundamental:'📈 Fund. History', tabAi:'🤖 AI Chat',
+    fundTitle:'Fundamental History',
+    fundSub:'Heatmap (macro) + COT positioning over time',
+    fundDate:'Date:', fundAvail:'dates available',
+    fundLoading:'Loading...', fundNoData:'No data for',
+    fundNoHistory:'No history yet.',
+    fundHeatmap:'Heatmap %', fundCot:'COT Long%', fundDelta:'Δ 6w',
+    fundNote:'Heatmap >55 = bullish fundamentals · COT delta = 6-week institutional trend',
   }
 };
 let lang='sr';
@@ -503,6 +567,34 @@ function toggleLang(){
   lang=lang==='sr'?'en':'sr';
   document.getElementById('lang-btn').textContent=lang==='sr'?'EN':'SR';
   updateStaticI18n();renderAll();
+  updateTabLabels();
+  // Refresh aktivnog fundamentalnog taba ako je otvoren
+  const fundWrap = document.getElementById('fundamental-content');
+  if(fundWrap && document.getElementById('tab-fundamental').classList.contains('active')){
+    if(FUND_SNAP) renderFundBody();  // samo re-render, bez novog fetch
+    else { FUND_INDEX=null; renderFundamentalTab(); }
+  }
+  // AI tab naslovi
+  const aiTitle = document.getElementById('ai-title');
+  if(aiTitle) {
+    document.getElementById('ai-title').textContent = lang==='sr'?'AI Analitičar':'AI Analyst';
+    document.getElementById('ai-sub').textContent = lang==='sr'?'vidi kompletno trenutno stanje CME-a':'sees the full current CME state';
+    document.getElementById('ai-clear').textContent = lang==='sr'?'Obriši':'Clear';
+  }
+  // History tab naslov
+  const histTitle = document.getElementById('history-title');
+  if(histTitle) histTitle.textContent = lang==='sr'?'Istorija Bias-a':'Bias History';
+  // Fund Replay naslov
+  const fundTitle = document.getElementById('fundamental-title');
+  if(fundTitle) fundTitle.textContent = lang==='sr'?'Fundamental Replay':'Fundamental Replay';
+}
+
+function updateTabLabels(){
+  const map={cme:'tabCme',heatmap:'tabHeatmap',cot:'tabCot',history:'tabHistory',fundamental:'tabFundamental',ai:'tabAi'};
+  document.querySelectorAll('.tab-btn').forEach(b=>{
+    const key=map[b.dataset.tab];
+    if(key && t(key)) b.textContent=t(key);
+  });
 }
 
 // ══════════════════════════════════════════════════════════
@@ -835,52 +927,170 @@ function buildPairResults(scores){
 }
 
 function renderPairs(scores){
-  // Top Setups = SAMO najčistiji setupovi. Isključi par ako BILO KOJA
-  // valuta ima konflikt (COT vs Heatmap), bez obzira na spread. Konflikt-parovi
-  // se vide u "Svi Parovi" sa upozorenjem i sniženim kvalitetom.
   const all=buildPairResults(scores).filter(p=>{
     if(p.pbk==='noedge') return false;
     const bsC=p.bs.penalty<=-5, qsC=p.qs.penalty<=-5;
-    if(bsC||qsC) return false;  // bilo koji konflikt → van Top Setups
+    if(bsC||qsC) return false;
     return true;
   });
   const topClean = all.slice(0,6);
+  if(!topClean.length) return`<div style="color:var(--tx2);font-size:11px;padding:10px">${t('noSetups')}</div>`;
 
-  if(!topClean.length)return`<div style="color:var(--tx2);font-size:11px;padding:10px">${t('noSetups')}</div>`;
+  const MAX_SPREAD = 200;
 
-  const rows=topClean.map((p,i)=>{
-    const cf=cfCls(p.pc);const isLong=p.ps>0;
-    const spread=Math.abs(p.ps);
-    // Top Setups su sada bez konflikta po definiciji (filtrirani gore).
-    const qlKey=qualityLabel(p.ps,p.pc);
-    const qlStr=t('qualityLabel')[qlKey];
-    const qlCls=qlKey==='elite'||qlKey==='high'?'t-pos':qlKey==='moderate'||qlKey==='watch'?'t-dim':'';
-    const cNote='', cReason='', cDesc='';
-    // News Impulse uticaj na par
-    const bsNews = p.bs.newsContrib && p.bs.newsContrib.length ? p.bs.newsContrib : null;
-    const qsNews = p.qs.newsContrib && p.qs.newsContrib.length ? p.qs.newsContrib : null;
-    let newsNote = '';
-    const bsBiasChange = newsChangedBias(p.bs);
-    const qsBiasChange = newsChangedBias(p.qs);
-    if (bsBiasChange) { const arrow=bsBiasChange==='bear'?'↓':'↑'; newsNote+=`<br><span class="${bsBiasChange==='bear'?'news-alert-bear':'news-alert-bull'}">⚡ ${p.base} BIAS ${arrow}</span>`; }
-    if (qsBiasChange) { const arrow=qsBiasChange==='bear'?'↓':'↑'; newsNote+=`<br><span class="${qsBiasChange==='bear'?'news-alert-bear':'news-alert-bull'}">⚡ ${p.quote} BIAS ${arrow}</span>`; }
-    if (bsNews) bsNews.forEach(c => { const sign=c.pts>0?'+':''; newsNote+=`<br><span style="color:var(--blu);font-size:9px">📰 ${p.base}: ${c.item.eventName||c.item.type} → ${sign}${c.pts}</span>`; });
-    if (qsNews) qsNews.forEach(c => { const sign=c.pts>0?'+':''; newsNote+=`<br><span style="color:var(--blu);font-size:9px">📰 ${p.quote}: ${c.item.eventName||c.item.type} → ${sign}${c.pts}</span>`; });
-    return`<tr style="cursor:pointer" onclick="showPairDetail('${p.display}')">
-      <td class="t-dim" style="font-size:10px">${i+1}</td>
-      <td style="font-weight:600;font-size:13px;color:${isLong?'var(--grn)':'var(--red)'}">${p.display}</td>
-      <td style="font-size:11px;color:${isLong?'var(--grn)':'var(--red)'}">${t('biasLabel')[p.pbk]}</td>
-      <td style="font-weight:600;font-size:13px;color:${isLong?'var(--grn)':'var(--red)'}">${spread}</td>
-      <td><div style="display:flex;align-items:center;gap:6px">
-        <div class="conf-track" style="width:60px"><div class="conf-fill cf-${cf}" style="width:${p.pc}%"></div></div>
-        <span class="conf-num cn-${cf}">${p.pc}%</span></div></td>
-      <td class="${qlCls}" style="font-size:11px;font-weight:500">${qlStr}${cNote?`<br><span style="color:var(--amb);font-size:9px">${cNote}</span><br><span style="color:var(--tx2);font-size:8px">↳ ${cReason}</span><br><span style="color:var(--tx2);font-size:8px;font-style:italic">↳ ${cDesc}</span>`:''}${newsNote}</td>
-    </tr>`;
+  const cards = topClean.map((p,i) => {
+    const isLong = p.ps > 0;
+    const spread = Math.abs(p.ps);
+    const cf  = cfCls(p.pc);
+    const qlKey = qualityLabel(p.ps, p.pc);
+    const dirCol = isLong ? 'var(--grn)' : 'var(--red)';
+    const dirTxt = isLong ? (lang==='sr'?'KUPI':'BUY') : (lang==='sr'?'PRODAJ':'SELL');
+
+    const bc = p.bs, qc = p.qs;
+
+    // ── Komponente ───────────────────────────────────────────
+    const comps = [
+      { key:'cot',     label:'COT',     bv: bc.cotMom||0,  qv: qc.cotMom||0,  max:40 },
+      { key:'heatmap', label:'Heatmap', bv: bc.hm||0,       qv: qc.hm||0,      max:20 },
+      { key:'weekly',  label:'Weekly',  bv: bc.weekly||0,   qv: qc.weekly||0,  max:30 },
+      { key:'news',    label:'News',    bv: bc.news||0,     qv: qc.news||0,    max:15 },
+    ];
+
+    // Net doprinos svake komponente u smeru signala
+    const compNets = comps.map(c => ({
+      ...c,
+      net: isLong ? (c.bv - c.qv) : (c.qv - c.bv),
+    }));
+
+    // ── Confidence (postojeći) ───────────────────────────────
+    const confidence = p.pc;
+
+    // ── Conviction = |spread| / MAX_SPREAD × 100 ────────────
+    const conviction = Math.round(Math.min(spread / MAX_SPREAD * 100, 100));
+    const convCol = conviction >= 60 ? 'var(--grn)' : conviction >= 35 ? 'var(--amb)' : 'var(--tx2)';
+
+    // ── Agreement ────────────────────────────────────────────
+    const agreeing = compNets.filter(c => c.net > 3).length;
+    const agreeCol = agreeing >= 3 ? 'var(--grn)' : agreeing >= 2 ? 'var(--amb)' : 'var(--red)';
+
+    // ── Komponente bar chart ─────────────────────────────────
+    const compRows = compNets.map(c => {
+      const col = c.net > 3 ? 'var(--grn)' : c.net < -3 ? 'var(--red)' : 'var(--tx2)';
+      const bar = Math.min(Math.abs(c.net) / (c.max*2) * 100, 100);
+      const barCol = c.net > 0 ? 'var(--grn)' : 'var(--red)';
+      return `<div style="display:flex;align-items:center;gap:6px;padding:2px 0">
+        <span style="font-size:9px;color:var(--tx2);width:52px">${c.label}</span>
+        <div style="flex:1;height:3px;background:var(--bg3);border-radius:2px">
+          <div style="width:${bar}%;height:3px;background:${barCol};border-radius:2px"></div>
+        </div>
+        <span style="font-family:var(--mono);font-size:10px;color:${col};width:32px;text-align:right">${c.net>0?'+':''}${Math.round(c.net)}</span>
+      </div>`;
+    }).join('');
+
+    // ── Signal Driver iz HEATMAP_DATA ────────────────────────
+    let driverHtml = '';
+    if (HEATMAP_DATA && HEATMAP_DATA.currencies) {
+      // Određujemo "jaku" valutu (base za BUY, quote za SELL)
+      const strongCcy = isLong ? p.base : p.quote;
+      const hmCcy = HEATMAP_DATA.currencies[strongCcy];
+      // Indicator labels za prikaz
+      const IND_LABELS = {
+        GDP:'GDP', CPI:'CPI', CORE_CPI:'Core CPI', NFP:'NFP',
+        UNEMPLOYMENT:'Unemployment', PMI_MFG:'PMI Mfg', PMI_SVC:'PMI Svc',
+        RETAIL_SALES:'Retail', INTEREST_RATE:'Int. Rate', EMPLOYMENT:'Employment',
+        PPI:'PPI', WAGES:'Wages', HICP:'HICP', PMI_COMP:'PMI Comp',
+        CONFIDENCE:'Confidence', TRADE_BALANCE:'Trade Bal', CURRENT_ACCOUNT:'Curr. Acc',
+        INDUSTRIAL_PROD:'Ind. Prod', ADP:'ADP', JOLTS:'JOLTS', JOBLESS_CLAIMS:'Jobless',
+        PCE:'PCE',
+      };
+      if (hmCcy && hmCcy.factors) {
+        const factors = Object.entries(hmCcy.factors);
+        const getLabel = ([k,f]) => IND_LABELS[k] || f.event_name || k;
+        const bulls  = factors.filter(([,f]) => f.signal === 'bullish').map(getLabel);
+        const bears  = factors.filter(([,f]) => f.signal === 'bearish').map(getLabel);
+        const neuts  = factors.filter(([,f]) => f.signal === 'neutral').map(getLabel);
+
+        const driverItems = (items, col, icon) => items.slice(0,3).map(l =>
+          `<span style="font-size:9px;color:${col}">${icon} ${l}</span>`).join(' ');
+
+        if (bulls.length || bears.length) {
+          driverHtml = `
+          <div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--bg3)">
+            <div style="font-size:9px;color:var(--tx3);margin-bottom:4px">${strongCcy} ${lang==='sr'?'pokretači':'drivers'}</div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px">
+              ${driverItems(bulls, 'var(--grn)', '✓')}
+              ${bears.length && !isLong ? driverItems(bears, 'var(--red)', '✗') : ''}
+              ${neuts.length <= 2 ? driverItems(neuts, 'var(--tx3)', '—') : ''}
+            </div>
+          </div>`;
+        }
+      }
+    }
+
+    // ── News alert ───────────────────────────────────────────
+    let newsAlert = '';
+    const bsBiasChange = newsChangedBias(bc);
+    const qsBiasChange = newsChangedBias(qc);
+    if (bsBiasChange) { const a=bsBiasChange==='bear'?'↓':'↑'; newsAlert+=`<span class="${bsBiasChange==='bear'?'news-alert-bear':'news-alert-bull'}">⚡ ${p.base} ${a}</span> `; }
+    if (qsBiasChange) { const a=qsBiasChange==='bear'?'↓':'↑'; newsAlert+=`<span class="${qsBiasChange==='bear'?'news-alert-bear':'news-alert-bull'}">⚡ ${p.quote} ${a}</span>`; }
+
+    return `<div style="background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:14px 16px;cursor:pointer;transition:border-color .15s"
+      onmouseover="this.style.borderColor='${dirCol}'" onmouseout="this.style.borderColor='var(--bd)'"
+      onclick="showPairDetail('${p.display}')">
+
+      <!-- Header -->
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
+        <div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <span style="font-family:var(--mono);font-size:16px;font-weight:700;color:var(--tx)">${p.display}</span>
+            <span style="font-family:var(--mono);font-size:13px;font-weight:700;color:${dirCol}">${dirTxt}</span>
+          </div>
+          ${newsAlert ? `<div style="font-size:9px;margin-top:2px">${newsAlert}</div>` : ''}
+        </div>
+        <div style="text-align:right">
+          <span style="font-size:9px;color:var(--tx3)">#${i+1}</span>
+        </div>
+      </div>
+
+      <!-- Confidence + Conviction -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+        <div style="background:var(--bg3);border-radius:6px;padding:6px 10px">
+          <div style="font-size:9px;color:var(--tx3);margin-bottom:2px">${lang==='sr'?'Pouzdanost':'Confidence'}</div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <div class="conf-track" style="flex:1"><div class="conf-fill cf-${cf}" style="width:${confidence}%"></div></div>
+            <span style="font-family:var(--mono);font-size:12px;font-weight:700" class="conf-num cn-${cf}">${confidence}%</span>
+          </div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:6px 10px">
+          <div style="font-size:9px;color:var(--tx3);margin-bottom:2px">${lang==='sr'?'Uverljivost':'Conviction'}</div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <div class="conf-track" style="flex:1"><div style="height:100%;width:${conviction}%;background:${convCol};border-radius:2px"></div></div>
+            <span style="font-family:var(--mono);font-size:12px;font-weight:700;color:${convCol}">${conviction}%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Komponente -->
+      ${compRows}
+
+      <!-- Driver -->
+      ${driverHtml}
+
+      <!-- Footer -->
+      <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--bg3);padding-top:8px;margin-top:8px">
+        <div>
+          <span style="font-size:9px;color:var(--tx3)">${lang==='sr'?'Slaganje':'Agreement'} </span>
+          <span style="font-family:var(--mono);font-size:10px;color:${agreeCol}">${'●'.repeat(agreeing)}${'○'.repeat(4-agreeing)} ${agreeing}/4</span>
+        </div>
+        <div>
+          <span style="font-size:9px;color:var(--tx3)">Spread </span>
+          <span style="font-family:var(--mono);font-size:12px;font-weight:600;color:${dirCol}">${spread}</span>
+        </div>
+      </div>
+    </div>`;
   }).join('');
 
-  return`<div class="tbl-wrap"><table>
-    <thead><tr><th>#</th><th>${t('thPair')}</th><th>Bias</th><th>${t('thSpread')}</th><th>Confidence</th><th>${t('thQuality')}</th></tr></thead>
-    <tbody>${rows}</tbody></table></div>`;
+  return `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">${cards}</div>`;
 }
 
 function renderTable(scores){
@@ -1036,10 +1246,18 @@ let HEATMAP_DATA = null;
 async function loadHeatmapJson(){
   const statusEl = document.getElementById('hm-status');
   try {
-    const res = await fetch('engine/output/heatmap.json', { cache: 'no-store' });
+    const res = await fetch('https://raw.githubusercontent.com/luka1233-cpu/cme-server/main/engine/output/heatmap.json');
     if (!res.ok) throw new Error('heatmap.json not found');
     HEATMAP_DATA = await res.json();
     LOAD_STATUS.heatmap = true;
+    // Upiši heatmap% iz engine/output/heatmap.json u DATA.currencies
+    // (isto kao loadCotJson za COT polja — DATA blok ostaje fallback)
+    for (const [ccy, hmData] of Object.entries(HEATMAP_DATA.currencies || {})) {
+      const d = DATA.currencies[ccy];
+      if (!d) continue;
+      if (typeof hmData.heatmap === 'number') d.heatmap = hmData.heatmap;
+    }
+    console.log('[heatmap] Heatmap% synced to DATA.currencies');
     const ts = HEATMAP_DATA.generatedAt
       ? new Date(HEATMAP_DATA.generatedAt).toLocaleString(t('dateLocale'),{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})
       : '—';
@@ -1064,7 +1282,7 @@ let COT_META = { reportDate: null, applied: false };
 async function loadCotJson(){
   const statusEl = document.getElementById('cot-status');
   try {
-    const res = await fetch('engine/output/cot.json', { cache: 'no-store' });
+    const res = await fetch('https://raw.githubusercontent.com/luka1233-cpu/cme-server/main/engine/output/cot.json');
     if (!res.ok) throw new Error('cot.json not found');
     const data = await res.json();
     const cots = data.currencies || {};
@@ -1120,7 +1338,7 @@ let GOLD_DATA = null;
 
 async function loadGoldJson(){
   try {
-    const res = await fetch('engine/output/gold.json', { cache: 'no-store' });
+    const res = await fetch('https://raw.githubusercontent.com/luka1233-cpu/cme-server/main/engine/output/gold.json');
     if (!res.ok) throw new Error('gold.json not found');
     const data = await res.json();
     GOLD_DATA = data;
@@ -1219,15 +1437,132 @@ function renderHeatmapTab(){
     ? new Date(HEATMAP_DATA.generatedAt).toLocaleString(t('dateLocale'),{day:'2-digit',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'})
     : '—';
 
+  const hmPairsHtml = renderHmPairs();
   wrap.innerHTML = `
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
       <div style="font-family:var(--mono);font-size:10px;color:var(--tx2)">
         🌡 <strong style="color:var(--tx)">Economic Heatmap</strong> — automatski iz FMP makro podataka
       </div>
-      <div style="font-family:var(--mono);font-size:9px;color:var(--tx3)">Generisano: ${genAt}</div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <div style="font-family:var(--mono);font-size:9px;color:var(--tx3)">Generisano: ${genAt}</div>
+        <button onclick="toggleOverridePanel()" style="font-family:var(--mono);font-size:10px;background:var(--bg2);border:1px solid var(--bd);color:var(--amb);border-radius:5px;padding:4px 10px;cursor:pointer">⚠ Override</button>
+      </div>
+    </div>
+    <div id="override-panel" style="display:none;margin-bottom:16px;background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:18px 20px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+        <div style="font-size:12px;font-weight:600;color:var(--tx);letter-spacing:.05em">⚠ MANUAL OVERRIDE — FMP kasni?</div>
+        <button onclick="document.getElementById('override-panel').style.display='none'" style="background:none;border:none;color:var(--tx3);font-size:16px;cursor:pointer">✕</button>
+      </div>
+      <div style="font-size:10px;color:var(--tx3);margin-bottom:12px">Override se primenjuje samo ako FMP nema actual vrednost. Kada FMP objavi podatke, override se automatski ignoriše.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr auto;gap:8px;align-items:end;margin-bottom:10px">
+        <div>
+          <div style="font-size:9px;color:var(--tx3);margin-bottom:4px">VALUTA</div>
+          <select id="ov-ccy" style="width:100%;font-family:var(--mono);font-size:12px;background:var(--bg3);color:var(--tx);border:1px solid var(--bd);border-radius:5px;padding:6px 8px">
+            <option>USD</option><option>EUR</option><option>GBP</option>
+            <option>JPY</option><option>CHF</option><option selected>CAD</option>
+            <option>AUD</option><option>NZD</option>
+          </select>
+        </div>
+        <div>
+          <div style="font-size:9px;color:var(--tx3);margin-bottom:4px">INDIKATOR</div>
+          <select id="ov-indicator" style="width:100%;font-family:var(--mono);font-size:12px;background:var(--bg3);color:var(--tx);border:1px solid var(--bd);border-radius:5px;padding:6px 8px">
+            <option value="CPI">CPI</option><option value="CORE_CPI">Core CPI</option>
+            <option value="GDP">GDP</option><option value="NFP">NFP</option>
+            <option value="UNEMPLOYMENT">Unemployment</option><option value="PMI_MFG">PMI Mfg</option>
+            <option value="PMI_SVC">PMI Services</option><option value="RETAIL_SALES">Retail Sales</option>
+            <option value="INTEREST_RATE">Interest Rate</option><option value="EMPLOYMENT">Employment</option>
+            <option value="PPI">PPI</option><option value="WAGES">Wages</option>
+          </select>
+        </div>
+        <div>
+          <div style="font-size:9px;color:var(--tx3);margin-bottom:4px">ACTUAL</div>
+          <input id="ov-actual" type="number" step="any" placeholder="npr. 2.8" style="width:100%;font-family:var(--mono);font-size:12px;background:var(--bg3);color:var(--tx);border:1px solid var(--bd);border-radius:5px;padding:6px 8px;box-sizing:border-box">
+        </div>
+        <div>
+          <div style="font-size:9px;color:var(--tx3);margin-bottom:4px">FORECAST (opt.)</div>
+          <input id="ov-forecast" type="number" step="any" placeholder="npr. 2.9" style="width:100%;font-family:var(--mono);font-size:12px;background:var(--bg3);color:var(--tx);border:1px solid var(--bd);border-radius:5px;padding:6px 8px;box-sizing:border-box">
+        </div>
+        <button onclick="saveOverride()" style="font-family:var(--mono);font-size:11px;background:var(--grn);color:#000;border:none;border-radius:5px;padding:7px 14px;cursor:pointer;font-weight:700;white-space:nowrap">Sačuvaj</button>
+      </div>
+      <div id="ov-status" style="font-size:10px;color:var(--tx3);margin-top:4px"></div>
+      <div id="ov-list" style="margin-top:12px"></div>
     </div>
     <div class="hm-grid">${cards}</div>
+    ${hmPairsHtml}
   `;
+}
+
+function renderHmPairs() {
+  if (!HEATMAP_DATA || !HEATMAP_DATA.currencies) return '';
+  const hm = HEATMAP_DATA.currencies;
+  const PAIRS = [
+    ['EUR','USD'],['GBP','USD'],['AUD','USD'],['NZD','USD'],
+    ['USD','JPY'],['USD','CAD'],['USD','CHF'],
+    ['EUR','JPY'],['GBP','JPY'],['AUD','JPY'],['NZD','JPY'],['CAD','JPY'],['CHF','JPY'],
+    ['EUR','GBP'],['EUR','CHF'],['EUR','AUD'],['EUR','CAD'],['EUR','NZD'],
+    ['GBP','AUD'],['GBP','CHF'],['GBP','CAD'],['GBP','NZD'],
+    ['AUD','NZD'],['AUD','CAD'],['AUD','CHF'],
+    ['NZD','CAD'],['NZD','CHF'],['CAD','CHF'],
+  ];
+  const rows = PAIRS.map(([base, quote]) => {
+    const bHm = hm[base]?.heatmap ?? 50;
+    const qHm = hm[quote]?.heatmap ?? 50;
+    const spread = Math.round(bHm - qHm);
+    const bBias = hm[base]?.bias || 'neut';
+    const qBias = hm[quote]?.bias || 'neut';
+    const dir = spread > 10 ? 'bull' : spread < -10 ? 'bear' : 'neut';
+    const dirCol = dir === 'bull' ? 'var(--grn)' : dir === 'bear' ? 'var(--red)' : 'var(--tx2)';
+    const dirTxt = dir === 'bull' ? (lang==='sr'?'Kupi':'Buy') : dir === 'bear' ? (lang==='sr'?'Prodaj':'Sell') : (lang==='sr'?'Neutral':'Neutral');
+    const absSpr = Math.abs(spread);
+    return { base, quote, spread, absSpr, bHm, qHm, bBias, qBias, dir, dirCol, dirTxt };
+  }).sort((a,b) => b.absSpr - a.absSpr);
+
+  const trs = rows.map((r,i) => `
+    <tr style="border-bottom:1px solid var(--bg3)">
+      <td style="font-family:var(--mono);font-size:11px;color:var(--tx3);padding:6px 8px">${i+1}</td>
+      <td style="font-family:var(--mono);font-size:12px;font-weight:600;color:var(--tx);padding:6px 8px">${r.base}${r.quote}</td>
+      <td style="text-align:center;padding:6px 8px">
+        <span style="font-size:10px;color:${r.bHm>=55?'var(--grn)':r.bHm<=45?'var(--red)':'var(--tx2)'}">
+          ${r.base} ${r.bHm}%
+        </span>
+      </td>
+      <td style="text-align:center;padding:6px 8px">
+        <span style="font-size:10px;color:${r.qHm>=55?'var(--grn)':r.qHm<=45?'var(--red)':'var(--tx2)'}">
+          ${r.quote} ${r.qHm}%
+        </span>
+      </td>
+      <td style="font-family:var(--mono);font-size:12px;font-weight:600;color:${r.dirCol};text-align:center;padding:6px 8px">
+        ${r.spread>0?'+':''}${r.spread}
+      </td>
+      <td style="font-family:var(--mono);font-size:11px;font-weight:600;color:${r.dirCol};text-align:center;padding:6px 8px">
+        ${r.dirTxt}
+      </td>
+    </tr>`).join('');
+
+  return `
+    <div style="margin-top:20px">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--tx2);margin-bottom:10px;letter-spacing:.05em">
+        📊 ${lang==='sr'?'PAROVI — FUNDAMENTALNI RANG (samo Heatmap)':'PAIRS — FUNDAMENTAL RANK (Heatmap only)'}
+      </div>
+      <div class="tbl-wrap">
+        <table style="width:100%">
+          <thead>
+            <tr style="border-bottom:1px solid var(--bd)">
+              <th style="font-size:9px;color:var(--tx3);padding:6px 8px;text-align:left">#</th>
+              <th style="font-size:9px;color:var(--tx3);padding:6px 8px;text-align:left">${lang==='sr'?'PAR':'PAIR'}</th>
+              <th style="font-size:9px;color:var(--tx3);padding:6px 8px;text-align:center">BASE</th>
+              <th style="font-size:9px;color:var(--tx3);padding:6px 8px;text-align:center">QUOTE</th>
+              <th style="font-size:9px;color:var(--tx3);padding:6px 8px;text-align:center">${lang==='sr'?'RAZLIKA':'SPREAD'}</th>
+              <th style="font-size:9px;color:var(--tx3);padding:6px 8px;text-align:center">${lang==='sr'?'SIGNAL':'SIGNAL'}</th>
+            </tr>
+          </thead>
+          <tbody>${trs}</tbody>
+        </table>
+      </div>
+      <div style="font-size:9px;color:var(--tx3);margin-top:6px">
+        ${lang==='sr'?'Razlika = Base Heatmap% − Quote Heatmap%. Bez COT, bez News.':'Spread = Base Heatmap% − Quote Heatmap%. No COT, no News.'}
+      </div>
+    </div>`;
 }
 
 function switchTab(tab) {
@@ -1235,6 +1570,8 @@ function switchTab(tab) {
   document.querySelectorAll('.tab-pane').forEach(p => p.classList.toggle('active', p.id === 'tab-' + tab));
   if (tab === 'heatmap') renderHeatmapTab();
   if (tab === 'history') renderHistoryTab();
+  if (tab === 'fundamental') initFundReplay();
+  if (tab === 'cot') renderCotTab();
   if (tab === 'ai') renderAiTab();
 }
 
@@ -1402,7 +1739,7 @@ async function renderHistoryTab(){
   const wrap = document.getElementById('history-content');
   if(!HISTORY_INDEX){
     try {
-      const res = await fetch('engine/output/history/index.json', {cache:'no-store'});
+      const res = await fetch('https://raw.githubusercontent.com/luka1233-cpu/cme-server/main/engine/output/history/index.json');
       if(!res.ok) throw new Error('nema index');
       HISTORY_INDEX = await res.json();
     } catch(e){
@@ -1436,7 +1773,7 @@ async function showHistoryDate(date){
   detail.innerHTML = `<div style="color:var(--tx3);font-size:11px">${lang==='sr'?'Učitavam...':'Loading...'}</div>`;
   let snap;
   try {
-    const res = await fetch(`engine/output/history/${date}.json`, {cache:'no-store'});
+    const res = await fetch(`https://raw.githubusercontent.com/luka1233-cpu/cme-server/main/engine/output/history/${date}.json`);
     if(!res.ok) throw new Error('nema');
     snap = await res.json();
   } catch(e){
@@ -2054,6 +2391,120 @@ function showPairDetail(display){
       <div style="font-size:9px;color:var(--tx3);font-style:italic">${lang==='sr'?penaltyNote_sr:penaltyNote_en}</div>
     </div>`;
   }
+  // ── COT objašnjenje za oba motora ──────────────────────
+  function cotExplain(ccy, d, s) {
+    if (!d.longPct || !d.deltaPct6w === undefined) return '';
+    const lp = d.longPct;
+    const delta = d.deltaPct6w;
+    const dLong = d.dLong || 0;
+    const dShort = d.dShort || 0;
+    const isBull = delta >= 0;
+    const col = isBull ? 'var(--grn)' : 'var(--red)';
+
+    // Tip akcije institucija — tačno po dLong/dShort vrednostima
+    let actionSr, actionEn;
+    if (dLong > 0 && dShort < 0) {
+      actionSr = `grade long i zatvaraju short`;
+      actionEn = `building longs and covering shorts`;
+    } else if (dLong < 0 && dShort > 0) {
+      actionSr = `zatvaraju long i grade short`;
+      actionEn = `closing longs and building shorts`;
+    } else if (dLong > 0) {
+      actionSr = `grade long pozicije`;
+      actionEn = `building long positions`;
+    } else if (dShort > 0) {
+      actionSr = `grade short pozicije`;
+      actionEn = `building short positions`;
+    } else if (dLong < 0) {
+      actionSr = `zatvaraju long pozicije`;
+      actionEn = `closing long positions`;
+    } else if (dShort < 0) {
+      actionSr = `zatvaraju short pozicije`;
+      actionEn = `covering short positions`;
+    } else {
+      actionSr = `minimalno menjaju pozicije`;
+      actionEn = `making minimal position changes`;
+    }
+
+    // TQ opis
+    const tq = d.tqConsistent || 0;
+    let tqSr = '', tqEn = '';
+    if (tq >= 5) { tqSr = ` Trend konzistentan ${tq}/6 nedelja.`; tqEn = ` Trend consistent ${tq}/6 weeks.`; }
+    else if (tq <= 2) { tqSr = ` Trend nekonzistentan (${tq}/6).`; tqEn = ` Trend inconsistent (${tq}/6).`; }
+
+    // Detektuj konflikt (npr. zatvaraju long ali delta pozitivna jer zatvaraju više shorta)
+    const conflictNote = (dLong < 0 && delta > 0) ? (lang==='sr' ? ' (neto bullish — zatvaraju više shorta)' : ' (net bullish — closing more shorts)') :
+                         (dShort < 0 && delta < 0) ? (lang==='sr' ? ' (neto bearish — zatvaraju više longa)' : ' (net bearish — closing more longs)') : '';
+
+    if (lang === 'sr') {
+      return `<div style="margin-bottom:4px"><span style="color:var(--tx);font-weight:600">${ccy} COT</span>: `+
+        `Long% <span style="color:${col};font-family:var(--mono)">${lp}%</span>, `+
+        `delta <span style="color:${col};font-family:var(--mono)">${delta>0?'+':''}${delta}pp</span> — `+
+        `institucije ${actionSr}${conflictNote}.${tqSr}</div>`;
+    } else {
+      return `<div style="margin-bottom:4px"><span style="color:var(--tx);font-weight:600">${ccy} COT</span>: `+
+        `Long% <span style="color:${col};font-family:var(--mono)">${lp}%</span>, `+
+        `delta <span style="color:${col};font-family:var(--mono)">${delta>0?'+':''}${delta}pp</span> — `+
+        `institutions ${actionEn}${conflictNote}.${tqEn}</div>`;
+    }
+  }
+
+  const bData = DATA.currencies[base];
+  const qData = DATA.currencies[quote];
+  // ── Heatmap Driver objašnjenje ──────────────────────────
+  function hmDriverBlock(ccy, isBase) {
+    if (!HEATMAP_DATA || !HEATMAP_DATA.currencies) return '';
+    const hmCcy = HEATMAP_DATA.currencies[ccy];
+    if (!hmCcy || !hmCcy.factors) return '';
+    const factors = Object.entries(hmCcy.factors);
+    const IND_LABELS = {
+      GDP:'GDP', CPI:'CPI', CORE_CPI:'Core CPI', NFP:'NFP',
+      UNEMPLOYMENT:'Unemployment Rate', PMI_MFG:'PMI Mfg', PMI_SVC:'PMI Services',
+      RETAIL_SALES:'Retail Sales', INTEREST_RATE:'Interest Rate', EMPLOYMENT:'Employment',
+      PPI:'PPI', WAGES:'Wages/Earnings', HICP:'HICP', PMI_COMP:'PMI Composite',
+      CONFIDENCE:'Confidence', TRADE_BALANCE:'Trade Balance', CURRENT_ACCOUNT:'Current Account',
+      INDUSTRIAL_PROD:'Industrial Prod.', ADP:'ADP', JOLTS:'JOLTS', JOBLESS_CLAIMS:'Jobless Claims', PCE:'PCE',
+    };
+    const getLabel = ([k,f]) => IND_LABELS[k] || f.event_name || k;
+    const bulls = factors.filter(([,f]) => f.signal==='bullish');
+    const bears = factors.filter(([,f]) => f.signal==='bearish');
+    const neuts = factors.filter(([,f]) => f.signal==='neutral');
+    const hpct = hmCcy.heatmap || 50;
+    const hmBiasCol = hpct>=55?'var(--grn)':hpct<=45?'var(--red)':'var(--tx2)';
+    const hmBiasTxt = hpct>=65?(lang==='sr'?'Bullish':'Bullish'):hpct>=55?(lang==='sr'?'Slabo Bullish':'Weak Bull'):hpct<=35?(lang==='sr'?'Bearish':'Bearish'):hpct<=45?(lang==='sr'?'Slabo Bearish':'Weak Bear'):(lang==='sr'?'Neutralan':'Neutral');
+
+    const itemList = (items, col, icon) => items.slice(0,4).map(e =>
+      `<span style="font-size:9px;color:${col};background:var(--bg3);padding:2px 6px;border-radius:3px">${icon} ${getLabel(e)}</span>`
+    ).join(' ');
+
+    return `<div style="margin-bottom:8px;padding:10px 12px;background:var(--bg2);border:1px solid var(--bd);border-radius:8px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <span style="font-size:9px;color:var(--tx3);letter-spacing:.05em">HEATMAP · ${ccy}</span>
+        <span style="font-family:var(--mono);font-size:11px;font-weight:600;color:${hmBiasCol}">${hmBiasTxt} · ${hpct}%</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px">
+        ${bulls.length ? itemList(bulls, 'var(--grn)', '✓') : ''}
+        ${bears.length ? itemList(bears, 'var(--red)', '✗') : ''}
+        ${neuts.length ? itemList(neuts.slice(0,2), 'var(--tx3)', '—') : ''}
+        ${bulls.length > 4 ? `<span style="font-size:9px;color:var(--tx3)">+${bulls.length-4} more</span>` : ''}
+      </div>
+    </div>`;
+  }
+
+  const hmExplainHtml = `
+    <div style="margin-top:10px">
+      <div style="font-size:9px;color:var(--tx3);margin-bottom:6px;letter-spacing:.05em">HEATMAP — ${lang==='sr'?'MAKRO POKRETAČI':'MACRO DRIVERS'}</div>
+      ${hmDriverBlock(base, true)}
+      ${hmDriverBlock(quote, false)}
+    </div>`;
+
+  const cotExplainHtml = (bData && qData) ? `
+    <div style="margin-top:10px;padding:10px 12px;background:var(--bg2);border:1px solid var(--bd);border-radius:8px;font-size:11px;line-height:1.6">
+      <div style="font-size:9px;color:var(--tx3);margin-bottom:6px;letter-spacing:.05em">COT — ${lang==='sr'?'INSTITUCIONALNO POZICIONIRANJE':'INSTITUTIONAL POSITIONING'}</div>
+      ${cotExplain(base, bData, bs)}
+      ${cotExplain(quote, qData, qs)}
+    </div>` : '';
+
   const conflictHtml = conflictBlock(base,bs) + conflictBlock(quote,qs);
 
   const box=document.getElementById('pair-modal-box');
@@ -2074,11 +2525,617 @@ function showPairDetail(display){
       <span class="modal-row-val ${dirCls}" style="font-size:16px">${fmt(ps)} · ${pc}% conf</span>
     </div>
     <div class="modal-explain">${explain}</div>
+    ${hmExplainHtml}
+    ${cotExplainHtml}
     ${conflictHtml}`;
   document.getElementById('pair-modal').classList.add('open');
 }
 function closePairDetail(e){
   if(e.target===document.getElementById('pair-modal'))document.getElementById('pair-modal').classList.remove('open');
+}
+
+
+
+// ══════════════════════════════════════════════════════════
+// FUNDAMENTAL REPLAY TAB
+// ══════════════════════════════════════════════════════════
+let FUND_INDEX   = null;
+let FUND_DATES   = [];
+let FUND_PAIR    = null;
+let FUND_DATE_I  = 0;   // index u FUND_DATES (0 = najnoviji)
+let FUND_SNAP    = null;
+
+// Signal → zvezde (1-5)
+function sigToStars(signal, signal_value) {
+  if (signal === 'neutral') return 3;
+  const abs = Math.abs(signal_value || 0);
+  if (abs >= 0.8) return signal === 'bullish' ? 5 : 1;
+  if (abs >= 0.5) return signal === 'bullish' ? 4 : 2;
+  return 3;
+}
+
+function renderStars(n) {
+  let s = '';
+  for (let i = 1; i <= 5; i++)
+    s += `<span style="color:${i<=n?'var(--grn)':'var(--bg4)'};font-size:14px">★</span>`;
+  return s;
+}
+
+function sigColor(signal) {
+  return signal==='bullish'?'var(--grn)':signal==='bearish'?'var(--red)':'var(--tx2)';
+}
+
+function biasToKey(bias) {
+  const map = {sbull:'sbull',bull:'bull',wbull:'wbull',neut:'neut',
+               wbear:'wbear',bear:'bear',sbear:'sbear'};
+  return map[bias] || 'neut';
+}
+
+async function initFundReplay() {
+  const wrap = document.getElementById('fundamental-content');
+  if (!FUND_INDEX) {
+    try {
+      const res = await fetch('https://raw.githubusercontent.com/luka1233-cpu/cme-server/main/engine/output/history/index.json');
+      if (!res.ok) throw new Error('no index');
+      FUND_INDEX = await res.json();
+      FUND_DATES = (FUND_INDEX.dates || []).slice().reverse(); // najnoviji prvi
+    } catch(e) {
+      wrap.innerHTML = `<div class="hm-no-data">🎬 ${lang==='sr'?'Nema istorije.':'No history.'}</div>`;
+      return;
+    }
+  }
+  if (!FUND_PAIR) {
+    // Defaultni par: prvi iz DATA.pairs
+    FUND_PAIR = (DATA.pairs && DATA.pairs[0]) ? DATA.pairs[0].base + DATA.pairs[0].quote : 'EURUSD';
+  }
+  renderFundReplayShell();
+  await loadFundSnap(FUND_DATE_I);
+}
+
+function renderFundReplayShell() {
+  const wrap = document.getElementById('fundamental-content');
+  // Par selector
+  const pairOpts = (DATA.pairs||[]).map(p => {
+    const key = p.base + p.quote;
+    return `<option value="${key}" ${key===FUND_PAIR?'selected':''}>${key}</option>`;
+  }).join('');
+
+  wrap.innerHTML = `
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px">
+      <select id="fund-pair-sel" onchange="onFundPairChange(this.value)"
+        style="font-family:var(--mono);font-size:13px;font-weight:600;background:var(--bg2);color:var(--tx);border:1px solid var(--bd);border-radius:6px;padding:6px 12px;cursor:pointer">
+        ${pairOpts}
+      </select>
+      <div style="display:flex;align-items:center;gap:6px">
+        <button onclick="fundStep(-1)" style="font-family:var(--mono);font-size:11px;background:var(--bg2);border:1px solid var(--bd);color:var(--tx2);padding:5px 10px;border-radius:5px;cursor:pointer"
+          title="${t('fundPrevDay')}">◀</button>
+        <span id="fund-date-label" style="font-family:var(--mono);font-size:13px;font-weight:600;min-width:110px;text-align:center;color:var(--tx)">—</span>
+        <button onclick="fundStep(1)" style="font-family:var(--mono);font-size:11px;background:var(--bg2);border:1px solid var(--bd);color:var(--tx2);padding:5px 10px;border-radius:5px;cursor:pointer"
+          title="${t('fundNextDay')}">▶</button>
+      </div>
+      <input type="date" id="fund-jump-inp" style="font-family:var(--mono);font-size:11px;background:var(--bg2);color:var(--tx);border:1px solid var(--bd);border-radius:5px;padding:5px 8px"
+        onchange="fundJumpToDate(this.value)">
+      <span style="font-size:10px;color:var(--tx3)">${FUND_DATES.length} ${lang==='sr'?'datuma':'dates'}</span>
+    </div>
+    <div id="fund-body"></div>`;
+}
+
+async function loadFundSnap(idx) {
+  if (!FUND_DATES.length) return;
+  idx = Math.max(0, Math.min(FUND_DATES.length - 1, idx));
+  FUND_DATE_I = idx;
+  const date = FUND_DATES[idx];
+  const label = document.getElementById('fund-date-label');
+  if (label) label.textContent = date;
+  const inp = document.getElementById('fund-jump-inp');
+  if (inp) inp.value = date;
+
+  const body = document.getElementById('fund-body');
+  if (body) body.innerHTML = `<div style="color:var(--tx3);font-size:11px">${lang==='sr'?'Učitavam...':'Loading...'}</div>`;
+
+  try {
+    const res = await fetch(`https://raw.githubusercontent.com/luka1233-cpu/cme-server/main/engine/output/history/${date}.json`);
+    if (!res.ok) throw new Error('no snap');
+    FUND_SNAP = await res.json();
+  } catch(e) {
+    if (body) body.innerHTML = `<div class="hm-no-data">${t('fundNoSnap')}</div>`;
+    return;
+  }
+  renderFundBody();
+}
+
+function onFundPairChange(pair) {
+  FUND_PAIR = pair;
+  renderFundBody();
+}
+
+function fundStep(dir) {
+  // dir=1 → stariji datum (veći index), dir=-1 → noviji
+  loadFundSnap(FUND_DATE_I + dir);
+}
+
+function fundJumpToDate(val) {
+  const idx = FUND_DATES.indexOf(val);
+  if (idx >= 0) loadFundSnap(idx);
+  else {
+    // Nađi najbliži datum
+    const closest = FUND_DATES.reduce((best, d, i) =>
+      Math.abs(d.localeCompare(val)) < Math.abs(FUND_DATES[best].localeCompare(val)) ? i : best, 0);
+    loadFundSnap(closest);
+  }
+}
+
+function renderFundBody() {
+  const body = document.getElementById('fund-body');
+  if (!body || !FUND_SNAP) return;
+
+  const snap = FUND_SNAP;
+  const fund = snap.fundamentals;
+
+  // Parsuj par
+  const pair = FUND_PAIR;
+  let base = '', quote = '';
+  const pairObj = (DATA.pairs||[]).find(p => p.base+p.quote === pair);
+  if (pairObj) { base = pairObj.base; quote = pairObj.quote; }
+  else if (pair.length >= 6) { base = pair.slice(0,3); quote = pair.slice(3,6); }
+
+  // ── Snapshot info (gore) ──────────────────────────────
+  const snapDate = snap.date || '';
+  const snapTime = snap.generatedAt
+    ? new Date(snap.generatedAt).toLocaleString('en-GB', {hour:'2-digit',minute:'2-digit',timeZone:'UTC'}) + ' UTC'
+    : '';
+  const schemaV = snap.schemaVersion || snap.snapshotVersion || 1;
+  const snapInfoHtml = `
+    <div style="background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:10px 14px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px">
+      <div>
+        <div style="font-family:var(--mono);font-size:12px;font-weight:600;color:var(--tx)">${snapDate}</div>
+        ${snapTime ? `<div style="font-size:10px;color:var(--tx3)">${snapTime}</div>` : ''}
+      </div>
+      <div style="font-size:9px;color:var(--tx3);text-align:right">
+        Schema v${schemaV}${schemaV<2 ? ` · <span style="color:var(--amb)">${lang==='sr'?'bez fund. kategorija':'no fund. categories'}</span>` : ''}
+      </div>
+    </div>`;
+
+  if (!fund) {
+    body.innerHTML = snapInfoHtml + `
+      <div style="padding:16px;background:var(--bg2);border:1px solid var(--bd);border-radius:8px;color:var(--tx2);font-size:11px">
+        ${t('fundNoFund')}
+        <div style="margin-top:8px;font-size:10px;color:var(--tx3)">
+          Heatmap: ${snap.currencies?.[base]?.heatmap ?? '—'}% (${base}) ·
+          ${snap.currencies?.[quote]?.heatmap ?? '—'}% (${quote})
+        </div>
+      </div>`;
+    return;
+  }
+
+  const baseFund  = fund[base];
+  const quoteFund = fund[quote];
+
+  // ── "What changed?" — poređenje sa prethodnim snapshotom ──
+  let changedHtml = '';
+  if (FUND_DATE_I < FUND_DATES.length - 1) {
+    const prevDate = FUND_DATES[FUND_DATE_I + 1];
+    // Async učitavanje prethodnog — samo ako je već keširan
+    const prevKey = `_fundPrev_${prevDate}`;
+    if (!window[prevKey]) {
+      fetch(`https://raw.githubusercontent.com/luka1233-cpu/cme-server/main/engine/output/history/${prevDate}.json`)
+        .then(r => r.json())
+        .then(prev => {
+          window[prevKey] = prev;
+          renderFundBody(); // re-render sa podacima
+        }).catch(()=>{});
+    } else {
+      const prev = window[prevKey];
+      const pf = prev.fundamentals;
+      if (pf) {
+        const bHmNow  = baseFund?.heatmap  ?? null;
+        const qHmNow  = quoteFund?.heatmap ?? null;
+        const bHmPrev = pf[base]?.heatmap  ?? null;
+        const qHmPrev = pf[quote]?.heatmap ?? null;
+        const spNow   = bHmNow!=null && qHmNow!=null  ? Math.round(bHmNow - qHmNow)   : null;
+        const spPrev  = bHmPrev!=null && qHmPrev!=null ? Math.round(bHmPrev - qHmPrev) : null;
+        const dBase   = bHmNow!=null && bHmPrev!=null ? Math.round(bHmNow - bHmPrev)   : null;
+        const dQuote  = qHmNow!=null && qHmPrev!=null ? Math.round(qHmNow - qHmPrev)   : null;
+        const dSpread = spNow!=null && spPrev!=null    ? Math.round(spNow - spPrev)     : null;
+        const chg = (v, label) => v==null ? '' : `
+          <div style="text-align:center">
+            <div style="font-size:10px;color:var(--tx2)">${label}</div>
+            <div style="font-family:var(--mono);font-size:12px;font-weight:600;color:${v>0?'var(--grn)':v<0?'var(--red)':'var(--tx2)'}">
+              ${v>0?'+':''}${v}
+            </div>
+          </div>`;
+        if (dBase!=null || dQuote!=null || dSpread!=null) {
+          changedHtml = `
+            <div style="background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:10px 14px;margin-bottom:14px">
+              <div style="font-size:10px;color:var(--tx2);margin-bottom:8px;font-weight:600">
+                ${lang==='sr'?'Šta se promenilo? (vs '+prevDate+')':'What changed? (vs '+prevDate+')'}
+              </div>
+              <div style="display:flex;gap:20px;flex-wrap:wrap">
+                ${chg(dBase, base)}
+                ${chg(dQuote, quote)}
+                ${chg(dSpread, lang==='sr'?'Spread':'Spread')}
+              </div>
+            </div>`;
+        }
+      }
+    }
+  }
+
+  // ── Kartica valute — Overall na vrhu, Score uz zvezde ──
+  const renderCcyBlock = (ccy) => {
+    const fd = fund[ccy];
+    if (!fd) return `<div style="color:var(--tx3);font-size:11px">${ccy}: —</div>`;
+    const cats = fd.categories || [];
+    const biasCol = fd.bias && fd.bias.includes('bull') ? 'var(--grn)'
+                  : fd.bias && fd.bias.includes('bear') ? 'var(--red)' : 'var(--tx2)';
+    const biasLabel = t('biasLabel')[biasToKey(fd.bias)] || fd.bias || '—';
+    const hmPct = fd.heatmap != null ? fd.heatmap : '—';
+
+    let catRows = '';
+    for (const c of cats) {
+      const stars = sigToStars(c.signal, c.signal_value);
+      const score100 = c.signal_value != null ? Math.round(Math.abs(c.signal_value) * 100) : null;
+      catRows += `
+        <div style="padding:6px 0;border-bottom:1px solid var(--bg3)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px">
+            <span style="font-size:11px;color:var(--tx2)">${c.label}</span>
+            <span style="font-size:10px;color:${sigColor(c.signal)};font-family:var(--mono)">${c.signal}</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div>${renderStars(stars)}</div>
+            ${score100!=null ? `<span style="font-size:10px;color:var(--tx3);font-family:var(--mono)">Score ${score100}/100</span>` : ''}
+          </div>
+        </div>`;
+    }
+    if (!catRows) catRows = `<div style="font-size:10px;color:var(--tx3);padding:8px 0">—</div>`;
+
+    return `
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;padding-bottom:10px;border-bottom:2px solid var(--bd)">
+        <div style="font-family:var(--mono);font-size:15px;font-weight:700;color:var(--tx)">${ccy}</div>
+        <div style="text-align:right">
+          <div style="font-family:var(--mono);font-size:16px;font-weight:700;color:${biasCol}">${biasLabel}</div>
+          <div style="font-family:var(--mono);font-size:13px;color:var(--tx2)">${hmPct}%</div>
+        </div>
+      </div>
+      ${catRows}`;
+  };
+
+  // ── Fundamental Advantage (bez COT) ──────────────────
+  const bHm = baseFund?.heatmap ?? null;
+  const qHm = quoteFund?.heatmap ?? null;
+  const fundSpread = bHm!=null && qHm!=null ? Math.round(bHm - qHm) : null;
+  const fundSpreadCol = fundSpread > 0 ? 'var(--grn)' : fundSpread < 0 ? 'var(--red)' : 'var(--tx2)';
+
+  let advantageHtml = '';
+  if (fundSpread != null) {
+    const isLong = fundSpread > 10;
+    const isShort = fundSpread < -10;
+    const dirTxt = isLong ? t('fundBuy') : isShort ? t('fundSell') : t('fundNeut');
+    const dirCol = isLong ? 'var(--grn)' : isShort ? 'var(--red)' : 'var(--tx2)';
+    const leadCcy = fundSpread > 0 ? base : quote;
+    const leadAmt = Math.abs(fundSpread);
+    const leadTxt = leadAmt > 5
+      ? (lang==='sr' ? `${leadCcy} ispred za ${leadAmt} bod.` : `${leadCcy} leads by ${leadAmt} pts`)
+      : (lang==='sr' ? 'Izjednačeno' : 'Even');
+
+    // Conf iz snapshot (bez COT — samo heatmap coverage)
+    const bCov = baseFund?.coverage ?? null;
+    const qCov = quoteFund?.coverage ?? null;
+    const avgCov = bCov!=null && qCov!=null ? Math.round((bCov + qCov) / 2 * 100) : null;
+
+    advantageHtml = `
+      <div style="margin-top:14px;background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:14px">
+        <div style="font-size:10px;color:var(--tx2);margin-bottom:10px;font-family:var(--mono);font-weight:600">
+          ${lang==='sr'?'FUNDAMENTALNI SIGNAL':'FUNDAMENTAL SIGNAL'} · ${pair}
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+          <div style="font-family:var(--mono);font-size:24px;font-weight:700;color:${dirCol}">${dirTxt}</div>
+          <div style="text-align:right">
+            <div style="font-size:10px;color:var(--tx2)">${lang==='sr'?'Prednost':'Advantage'}</div>
+            <div style="font-family:var(--mono);font-size:16px;font-weight:700;color:${fundSpreadCol}">${fundSpread>0?'+':''}${fundSpread}</div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--tx2);border-top:1px solid var(--bg3);padding-top:8px">
+          <div><span style="color:var(--tx);font-weight:600">${base}</span> ${bHm}%
+           &nbsp;·&nbsp; <span style="color:var(--tx);font-weight:600">${quote}</span> ${qHm}%</div>
+          <div style="color:${fundSpreadCol};font-weight:600">${leadTxt}</div>
+        </div>
+        ${avgCov!=null ? `<div style="font-size:9px;color:var(--tx3);margin-top:6px">${lang==='sr'?'Pokrivenost podataka':'Data coverage'}: ~${avgCov}%</div>` : ''}
+      </div>`;
+  }
+
+  // ── TradingView link ──────────────────────────────────
+  const tvUrl = `https://www.tradingview.com/chart/?symbol=FX:${encodeURIComponent(pair)}`;
+  const tvHtml = `
+    <div style="margin-top:10px">
+      <a href="${tvUrl}" target="_blank"
+        style="display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;color:var(--tx2);background:var(--bg2);border:1px solid var(--bd);border-radius:6px;padding:7px 14px;text-decoration:none"
+        onmouseover="this.style.borderColor='var(--tx2)'" onmouseout="this.style.borderColor='var(--bd)'">
+        📈 ${lang==='sr'?'Otvori grafikon':'Open Chart'} · ${pair}
+        <span style="font-size:9px;color:var(--tx3)">TradingView ↗</span>
+      </a>
+    </div>`;
+
+  body.innerHTML = snapInfoHtml + changedHtml + `
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <div style="background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:14px">
+        ${renderCcyBlock(base)}
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:14px">
+        ${renderCcyBlock(quote)}
+      </div>
+    </div>
+    ${advantageHtml}
+    ${tvHtml}`;
+}
+
+
+
+// ══════════════════════════════════════════════════════════
+// MANUAL OVERRIDE — FMP kasni?
+// ══════════════════════════════════════════════════════════
+function toggleOverridePanel(){
+  const p = document.getElementById('override-panel');
+  const isHidden = p.style.display === 'none';
+  p.style.display = isHidden ? 'block' : 'none';
+  if (isHidden) loadOverrideList();
+}
+
+async function saveOverride(){
+  const ccy       = document.getElementById('ov-ccy').value;
+  const indicator = document.getElementById('ov-indicator').value;
+  const actual    = parseFloat(document.getElementById('ov-actual').value);
+  const forecastV = document.getElementById('ov-forecast').value;
+  const forecast  = forecastV ? parseFloat(forecastV) : null;
+  const statusEl  = document.getElementById('ov-status');
+
+  if (isNaN(actual)) { statusEl.textContent = '⚠ Actual je obavezan.'; statusEl.style.color='var(--red)'; return; }
+
+  statusEl.textContent = 'Čuvam...';
+  statusEl.style.color = 'var(--tx3)';
+
+  try {
+    const res = await fetch('/manual-override', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ccy, indicator, actual, forecast,
+        event_name: `${ccy} ${indicator} (manual override)`})
+    });
+    const data = await res.json();
+    if (data.ok) {
+      statusEl.textContent = `✓ ${data.message}`;
+      statusEl.style.color = 'var(--grn)';
+      document.getElementById('ov-actual').value = '';
+      document.getElementById('ov-forecast').value = '';
+      loadOverrideList();
+    } else {
+      statusEl.textContent = `⚠ ${data.error}`;
+      statusEl.style.color = 'var(--red)';
+    }
+  } catch(e) {
+    statusEl.textContent = '⚠ Server ne odgovara.';
+    statusEl.style.color = 'var(--red)';
+  }
+}
+
+async function loadOverrideList(){
+  const listEl = document.getElementById('ov-list');
+  if (!listEl) return;
+  try {
+    const res = await fetch('/get-overrides');
+    const data = await res.json();
+    const ov = data.overrides || {};
+    const entries = [];
+    for (const [ccy, inds] of Object.entries(ov)) {
+      for (const [itype, val] of Object.entries(inds)) {
+        entries.push({ccy, itype, val});
+      }
+    }
+    if (!entries.length) { listEl.innerHTML = '<div style="font-size:10px;color:var(--tx3)">Nema aktivnih overrides.</div>'; return; }
+    listEl.innerHTML = `
+      <div style="font-size:9px;color:var(--tx3);margin-bottom:6px">AKTIVNI OVERRIDES (primenjuju se pri sledećem run_cme.bat):</div>
+      ${entries.map(e => `
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 8px;background:var(--bg3);border-radius:5px;margin-bottom:4px;font-size:11px">
+          <span><span style="color:var(--tx);font-weight:600;font-family:var(--mono)">${e.ccy} ${e.itype}</span>
+            <span style="color:var(--grn);font-family:var(--mono);margin-left:8px">actual=${e.val.actual}</span>
+            ${e.val.forecast!=null?`<span style="color:var(--tx3);font-family:var(--mono);margin-left:4px">vs ${e.val.forecast}</span>`:''}
+            <span style="color:var(--tx3);margin-left:8px;font-size:9px">${(e.val.timestamp||'').slice(0,10)}</span>
+          </span>
+          <button onclick="clearOverride('${e.ccy}','${e.itype}')"
+            style="background:none;border:1px solid var(--bd);color:var(--red);border-radius:4px;padding:2px 8px;font-size:10px;cursor:pointer">✕</button>
+        </div>`).join('')}`;
+  } catch(e) {
+    listEl.innerHTML = '<div style="font-size:10px;color:var(--red)">Server ne odgovara.</div>';
+  }
+}
+
+async function clearOverride(ccy, indicator){
+  try {
+    await fetch('/clear-override', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ccy, indicator})
+    });
+    loadOverrideList();
+    document.getElementById('ov-status').textContent = `Override obrisan: ${ccy} ${indicator}`;
+  } catch(e) {}
+}
+
+
+// ══════════════════════════════════════════════════════════
+// COT TAB — Institucionalno pozicioniranje po valutama
+// ══════════════════════════════════════════════════════════
+
+function cotLevelScore(d) {
+  // Level Score = (Long% - 50) × 2 + (Percentil - 50) × 2) / 2
+  const lp  = d.longPct != null ? d.longPct : 50;
+  const pct = d.percentile3y != null ? d.percentile3y : null;
+  const ls_long = (lp - 50) * 2;
+  const ls_pct  = pct != null ? (pct - 50) * 2 : 0;
+  return Math.round((ls_long + ls_pct) / 2);
+}
+
+function cotMomentumScore(d) {
+  // Momentum Score = (0.8 × DeltaScore + 0.2 × Weekly) × TQ_factor
+  // DeltaScore = clamp(delta × 2, -100, 100) — aproksimacija z-score
+  const delta = d.deltaPct6w || 0;
+  const tq    = d.tqConsistent != null ? d.tqConsistent : 3;
+  const weekly= d.dLong != null && d.dShort != null ? (d.dLong - d.dShort) : 0;
+  const tqFactor   = tq / 6;
+  const deltaScore = Math.max(-100, Math.min(100, delta * 2));
+  const weeklyNorm = weekly > 0 ? Math.min(20, weekly / 5000) : Math.max(-20, weekly / 5000);
+  const raw = 0.8 * deltaScore + 0.2 * weeklyNorm * 100;
+  return Math.round(raw * tqFactor);
+}
+
+function cotFinalScore(d) {
+  return Math.round(cotLevelScore(d) * 0.0 + cotMomentumScore(d) * 1.0); // trenutno čisti Momentum
+}
+
+function cotBiasFromScore(score) {
+  if (score >  50) return {key:'sbull', label: lang==='sr'?'Jak Bullish':'Strong Bull', col:'var(--grn)'};
+  if (score >  20) return {key:'bull',  label: lang==='sr'?'Bullish':'Bullish',         col:'var(--grn)'};
+  if (score >   5) return {key:'wbull', label: lang==='sr'?'Slabo Bullish':'Weak Bull', col:'var(--yel)'};
+  if (score >  -5) return {key:'neut',  label: lang==='sr'?'Neutral':'Neutral',         col:'var(--tx2)'};
+  if (score > -20) return {key:'wbear', label: lang==='sr'?'Slabo Bearish':'Weak Bear', col:'var(--amb)'};
+  if (score > -50) return {key:'bear',  label: lang==='sr'?'Bearish':'Bearish',         col:'var(--red)'};
+  return              {key:'sbear', label: lang==='sr'?'Jak Bearish':'Strong Bear',      col:'var(--red)'};
+}
+
+function cotTrend(d) {
+  const delta = d.deltaPct6w || 0;
+  const tq    = d.tqConsistent || 3;
+  if (delta > 5  && tq >= 4) return { icon:'↑', label: lang==='sr'?'Raste':'Rising',   col:'var(--grn)' };
+  if (delta < -5 && tq >= 4) return { icon:'↓', label: lang==='sr'?'Pada':'Falling',   col:'var(--red)' };
+  if (Math.abs(delta) <= 2)  return { icon:'→', label: lang==='sr'?'Stabilno':'Stable', col:'var(--tx2)' };
+  if (delta > 0) return { icon:'↗', label: lang==='sr'?'Blago raste':'Rising', col:'var(--yel)' };
+  return              { icon:'↘', label: lang==='sr'?'Blago pada':'Falling',  col:'var(--amb)' };
+}
+
+function cotDrivers(d) {
+  const drivers = [];
+  const lp = d.longPct || 50;
+  const delta = d.deltaPct6w || 0;
+  const tq = d.tqConsistent || 0;
+  const pct = d.percentile3y;
+
+  if (lp > 60)  drivers.push({ label: lang==='sr'?'Visok Long%':'High Long%',          bull: true });
+  if (lp < 40)  drivers.push({ label: lang==='sr'?'Nizak Long%':'Low Long%',           bull: false });
+  if (delta > 5)  drivers.push({ label: lang==='sr'?'Pozitivna delta':'Positive delta', bull: true });
+  if (delta < -5) drivers.push({ label: lang==='sr'?'Negativna delta':'Negative delta', bull: false });
+  if (tq >= 5)  drivers.push({ label: lang==='sr'?'Jak trend (TQ)':'Strong trend (TQ)', bull: delta>=0 });
+  if (tq <= 2)  drivers.push({ label: lang==='sr'?'Slab trend (TQ)':'Weak trend (TQ)',  bull: null });
+  if (pct != null && pct >= 70) drivers.push({ label: lang==='sr'?'Visok percentil':'High percentile', bull: true });
+  if (pct != null && pct <= 30) drivers.push({ label: lang==='sr'?'Nizak percentil':'Low percentile',  bull: false });
+
+  return drivers;
+}
+
+function renderCotTab() {
+  const wrap = document.getElementById('cot-tab-content');
+  if (!wrap) return;
+  if (!LAST_SCORES) { wrap.innerHTML = `<div class="hm-no-data">${t('cotNoData')}</div>`; return; }
+
+  const ccys = Object.keys(LAST_SCORES).filter(c => c !== 'XAU');
+  // Sortiraj po momentumScore DESC (single source of truth iz LAST_SCORES)
+  ccys.sort((a,b) => (LAST_SCORES[b].momentumScore||0) - (LAST_SCORES[a].momentumScore||0));
+
+  const cards = ccys.map(ccy => {
+    const s = LAST_SCORES[ccy];        // ← sve iz calcCcy(), nula duplirane logike
+    const d = DATA.currencies[ccy];    // ← samo za raw ulaze ako treba
+    const ls  = s.levelScore    || 0;
+    const ms  = s.momentumScore || 0;
+    const fs  = ms;                    // COT tab prikazuje Momentum (trenutni model)
+    const bias = cotBiasFromScore(fs);
+    const trend = cotTrend({deltaPct6w: s.deltaPct6w, tqConsistent: s.tqConsistent});
+    const drivers = cotDrivers({longPct: s.longPct, deltaPct6w: s.deltaPct6w,
+                                 tqConsistent: s.tqConsistent, percentile3y: s.percentile3y});
+    const lp  = s.longPct != null ? s.longPct : '—';
+    const pct = s.percentile3y != null ? s.percentile3y : null;
+    const delta = s.deltaPct6w || 0;
+    const tq  = s.tqConsistent != null ? s.tqConsistent : '—';
+
+    // Gauge bar: -100 do +100
+    const gaugeW = Math.min(Math.abs(fs), 100);
+    const gaugeCol = fs > 0 ? 'var(--grn)' : fs < 0 ? 'var(--red)' : 'var(--tx3)';
+    const gaugeDir = fs >= 0 ? 'left' : 'right';
+
+    // Score bar helper
+    const scoreBar = (val, max=100) => {
+      const w = Math.min(Math.abs(val)/max*100, 100);
+      const col = val > 0 ? 'var(--grn)' : val < 0 ? 'var(--red)' : 'var(--tx3)';
+      return `<div style="display:flex;align-items:center;gap:6px">
+        <div style="flex:1;height:3px;background:var(--bg3);border-radius:2px">
+          <div style="width:${w}%;height:3px;background:${col};border-radius:2px"></div>
+        </div>
+        <span style="font-family:var(--mono);font-size:11px;font-weight:600;color:${col};width:36px;text-align:right">${val>0?'+':''}${val}</span>
+      </div>`;
+    };
+
+    // Drivers
+    const driverHtml = drivers.length ? `
+      <div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--bg3)">
+        <div style="font-size:9px;color:var(--tx3);margin-bottom:4px">${t('cotDrivers')}</div>
+        <div style="display:flex;flex-wrap:wrap;gap:3px">
+          ${drivers.map(dr => `<span style="font-size:9px;padding:2px 6px;border-radius:3px;background:var(--bg3);color:${dr.bull===true?'var(--grn)':dr.bull===false?'var(--red)':'var(--tx2)'}">
+            ${dr.bull===true?'✓':dr.bull===false?'✗':'—'} ${dr.label}
+          </span>`).join('')}
+        </div>
+      </div>` : '';
+
+    return `<div style="background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:14px 16px">
+      <!-- Header -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <span style="font-family:var(--mono);font-size:16px;font-weight:700;color:var(--tx)">${ccy}</span>
+        <div style="text-align:right">
+          <div style="font-family:var(--mono);font-size:13px;font-weight:700;color:${bias.col}">${bias.label}</div>
+          <div style="font-size:9px;color:${trend.col}">${trend.icon} ${trend.label}</div>
+        </div>
+      </div>
+
+      <!-- Gauge -->
+      <div style="position:relative;height:4px;background:var(--bg3);border-radius:2px;margin-bottom:12px">
+        <div style="position:absolute;top:0;${gaugeDir}:50%;width:${gaugeW/2}%;height:4px;background:${gaugeCol};border-radius:2px"></div>
+        <div style="position:absolute;top:-2px;left:50%;width:1px;height:8px;background:var(--tx3)"></div>
+      </div>
+
+      <!-- Scores -->
+      <div style="margin-bottom:8px">
+        <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--tx3);margin-bottom:3px">
+          <span>${t('cotLevel')}</span>
+        </div>
+        ${scoreBar(ls)}
+        <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--tx3);margin:5px 0 3px">
+          <span>${t('cotMom')}</span>
+        </div>
+        ${scoreBar(ms)}
+      </div>
+
+      <!-- Stats grid -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:10px;padding-top:8px;border-top:1px solid var(--bg3)">
+        <div><span style="color:var(--tx3)">${t('cotLong')} </span><span style="font-family:var(--mono);color:${lp>55?'var(--grn)':lp<45?'var(--red)':'var(--tx2)'}">${lp}%</span></div>
+        <div><span style="color:var(--tx3)">Δ 6W </span><span style="font-family:var(--mono);color:${delta>0?'var(--grn)':delta<0?'var(--red)':'var(--tx2)'}">${delta>0?'+':''}${delta}pp</span></div>
+        <div><span style="color:var(--tx3)">TQ </span><span style="font-family:var(--mono);color:${tq>=5?'var(--grn)':tq<=2?'var(--red)':'var(--tx2)'}">${tq}/6</span></div>
+        <div><span style="color:var(--tx3)">${t('cotPct')} </span><span style="font-family:var(--mono);color:${pct>=70?'var(--grn)':pct<=30?'var(--red)':'var(--tx2)'}">${pct!=null?pct+'%':'—'}</span></div>
+      </div>
+
+      ${driverHtml}
+    </div>`;
+  }).join('');
+
+  const genAt = DATA.currencies.USD ? (() => {
+    const cot = Object.values(DATA.currencies)[0];
+    return '';
+  })() : '';
+
+  wrap.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--tx2)">
+        📈 <strong style="color:var(--tx)">${t('cotTitle')}</strong>
+      </div>
+      <div style="font-size:9px;color:var(--tx3)">${t('cotSub')}</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">${cards}</div>`;
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -2103,7 +3160,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 <nav class="tab-nav">
   <button class="tab-btn active" data-tab="cme" onclick="switchTab('cme')">📊 CME</button>
   <button class="tab-btn" data-tab="heatmap" onclick="switchTab('heatmap')">🌡 Economic Heatmap</button>
+  <button class="tab-btn" data-tab="cot" onclick="switchTab('cot')">📈 COT</button>
   <button class="tab-btn" data-tab="history" onclick="switchTab('history')">📅 Istorija</button>
+  <button class="tab-btn" data-tab="fundamental" onclick="switchTab('fundamental')">🎬 Fund. Replay</button>
   <button class="tab-btn" data-tab="ai" onclick="switchTab('ai')">🤖 AI Chat</button>
 </nav>
 
@@ -2149,6 +3208,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 </div><!-- /wrap -->
 </div><!-- /tab-cme -->
 
+<!-- TAB: COT -->
+<div class="tab-pane" id="tab-cot">
+  <div class="wrap">
+    <div id="cot-tab-content"></div>
+  </div>
+</div>
+
 <!-- TAB: Economic Heatmap -->
 <div class="tab-pane" id="tab-heatmap">
   <div class="wrap">
@@ -2160,9 +3226,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 <div class="tab-pane" id="tab-history">
   <div class="wrap">
     <div style="margin-bottom:8px">
-      📅 <strong style="color:var(--tx)" id="history-title">Istorija Bias-a</strong>
+      📅 <strong style="color:var(--tx)" id="history-title" data-i18n-dynamic="histTitle">Istorija Bias-a</strong>
     </div>
     <div id="history-content"></div>
+  </div>
+</div>
+
+<!-- TAB: Fundamental Replay -->
+<div class="tab-pane" id="tab-fundamental">
+  <div class="wrap">
+    <div style="margin-bottom:12px;display:flex;align-items:center;gap:10px">
+      🎬 <strong style="color:var(--tx)" id="fundamental-title">Fundamental Replay</strong>
+    </div>
+    <div id="fundamental-content"></div>
   </div>
 </div>
 
@@ -2206,7 +3282,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   </div>
 </div>
 <div class="modal-overlay" id="pair-modal" onclick="closePairDetail(event)">
-  <div class="modal-box" id="pair-modal-box" style="max-width:480px"></div>
+  <div class="modal-box" id="pair-modal-box" style="max-width:480px;max-height:90vh;overflow-y:auto"></div>
 </div>
 </body>
 </html>
