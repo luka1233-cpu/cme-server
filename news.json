@@ -1,5 +1,36 @@
 {
-  "generatedAt": "2026-07-23T18:36:37.746690+00:00",
+  "generatedAt": "2026-07-24T07:34:09.248834+00:00",
   "daysBack": 7,
-  "news": []
+  "news": [
+    {
+      "ccy": "EUR",
+      "type": "PMI",
+      "eventName": "S&P Global Manufacturing PMI (Jul)",
+      "impact": "high",
+      "actual": 52.2,
+      "forecast": 50.5,
+      "previous": 50.3,
+      "date": "2026-07-24 07:30:00",
+      "daysAgo": 0,
+      "surpriseDiff": 1.7,
+      "impulseBase": 10.0,
+      "impulse": 10.0,
+      "decay": 1.0
+    },
+    {
+      "ccy": "GBP",
+      "type": "RETAIL_SALES",
+      "eventName": "Retail Sales MoM (Jun)",
+      "impact": "high",
+      "actual": 1.0,
+      "forecast": -0.3,
+      "previous": 1.2,
+      "date": "2026-07-24 06:00:00",
+      "daysAgo": 0,
+      "surpriseDiff": 1.3,
+      "impulseBase": 10.0,
+      "impulse": 10.0,
+      "decay": 1.0
+    }
+  ]
 }
