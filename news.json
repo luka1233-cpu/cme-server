@@ -1,7 +1,37 @@
 {
-  "generatedAt": "2026-07-24T07:34:09.248834+00:00",
+  "generatedAt": "2026-07-24T11:53:55.639770+00:00",
   "daysBack": 7,
   "news": [
+    {
+      "ccy": "GBP",
+      "type": "PMI",
+      "eventName": "S&P Global Manufacturing PMI (Jul)",
+      "impact": "high",
+      "actual": 52.8,
+      "forecast": 52.0,
+      "previous": 52.5,
+      "date": "2026-07-24 08:30:00",
+      "daysAgo": 0,
+      "surpriseDiff": 0.8,
+      "impulseBase": 8.89,
+      "impulse": 8.89,
+      "decay": 1.0
+    },
+    {
+      "ccy": "GBP",
+      "type": "PMI",
+      "eventName": "S&P Global Services PMI (Jul)",
+      "impact": "high",
+      "actual": 51.8,
+      "forecast": 49.4,
+      "previous": 48.8,
+      "date": "2026-07-24 08:30:00",
+      "daysAgo": 0,
+      "surpriseDiff": 2.4,
+      "impulseBase": 10.0,
+      "impulse": 10.0,
+      "decay": 1.0
+    },
     {
       "ccy": "EUR",
       "type": "PMI",
