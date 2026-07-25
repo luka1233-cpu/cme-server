@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T13:40:31.996985+00:00",
+  "generatedAt": "2026-07-25T08:30:55.774880+00:00",
   "heatmap": 61,
   "score": 22,
   "bias": "wbull",
@@ -28,7 +28,7 @@
         },
         {
           "factor": "YIELD_2Y",
-          "detail": "2Y 4.07->4.31 (+0.24pp, rising)",
+          "detail": "2Y 4.07->4.33 (+0.26pp, rising)",
           "gold_signal": "bearish",
           "weight": 0.2
         }
@@ -40,12 +40,12 @@
       "factors": [
         {
           "factor": "NET_POSITIONING",
-          "detail": "Long 84.8%",
+          "detail": "Long 84.6%",
           "gold_signal": "bullish"
         },
         {
           "factor": "LATEST_FLOW",
-          "detail": "dLong -6403, dShort +1161",
+          "detail": "dLong -2525, dShort +247",
           "gold_signal": "bearish"
         }
       ],
