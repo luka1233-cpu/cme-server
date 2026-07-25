@@ -1737,4 +1737,50 @@
       "coverage": 0.8,
       "categories": [
         {
-     
+          "category": "GDP",
+          "label": "GDP Growth",
+          "signal": "neutral",
+          "signal_value": 0.0
+        },
+        {
+          "category": "CPI",
+          "label": "Inflation",
+          "signal": "bullish",
+          "signal_value": 0.333
+        },
+        {
+          "category": "EMPLOYMENT",
+          "label": "Employment",
+          "signal": "bearish",
+          "signal_value": -0.467
+        },
+        {
+          "category": "RETAIL",
+          "label": "Retail Sales",
+          "signal": "bullish",
+          "signal_value": 0.667
+        },
+        {
+          "category": "RATES",
+          "label": "Interest Rate / Wages",
+          "signal": "bullish",
+          "signal_value": 1.0
+        },
+        {
+          "category": "PPI",
+          "label": "PPI",
+          "signal": "bullish",
+          "signal_value": 0.5
+        },
+        {
+          "category": "CONFIDENCE",
+          "label": "Confidence / Other",
+          "signal": "bullish",
+          "signal_value": 0.952
+        }
+      ]
+    }
+  },
+  "fundamentalsGeneratedAt": "2026-07-25T14:40:52.528250+00:00",
+  "schemaVersion": 2
+}
