@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T12:48:48.501610+00:00",
+  "generatedAt": "2026-07-30T12:54:55.393180+00:00",
   "daysBack": 7,
   "news": [
     {
@@ -35,21 +35,6 @@
     {
       "ccy": "EUR",
       "type": "GDP",
-      "eventName": "GDP Growth Rate YoY (Q2)",
-      "impact": "high",
-      "actual": 1.0,
-      "forecast": 0.5,
-      "previous": 0.5,
-      "date": "2026-07-30 09:00:00",
-      "daysAgo": 0,
-      "surpriseDiff": 0.5,
-      "impulseBase": 8.33,
-      "impulse": 8.33,
-      "decay": 1.0
-    },
-    {
-      "ccy": "EUR",
-      "type": "GDP",
       "eventName": "GDP Growth Rate QoQ (Q2)",
       "impact": "high",
       "actual": 0.4,
@@ -60,6 +45,21 @@
       "surpriseDiff": 0.2,
       "impulseBase": 3.33,
       "impulse": 3.33,
+      "decay": 1.0
+    },
+    {
+      "ccy": "EUR",
+      "type": "GDP",
+      "eventName": "GDP Growth Rate YoY (Q2)",
+      "impact": "high",
+      "actual": 1.0,
+      "forecast": 0.5,
+      "previous": 0.5,
+      "date": "2026-07-30 09:00:00",
+      "daysAgo": 0,
+      "surpriseDiff": 0.5,
+      "impulseBase": 8.33,
+      "impulse": 8.33,
       "decay": 1.0
     },
     {
