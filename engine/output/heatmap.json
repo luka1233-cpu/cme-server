@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-30T10:33:19.066714+00:00",
+  "generatedAt": "2026-07-30T10:53:09.050266+00:00",
   "source": "FMP Economic Calendar (auto)",
   "model": "V1 — category weighted, signal: -1/0/+1",
   "currencies": {
     "USD": {
       "ccy": "USD",
-      "heatmap": 54,
-      "macro_score": 8,
+      "heatmap": 52,
+      "macro_score": 5,
       "bias": "neut",
       "bull_count": 3,
       "bear_count": 4,
@@ -47,7 +47,7 @@
           "weight_orig": 0.15,
           "weight_eff": 0.15,
           "signal": "bearish",
-          "signal_value": -0.493,
+          "signal_value": -0.707,
           "factors": [
             {
               "indicator": "CPI",
@@ -64,14 +64,14 @@
             },
             {
               "indicator": "CORE_CPI",
-              "signal": "neutral",
-              "signal_value": 0.0,
+              "signal": "bearish",
+              "signal_value": -0.667,
               "ind_weight": 0.8,
-              "actual": 336.07,
-              "forecast": null,
-              "previous": 336.12,
-              "surprise_diff": -0.05,
-              "event_name": "Core CPI (Jun)",
+              "actual": 0.0,
+              "forecast": 0.2,
+              "previous": 0.2,
+              "surprise_diff": -0.2,
+              "event_name": "Core CPI MoM (Jun)",
               "release_date": "2026-07-14",
               "impact": "high"
             },
@@ -257,11 +257,11 @@
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 1.0,
-              "actual": 6.7,
-              "forecast": 6.7,
-              "previous": 7.3,
+              "actual": 0.2,
+              "forecast": 0.2,
+              "previous": 1.0,
               "surprise_diff": 0.0,
-              "event_name": "Retail Sales YoY (Jun)",
+              "event_name": "Retail Sales MoM (Jun)",
               "release_date": "2026-07-16",
               "impact": "high"
             }
@@ -269,7 +269,7 @@
           "freshness": {
             "event_date": "2026-07-16",
             "age_days": 14,
-            "indicator": "Retail Sales YoY (Jun)"
+            "indicator": "Retail Sales MoM (Jun)"
           }
         },
         {
@@ -431,14 +431,14 @@
         },
         "CORE_CPI": {
           "indicator": "CORE_CPI",
-          "signal": "neutral",
-          "signal_value": 0.0,
+          "signal": "bearish",
+          "signal_value": -0.667,
           "ind_weight": 0.8,
-          "actual": 336.07,
-          "forecast": null,
-          "previous": 336.12,
-          "surprise_diff": -0.05,
-          "event_name": "Core CPI (Jun)",
+          "actual": 0.0,
+          "forecast": 0.2,
+          "previous": 0.2,
+          "surprise_diff": -0.2,
+          "event_name": "Core CPI MoM (Jun)",
           "release_date": "2026-07-14",
           "impact": "high"
         },
@@ -564,11 +564,11 @@
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 1.0,
-          "actual": 6.7,
-          "forecast": 6.7,
-          "previous": 7.3,
+          "actual": 0.2,
+          "forecast": 0.2,
+          "previous": 1.0,
           "surprise_diff": 0.0,
-          "event_name": "Retail Sales YoY (Jun)",
+          "event_name": "Retail Sales MoM (Jun)",
           "release_date": "2026-07-16",
           "impact": "high"
         },
@@ -654,8 +654,8 @@
     },
     "EUR": {
       "ccy": "EUR",
-      "heatmap": 75,
-      "macro_score": 51,
+      "heatmap": 77,
+      "macro_score": 53,
       "bias": "bull",
       "bull_count": 8,
       "bear_count": 1,
@@ -717,10 +717,10 @@
               "signal_value": 0.333,
               "ind_weight": 0.8,
               "actual": 3.0,
-              "forecast": null,
+              "forecast": 2.9,
               "previous": 2.9,
               "surprise_diff": 0.1,
-              "event_name": "Core CPI YoY (Jul)",
+              "event_name": "Core Inflation Rate YoY (Jul)",
               "release_date": "2026-07-30",
               "impact": "high"
             },
@@ -750,7 +750,7 @@
           "weight_orig": 0.15,
           "weight_eff": 0.15,
           "signal": "bullish",
-          "signal_value": 0.516,
+          "signal_value": 0.676,
           "factors": [
             {
               "indicator": "NFP",
@@ -781,12 +781,12 @@
             {
               "indicator": "UNEMPLOYMENT",
               "signal": "bearish",
-              "signal_value": -1.0,
+              "signal_value": -0.333,
               "ind_weight": 0.6,
-              "actual": 5.7,
-              "forecast": 5.1,
-              "previous": 5.3,
-              "surprise_diff": 0.6,
+              "actual": 6.3,
+              "forecast": 6.2,
+              "previous": 6.3,
+              "surprise_diff": 0.1,
               "event_name": "Unemployment Rate (Jun)",
               "release_date": "2026-07-30",
               "impact": "high"
@@ -949,11 +949,11 @@
               "signal": "bullish",
               "signal_value": 0.667,
               "ind_weight": 1.0,
-              "actual": 0.0,
-              "forecast": -0.4,
-              "previous": -0.2,
+              "actual": 5.8,
+              "forecast": 5.4,
+              "previous": 7.3,
               "surprise_diff": 0.4,
-              "event_name": "Producer Price Index MoM (Jun)",
+              "event_name": "Producer Price Index YoY (Jun)",
               "release_date": "2026-07-30",
               "impact": "medium"
             }
@@ -961,7 +961,7 @@
           "freshness": {
             "event_date": "2026-07-30",
             "age_days": 0,
-            "indicator": "Producer Price Index MoM (Jun)"
+            "indicator": "Producer Price Index YoY (Jun)"
           }
         },
         {
@@ -1058,10 +1058,10 @@
           "signal_value": 0.333,
           "ind_weight": 0.8,
           "actual": 3.0,
-          "forecast": null,
+          "forecast": 2.9,
           "previous": 2.9,
           "surprise_diff": 0.1,
-          "event_name": "Core CPI YoY (Jul)",
+          "event_name": "Core Inflation Rate YoY (Jul)",
           "release_date": "2026-07-30",
           "impact": "high"
         },
@@ -1107,12 +1107,12 @@
         "UNEMPLOYMENT": {
           "indicator": "UNEMPLOYMENT",
           "signal": "bearish",
-          "signal_value": -1.0,
+          "signal_value": -0.333,
           "ind_weight": 0.6,
-          "actual": 5.7,
-          "forecast": 5.1,
-          "previous": 5.3,
-          "surprise_diff": 0.6,
+          "actual": 6.3,
+          "forecast": 6.2,
+          "previous": 6.3,
+          "surprise_diff": 0.1,
           "event_name": "Unemployment Rate (Jun)",
           "release_date": "2026-07-30",
           "impact": "high"
@@ -1200,11 +1200,11 @@
           "signal": "bullish",
           "signal_value": 0.667,
           "ind_weight": 1.0,
-          "actual": 0.0,
-          "forecast": -0.4,
-          "previous": -0.2,
+          "actual": 5.8,
+          "forecast": 5.4,
+          "previous": 7.3,
           "surprise_diff": 0.4,
-          "event_name": "Producer Price Index MoM (Jun)",
+          "event_name": "Producer Price Index YoY (Jun)",
           "release_date": "2026-07-30",
           "impact": "medium"
         },
@@ -1251,12 +1251,12 @@
     },
     "GBP": {
       "ccy": "GBP",
-      "heatmap": 72,
-      "macro_score": 44,
+      "heatmap": 77,
+      "macro_score": 55,
       "bias": "bull",
       "bull_count": 5,
-      "bear_count": 2,
-      "neutral_count": 2,
+      "bear_count": 1,
+      "neutral_count": 3,
       "model_coverage": 1.0,
       "categories": [
         {
@@ -1291,9 +1291,9 @@
           "category": "CPI",
           "label": "Inflation",
           "weight_orig": 0.15,
-          "weight_eff": 0.15,
-          "signal": "bearish",
-          "signal_value": -0.185,
+          "weight_eff": 0.045,
+          "signal": "neutral",
+          "signal_value": -0.037,
           "factors": [
             {
               "indicator": "CPI",
@@ -1310,14 +1310,14 @@
             },
             {
               "indicator": "CORE_CPI",
-              "signal": "neutral",
-              "signal_value": 0.0,
+              "signal": "bullish",
+              "signal_value": 0.333,
               "ind_weight": 0.8,
-              "actual": 0.3,
-              "forecast": null,
-              "previous": 0.3,
-              "surprise_diff": 0.0,
-              "event_name": "Core CPI MoM (Jun)",
+              "actual": 2.6,
+              "forecast": 2.5,
+              "previous": 2.6,
+              "surprise_diff": 0.1,
+              "event_name": "Core Inflation Rate YoY (Jun)",
               "release_date": "2026-07-22",
               "impact": "high"
             }
@@ -1451,11 +1451,11 @@
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 1.0,
-              "actual": 1.1,
-              "forecast": -0.4,
+              "actual": 1.0,
+              "forecast": -0.3,
               "previous": 1.2,
-              "surprise_diff": 1.5,
-              "event_name": "Retail Sales Ex Fuel MoM (Jun)",
+              "surprise_diff": 1.3,
+              "event_name": "Retail Sales MoM (Jun)",
               "release_date": "2026-07-24",
               "impact": "high"
             }
@@ -1463,7 +1463,7 @@
           "freshness": {
             "event_date": "2026-07-24",
             "age_days": 6,
-            "indicator": "Retail Sales Ex Fuel MoM (Jun)"
+            "indicator": "Retail Sales MoM (Jun)"
           }
         },
         {
@@ -1496,7 +1496,7 @@
               "forecast": 3.4,
               "previous": 3.4,
               "surprise_diff": 0.0,
-              "event_name": "Average Earnings excl. Bonus (May)",
+              "event_name": "Average Earnings excl. Bonus (3Mo/Yr) (May)",
               "release_date": "2026-07-21",
               "impact": "medium"
             }
@@ -1638,14 +1638,14 @@
         },
         "CORE_CPI": {
           "indicator": "CORE_CPI",
-          "signal": "neutral",
-          "signal_value": 0.0,
+          "signal": "bullish",
+          "signal_value": 0.333,
           "ind_weight": 0.8,
-          "actual": 0.3,
-          "forecast": null,
-          "previous": 0.3,
-          "surprise_diff": 0.0,
-          "event_name": "Core CPI MoM (Jun)",
+          "actual": 2.6,
+          "forecast": 2.5,
+          "previous": 2.6,
+          "surprise_diff": 0.1,
+          "event_name": "Core Inflation Rate YoY (Jun)",
           "release_date": "2026-07-22",
           "impact": "high"
         },
@@ -1719,11 +1719,11 @@
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 1.0,
-          "actual": 1.1,
-          "forecast": -0.4,
+          "actual": 1.0,
+          "forecast": -0.3,
           "previous": 1.2,
-          "surprise_diff": 1.5,
-          "event_name": "Retail Sales Ex Fuel MoM (Jun)",
+          "surprise_diff": 1.3,
+          "event_name": "Retail Sales MoM (Jun)",
           "release_date": "2026-07-24",
           "impact": "high"
         },
@@ -1749,7 +1749,7 @@
           "forecast": 3.4,
           "previous": 3.4,
           "surprise_diff": 0.0,
-          "event_name": "Average Earnings excl. Bonus (May)",
+          "event_name": "Average Earnings excl. Bonus (3Mo/Yr) (May)",
           "release_date": "2026-07-21",
           "impact": "medium"
         },
@@ -1822,12 +1822,12 @@
     },
     "JPY": {
       "ccy": "JPY",
-      "heatmap": 68,
-      "macro_score": 36,
+      "heatmap": 67,
+      "macro_score": 35,
       "bias": "bull",
-      "bull_count": 5,
+      "bull_count": 4,
       "bear_count": 1,
-      "neutral_count": 3,
+      "neutral_count": 4,
       "model_coverage": 1.0,
       "categories": [
         {
@@ -2056,20 +2056,20 @@
           "category": "PPI",
           "label": "PPI",
           "weight_orig": 0.05,
-          "weight_eff": 0.05,
-          "signal": "bullish",
-          "signal_value": 0.5,
+          "weight_eff": 0.015,
+          "signal": "neutral",
+          "signal_value": 0.0,
           "factors": [
             {
               "indicator": "PPI",
-              "signal": "bullish",
-              "signal_value": 0.5,
+              "signal": "neutral",
+              "signal_value": 0.0,
               "ind_weight": 1.0,
-              "actual": 7.1,
-              "forecast": 6.8,
-              "previous": 6.6,
-              "surprise_diff": 0.3,
-              "event_name": "Producer Price Index YoY (Jun)",
+              "actual": 0.4,
+              "forecast": 0.3,
+              "previous": 1.1,
+              "surprise_diff": 0.1,
+              "event_name": "Producer Price Index MoM (Jun)",
               "release_date": "2026-07-09",
               "impact": "medium"
             }
@@ -2077,7 +2077,7 @@
           "freshness": {
             "event_date": "2026-07-09",
             "age_days": 21,
-            "indicator": "Producer Price Index YoY (Jun)"
+            "indicator": "Producer Price Index MoM (Jun)"
           }
         },
         {
@@ -2106,11 +2106,11 @@
               "signal": "bearish",
               "signal_value": -0.667,
               "ind_weight": 0.6,
-              "actual": 0.1,
-              "forecast": 0.5,
-              "previous": 0.5,
+              "actual": -2.1,
+              "forecast": -1.7,
+              "previous": 2.0,
               "surprise_diff": -0.4,
-              "event_name": "Industrial Production MoM (May)",
+              "event_name": "Industrial Production YoY (May)",
               "release_date": "2026-07-14",
               "impact": "medium"
             },
@@ -2274,14 +2274,14 @@
         },
         "PPI": {
           "indicator": "PPI",
-          "signal": "bullish",
-          "signal_value": 0.5,
+          "signal": "neutral",
+          "signal_value": 0.0,
           "ind_weight": 1.0,
-          "actual": 7.1,
-          "forecast": 6.8,
-          "previous": 6.6,
-          "surprise_diff": 0.3,
-          "event_name": "Producer Price Index YoY (Jun)",
+          "actual": 0.4,
+          "forecast": 0.3,
+          "previous": 1.1,
+          "surprise_diff": 0.1,
+          "event_name": "Producer Price Index MoM (Jun)",
           "release_date": "2026-07-09",
           "impact": "medium"
         },
@@ -2303,11 +2303,11 @@
           "signal": "bearish",
           "signal_value": -0.667,
           "ind_weight": 0.6,
-          "actual": 0.1,
-          "forecast": 0.5,
-          "previous": 0.5,
+          "actual": -2.1,
+          "forecast": -1.7,
+          "previous": 2.0,
           "surprise_diff": -0.4,
-          "event_name": "Industrial Production MoM (May)",
+          "event_name": "Industrial Production YoY (May)",
           "release_date": "2026-07-14",
           "impact": "medium"
         },
@@ -2341,11 +2341,11 @@
     },
     "CHF": {
       "ccy": "CHF",
-      "heatmap": 51,
-      "macro_score": 3,
+      "heatmap": 48,
+      "macro_score": -4,
       "bias": "neut",
-      "bull_count": 3,
-      "bear_count": 2,
+      "bull_count": 2,
+      "bear_count": 3,
       "neutral_count": 3,
       "model_coverage": 0.9,
       "categories": [
@@ -2433,9 +2433,9 @@
               "ind_weight": 0.6,
               "actual": 2.9,
               "forecast": 3.1,
-              "previous": 3.1,
+              "previous": 3.0,
               "surprise_diff": -0.2,
-              "event_name": "Unemployment Rate n.s.a (Jun)",
+              "event_name": "Unemployment Rate (Jun)",
               "release_date": "2026-07-06",
               "impact": "high"
             }
@@ -2535,19 +2535,19 @@
           "label": "PPI",
           "weight_orig": 0.05,
           "weight_eff": 0.05,
-          "signal": "bullish",
-          "signal_value": 0.333,
+          "signal": "bearish",
+          "signal_value": -0.5,
           "factors": [
             {
               "indicator": "PPI",
-              "signal": "bullish",
-              "signal_value": 0.333,
+              "signal": "bearish",
+              "signal_value": -0.5,
               "ind_weight": 1.0,
-              "actual": -0.3,
-              "forecast": -0.5,
-              "previous": -0.4,
-              "surprise_diff": 0.2,
-              "event_name": "Producer Price Index MoM (Jun)",
+              "actual": -2.1,
+              "forecast": null,
+              "previous": -1.8,
+              "surprise_diff": -0.3,
+              "event_name": "Producer Price Index YoY (Jun)",
               "release_date": "2026-07-14",
               "impact": "medium"
             }
@@ -2555,7 +2555,7 @@
           "freshness": {
             "event_date": "2026-07-14",
             "age_days": 16,
-            "indicator": "Producer Price Index MoM (Jun)"
+            "indicator": "Producer Price Index YoY (Jun)"
           }
         },
         {
@@ -2666,9 +2666,9 @@
           "ind_weight": 0.6,
           "actual": 2.9,
           "forecast": 3.1,
-          "previous": 3.1,
+          "previous": 3.0,
           "surprise_diff": -0.2,
-          "event_name": "Unemployment Rate n.s.a (Jun)",
+          "event_name": "Unemployment Rate (Jun)",
           "release_date": "2026-07-06",
           "impact": "high"
         },
@@ -2713,14 +2713,14 @@
         },
         "PPI": {
           "indicator": "PPI",
-          "signal": "bullish",
-          "signal_value": 0.333,
+          "signal": "bearish",
+          "signal_value": -0.5,
           "ind_weight": 1.0,
-          "actual": -0.3,
-          "forecast": -0.5,
-          "previous": -0.4,
-          "surprise_diff": 0.2,
-          "event_name": "Producer Price Index MoM (Jun)",
+          "actual": -2.1,
+          "forecast": null,
+          "previous": -1.8,
+          "surprise_diff": -0.3,
+          "event_name": "Producer Price Index YoY (Jun)",
           "release_date": "2026-07-14",
           "impact": "medium"
         },
@@ -2830,10 +2830,10 @@
               "signal_value": -0.333,
               "ind_weight": 0.8,
               "actual": 2.1,
-              "forecast": 2.2,
+              "forecast": null,
               "previous": 2.2,
               "surprise_diff": -0.1,
-              "event_name": "Core Inflation Rate YoY (Jun)",
+              "event_name": "Core CPI YoY (Jun)",
               "release_date": "2026-07-20",
               "impact": "high"
             }
@@ -3106,10 +3106,10 @@
           "signal_value": -0.333,
           "ind_weight": 0.8,
           "actual": 2.1,
-          "forecast": 2.2,
+          "forecast": null,
           "previous": 2.2,
           "surprise_diff": -0.1,
-          "event_name": "Core Inflation Rate YoY (Jun)",
+          "event_name": "Core CPI YoY (Jun)",
           "release_date": "2026-07-20",
           "impact": "high"
         },
@@ -3234,13 +3234,13 @@
     },
     "AUD": {
       "ccy": "AUD",
-      "heatmap": 59,
-      "macro_score": 17,
+      "heatmap": 55,
+      "macro_score": 10,
       "bias": "wbull",
       "bull_count": 4,
-      "bear_count": 2,
+      "bear_count": 3,
       "neutral_count": 1,
-      "model_coverage": 0.85,
+      "model_coverage": 0.9,
       "categories": [
         {
           "category": "GDP",
@@ -3283,11 +3283,11 @@
               "signal": "bearish",
               "signal_value": -0.667,
               "ind_weight": 1.0,
-              "actual": 3.8,
-              "forecast": 4.0,
-              "previous": 4.0,
+              "actual": 3.9,
+              "forecast": 4.1,
+              "previous": 4.1,
               "surprise_diff": -0.2,
-              "event_name": "Inflation Rate YoY (Jun)",
+              "event_name": "Inflation Rate YoY (Q2)",
               "release_date": "2026-07-29",
               "impact": "high"
             }
@@ -3295,7 +3295,7 @@
           "freshness": {
             "event_date": "2026-07-29",
             "age_days": 1,
-            "indicator": "Inflation Rate YoY (Jun)"
+            "indicator": "Inflation Rate YoY (Q2)"
           }
         },
         {
@@ -3437,6 +3437,34 @@
           }
         },
         {
+          "category": "PPI",
+          "label": "PPI",
+          "weight_orig": 0.05,
+          "weight_eff": 0.05,
+          "signal": "bearish",
+          "signal_value": -1.0,
+          "factors": [
+            {
+              "indicator": "PPI",
+              "signal": "bearish",
+              "signal_value": -1.0,
+              "ind_weight": 1.0,
+              "actual": 3.0,
+              "forecast": 4.1,
+              "previous": 3.5,
+              "surprise_diff": -1.1,
+              "event_name": "Producer Price Index YoY (Q1)",
+              "release_date": "2026-05-01",
+              "impact": "medium"
+            }
+          ],
+          "freshness": {
+            "event_date": "2026-05-01",
+            "age_days": 90,
+            "indicator": "Producer Price Index YoY (Q1)"
+          }
+        },
+        {
           "category": "CONFIDENCE",
           "label": "Confidence / Other",
           "weight_orig": 0.05,
@@ -3479,10 +3507,10 @@
         }
       ],
       "freshness": {
-        "avg_age_days": 19.9,
-        "weighted_avg_age": 22.6,
+        "avg_age_days": 28.6,
+        "weighted_avg_age": 26.3,
         "min_age_days": 1,
-        "max_age_days": 57
+        "max_age_days": 90
       },
       "factors": {
         "GDP": {
@@ -3503,11 +3531,11 @@
           "signal": "bearish",
           "signal_value": -0.667,
           "ind_weight": 1.0,
-          "actual": 3.8,
-          "forecast": 4.0,
-          "previous": 4.0,
+          "actual": 3.9,
+          "forecast": 4.1,
+          "previous": 4.1,
           "surprise_diff": -0.2,
-          "event_name": "Inflation Rate YoY (Jun)",
+          "event_name": "Inflation Rate YoY (Q2)",
           "release_date": "2026-07-29",
           "impact": "high"
         },
@@ -3589,6 +3617,19 @@
           "release_date": "2026-06-16",
           "impact": "high"
         },
+        "PPI": {
+          "indicator": "PPI",
+          "signal": "bearish",
+          "signal_value": -1.0,
+          "ind_weight": 1.0,
+          "actual": 3.0,
+          "forecast": 4.1,
+          "previous": 3.5,
+          "surprise_diff": -1.1,
+          "event_name": "Producer Price Index YoY (Q1)",
+          "release_date": "2026-05-01",
+          "impact": "medium"
+        },
         "CONFIDENCE": {
           "indicator": "CONFIDENCE",
           "signal": "bullish",
@@ -3619,9 +3660,9 @@
     },
     "NZD": {
       "ccy": "NZD",
-      "heatmap": 67,
-      "macro_score": 33,
-      "bias": "bull",
+      "heatmap": 64,
+      "macro_score": 28,
+      "bias": "wbull",
       "bull_count": 5,
       "bear_count": 1,
       "neutral_count": 1,
@@ -3730,18 +3771,18 @@
           "weight_orig": 0.1,
           "weight_eff": 0.1,
           "signal": "bullish",
-          "signal_value": 0.667,
+          "signal_value": 0.333,
           "factors": [
             {
               "indicator": "RETAIL_SALES",
               "signal": "bullish",
-              "signal_value": 0.667,
+              "signal_value": 0.333,
               "ind_weight": 1.0,
-              "actual": 0.9,
-              "forecast": 0.5,
-              "previous": 0.9,
-              "surprise_diff": 0.4,
-              "event_name": "Retail Sales QoQ (Q1)",
+              "actual": 1.0,
+              "forecast": 0.8,
+              "previous": 1.5,
+              "surprise_diff": 0.2,
+              "event_name": "Retail Sales QoQ",
               "release_date": "2026-05-21",
               "impact": "high"
             }
@@ -3749,7 +3790,7 @@
           "freshness": {
             "event_date": "2026-05-21",
             "age_days": 70,
-            "indicator": "Retail Sales QoQ (Q1)"
+            "indicator": "Retail Sales QoQ"
           }
         },
         {
@@ -3912,13 +3953,13 @@
         "RETAIL_SALES": {
           "indicator": "RETAIL_SALES",
           "signal": "bullish",
-          "signal_value": 0.667,
+          "signal_value": 0.333,
           "ind_weight": 1.0,
-          "actual": 0.9,
-          "forecast": 0.5,
-          "previous": 0.9,
-          "surprise_diff": 0.4,
-          "event_name": "Retail Sales QoQ (Q1)",
+          "actual": 1.0,
+          "forecast": 0.8,
+          "previous": 1.5,
+          "surprise_diff": 0.2,
+          "event_name": "Retail Sales QoQ",
           "release_date": "2026-05-21",
           "impact": "high"
         },

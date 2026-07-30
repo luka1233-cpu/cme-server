@@ -4,8 +4,8 @@
   "build": "2026-07-12",
   "status": "complete",
   "date": "2026-07-30",
-  "datasetId": "2026-07-30T09:25:58.173209+00:00",
-  "generatedAt": "2026-07-30T09:26:14.804Z",
+  "datasetId": "2026-07-30T10:33:19.066714+00:00",
+  "generatedAt": "2026-07-30T10:33:38.011Z",
   "cotReportDate": "2026-07-21",
   "newsLoaded": true,
   "heatmapLoaded": true,
@@ -77,13 +77,13 @@
           "opposed": false,
           "gap": 3
         },
-        "heatmapPercent": 55,
+        "heatmapPercent": 54,
         "heatmapCoverage": 1,
         "newsImpulse": 0,
         "newsContrib": [],
         "cotBias": "Bullish",
         "weeklyBias": "Bullish",
-        "heatmapBias": "Bullish",
+        "heatmapBias": "Neutral",
         "tqBias": "Strong",
         "cotMomentumScore": 22,
         "cotLevelScore": 46,
@@ -93,7 +93,7 @@
       "score": 47,
       "bias": "wbull",
       "coverage": 1,
-      "heatmap": 55,
+      "heatmap": 54,
       "cot_longPct": 65.3,
       "cot_deltaPct6w": 14,
       "cot_tq": 5
@@ -161,28 +161,10 @@
           "opposed": false,
           "gap": 3
         },
-        "heatmapPercent": 72,
+        "heatmapPercent": 75,
         "heatmapCoverage": 1,
         "newsImpulse": 15,
         "newsContrib": [
-          {
-            "item": {
-              "ccy": "EUR",
-              "type": "GDP",
-              "eventName": "GDP Growth Rate QoQ (Q2)",
-              "impact": "high",
-              "actual": 0.4,
-              "forecast": 0.2,
-              "previous": 0,
-              "date": "2026-07-30 09:00:00",
-              "daysAgo": 0,
-              "surpriseDiff": 0.2,
-              "impulseBase": 3.33,
-              "impulse": 3.33,
-              "decay": 1
-            },
-            "pts": 3.33
-          },
           {
             "item": {
               "ccy": "EUR",
@@ -200,6 +182,24 @@
               "decay": 1
             },
             "pts": 8.33
+          },
+          {
+            "item": {
+              "ccy": "EUR",
+              "type": "GDP",
+              "eventName": "GDP Growth Rate QoQ (Q2)",
+              "impact": "high",
+              "actual": 0.4,
+              "forecast": 0.2,
+              "previous": 0,
+              "date": "2026-07-30 09:00:00",
+              "daysAgo": 0,
+              "surpriseDiff": 0.2,
+              "impulseBase": 3.33,
+              "impulse": 3.33,
+              "decay": 1
+            },
+            "pts": 3.33
           },
           {
             "item": {
@@ -268,7 +268,7 @@
       "score": -25,
       "bias": "wbear",
       "coverage": 1,
-      "heatmap": 72,
+      "heatmap": 75,
       "cot_longPct": 45.7,
       "cot_deltaPct6w": -6,
       "cot_tq": 4
@@ -336,7 +336,7 @@
           "opposed": false,
           "gap": 3
         },
-        "heatmapPercent": 71,
+        "heatmapPercent": 72,
         "heatmapCoverage": 1,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -352,7 +352,7 @@
       "score": 53,
       "bias": "wbull",
       "coverage": 1,
-      "heatmap": 71,
+      "heatmap": 72,
       "cot_longPct": 34.9,
       "cot_deltaPct6w": 6,
       "cot_tq": 3
@@ -420,7 +420,7 @@
           "opposed": false,
           "gap": 0
         },
-        "heatmapPercent": 67,
+        "heatmapPercent": 68,
         "heatmapCoverage": 1,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -436,7 +436,7 @@
       "score": -27,
       "bias": "wbear",
       "coverage": 1,
-      "heatmap": 67,
+      "heatmap": 68,
       "cot_longPct": 29.3,
       "cot_deltaPct6w": -2,
       "cot_tq": 4
@@ -588,7 +588,7 @@
           "opposed": false,
           "gap": 1
         },
-        "heatmapPercent": 39,
+        "heatmapPercent": 38,
         "heatmapCoverage": 1,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -604,7 +604,7 @@
       "score": -21,
       "bias": "wbear",
       "coverage": 1,
-      "heatmap": 39,
+      "heatmap": 38,
       "cot_longPct": 11.8,
       "cot_deltaPct6w": -8,
       "cot_tq": 6
@@ -672,8 +672,8 @@
           "opposed": false,
           "gap": 1
         },
-        "heatmapPercent": 56,
-        "heatmapCoverage": 0.9,
+        "heatmapPercent": 59,
+        "heatmapCoverage": 0.85,
         "newsImpulse": 0,
         "newsContrib": [],
         "cotBias": "Bearish",
@@ -687,8 +687,8 @@
       },
       "score": -52,
       "bias": "wbear",
-      "coverage": 0.9,
-      "heatmap": 56,
+      "coverage": 0.85,
+      "heatmap": 59,
       "cot_longPct": 38.9,
       "cot_deltaPct6w": -16,
       "cot_tq": 6
@@ -1310,9 +1310,9 @@
   },
   "fundamentals": {
     "USD": {
-      "bias": "wbull",
-      "heatmap": 55,
-      "macro_score": 10,
+      "bias": "neut",
+      "heatmap": 54,
+      "macro_score": 8,
       "bull_count": 3,
       "bear_count": 4,
       "coverage": 1.0,
@@ -1327,7 +1327,7 @@
           "category": "CPI",
           "label": "Inflation",
           "signal": "bearish",
-          "signal_value": -0.4
+          "signal_value": -0.493
         },
         {
           "category": "EMPLOYMENT",
@@ -1375,10 +1375,10 @@
     },
     "EUR": {
       "bias": "bull",
-      "heatmap": 72,
-      "macro_score": 45,
-      "bull_count": 7,
-      "bear_count": 2,
+      "heatmap": 75,
+      "macro_score": 51,
+      "bull_count": 8,
+      "bear_count": 1,
       "coverage": 1.0,
       "categories": [
         {
@@ -1397,7 +1397,7 @@
           "category": "EMPLOYMENT",
           "label": "Employment",
           "signal": "bullish",
-          "signal_value": 0.676
+          "signal_value": 0.516
         },
         {
           "category": "PMI_MFG",
@@ -1426,8 +1426,8 @@
         {
           "category": "PPI",
           "label": "PPI",
-          "signal": "bearish",
-          "signal_value": -1.0
+          "signal": "bullish",
+          "signal_value": 0.667
         },
         {
           "category": "CONFIDENCE",
@@ -1439,8 +1439,8 @@
     },
     "GBP": {
       "bias": "bull",
-      "heatmap": 71,
-      "macro_score": 43,
+      "heatmap": 72,
+      "macro_score": 44,
       "bull_count": 5,
       "bear_count": 2,
       "coverage": 1.0,
@@ -1491,7 +1491,7 @@
           "category": "PPI",
           "label": "PPI",
           "signal": "bearish",
-          "signal_value": -1.0
+          "signal_value": -0.833
         },
         {
           "category": "CONFIDENCE",
@@ -1503,9 +1503,9 @@
     },
     "JPY": {
       "bias": "bull",
-      "heatmap": 67,
-      "macro_score": 35,
-      "bull_count": 4,
+      "heatmap": 68,
+      "macro_score": 36,
+      "bull_count": 5,
       "bear_count": 1,
       "coverage": 1.0,
       "categories": [
@@ -1554,8 +1554,8 @@
         {
           "category": "PPI",
           "label": "PPI",
-          "signal": "neutral",
-          "signal_value": 0.0
+          "signal": "bullish",
+          "signal_value": 0.5
         },
         {
           "category": "CONFIDENCE",
@@ -1625,7 +1625,7 @@
     },
     "CAD": {
       "bias": "wbear",
-      "heatmap": 39,
+      "heatmap": 38,
       "macro_score": -23,
       "bull_count": 1,
       "bear_count": 5,
@@ -1641,7 +1641,7 @@
           "category": "CPI",
           "label": "Inflation",
           "signal": "bearish",
-          "signal_value": -0.185
+          "signal_value": -0.333
         },
         {
           "category": "EMPLOYMENT",
@@ -1677,7 +1677,7 @@
           "category": "PPI",
           "label": "PPI",
           "signal": "bearish",
-          "signal_value": -1.0
+          "signal_value": -0.667
         },
         {
           "category": "CONFIDENCE",
@@ -1689,11 +1689,11 @@
     },
     "AUD": {
       "bias": "wbull",
-      "heatmap": 56,
-      "macro_score": 11,
+      "heatmap": 59,
+      "macro_score": 17,
       "bull_count": 4,
-      "bear_count": 3,
-      "coverage": 0.9,
+      "bear_count": 2,
+      "coverage": 0.85,
       "categories": [
         {
           "category": "GDP",
@@ -1730,12 +1730,6 @@
           "label": "Interest Rate / Wages",
           "signal": "neutral",
           "signal_value": 0.0
-        },
-        {
-          "category": "PPI",
-          "label": "PPI",
-          "signal": "bearish",
-          "signal_value": -0.833
         },
         {
           "category": "CONFIDENCE",
@@ -1798,6 +1792,6 @@
       ]
     }
   },
-  "fundamentalsGeneratedAt": "2026-07-30T09:25:58.173209+00:00",
+  "fundamentalsGeneratedAt": "2026-07-30T10:33:19.066714+00:00",
   "schemaVersion": 2
 }
