@@ -1,5 +1,21 @@
 {
-  "generatedAt": "2026-08-03T07:32:05.014343+00:00",
+  "generatedAt": "2026-08-03T14:02:35.682147+00:00",
   "daysBack": 7,
-  "news": []
+  "news": [
+    {
+      "ccy": "USD",
+      "type": "PMI",
+      "eventName": "ISM Manufacturing PMI (Jul)",
+      "impact": "high",
+      "actual": 55.6,
+      "forecast": 54.0,
+      "previous": 53.3,
+      "date": "2026-08-03 14:00:00",
+      "daysAgo": 0,
+      "surpriseDiff": 1.6,
+      "impulseBase": 10.0,
+      "impulse": 10.0,
+      "decay": 1.0
+    }
+  ]
 }
