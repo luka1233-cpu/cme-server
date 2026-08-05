@@ -4,8 +4,8 @@
   "build": "2026-07-12",
   "status": "complete",
   "date": "2026-08-05",
-  "datasetId": "2026-08-05T16:03:29.774577+00:00",
-  "generatedAt": "2026-08-05T16:03:46.664Z",
+  "datasetId": "2026-08-05T16:05:03.856720+00:00",
+  "generatedAt": "2026-08-05T16:05:20.725Z",
   "cotReportDate": "2026-07-28",
   "newsLoaded": true,
   "heatmapLoaded": true,
@@ -85,7 +85,7 @@
             "item": {
               "ccy": "USD",
               "type": "PMI",
-              "eventName": "ISM Services PMI (Jul)",
+              "eventName": "ISM Non-Manufacturing PMI (Jul)",
               "impact": "high",
               "actual": 54.1,
               "forecast": 54.5,
@@ -103,7 +103,7 @@
             "item": {
               "ccy": "USD",
               "type": "PMI",
-              "eventName": "ISM Non-Manufacturing PMI (Jul)",
+              "eventName": "ISM Services PMI (Jul)",
               "impact": "high",
               "actual": 54.1,
               "forecast": 54.5,
@@ -552,8 +552,8 @@
           "opposed": false,
           "gap": 1
         },
-        "heatmapPercent": 55,
-        "heatmapCoverage": 0.85,
+        "heatmapPercent": 57,
+        "heatmapCoverage": 1,
         "newsImpulse": 0,
         "newsContrib": [],
         "cotBias": "Bearish",
@@ -567,8 +567,8 @@
       },
       "score": -38,
       "bias": "wbear",
-      "coverage": 0.85,
-      "heatmap": 55,
+      "coverage": 1,
+      "heatmap": 57,
       "cot_longPct": 10.2,
       "cot_deltaPct6w": -9,
       "cot_tq": 6
@@ -636,8 +636,8 @@
           "opposed": true,
           "gap": 7
         },
-        "heatmapPercent": 57,
-        "heatmapCoverage": 0.828,
+        "heatmapPercent": 58,
+        "heatmapCoverage": 0.908,
         "newsImpulse": 0,
         "newsContrib": [],
         "cotBias": "Bearish",
@@ -651,8 +651,8 @@
       },
       "score": -40,
       "bias": "wbear",
-      "coverage": 0.828,
-      "heatmap": 57,
+      "coverage": 0.908,
+      "heatmap": 58,
       "cot_longPct": 38.6,
       "cot_deltaPct6w": -10,
       "cot_tq": 6
@@ -721,7 +721,7 @@
           "gap": 8
         },
         "heatmapPercent": 73,
-        "heatmapCoverage": 0.76,
+        "heatmapCoverage": 0.81,
         "newsImpulse": 0,
         "newsContrib": [],
         "cotBias": "Bearish",
@@ -735,7 +735,7 @@
       },
       "score": 6,
       "bias": "neut",
-      "coverage": 0.76,
+      "coverage": 0.81,
       "heatmap": 73,
       "cot_longPct": 11.2,
       "cot_deltaPct6w": -3,
@@ -1595,11 +1595,11 @@
     },
     "CAD": {
       "bias": "wbull",
-      "heatmap": 55,
-      "macro_score": 10,
-      "bull_count": 3,
+      "heatmap": 57,
+      "macro_score": 15,
+      "bull_count": 4,
       "bear_count": 4,
-      "coverage": 0.85,
+      "coverage": 1.0,
       "categories": [
         {
           "category": "GDP",
@@ -1654,16 +1654,22 @@
           "label": "Confidence / Other",
           "signal": "bearish",
           "signal_value": -1.0
+        },
+        {
+          "category": "COMMODITY",
+          "label": "Commodity",
+          "signal": "bullish",
+          "signal_value": 0.387
         }
       ]
     },
     "AUD": {
       "bias": "wbull",
-      "heatmap": 57,
-      "macro_score": 14,
-      "bull_count": 5,
+      "heatmap": 58,
+      "macro_score": 17,
+      "bull_count": 6,
       "bear_count": 2,
-      "coverage": 0.828,
+      "coverage": 0.908,
       "categories": [
         {
           "category": "GDP",
@@ -1712,6 +1718,12 @@
           "label": "Confidence / Other",
           "signal": "bullish",
           "signal_value": 0.905
+        },
+        {
+          "category": "COMMODITY",
+          "label": "Commodity",
+          "signal": "bullish",
+          "signal_value": 0.387
         }
       ]
     },
@@ -1719,9 +1731,9 @@
       "bias": "bull",
       "heatmap": 73,
       "macro_score": 46,
-      "bull_count": 6,
+      "bull_count": 7,
       "bear_count": 0,
-      "coverage": 0.76,
+      "coverage": 0.81,
       "categories": [
         {
           "category": "GDP",
@@ -1764,10 +1776,16 @@
           "label": "Confidence / Other",
           "signal": "bullish",
           "signal_value": 0.952
+        },
+        {
+          "category": "COMMODITY",
+          "label": "Commodity",
+          "signal": "bullish",
+          "signal_value": 0.387
         }
       ]
     }
   },
-  "fundamentalsGeneratedAt": "2026-08-05T16:03:29.774577+00:00",
+  "fundamentalsGeneratedAt": "2026-08-05T16:05:03.856720+00:00",
   "schemaVersion": 2
 }
