@@ -1,30 +1,28 @@
 {
-  "generatedAt": "2026-08-05T15:32:47.768046+00:00",
+  "generatedAt": "2026-08-05T15:58:04.067654+00:00",
   "source": "FMP Economic Calendar (auto)",
   "model": "V1 — category weighted, signal: -1/0/+1",
   "currencies": {
     "USD": {
       "ccy": "USD",
-      "heatmap": 26,
-      "macro_score": -48,
+      "heatmap": 22,
+      "macro_score": -56,
       "bias": "bear",
-      "bull_count": 2,
-      "bear_count": 5,
-      "neutral_count": 2,
+      "bull_count": 1,
+      "bear_count": 6,
+      "neutral_count": 3,
       "model_coverage": 1.0,
       "categories": [
         {
           "category": "GDP",
           "label": "GDP Growth",
-          "weight_orig": 0.2,
-          "weight_eff": 0.2,
+          "weight_orig": 0.196,
+          "weight_eff": 0.196,
           "signal": "bearish",
           "signal_value": -1.0,
           "factors": [
             {
               "indicator": "GDP",
-              "display_name": "GDP Growth",
-              "tooltip": "Gross Domestic Product growth rate",
               "signal": "bearish",
               "signal_value": -1.0,
               "ind_weight": 1.0,
@@ -46,15 +44,13 @@
         {
           "category": "CPI",
           "label": "Inflation",
-          "weight_orig": 0.15,
-          "weight_eff": 0.15,
+          "weight_orig": 0.147,
+          "weight_eff": 0.147,
           "signal": "bearish",
           "signal_value": -0.613,
           "factors": [
             {
               "indicator": "CPI",
-              "display_name": "CPI",
-              "tooltip": "Consumer Price Index — headline inflation",
               "signal": "bearish",
               "signal_value": -1.0,
               "ind_weight": 1.0,
@@ -68,31 +64,27 @@
             },
             {
               "indicator": "CORE_CPI",
-              "display_name": "Core CPI",
-              "tooltip": "CPI excluding food and energy",
               "signal": "bearish",
               "signal_value": -0.667,
               "ind_weight": 0.8,
-              "actual": 2.6,
-              "forecast": 2.8,
-              "previous": 2.9,
+              "actual": 0.0,
+              "forecast": 0.2,
+              "previous": 0.2,
               "surprise_diff": -0.2,
-              "event_name": "Core Inflation Rate YoY (Jun)",
+              "event_name": "Core Inflation Rate MoM (Jun)",
               "release_date": "2026-07-14",
               "impact": "high"
             },
             {
               "indicator": "PCE",
-              "display_name": "PCE",
-              "tooltip": "Personal Consumption Expenditures — headline",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 0.7,
-              "actual": -0.1,
-              "forecast": -0.1,
-              "previous": 0.5,
+              "actual": 3.7,
+              "forecast": 3.7,
+              "previous": 4.1,
               "surprise_diff": 0.0,
-              "event_name": "PCE Price Index MoM (Jun)",
+              "event_name": "PCE Price Index YoY (Jun)",
               "release_date": "2026-07-30",
               "impact": "high"
             }
@@ -106,15 +98,13 @@
         {
           "category": "EMPLOYMENT",
           "label": "Employment",
-          "weight_orig": 0.15,
-          "weight_eff": 0.15,
+          "weight_orig": 0.147,
+          "weight_eff": 0.147,
           "signal": "bearish",
           "signal_value": -0.44,
           "factors": [
             {
               "indicator": "NFP",
-              "display_name": "Non-Farm Payrolls",
-              "tooltip": "US monthly job additions (ex-farm sector)",
               "signal": "bearish",
               "signal_value": -1.0,
               "ind_weight": 1.0,
@@ -128,8 +118,6 @@
             },
             {
               "indicator": "ADP",
-              "display_name": "ADP",
-              "tooltip": "Private sector employment estimate (ADP)",
               "signal": "bearish",
               "signal_value": -1.0,
               "ind_weight": 0.3,
@@ -143,8 +131,6 @@
             },
             {
               "indicator": "UNEMPLOYMENT",
-              "display_name": "Unemployment Rate",
-              "tooltip": "Headline unemployment rate (U-3)",
               "signal": "bullish",
               "signal_value": 0.333,
               "ind_weight": 0.6,
@@ -158,8 +144,6 @@
             },
             {
               "indicator": "JOBLESS_CLAIMS",
-              "display_name": "Jobless Claims",
-              "tooltip": "Initial weekly unemployment claims",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 0.3,
@@ -173,8 +157,6 @@
             },
             {
               "indicator": "JOLTS",
-              "display_name": "JOLTS",
-              "tooltip": "Job Openings and Labor Turnover Survey",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 0.3,
@@ -196,15 +178,13 @@
         {
           "category": "PMI_MFG",
           "label": "PMI Manufacturing",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
+          "weight_orig": 0.098,
+          "weight_eff": 0.098,
           "signal": "bearish",
           "signal_value": -0.444,
           "factors": [
             {
               "indicator": "PMI_MFG",
-              "display_name": "PMI Mfg",
-              "tooltip": "Manufacturing PMI — above 50 = expansion",
               "signal": "bearish",
               "signal_value": -0.444,
               "ind_weight": 1.0,
@@ -226,15 +206,13 @@
         {
           "category": "PMI_SVC",
           "label": "PMI Services",
-          "weight_orig": 0.1,
-          "weight_eff": 0.03,
+          "weight_orig": 0.098,
+          "weight_eff": 0.029,
           "signal": "neutral",
           "signal_value": 0.097,
           "factors": [
             {
               "indicator": "PMI_SVC",
-              "display_name": "PMI Services",
-              "tooltip": "Services PMI — above 50 = expansion",
               "signal": "bearish",
               "signal_value": -0.444,
               "ind_weight": 1.0,
@@ -248,8 +226,6 @@
             },
             {
               "indicator": "PMI_COMP",
-              "display_name": "PMI Composite",
-              "tooltip": "Composite PMI (manufacturing + services)",
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 0.6,
@@ -271,15 +247,13 @@
         {
           "category": "RETAIL",
           "label": "Retail Sales",
-          "weight_orig": 0.1,
-          "weight_eff": 0.03,
+          "weight_orig": 0.098,
+          "weight_eff": 0.029,
           "signal": "neutral",
           "signal_value": 0.0,
           "factors": [
             {
               "indicator": "RETAIL_SALES",
-              "display_name": "Retail Sales",
-              "tooltip": "Monthly retail sales change",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 1.0,
@@ -301,15 +275,13 @@
         {
           "category": "RATES",
           "label": "Interest Rate / Wages",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
-          "signal": "bullish",
-          "signal_value": 0.25,
+          "weight_orig": 0.098,
+          "weight_eff": 0.029,
+          "signal": "neutral",
+          "signal_value": -0.125,
           "factors": [
             {
               "indicator": "INTEREST_RATE",
-              "display_name": "Interest Rate",
-              "tooltip": "Central bank benchmark interest rate",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 1.0,
@@ -323,16 +295,14 @@
             },
             {
               "indicator": "WAGES",
-              "display_name": "Wages",
-              "tooltip": "Average earnings / wage growth",
-              "signal": "bullish",
-              "signal_value": 0.667,
+              "signal": "bearish",
+              "signal_value": -0.333,
               "ind_weight": 0.6,
-              "actual": 0.9,
-              "forecast": 0.7,
-              "previous": 0.8,
-              "surprise_diff": 0.2,
-              "event_name": "Employment Cost - Wages QoQ (Q2)",
+              "actual": 1.0,
+              "forecast": 1.1,
+              "previous": 1.2,
+              "surprise_diff": -0.1,
+              "event_name": "Employment Cost - Benefits QoQ (Q2)",
               "release_date": "2026-07-31",
               "impact": "medium"
             }
@@ -346,15 +316,13 @@
         {
           "category": "PPI",
           "label": "PPI",
-          "weight_orig": 0.05,
-          "weight_eff": 0.05,
+          "weight_orig": 0.049,
+          "weight_eff": 0.049,
           "signal": "bearish",
           "signal_value": -1.0,
           "factors": [
             {
               "indicator": "PPI",
-              "display_name": "PPI",
-              "tooltip": "Producer Price Index — upstream inflation",
               "signal": "bearish",
               "signal_value": -1.0,
               "ind_weight": 1.0,
@@ -376,15 +344,13 @@
         {
           "category": "CONFIDENCE",
           "label": "Confidence / Other",
-          "weight_orig": 0.05,
-          "weight_eff": 0.05,
+          "weight_orig": 0.049,
+          "weight_eff": 0.049,
           "signal": "bullish",
-          "signal_value": 0.182,
+          "signal_value": 0.418,
           "factors": [
             {
               "indicator": "CONFIDENCE",
-              "display_name": "Confidence",
-              "tooltip": "Consumer or business confidence index",
               "signal": "bullish",
               "signal_value": 0.8,
               "ind_weight": 1.0,
@@ -398,23 +364,19 @@
             },
             {
               "indicator": "INDUSTRIAL_PROD",
-              "display_name": "Industrial Prod.",
-              "tooltip": "Industrial production output",
-              "signal": "bearish",
-              "signal_value": -0.667,
+              "signal": "neutral",
+              "signal_value": 0.0,
               "ind_weight": 0.6,
-              "actual": 1.1,
-              "forecast": 1.5,
-              "previous": 1.6,
-              "surprise_diff": -0.4,
-              "event_name": "Industrial Production YoY (Jun)",
+              "actual": 0.1,
+              "forecast": 0.2,
+              "previous": 0.1,
+              "surprise_diff": -0.1,
+              "event_name": "Industrial Production MoM (Jun)",
               "release_date": "2026-07-17",
               "impact": "medium"
             },
             {
               "indicator": "TRADE_BALANCE",
-              "display_name": "Trade Balance",
-              "tooltip": "Exports minus imports",
               "signal": "bearish",
               "signal_value": -0.8,
               "ind_weight": 0.05,
@@ -428,8 +390,6 @@
             },
             {
               "indicator": "CURRENT_ACCOUNT",
-              "display_name": "Current Account",
-              "tooltip": "Broadest measure of trade and transfers",
               "signal": "bearish",
               "signal_value": -1.0,
               "ind_weight": 0.05,
@@ -447,19 +407,45 @@
             "age_days": 5,
             "indicator": "Michigan Consumer Sentiment (Jul)"
           }
+        },
+        {
+          "category": "COMMODITY",
+          "label": "Commodity",
+          "weight_orig": 0.02,
+          "weight_eff": 0.02,
+          "signal": "bearish",
+          "signal_value": -1.0,
+          "factors": [
+            {
+              "indicator": "OIL_INVENTORIES",
+              "signal": "bearish",
+              "signal_value": -1.0,
+              "ind_weight": 0.25,
+              "actual": 2.479,
+              "forecast": -1.5,
+              "previous": -7.167,
+              "surprise_diff": 3.979,
+              "event_name": "EIA Crude Oil Stocks Change (Jul/31)",
+              "release_date": "2026-08-05",
+              "impact": "high"
+            }
+          ],
+          "freshness": {
+            "event_date": "2026-08-05",
+            "age_days": 0,
+            "indicator": "EIA Crude Oil Stocks Change (Jul/31)"
+          }
         }
       ],
       "freshness": {
-        "avg_age_days": 12.8,
-        "weighted_avg_age": 13.6,
+        "avg_age_days": 11.5,
+        "weighted_avg_age": 13.3,
         "min_age_days": 0,
         "max_age_days": 34
       },
       "factors": {
         "GDP": {
           "indicator": "GDP",
-          "display_name": "GDP Growth",
-          "tooltip": "Gross Domestic Product growth rate",
           "signal": "bearish",
           "signal_value": -1.0,
           "ind_weight": 1.0,
@@ -473,8 +459,6 @@
         },
         "CPI": {
           "indicator": "CPI",
-          "display_name": "CPI",
-          "tooltip": "Consumer Price Index — headline inflation",
           "signal": "bearish",
           "signal_value": -1.0,
           "ind_weight": 1.0,
@@ -488,38 +472,32 @@
         },
         "CORE_CPI": {
           "indicator": "CORE_CPI",
-          "display_name": "Core CPI",
-          "tooltip": "CPI excluding food and energy",
           "signal": "bearish",
           "signal_value": -0.667,
           "ind_weight": 0.8,
-          "actual": 2.6,
-          "forecast": 2.8,
-          "previous": 2.9,
+          "actual": 0.0,
+          "forecast": 0.2,
+          "previous": 0.2,
           "surprise_diff": -0.2,
-          "event_name": "Core Inflation Rate YoY (Jun)",
+          "event_name": "Core Inflation Rate MoM (Jun)",
           "release_date": "2026-07-14",
           "impact": "high"
         },
         "PCE": {
           "indicator": "PCE",
-          "display_name": "PCE",
-          "tooltip": "Personal Consumption Expenditures — headline",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 0.7,
-          "actual": -0.1,
-          "forecast": -0.1,
-          "previous": 0.5,
+          "actual": 3.7,
+          "forecast": 3.7,
+          "previous": 4.1,
           "surprise_diff": 0.0,
-          "event_name": "PCE Price Index MoM (Jun)",
+          "event_name": "PCE Price Index YoY (Jun)",
           "release_date": "2026-07-30",
           "impact": "high"
         },
         "NFP": {
           "indicator": "NFP",
-          "display_name": "Non-Farm Payrolls",
-          "tooltip": "US monthly job additions (ex-farm sector)",
           "signal": "bearish",
           "signal_value": -1.0,
           "ind_weight": 1.0,
@@ -533,8 +511,6 @@
         },
         "ADP": {
           "indicator": "ADP",
-          "display_name": "ADP",
-          "tooltip": "Private sector employment estimate (ADP)",
           "signal": "bearish",
           "signal_value": -1.0,
           "ind_weight": 0.3,
@@ -548,8 +524,6 @@
         },
         "UNEMPLOYMENT": {
           "indicator": "UNEMPLOYMENT",
-          "display_name": "Unemployment Rate",
-          "tooltip": "Headline unemployment rate (U-3)",
           "signal": "bullish",
           "signal_value": 0.333,
           "ind_weight": 0.6,
@@ -563,8 +537,6 @@
         },
         "JOBLESS_CLAIMS": {
           "indicator": "JOBLESS_CLAIMS",
-          "display_name": "Jobless Claims",
-          "tooltip": "Initial weekly unemployment claims",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 0.3,
@@ -578,8 +550,6 @@
         },
         "JOLTS": {
           "indicator": "JOLTS",
-          "display_name": "JOLTS",
-          "tooltip": "Job Openings and Labor Turnover Survey",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 0.3,
@@ -593,8 +563,6 @@
         },
         "PMI_MFG": {
           "indicator": "PMI_MFG",
-          "display_name": "PMI Mfg",
-          "tooltip": "Manufacturing PMI — above 50 = expansion",
           "signal": "bearish",
           "signal_value": -0.444,
           "ind_weight": 1.0,
@@ -608,8 +576,6 @@
         },
         "PMI_SVC": {
           "indicator": "PMI_SVC",
-          "display_name": "PMI Services",
-          "tooltip": "Services PMI — above 50 = expansion",
           "signal": "bearish",
           "signal_value": -0.444,
           "ind_weight": 1.0,
@@ -623,8 +589,6 @@
         },
         "PMI_COMP": {
           "indicator": "PMI_COMP",
-          "display_name": "PMI Composite",
-          "tooltip": "Composite PMI (manufacturing + services)",
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 0.6,
@@ -638,8 +602,6 @@
         },
         "RETAIL_SALES": {
           "indicator": "RETAIL_SALES",
-          "display_name": "Retail Sales",
-          "tooltip": "Monthly retail sales change",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 1.0,
@@ -653,8 +615,6 @@
         },
         "INTEREST_RATE": {
           "indicator": "INTEREST_RATE",
-          "display_name": "Interest Rate",
-          "tooltip": "Central bank benchmark interest rate",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 1.0,
@@ -668,23 +628,19 @@
         },
         "WAGES": {
           "indicator": "WAGES",
-          "display_name": "Wages",
-          "tooltip": "Average earnings / wage growth",
-          "signal": "bullish",
-          "signal_value": 0.667,
+          "signal": "bearish",
+          "signal_value": -0.333,
           "ind_weight": 0.6,
-          "actual": 0.9,
-          "forecast": 0.7,
-          "previous": 0.8,
-          "surprise_diff": 0.2,
-          "event_name": "Employment Cost - Wages QoQ (Q2)",
+          "actual": 1.0,
+          "forecast": 1.1,
+          "previous": 1.2,
+          "surprise_diff": -0.1,
+          "event_name": "Employment Cost - Benefits QoQ (Q2)",
           "release_date": "2026-07-31",
           "impact": "medium"
         },
         "PPI": {
           "indicator": "PPI",
-          "display_name": "PPI",
-          "tooltip": "Producer Price Index — upstream inflation",
           "signal": "bearish",
           "signal_value": -1.0,
           "ind_weight": 1.0,
@@ -698,8 +654,6 @@
         },
         "CONFIDENCE": {
           "indicator": "CONFIDENCE",
-          "display_name": "Confidence",
-          "tooltip": "Consumer or business confidence index",
           "signal": "bullish",
           "signal_value": 0.8,
           "ind_weight": 1.0,
@@ -713,23 +667,19 @@
         },
         "INDUSTRIAL_PROD": {
           "indicator": "INDUSTRIAL_PROD",
-          "display_name": "Industrial Prod.",
-          "tooltip": "Industrial production output",
-          "signal": "bearish",
-          "signal_value": -0.667,
+          "signal": "neutral",
+          "signal_value": 0.0,
           "ind_weight": 0.6,
-          "actual": 1.1,
-          "forecast": 1.5,
-          "previous": 1.6,
-          "surprise_diff": -0.4,
-          "event_name": "Industrial Production YoY (Jun)",
+          "actual": 0.1,
+          "forecast": 0.2,
+          "previous": 0.1,
+          "surprise_diff": -0.1,
+          "event_name": "Industrial Production MoM (Jun)",
           "release_date": "2026-07-17",
           "impact": "medium"
         },
         "TRADE_BALANCE": {
           "indicator": "TRADE_BALANCE",
-          "display_name": "Trade Balance",
-          "tooltip": "Exports minus imports",
           "signal": "bearish",
           "signal_value": -0.8,
           "ind_weight": 0.05,
@@ -743,8 +693,6 @@
         },
         "CURRENT_ACCOUNT": {
           "indicator": "CURRENT_ACCOUNT",
-          "display_name": "Current Account",
-          "tooltip": "Broadest measure of trade and transfers",
           "signal": "bearish",
           "signal_value": -1.0,
           "ind_weight": 0.05,
@@ -755,31 +703,42 @@
           "event_name": "Current Account (Q1)",
           "release_date": "2026-06-24",
           "impact": "medium"
+        },
+        "OIL_INVENTORIES": {
+          "indicator": "OIL_INVENTORIES",
+          "signal": "bearish",
+          "signal_value": -1.0,
+          "ind_weight": 0.25,
+          "actual": 2.479,
+          "forecast": -1.5,
+          "previous": -7.167,
+          "surprise_diff": 3.979,
+          "event_name": "EIA Crude Oil Stocks Change (Jul/31)",
+          "release_date": "2026-08-05",
+          "impact": "high"
         }
       }
     },
     "EUR": {
       "ccy": "EUR",
-      "heatmap": 66,
+      "heatmap": 65,
       "macro_score": 31,
       "bias": "bull",
-      "bull_count": 6,
+      "bull_count": 7,
       "bear_count": 1,
-      "neutral_count": 2,
-      "model_coverage": 1.0,
+      "neutral_count": 1,
+      "model_coverage": 0.98,
       "categories": [
         {
           "category": "GDP",
           "label": "GDP Growth",
-          "weight_orig": 0.2,
-          "weight_eff": 0.2,
+          "weight_orig": 0.196,
+          "weight_eff": 0.196,
           "signal": "bullish",
           "signal_value": 0.333,
           "factors": [
             {
               "indicator": "GDP",
-              "display_name": "GDP Growth",
-              "tooltip": "Gross Domestic Product growth rate",
               "signal": "bullish",
               "signal_value": 0.333,
               "ind_weight": 1.0,
@@ -801,30 +760,26 @@
         {
           "category": "CPI",
           "label": "Inflation",
-          "weight_orig": 0.15,
-          "weight_eff": 0.15,
+          "weight_orig": 0.147,
+          "weight_eff": 0.147,
           "signal": "bullish",
-          "signal_value": 0.333,
+          "signal_value": 0.214,
           "factors": [
             {
               "indicator": "CPI",
-              "display_name": "CPI",
-              "tooltip": "Consumer Price Index — headline inflation",
-              "signal": "bullish",
-              "signal_value": 0.333,
+              "signal": "neutral",
+              "signal_value": 0.0,
               "ind_weight": 1.0,
               "actual": 2.9,
-              "forecast": 2.8,
-              "previous": 3.0,
-              "surprise_diff": 0.1,
-              "event_name": "Harmonised Inflation Rate YoY (Jul)",
+              "forecast": 2.9,
+              "previous": 2.8,
+              "surprise_diff": 0.0,
+              "event_name": "Inflation Rate YoY (Jul)",
               "release_date": "2026-07-31",
               "impact": "high"
             },
             {
               "indicator": "CORE_CPI",
-              "display_name": "Core CPI",
-              "tooltip": "CPI excluding food and energy",
               "signal": "bullish",
               "signal_value": 0.333,
               "ind_weight": 0.8,
@@ -832,14 +787,12 @@
               "forecast": 2.4,
               "previous": 2.4,
               "surprise_diff": 0.1,
-              "event_name": "Core Inflation Rate YoY (Jul)",
+              "event_name": "Core CPI YoY (Jul)",
               "release_date": "2026-07-31",
               "impact": "high"
             },
             {
               "indicator": "HICP",
-              "display_name": "HICP",
-              "tooltip": "Harmonized Index of Consumer Prices (EU)",
               "signal": "bullish",
               "signal_value": 0.333,
               "ind_weight": 1.0,
@@ -855,21 +808,19 @@
           "freshness": {
             "event_date": "2026-07-31",
             "age_days": 5,
-            "indicator": "Harmonised Inflation Rate YoY (Jul)"
+            "indicator": "Inflation Rate YoY (Jul)"
           }
         },
         {
           "category": "EMPLOYMENT",
           "label": "Employment",
-          "weight_orig": 0.15,
-          "weight_eff": 0.15,
+          "weight_orig": 0.147,
+          "weight_eff": 0.147,
           "signal": "bullish",
           "signal_value": 0.68,
           "factors": [
             {
               "indicator": "NFP",
-              "display_name": "Non-Farm Payrolls",
-              "tooltip": "US monthly job additions (ex-farm sector)",
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 1.0,
@@ -883,8 +834,6 @@
             },
             {
               "indicator": "EMPLOYMENT",
-              "display_name": "Employment",
-              "tooltip": "Employment change",
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 0.9,
@@ -898,8 +847,6 @@
             },
             {
               "indicator": "UNEMPLOYMENT",
-              "display_name": "Unemployment Rate",
-              "tooltip": "Headline unemployment rate (U-3)",
               "signal": "bearish",
               "signal_value": -0.333,
               "ind_weight": 0.6,
@@ -921,15 +868,13 @@
         {
           "category": "PMI_MFG",
           "label": "PMI Manufacturing",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
+          "weight_orig": 0.098,
+          "weight_eff": 0.098,
           "signal": "bullish",
           "signal_value": 0.333,
           "factors": [
             {
               "indicator": "PMI_MFG",
-              "display_name": "PMI Mfg",
-              "tooltip": "Manufacturing PMI — above 50 = expansion",
               "signal": "bullish",
               "signal_value": 0.333,
               "ind_weight": 1.0,
@@ -951,15 +896,13 @@
         {
           "category": "PMI_SVC",
           "label": "PMI Services",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
+          "weight_orig": 0.098,
+          "weight_eff": 0.098,
           "signal": "bullish",
           "signal_value": 0.333,
           "factors": [
             {
               "indicator": "PMI_SVC",
-              "display_name": "PMI Services",
-              "tooltip": "Services PMI — above 50 = expansion",
               "signal": "bullish",
               "signal_value": 0.333,
               "ind_weight": 1.0,
@@ -973,8 +916,6 @@
             },
             {
               "indicator": "PMI_COMP",
-              "display_name": "PMI Composite",
-              "tooltip": "Composite PMI (manufacturing + services)",
               "signal": "bullish",
               "signal_value": 0.333,
               "ind_weight": 0.6,
@@ -996,15 +937,13 @@
         {
           "category": "RETAIL",
           "label": "Retail Sales",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
+          "weight_orig": 0.098,
+          "weight_eff": 0.098,
           "signal": "bearish",
           "signal_value": -0.333,
           "factors": [
             {
               "indicator": "RETAIL_SALES",
-              "display_name": "Retail Sales",
-              "tooltip": "Monthly retail sales change",
               "signal": "bearish",
               "signal_value": -0.333,
               "ind_weight": 1.0,
@@ -1026,15 +965,13 @@
         {
           "category": "RATES",
           "label": "Interest Rate / Wages",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
+          "weight_orig": 0.098,
+          "weight_eff": 0.098,
           "signal": "bullish",
           "signal_value": 0.375,
           "factors": [
             {
               "indicator": "INTEREST_RATE",
-              "display_name": "Interest Rate",
-              "tooltip": "Central bank benchmark interest rate",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 1.0,
@@ -1048,8 +985,6 @@
             },
             {
               "indicator": "WAGES",
-              "display_name": "Wages",
-              "tooltip": "Average earnings / wage growth",
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 0.6,
@@ -1071,15 +1006,13 @@
         {
           "category": "PPI",
           "label": "PPI",
-          "weight_orig": 0.05,
+          "weight_orig": 0.049,
           "weight_eff": 0.015,
           "signal": "neutral",
           "signal_value": 0.0,
           "factors": [
             {
               "indicator": "PPI",
-              "display_name": "PPI",
-              "tooltip": "Producer Price Index — upstream inflation",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 1.0,
@@ -1101,30 +1034,26 @@
         {
           "category": "CONFIDENCE",
           "label": "Confidence / Other",
-          "weight_orig": 0.05,
-          "weight_eff": 0.015,
-          "signal": "neutral",
-          "signal_value": 0.131,
+          "weight_orig": 0.049,
+          "weight_eff": 0.049,
+          "signal": "bullish",
+          "signal_value": 0.455,
           "factors": [
             {
               "indicator": "CONFIDENCE",
-              "display_name": "Confidence",
-              "tooltip": "Consumer or business confidence index",
               "signal": "bullish",
-              "signal_value": 0.467,
+              "signal_value": 1.0,
               "ind_weight": 1.0,
-              "actual": 89.6,
-              "forecast": 88.9,
-              "previous": 88.6,
-              "surprise_diff": 0.7,
-              "event_name": "Business Confidence (Jul)",
+              "actual": 94.2,
+              "forecast": 92.5,
+              "previous": 92.4,
+              "surprise_diff": 1.7,
+              "event_name": "Consumer Confidence (Jul)",
               "release_date": "2026-07-31",
               "impact": "medium"
             },
             {
               "indicator": "INDUSTRIAL_PROD",
-              "display_name": "Industrial Prod.",
-              "tooltip": "Industrial production output",
               "signal": "bearish",
               "signal_value": -0.333,
               "ind_weight": 0.6,
@@ -1138,8 +1067,6 @@
             },
             {
               "indicator": "CURRENT_ACCOUNT",
-              "display_name": "Current Account",
-              "tooltip": "Broadest measure of trade and transfers",
               "signal": "bearish",
               "signal_value": -1.0,
               "ind_weight": 0.05,
@@ -1155,7 +1082,7 @@
           "freshness": {
             "event_date": "2026-07-31",
             "age_days": 5,
-            "indicator": "Business Confidence (Jul)"
+            "indicator": "Consumer Confidence (Jul)"
           }
         }
       ],
@@ -1168,8 +1095,6 @@
       "factors": {
         "GDP": {
           "indicator": "GDP",
-          "display_name": "GDP Growth",
-          "tooltip": "Gross Domestic Product growth rate",
           "signal": "bullish",
           "signal_value": 0.333,
           "ind_weight": 1.0,
@@ -1183,23 +1108,19 @@
         },
         "CPI": {
           "indicator": "CPI",
-          "display_name": "CPI",
-          "tooltip": "Consumer Price Index — headline inflation",
-          "signal": "bullish",
-          "signal_value": 0.333,
+          "signal": "neutral",
+          "signal_value": 0.0,
           "ind_weight": 1.0,
           "actual": 2.9,
-          "forecast": 2.8,
-          "previous": 3.0,
-          "surprise_diff": 0.1,
-          "event_name": "Harmonised Inflation Rate YoY (Jul)",
+          "forecast": 2.9,
+          "previous": 2.8,
+          "surprise_diff": 0.0,
+          "event_name": "Inflation Rate YoY (Jul)",
           "release_date": "2026-07-31",
           "impact": "high"
         },
         "CORE_CPI": {
           "indicator": "CORE_CPI",
-          "display_name": "Core CPI",
-          "tooltip": "CPI excluding food and energy",
           "signal": "bullish",
           "signal_value": 0.333,
           "ind_weight": 0.8,
@@ -1207,14 +1128,12 @@
           "forecast": 2.4,
           "previous": 2.4,
           "surprise_diff": 0.1,
-          "event_name": "Core Inflation Rate YoY (Jul)",
+          "event_name": "Core CPI YoY (Jul)",
           "release_date": "2026-07-31",
           "impact": "high"
         },
         "HICP": {
           "indicator": "HICP",
-          "display_name": "HICP",
-          "tooltip": "Harmonized Index of Consumer Prices (EU)",
           "signal": "bullish",
           "signal_value": 0.333,
           "ind_weight": 1.0,
@@ -1228,8 +1147,6 @@
         },
         "NFP": {
           "indicator": "NFP",
-          "display_name": "Non-Farm Payrolls",
-          "tooltip": "US monthly job additions (ex-farm sector)",
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 1.0,
@@ -1243,8 +1160,6 @@
         },
         "EMPLOYMENT": {
           "indicator": "EMPLOYMENT",
-          "display_name": "Employment",
-          "tooltip": "Employment change",
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 0.9,
@@ -1258,8 +1173,6 @@
         },
         "UNEMPLOYMENT": {
           "indicator": "UNEMPLOYMENT",
-          "display_name": "Unemployment Rate",
-          "tooltip": "Headline unemployment rate (U-3)",
           "signal": "bearish",
           "signal_value": -0.333,
           "ind_weight": 0.6,
@@ -1273,8 +1186,6 @@
         },
         "PMI_MFG": {
           "indicator": "PMI_MFG",
-          "display_name": "PMI Mfg",
-          "tooltip": "Manufacturing PMI — above 50 = expansion",
           "signal": "bullish",
           "signal_value": 0.333,
           "ind_weight": 1.0,
@@ -1288,8 +1199,6 @@
         },
         "PMI_SVC": {
           "indicator": "PMI_SVC",
-          "display_name": "PMI Services",
-          "tooltip": "Services PMI — above 50 = expansion",
           "signal": "bullish",
           "signal_value": 0.333,
           "ind_weight": 1.0,
@@ -1303,8 +1212,6 @@
         },
         "PMI_COMP": {
           "indicator": "PMI_COMP",
-          "display_name": "PMI Composite",
-          "tooltip": "Composite PMI (manufacturing + services)",
           "signal": "bullish",
           "signal_value": 0.333,
           "ind_weight": 0.6,
@@ -1318,8 +1225,6 @@
         },
         "RETAIL_SALES": {
           "indicator": "RETAIL_SALES",
-          "display_name": "Retail Sales",
-          "tooltip": "Monthly retail sales change",
           "signal": "bearish",
           "signal_value": -0.333,
           "ind_weight": 1.0,
@@ -1333,8 +1238,6 @@
         },
         "INTEREST_RATE": {
           "indicator": "INTEREST_RATE",
-          "display_name": "Interest Rate",
-          "tooltip": "Central bank benchmark interest rate",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 1.0,
@@ -1348,8 +1251,6 @@
         },
         "WAGES": {
           "indicator": "WAGES",
-          "display_name": "Wages",
-          "tooltip": "Average earnings / wage growth",
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 0.6,
@@ -1363,8 +1264,6 @@
         },
         "PPI": {
           "indicator": "PPI",
-          "display_name": "PPI",
-          "tooltip": "Producer Price Index — upstream inflation",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 1.0,
@@ -1378,23 +1277,19 @@
         },
         "CONFIDENCE": {
           "indicator": "CONFIDENCE",
-          "display_name": "Confidence",
-          "tooltip": "Consumer or business confidence index",
           "signal": "bullish",
-          "signal_value": 0.467,
+          "signal_value": 1.0,
           "ind_weight": 1.0,
-          "actual": 89.6,
-          "forecast": 88.9,
-          "previous": 88.6,
-          "surprise_diff": 0.7,
-          "event_name": "Business Confidence (Jul)",
+          "actual": 94.2,
+          "forecast": 92.5,
+          "previous": 92.4,
+          "surprise_diff": 1.7,
+          "event_name": "Consumer Confidence (Jul)",
           "release_date": "2026-07-31",
           "impact": "medium"
         },
         "INDUSTRIAL_PROD": {
           "indicator": "INDUSTRIAL_PROD",
-          "display_name": "Industrial Prod.",
-          "tooltip": "Industrial production output",
           "signal": "bearish",
           "signal_value": -0.333,
           "ind_weight": 0.6,
@@ -1408,8 +1303,6 @@
         },
         "CURRENT_ACCOUNT": {
           "indicator": "CURRENT_ACCOUNT",
-          "display_name": "Current Account",
-          "tooltip": "Broadest measure of trade and transfers",
           "signal": "bearish",
           "signal_value": -1.0,
           "ind_weight": 0.05,
@@ -1425,26 +1318,24 @@
     },
     "GBP": {
       "ccy": "GBP",
-      "heatmap": 57,
-      "macro_score": 13,
+      "heatmap": 56,
+      "macro_score": 12,
       "bias": "wbull",
       "bull_count": 4,
       "bear_count": 3,
       "neutral_count": 2,
-      "model_coverage": 1.0,
+      "model_coverage": 0.99,
       "categories": [
         {
           "category": "GDP",
           "label": "GDP Growth",
-          "weight_orig": 0.2,
-          "weight_eff": 0.06,
+          "weight_orig": 0.198,
+          "weight_eff": 0.059,
           "signal": "neutral",
           "signal_value": 0.0,
           "factors": [
             {
               "indicator": "GDP",
-              "display_name": "GDP Growth",
-              "tooltip": "Gross Domestic Product growth rate",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 1.0,
@@ -1466,15 +1357,13 @@
         {
           "category": "CPI",
           "label": "Inflation",
-          "weight_orig": 0.15,
-          "weight_eff": 0.045,
-          "signal": "neutral",
-          "signal_value": -0.037,
+          "weight_orig": 0.148,
+          "weight_eff": 0.148,
+          "signal": "bearish",
+          "signal_value": -0.185,
           "factors": [
             {
               "indicator": "CPI",
-              "display_name": "CPI",
-              "tooltip": "Consumer Price Index — headline inflation",
               "signal": "bearish",
               "signal_value": -0.333,
               "ind_weight": 1.0,
@@ -1488,16 +1377,14 @@
             },
             {
               "indicator": "CORE_CPI",
-              "display_name": "Core CPI",
-              "tooltip": "CPI excluding food and energy",
-              "signal": "bullish",
-              "signal_value": 0.333,
+              "signal": "neutral",
+              "signal_value": 0.0,
               "ind_weight": 0.8,
-              "actual": 2.6,
-              "forecast": 2.5,
-              "previous": 2.6,
-              "surprise_diff": 0.1,
-              "event_name": "Core CPI YoY (Jun)",
+              "actual": 0.3,
+              "forecast": null,
+              "previous": 0.3,
+              "surprise_diff": 0.0,
+              "event_name": "Core CPI MoM (Jun)",
               "release_date": "2026-07-22",
               "impact": "high"
             }
@@ -1511,15 +1398,13 @@
         {
           "category": "EMPLOYMENT",
           "label": "Employment",
-          "weight_orig": 0.15,
-          "weight_eff": 0.15,
+          "weight_orig": 0.148,
+          "weight_eff": 0.148,
           "signal": "bullish",
           "signal_value": 0.733,
           "factors": [
             {
               "indicator": "EMPLOYMENT",
-              "display_name": "Employment",
-              "tooltip": "Employment change",
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 0.9,
@@ -1533,8 +1418,6 @@
             },
             {
               "indicator": "UNEMPLOYMENT",
-              "display_name": "Unemployment Rate",
-              "tooltip": "Headline unemployment rate (U-3)",
               "signal": "bullish",
               "signal_value": 0.333,
               "ind_weight": 0.6,
@@ -1556,15 +1439,13 @@
         {
           "category": "PMI_MFG",
           "label": "PMI Manufacturing",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
+          "weight_orig": 0.099,
+          "weight_eff": 0.099,
           "signal": "bearish",
           "signal_value": -1.0,
           "factors": [
             {
               "indicator": "PMI_MFG",
-              "display_name": "PMI Mfg",
-              "tooltip": "Manufacturing PMI — above 50 = expansion",
               "signal": "bearish",
               "signal_value": -1.0,
               "ind_weight": 1.0,
@@ -1586,15 +1467,13 @@
         {
           "category": "PMI_SVC",
           "label": "PMI Services",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
+          "weight_orig": 0.099,
+          "weight_eff": 0.099,
           "signal": "bullish",
           "signal_value": 0.333,
           "factors": [
             {
               "indicator": "PMI_SVC",
-              "display_name": "PMI Services",
-              "tooltip": "Services PMI — above 50 = expansion",
               "signal": "bullish",
               "signal_value": 0.333,
               "ind_weight": 1.0,
@@ -1608,8 +1487,6 @@
             },
             {
               "indicator": "PMI_COMP",
-              "display_name": "PMI Composite",
-              "tooltip": "Composite PMI (manufacturing + services)",
               "signal": "bullish",
               "signal_value": 0.333,
               "ind_weight": 0.6,
@@ -1631,23 +1508,21 @@
         {
           "category": "RETAIL",
           "label": "Retail Sales",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
+          "weight_orig": 0.099,
+          "weight_eff": 0.099,
           "signal": "bullish",
           "signal_value": 1.0,
           "factors": [
             {
               "indicator": "RETAIL_SALES",
-              "display_name": "Retail Sales",
-              "tooltip": "Monthly retail sales change",
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 1.0,
-              "actual": 1.0,
-              "forecast": -0.3,
+              "actual": 1.1,
+              "forecast": -0.4,
               "previous": 1.2,
-              "surprise_diff": 1.3,
-              "event_name": "Retail Sales MoM (Jun)",
+              "surprise_diff": 1.5,
+              "event_name": "Retail Sales Ex Fuel MoM (Jun)",
               "release_date": "2026-07-24",
               "impact": "high"
             }
@@ -1655,21 +1530,19 @@
           "freshness": {
             "event_date": "2026-07-24",
             "age_days": 12,
-            "indicator": "Retail Sales MoM (Jun)"
+            "indicator": "Retail Sales Ex Fuel MoM (Jun)"
           }
         },
         {
           "category": "RATES",
           "label": "Interest Rate / Wages",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
-          "signal": "bearish",
-          "signal_value": -0.25,
+          "weight_orig": 0.099,
+          "weight_eff": 0.03,
+          "signal": "neutral",
+          "signal_value": 0.0,
           "factors": [
             {
               "indicator": "INTEREST_RATE",
-              "display_name": "Interest Rate",
-              "tooltip": "Central bank benchmark interest rate",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 1.0,
@@ -1683,16 +1556,14 @@
             },
             {
               "indicator": "WAGES",
-              "display_name": "Wages",
-              "tooltip": "Average earnings / wage growth",
-              "signal": "bearish",
-              "signal_value": -0.667,
+              "signal": "neutral",
+              "signal_value": 0.0,
               "ind_weight": 0.6,
-              "actual": 4.3,
-              "forecast": 4.5,
-              "previous": 4.4,
-              "surprise_diff": -0.2,
-              "event_name": "Average Earnings incl. Bonus (May)",
+              "actual": 3.4,
+              "forecast": 3.4,
+              "previous": 3.4,
+              "surprise_diff": 0.0,
+              "event_name": "Average Earnings excl. Bonus (3Mo/Yr) (May)",
               "release_date": "2026-07-21",
               "impact": "medium"
             }
@@ -1713,8 +1584,6 @@
           "factors": [
             {
               "indicator": "PPI",
-              "display_name": "PPI",
-              "tooltip": "Producer Price Index — upstream inflation",
               "signal": "bearish",
               "signal_value": -0.833,
               "ind_weight": 1.0,
@@ -1739,12 +1608,10 @@
           "weight_orig": 0.05,
           "weight_eff": 0.05,
           "signal": "bullish",
-          "signal_value": 0.488,
+          "signal_value": 0.371,
           "factors": [
             {
               "indicator": "CONFIDENCE",
-              "display_name": "Confidence",
-              "tooltip": "Consumer or business confidence index",
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 1.0,
@@ -1758,23 +1625,19 @@
             },
             {
               "indicator": "INDUSTRIAL_PROD",
-              "display_name": "Industrial Prod.",
-              "tooltip": "Industrial production output",
               "signal": "bearish",
-              "signal_value": -0.333,
+              "signal_value": -0.667,
               "ind_weight": 0.6,
-              "actual": 1.0,
-              "forecast": 1.2,
-              "previous": 0.0,
-              "surprise_diff": -0.2,
-              "event_name": "Industrial Production YoY (May)",
+              "actual": -0.5,
+              "forecast": -0.1,
+              "previous": 0.2,
+              "surprise_diff": -0.4,
+              "event_name": "Industrial Production MoM (May)",
               "release_date": "2026-07-16",
               "impact": "medium"
             },
             {
               "indicator": "TRADE_BALANCE",
-              "display_name": "Trade Balance",
-              "tooltip": "Exports minus imports",
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 0.05,
@@ -1788,8 +1651,6 @@
             },
             {
               "indicator": "CURRENT_ACCOUNT",
-              "display_name": "Current Account",
-              "tooltip": "Broadest measure of trade and transfers",
               "signal": "bearish",
               "signal_value": -0.4,
               "ind_weight": 0.05,
@@ -1818,8 +1679,6 @@
       "factors": {
         "GDP": {
           "indicator": "GDP",
-          "display_name": "GDP Growth",
-          "tooltip": "Gross Domestic Product growth rate",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 1.0,
@@ -1833,8 +1692,6 @@
         },
         "CPI": {
           "indicator": "CPI",
-          "display_name": "CPI",
-          "tooltip": "Consumer Price Index — headline inflation",
           "signal": "bearish",
           "signal_value": -0.333,
           "ind_weight": 1.0,
@@ -1848,23 +1705,19 @@
         },
         "CORE_CPI": {
           "indicator": "CORE_CPI",
-          "display_name": "Core CPI",
-          "tooltip": "CPI excluding food and energy",
-          "signal": "bullish",
-          "signal_value": 0.333,
+          "signal": "neutral",
+          "signal_value": 0.0,
           "ind_weight": 0.8,
-          "actual": 2.6,
-          "forecast": 2.5,
-          "previous": 2.6,
-          "surprise_diff": 0.1,
-          "event_name": "Core CPI YoY (Jun)",
+          "actual": 0.3,
+          "forecast": null,
+          "previous": 0.3,
+          "surprise_diff": 0.0,
+          "event_name": "Core CPI MoM (Jun)",
           "release_date": "2026-07-22",
           "impact": "high"
         },
         "EMPLOYMENT": {
           "indicator": "EMPLOYMENT",
-          "display_name": "Employment",
-          "tooltip": "Employment change",
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 0.9,
@@ -1878,8 +1731,6 @@
         },
         "UNEMPLOYMENT": {
           "indicator": "UNEMPLOYMENT",
-          "display_name": "Unemployment Rate",
-          "tooltip": "Headline unemployment rate (U-3)",
           "signal": "bullish",
           "signal_value": 0.333,
           "ind_weight": 0.6,
@@ -1893,8 +1744,6 @@
         },
         "PMI_MFG": {
           "indicator": "PMI_MFG",
-          "display_name": "PMI Mfg",
-          "tooltip": "Manufacturing PMI — above 50 = expansion",
           "signal": "bearish",
           "signal_value": -1.0,
           "ind_weight": 1.0,
@@ -1908,8 +1757,6 @@
         },
         "PMI_SVC": {
           "indicator": "PMI_SVC",
-          "display_name": "PMI Services",
-          "tooltip": "Services PMI — above 50 = expansion",
           "signal": "bullish",
           "signal_value": 0.333,
           "ind_weight": 1.0,
@@ -1923,8 +1770,6 @@
         },
         "PMI_COMP": {
           "indicator": "PMI_COMP",
-          "display_name": "PMI Composite",
-          "tooltip": "Composite PMI (manufacturing + services)",
           "signal": "bullish",
           "signal_value": 0.333,
           "ind_weight": 0.6,
@@ -1938,23 +1783,19 @@
         },
         "RETAIL_SALES": {
           "indicator": "RETAIL_SALES",
-          "display_name": "Retail Sales",
-          "tooltip": "Monthly retail sales change",
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 1.0,
-          "actual": 1.0,
-          "forecast": -0.3,
+          "actual": 1.1,
+          "forecast": -0.4,
           "previous": 1.2,
-          "surprise_diff": 1.3,
-          "event_name": "Retail Sales MoM (Jun)",
+          "surprise_diff": 1.5,
+          "event_name": "Retail Sales Ex Fuel MoM (Jun)",
           "release_date": "2026-07-24",
           "impact": "high"
         },
         "INTEREST_RATE": {
           "indicator": "INTEREST_RATE",
-          "display_name": "Interest Rate",
-          "tooltip": "Central bank benchmark interest rate",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 1.0,
@@ -1968,23 +1809,19 @@
         },
         "WAGES": {
           "indicator": "WAGES",
-          "display_name": "Wages",
-          "tooltip": "Average earnings / wage growth",
-          "signal": "bearish",
-          "signal_value": -0.667,
+          "signal": "neutral",
+          "signal_value": 0.0,
           "ind_weight": 0.6,
-          "actual": 4.3,
-          "forecast": 4.5,
-          "previous": 4.4,
-          "surprise_diff": -0.2,
-          "event_name": "Average Earnings incl. Bonus (May)",
+          "actual": 3.4,
+          "forecast": 3.4,
+          "previous": 3.4,
+          "surprise_diff": 0.0,
+          "event_name": "Average Earnings excl. Bonus (3Mo/Yr) (May)",
           "release_date": "2026-07-21",
           "impact": "medium"
         },
         "PPI": {
           "indicator": "PPI",
-          "display_name": "PPI",
-          "tooltip": "Producer Price Index — upstream inflation",
           "signal": "bearish",
           "signal_value": -0.833,
           "ind_weight": 1.0,
@@ -1998,8 +1835,6 @@
         },
         "CONFIDENCE": {
           "indicator": "CONFIDENCE",
-          "display_name": "Confidence",
-          "tooltip": "Consumer or business confidence index",
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 1.0,
@@ -2013,23 +1848,19 @@
         },
         "INDUSTRIAL_PROD": {
           "indicator": "INDUSTRIAL_PROD",
-          "display_name": "Industrial Prod.",
-          "tooltip": "Industrial production output",
           "signal": "bearish",
-          "signal_value": -0.333,
+          "signal_value": -0.667,
           "ind_weight": 0.6,
-          "actual": 1.0,
-          "forecast": 1.2,
-          "previous": 0.0,
-          "surprise_diff": -0.2,
-          "event_name": "Industrial Production YoY (May)",
+          "actual": -0.5,
+          "forecast": -0.1,
+          "previous": 0.2,
+          "surprise_diff": -0.4,
+          "event_name": "Industrial Production MoM (May)",
           "release_date": "2026-07-16",
           "impact": "medium"
         },
         "TRADE_BALANCE": {
           "indicator": "TRADE_BALANCE",
-          "display_name": "Trade Balance",
-          "tooltip": "Exports minus imports",
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 0.05,
@@ -2043,8 +1874,6 @@
         },
         "CURRENT_ACCOUNT": {
           "indicator": "CURRENT_ACCOUNT",
-          "display_name": "Current Account",
-          "tooltip": "Broadest measure of trade and transfers",
           "signal": "bearish",
           "signal_value": -0.4,
           "ind_weight": 0.05,
@@ -2060,26 +1889,24 @@
     },
     "JPY": {
       "ccy": "JPY",
-      "heatmap": 51,
-      "macro_score": 1,
+      "heatmap": 52,
+      "macro_score": 4,
       "bias": "neut",
-      "bull_count": 4,
+      "bull_count": 5,
       "bear_count": 2,
-      "neutral_count": 3,
-      "model_coverage": 1.0,
+      "neutral_count": 2,
+      "model_coverage": 0.99,
       "categories": [
         {
           "category": "GDP",
           "label": "GDP Growth",
-          "weight_orig": 0.2,
-          "weight_eff": 0.2,
+          "weight_orig": 0.198,
+          "weight_eff": 0.198,
           "signal": "bullish",
           "signal_value": 0.333,
           "factors": [
             {
               "indicator": "GDP",
-              "display_name": "GDP Growth",
-              "tooltip": "Gross Domestic Product growth rate",
               "signal": "bullish",
               "signal_value": 0.333,
               "ind_weight": 1.0,
@@ -2101,15 +1928,13 @@
         {
           "category": "CPI",
           "label": "Inflation",
-          "weight_orig": 0.15,
-          "weight_eff": 0.15,
+          "weight_orig": 0.148,
+          "weight_eff": 0.148,
           "signal": "bullish",
           "signal_value": 0.296,
           "factors": [
             {
               "indicator": "CPI",
-              "display_name": "CPI",
-              "tooltip": "Consumer Price Index — headline inflation",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 1.0,
@@ -2123,8 +1948,6 @@
             },
             {
               "indicator": "CORE_CPI",
-              "display_name": "Core CPI",
-              "tooltip": "CPI excluding food and energy",
               "signal": "bullish",
               "signal_value": 0.667,
               "ind_weight": 0.8,
@@ -2146,15 +1969,13 @@
         {
           "category": "EMPLOYMENT",
           "label": "Employment",
-          "weight_orig": 0.15,
+          "weight_orig": 0.148,
           "weight_eff": 0.045,
           "signal": "neutral",
           "signal_value": 0.0,
           "factors": [
             {
               "indicator": "UNEMPLOYMENT",
-              "display_name": "Unemployment Rate",
-              "tooltip": "Headline unemployment rate (U-3)",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 0.6,
@@ -2176,15 +1997,13 @@
         {
           "category": "PMI_MFG",
           "label": "PMI Manufacturing",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
+          "weight_orig": 0.099,
+          "weight_eff": 0.099,
           "signal": "bullish",
           "signal_value": 0.333,
           "factors": [
             {
               "indicator": "PMI_MFG",
-              "display_name": "PMI Mfg",
-              "tooltip": "Manufacturing PMI — above 50 = expansion",
               "signal": "bullish",
               "signal_value": 0.333,
               "ind_weight": 1.0,
@@ -2206,15 +2025,13 @@
         {
           "category": "PMI_SVC",
           "label": "PMI Services",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
+          "weight_orig": 0.099,
+          "weight_eff": 0.099,
           "signal": "bearish",
           "signal_value": -0.653,
           "factors": [
             {
               "indicator": "PMI_SVC",
-              "display_name": "PMI Services",
-              "tooltip": "Services PMI — above 50 = expansion",
               "signal": "bearish",
               "signal_value": -0.778,
               "ind_weight": 1.0,
@@ -2228,8 +2045,6 @@
             },
             {
               "indicator": "PMI_COMP",
-              "display_name": "PMI Composite",
-              "tooltip": "Composite PMI (manufacturing + services)",
               "signal": "bearish",
               "signal_value": -0.444,
               "ind_weight": 0.6,
@@ -2251,15 +2066,13 @@
         {
           "category": "RETAIL",
           "label": "Retail Sales",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
+          "weight_orig": 0.099,
+          "weight_eff": 0.099,
           "signal": "bearish",
           "signal_value": -1.0,
           "factors": [
             {
               "indicator": "RETAIL_SALES",
-              "display_name": "Retail Sales",
-              "tooltip": "Monthly retail sales change",
               "signal": "bearish",
               "signal_value": -1.0,
               "ind_weight": 1.0,
@@ -2281,15 +2094,13 @@
         {
           "category": "RATES",
           "label": "Interest Rate / Wages",
-          "weight_orig": 0.1,
+          "weight_orig": 0.099,
           "weight_eff": 0.03,
           "signal": "neutral",
           "signal_value": 0.0,
           "factors": [
             {
               "indicator": "INTEREST_RATE",
-              "display_name": "Interest Rate",
-              "tooltip": "Central bank benchmark interest rate",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 1.0,
@@ -2312,22 +2123,20 @@
           "category": "PPI",
           "label": "PPI",
           "weight_orig": 0.05,
-          "weight_eff": 0.015,
-          "signal": "neutral",
-          "signal_value": 0.0,
+          "weight_eff": 0.05,
+          "signal": "bullish",
+          "signal_value": 0.5,
           "factors": [
             {
               "indicator": "PPI",
-              "display_name": "PPI",
-              "tooltip": "Producer Price Index — upstream inflation",
-              "signal": "neutral",
-              "signal_value": 0.0,
+              "signal": "bullish",
+              "signal_value": 0.5,
               "ind_weight": 1.0,
-              "actual": 0.4,
-              "forecast": 0.3,
-              "previous": 1.1,
-              "surprise_diff": 0.1,
-              "event_name": "Producer Price Index MoM (Jun)",
+              "actual": 7.1,
+              "forecast": 6.8,
+              "previous": 6.6,
+              "surprise_diff": 0.3,
+              "event_name": "Producer Price Index YoY (Jun)",
               "release_date": "2026-07-09",
               "impact": "medium"
             }
@@ -2335,7 +2144,7 @@
           "freshness": {
             "event_date": "2026-07-09",
             "age_days": 27,
-            "indicator": "Producer Price Index MoM (Jun)"
+            "indicator": "Producer Price Index YoY (Jun)"
           }
         },
         {
@@ -2348,8 +2157,6 @@
           "factors": [
             {
               "indicator": "CONFIDENCE",
-              "display_name": "Confidence",
-              "tooltip": "Consumer or business confidence index",
               "signal": "bullish",
               "signal_value": 0.467,
               "ind_weight": 1.0,
@@ -2363,8 +2170,6 @@
             },
             {
               "indicator": "INDUSTRIAL_PROD",
-              "display_name": "Industrial Prod.",
-              "tooltip": "Industrial production output",
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 0.6,
@@ -2378,8 +2183,6 @@
             },
             {
               "indicator": "TRADE_BALANCE",
-              "display_name": "Trade Balance",
-              "tooltip": "Exports minus imports",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 0.05,
@@ -2393,8 +2196,6 @@
             },
             {
               "indicator": "CURRENT_ACCOUNT",
-              "display_name": "Current Account",
-              "tooltip": "Broadest measure of trade and transfers",
               "signal": "bearish",
               "signal_value": -1.0,
               "ind_weight": 0.05,
@@ -2423,8 +2224,6 @@
       "factors": {
         "GDP": {
           "indicator": "GDP",
-          "display_name": "GDP Growth",
-          "tooltip": "Gross Domestic Product growth rate",
           "signal": "bullish",
           "signal_value": 0.333,
           "ind_weight": 1.0,
@@ -2438,8 +2237,6 @@
         },
         "CPI": {
           "indicator": "CPI",
-          "display_name": "CPI",
-          "tooltip": "Consumer Price Index — headline inflation",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 1.0,
@@ -2453,8 +2250,6 @@
         },
         "CORE_CPI": {
           "indicator": "CORE_CPI",
-          "display_name": "Core CPI",
-          "tooltip": "CPI excluding food and energy",
           "signal": "bullish",
           "signal_value": 0.667,
           "ind_weight": 0.8,
@@ -2468,8 +2263,6 @@
         },
         "UNEMPLOYMENT": {
           "indicator": "UNEMPLOYMENT",
-          "display_name": "Unemployment Rate",
-          "tooltip": "Headline unemployment rate (U-3)",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 0.6,
@@ -2483,8 +2276,6 @@
         },
         "PMI_MFG": {
           "indicator": "PMI_MFG",
-          "display_name": "PMI Mfg",
-          "tooltip": "Manufacturing PMI — above 50 = expansion",
           "signal": "bullish",
           "signal_value": 0.333,
           "ind_weight": 1.0,
@@ -2498,8 +2289,6 @@
         },
         "PMI_SVC": {
           "indicator": "PMI_SVC",
-          "display_name": "PMI Services",
-          "tooltip": "Services PMI — above 50 = expansion",
           "signal": "bearish",
           "signal_value": -0.778,
           "ind_weight": 1.0,
@@ -2513,8 +2302,6 @@
         },
         "PMI_COMP": {
           "indicator": "PMI_COMP",
-          "display_name": "PMI Composite",
-          "tooltip": "Composite PMI (manufacturing + services)",
           "signal": "bearish",
           "signal_value": -0.444,
           "ind_weight": 0.6,
@@ -2528,8 +2315,6 @@
         },
         "RETAIL_SALES": {
           "indicator": "RETAIL_SALES",
-          "display_name": "Retail Sales",
-          "tooltip": "Monthly retail sales change",
           "signal": "bearish",
           "signal_value": -1.0,
           "ind_weight": 1.0,
@@ -2543,8 +2328,6 @@
         },
         "INTEREST_RATE": {
           "indicator": "INTEREST_RATE",
-          "display_name": "Interest Rate",
-          "tooltip": "Central bank benchmark interest rate",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 1.0,
@@ -2558,23 +2341,19 @@
         },
         "PPI": {
           "indicator": "PPI",
-          "display_name": "PPI",
-          "tooltip": "Producer Price Index — upstream inflation",
-          "signal": "neutral",
-          "signal_value": 0.0,
+          "signal": "bullish",
+          "signal_value": 0.5,
           "ind_weight": 1.0,
-          "actual": 0.4,
-          "forecast": 0.3,
-          "previous": 1.1,
-          "surprise_diff": 0.1,
-          "event_name": "Producer Price Index MoM (Jun)",
+          "actual": 7.1,
+          "forecast": 6.8,
+          "previous": 6.6,
+          "surprise_diff": 0.3,
+          "event_name": "Producer Price Index YoY (Jun)",
           "release_date": "2026-07-09",
           "impact": "medium"
         },
         "CONFIDENCE": {
           "indicator": "CONFIDENCE",
-          "display_name": "Confidence",
-          "tooltip": "Consumer or business confidence index",
           "signal": "bullish",
           "signal_value": 0.467,
           "ind_weight": 1.0,
@@ -2588,8 +2367,6 @@
         },
         "INDUSTRIAL_PROD": {
           "indicator": "INDUSTRIAL_PROD",
-          "display_name": "Industrial Prod.",
-          "tooltip": "Industrial production output",
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 0.6,
@@ -2603,8 +2380,6 @@
         },
         "TRADE_BALANCE": {
           "indicator": "TRADE_BALANCE",
-          "display_name": "Trade Balance",
-          "tooltip": "Exports minus imports",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 0.05,
@@ -2618,8 +2393,6 @@
         },
         "CURRENT_ACCOUNT": {
           "indicator": "CURRENT_ACCOUNT",
-          "display_name": "Current Account",
-          "tooltip": "Broadest measure of trade and transfers",
           "signal": "bearish",
           "signal_value": -1.0,
           "ind_weight": 0.05,
@@ -2635,26 +2408,24 @@
     },
     "CHF": {
       "ccy": "CHF",
-      "heatmap": 34,
-      "macro_score": -31,
+      "heatmap": 31,
+      "macro_score": -38,
       "bias": "bear",
-      "bull_count": 2,
-      "bear_count": 3,
+      "bull_count": 1,
+      "bear_count": 4,
       "neutral_count": 3,
-      "model_coverage": 0.9,
+      "model_coverage": 0.891,
       "categories": [
         {
           "category": "GDP",
           "label": "GDP Growth",
-          "weight_orig": 0.2,
-          "weight_eff": 0.06,
+          "weight_orig": 0.198,
+          "weight_eff": 0.059,
           "signal": "neutral",
           "signal_value": 0.0,
           "factors": [
             {
               "indicator": "GDP",
-              "display_name": "GDP Growth",
-              "tooltip": "Gross Domestic Product growth rate",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 1.0,
@@ -2676,15 +2447,13 @@
         {
           "category": "CPI",
           "label": "Inflation",
-          "weight_orig": 0.15,
+          "weight_orig": 0.148,
           "weight_eff": 0.045,
           "signal": "neutral",
           "signal_value": 0.0,
           "factors": [
             {
               "indicator": "CPI",
-              "display_name": "CPI",
-              "tooltip": "Consumer Price Index — headline inflation",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 1.0,
@@ -2706,15 +2475,13 @@
         {
           "category": "EMPLOYMENT",
           "label": "Employment",
-          "weight_orig": 0.15,
-          "weight_eff": 0.15,
+          "weight_orig": 0.148,
+          "weight_eff": 0.148,
           "signal": "bullish",
           "signal_value": 0.25,
           "factors": [
             {
               "indicator": "NFP",
-              "display_name": "Non-Farm Payrolls",
-              "tooltip": "US monthly job additions (ex-farm sector)",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 1.0,
@@ -2728,8 +2495,6 @@
             },
             {
               "indicator": "UNEMPLOYMENT",
-              "display_name": "Unemployment Rate",
-              "tooltip": "Headline unemployment rate (U-3)",
               "signal": "bullish",
               "signal_value": 0.667,
               "ind_weight": 0.6,
@@ -2751,15 +2516,13 @@
         {
           "category": "PMI_MFG",
           "label": "PMI Manufacturing",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
+          "weight_orig": 0.099,
+          "weight_eff": 0.099,
           "signal": "bearish",
           "signal_value": -1.0,
           "factors": [
             {
               "indicator": "PMI_MFG",
-              "display_name": "PMI Mfg",
-              "tooltip": "Manufacturing PMI — above 50 = expansion",
               "signal": "bearish",
               "signal_value": -1.0,
               "ind_weight": 1.0,
@@ -2781,15 +2544,13 @@
         {
           "category": "RETAIL",
           "label": "Retail Sales",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
+          "weight_orig": 0.099,
+          "weight_eff": 0.099,
           "signal": "bearish",
           "signal_value": -1.0,
           "factors": [
             {
               "indicator": "RETAIL_SALES",
-              "display_name": "Retail Sales",
-              "tooltip": "Monthly retail sales change",
               "signal": "bearish",
               "signal_value": -1.0,
               "ind_weight": 1.0,
@@ -2811,15 +2572,13 @@
         {
           "category": "RATES",
           "label": "Interest Rate / Wages",
-          "weight_orig": 0.1,
+          "weight_orig": 0.099,
           "weight_eff": 0.03,
           "signal": "neutral",
           "signal_value": 0.0,
           "factors": [
             {
               "indicator": "INTEREST_RATE",
-              "display_name": "Interest Rate",
-              "tooltip": "Central bank benchmark interest rate",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 1.0,
@@ -2843,21 +2602,19 @@
           "label": "PPI",
           "weight_orig": 0.05,
           "weight_eff": 0.05,
-          "signal": "bullish",
-          "signal_value": 0.333,
+          "signal": "bearish",
+          "signal_value": -0.5,
           "factors": [
             {
               "indicator": "PPI",
-              "display_name": "PPI",
-              "tooltip": "Producer Price Index — upstream inflation",
-              "signal": "bullish",
-              "signal_value": 0.333,
+              "signal": "bearish",
+              "signal_value": -0.5,
               "ind_weight": 1.0,
-              "actual": -0.3,
-              "forecast": -0.5,
-              "previous": -0.4,
-              "surprise_diff": 0.2,
-              "event_name": "Producer Price Index MoM (Jun)",
+              "actual": -2.1,
+              "forecast": null,
+              "previous": -1.8,
+              "surprise_diff": -0.3,
+              "event_name": "Producer Price Index YoY (Jun)",
               "release_date": "2026-07-14",
               "impact": "medium"
             }
@@ -2865,7 +2622,7 @@
           "freshness": {
             "event_date": "2026-07-14",
             "age_days": 22,
-            "indicator": "Producer Price Index MoM (Jun)"
+            "indicator": "Producer Price Index YoY (Jun)"
           }
         },
         {
@@ -2878,8 +2635,6 @@
           "factors": [
             {
               "indicator": "CONFIDENCE",
-              "display_name": "Confidence",
-              "tooltip": "Consumer or business confidence index",
               "signal": "bearish",
               "signal_value": -0.667,
               "ind_weight": 1.0,
@@ -2893,8 +2648,6 @@
             },
             {
               "indicator": "INDUSTRIAL_PROD",
-              "display_name": "Industrial Prod.",
-              "tooltip": "Industrial production output",
               "signal": "bearish",
               "signal_value": -1.0,
               "ind_weight": 0.6,
@@ -2908,8 +2661,6 @@
             },
             {
               "indicator": "CURRENT_ACCOUNT",
-              "display_name": "Current Account",
-              "tooltip": "Broadest measure of trade and transfers",
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 0.05,
@@ -2931,15 +2682,13 @@
       ],
       "freshness": {
         "avg_age_days": 29.9,
-        "weighted_avg_age": 35.1,
+        "weighted_avg_age": 35.0,
         "min_age_days": 2,
         "max_age_days": 69
       },
       "factors": {
         "GDP": {
           "indicator": "GDP",
-          "display_name": "GDP Growth",
-          "tooltip": "Gross Domestic Product growth rate",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 1.0,
@@ -2953,8 +2702,6 @@
         },
         "CPI": {
           "indicator": "CPI",
-          "display_name": "CPI",
-          "tooltip": "Consumer Price Index — headline inflation",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 1.0,
@@ -2968,8 +2715,6 @@
         },
         "NFP": {
           "indicator": "NFP",
-          "display_name": "Non-Farm Payrolls",
-          "tooltip": "US monthly job additions (ex-farm sector)",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 1.0,
@@ -2983,8 +2728,6 @@
         },
         "UNEMPLOYMENT": {
           "indicator": "UNEMPLOYMENT",
-          "display_name": "Unemployment Rate",
-          "tooltip": "Headline unemployment rate (U-3)",
           "signal": "bullish",
           "signal_value": 0.667,
           "ind_weight": 0.6,
@@ -2998,8 +2741,6 @@
         },
         "PMI_MFG": {
           "indicator": "PMI_MFG",
-          "display_name": "PMI Mfg",
-          "tooltip": "Manufacturing PMI — above 50 = expansion",
           "signal": "bearish",
           "signal_value": -1.0,
           "ind_weight": 1.0,
@@ -3013,8 +2754,6 @@
         },
         "RETAIL_SALES": {
           "indicator": "RETAIL_SALES",
-          "display_name": "Retail Sales",
-          "tooltip": "Monthly retail sales change",
           "signal": "bearish",
           "signal_value": -1.0,
           "ind_weight": 1.0,
@@ -3028,8 +2767,6 @@
         },
         "INTEREST_RATE": {
           "indicator": "INTEREST_RATE",
-          "display_name": "Interest Rate",
-          "tooltip": "Central bank benchmark interest rate",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 1.0,
@@ -3043,23 +2780,19 @@
         },
         "PPI": {
           "indicator": "PPI",
-          "display_name": "PPI",
-          "tooltip": "Producer Price Index — upstream inflation",
-          "signal": "bullish",
-          "signal_value": 0.333,
+          "signal": "bearish",
+          "signal_value": -0.5,
           "ind_weight": 1.0,
-          "actual": -0.3,
-          "forecast": -0.5,
-          "previous": -0.4,
-          "surprise_diff": 0.2,
-          "event_name": "Producer Price Index MoM (Jun)",
+          "actual": -2.1,
+          "forecast": null,
+          "previous": -1.8,
+          "surprise_diff": -0.3,
+          "event_name": "Producer Price Index YoY (Jun)",
           "release_date": "2026-07-14",
           "impact": "medium"
         },
         "CONFIDENCE": {
           "indicator": "CONFIDENCE",
-          "display_name": "Confidence",
-          "tooltip": "Consumer or business confidence index",
           "signal": "bearish",
           "signal_value": -0.667,
           "ind_weight": 1.0,
@@ -3073,8 +2806,6 @@
         },
         "INDUSTRIAL_PROD": {
           "indicator": "INDUSTRIAL_PROD",
-          "display_name": "Industrial Prod.",
-          "tooltip": "Industrial production output",
           "signal": "bearish",
           "signal_value": -1.0,
           "ind_weight": 0.6,
@@ -3088,8 +2819,6 @@
         },
         "CURRENT_ACCOUNT": {
           "indicator": "CURRENT_ACCOUNT",
-          "display_name": "Current Account",
-          "tooltip": "Broadest measure of trade and transfers",
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 0.05,
@@ -3105,26 +2834,24 @@
     },
     "CAD": {
       "ccy": "CAD",
-      "heatmap": 50,
-      "macro_score": 0,
-      "bias": "neut",
+      "heatmap": 44,
+      "macro_score": -12,
+      "bias": "wbear",
       "bull_count": 2,
       "bear_count": 4,
       "neutral_count": 3,
-      "model_coverage": 1.0,
+      "model_coverage": 0.85,
       "categories": [
         {
           "category": "GDP",
           "label": "GDP Growth",
-          "weight_orig": 0.2,
-          "weight_eff": 0.06,
+          "weight_orig": 0.17,
+          "weight_eff": 0.051,
           "signal": "neutral",
           "signal_value": 0.0,
           "factors": [
             {
               "indicator": "GDP",
-              "display_name": "GDP Growth",
-              "tooltip": "Gross Domestic Product growth rate",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 1.0,
@@ -3146,15 +2873,13 @@
         {
           "category": "CPI",
           "label": "Inflation",
-          "weight_orig": 0.15,
-          "weight_eff": 0.15,
+          "weight_orig": 0.128,
+          "weight_eff": 0.128,
           "signal": "bearish",
-          "signal_value": -0.185,
+          "signal_value": -0.63,
           "factors": [
             {
               "indicator": "CPI",
-              "display_name": "CPI",
-              "tooltip": "Consumer Price Index — headline inflation",
               "signal": "bearish",
               "signal_value": -0.333,
               "ind_weight": 1.0,
@@ -3168,16 +2893,14 @@
             },
             {
               "indicator": "CORE_CPI",
-              "display_name": "Core CPI",
-              "tooltip": "CPI excluding food and energy",
-              "signal": "neutral",
-              "signal_value": 0.0,
+              "signal": "bearish",
+              "signal_value": -1.0,
               "ind_weight": 0.8,
               "actual": 0.1,
-              "forecast": 0.1,
+              "forecast": null,
               "previous": 0.6,
-              "surprise_diff": 0.0,
-              "event_name": "Core Inflation Rate MoM (Jun)",
+              "surprise_diff": -0.5,
+              "event_name": "Core CPI MoM (Jun)",
               "release_date": "2026-07-20",
               "impact": "high"
             }
@@ -3191,15 +2914,13 @@
         {
           "category": "EMPLOYMENT",
           "label": "Employment",
-          "weight_orig": 0.15,
-          "weight_eff": 0.15,
+          "weight_orig": 0.128,
+          "weight_eff": 0.128,
           "signal": "bullish",
           "signal_value": 0.733,
           "factors": [
             {
               "indicator": "EMPLOYMENT",
-              "display_name": "Employment",
-              "tooltip": "Employment change",
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 0.9,
@@ -3213,8 +2934,6 @@
             },
             {
               "indicator": "UNEMPLOYMENT",
-              "display_name": "Unemployment Rate",
-              "tooltip": "Headline unemployment rate (U-3)",
               "signal": "bullish",
               "signal_value": 0.333,
               "ind_weight": 0.6,
@@ -3236,15 +2955,13 @@
         {
           "category": "PMI_MFG",
           "label": "PMI Manufacturing",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
+          "weight_orig": 0.085,
+          "weight_eff": 0.085,
           "signal": "bullish",
           "signal_value": 1.0,
           "factors": [
             {
               "indicator": "PMI_MFG",
-              "display_name": "PMI Mfg",
-              "tooltip": "Manufacturing PMI — above 50 = expansion",
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 1.0,
@@ -3266,15 +2983,13 @@
         {
           "category": "PMI_SVC",
           "label": "PMI Services",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
+          "weight_orig": 0.085,
+          "weight_eff": 0.085,
           "signal": "bearish",
           "signal_value": -1.0,
           "factors": [
             {
               "indicator": "PMI_SVC",
-              "display_name": "PMI Services",
-              "tooltip": "Services PMI — above 50 = expansion",
               "signal": "bearish",
               "signal_value": -1.0,
               "ind_weight": 1.0,
@@ -3288,8 +3003,6 @@
             },
             {
               "indicator": "PMI_COMP",
-              "display_name": "PMI Composite",
-              "tooltip": "Composite PMI (manufacturing + services)",
               "signal": "bearish",
               "signal_value": -1.0,
               "ind_weight": 0.6,
@@ -3311,23 +3024,21 @@
         {
           "category": "RETAIL",
           "label": "Retail Sales",
-          "weight_orig": 0.1,
-          "weight_eff": 0.03,
+          "weight_orig": 0.085,
+          "weight_eff": 0.026,
           "signal": "neutral",
           "signal_value": 0.0,
           "factors": [
             {
               "indicator": "RETAIL_SALES",
-              "display_name": "Retail Sales",
-              "tooltip": "Monthly retail sales change",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 1.0,
-              "actual": 0.4,
-              "forecast": 0.4,
-              "previous": 1.0,
+              "actual": 1.0,
+              "forecast": 1.0,
+              "previous": 0.4,
               "surprise_diff": 0.0,
-              "event_name": "Retail Sales MoM (Jun)",
+              "event_name": "Retail Sales MoM (May)",
               "release_date": "2026-07-23",
               "impact": "high"
             }
@@ -3335,21 +3046,19 @@
           "freshness": {
             "event_date": "2026-07-23",
             "age_days": 13,
-            "indicator": "Retail Sales MoM (Jun)"
+            "indicator": "Retail Sales MoM (May)"
           }
         },
         {
           "category": "RATES",
           "label": "Interest Rate / Wages",
-          "weight_orig": 0.1,
-          "weight_eff": 0.03,
+          "weight_orig": 0.085,
+          "weight_eff": 0.026,
           "signal": "neutral",
           "signal_value": 0.0,
           "factors": [
             {
               "indicator": "INTEREST_RATE",
-              "display_name": "Interest Rate",
-              "tooltip": "Central bank benchmark interest rate",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 1.0,
@@ -3371,23 +3080,21 @@
         {
           "category": "PPI",
           "label": "PPI",
-          "weight_orig": 0.05,
-          "weight_eff": 0.05,
+          "weight_orig": 0.043,
+          "weight_eff": 0.043,
           "signal": "bearish",
-          "signal_value": -0.667,
+          "signal_value": -1.0,
           "factors": [
             {
               "indicator": "PPI",
-              "display_name": "PPI",
-              "tooltip": "Producer Price Index — upstream inflation",
               "signal": "bearish",
-              "signal_value": -0.667,
+              "signal_value": -1.0,
               "ind_weight": 1.0,
-              "actual": 12.4,
-              "forecast": 12.8,
-              "previous": 13.6,
-              "surprise_diff": -0.4,
-              "event_name": "Producer Price Index YoY (Jun)",
+              "actual": -1.4,
+              "forecast": -0.4,
+              "previous": 1.2,
+              "surprise_diff": -1.0,
+              "event_name": "Producer Price Index MoM (Jun)",
               "release_date": "2026-07-24",
               "impact": "medium"
             }
@@ -3395,21 +3102,19 @@
           "freshness": {
             "event_date": "2026-07-24",
             "age_days": 12,
-            "indicator": "Producer Price Index YoY (Jun)"
+            "indicator": "Producer Price Index MoM (Jun)"
           }
         },
         {
           "category": "CONFIDENCE",
           "label": "Confidence / Other",
-          "weight_orig": 0.05,
-          "weight_eff": 0.05,
+          "weight_orig": 0.043,
+          "weight_eff": 0.043,
           "signal": "bearish",
           "signal_value": -1.0,
           "factors": [
             {
               "indicator": "CURRENT_ACCOUNT",
-              "display_name": "Current Account",
-              "tooltip": "Broadest measure of trade and transfers",
               "signal": "bearish",
               "signal_value": -1.0,
               "ind_weight": 0.05,
@@ -3438,8 +3143,6 @@
       "factors": {
         "GDP": {
           "indicator": "GDP",
-          "display_name": "GDP Growth",
-          "tooltip": "Gross Domestic Product growth rate",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 1.0,
@@ -3453,8 +3156,6 @@
         },
         "CPI": {
           "indicator": "CPI",
-          "display_name": "CPI",
-          "tooltip": "Consumer Price Index — headline inflation",
           "signal": "bearish",
           "signal_value": -0.333,
           "ind_weight": 1.0,
@@ -3468,23 +3169,19 @@
         },
         "CORE_CPI": {
           "indicator": "CORE_CPI",
-          "display_name": "Core CPI",
-          "tooltip": "CPI excluding food and energy",
-          "signal": "neutral",
-          "signal_value": 0.0,
+          "signal": "bearish",
+          "signal_value": -1.0,
           "ind_weight": 0.8,
           "actual": 0.1,
-          "forecast": 0.1,
+          "forecast": null,
           "previous": 0.6,
-          "surprise_diff": 0.0,
-          "event_name": "Core Inflation Rate MoM (Jun)",
+          "surprise_diff": -0.5,
+          "event_name": "Core CPI MoM (Jun)",
           "release_date": "2026-07-20",
           "impact": "high"
         },
         "EMPLOYMENT": {
           "indicator": "EMPLOYMENT",
-          "display_name": "Employment",
-          "tooltip": "Employment change",
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 0.9,
@@ -3498,8 +3195,6 @@
         },
         "UNEMPLOYMENT": {
           "indicator": "UNEMPLOYMENT",
-          "display_name": "Unemployment Rate",
-          "tooltip": "Headline unemployment rate (U-3)",
           "signal": "bullish",
           "signal_value": 0.333,
           "ind_weight": 0.6,
@@ -3513,8 +3208,6 @@
         },
         "PMI_MFG": {
           "indicator": "PMI_MFG",
-          "display_name": "PMI Mfg",
-          "tooltip": "Manufacturing PMI — above 50 = expansion",
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 1.0,
@@ -3528,8 +3221,6 @@
         },
         "PMI_SVC": {
           "indicator": "PMI_SVC",
-          "display_name": "PMI Services",
-          "tooltip": "Services PMI — above 50 = expansion",
           "signal": "bearish",
           "signal_value": -1.0,
           "ind_weight": 1.0,
@@ -3543,8 +3234,6 @@
         },
         "PMI_COMP": {
           "indicator": "PMI_COMP",
-          "display_name": "PMI Composite",
-          "tooltip": "Composite PMI (manufacturing + services)",
           "signal": "bearish",
           "signal_value": -1.0,
           "ind_weight": 0.6,
@@ -3558,23 +3247,19 @@
         },
         "RETAIL_SALES": {
           "indicator": "RETAIL_SALES",
-          "display_name": "Retail Sales",
-          "tooltip": "Monthly retail sales change",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 1.0,
-          "actual": 0.4,
-          "forecast": 0.4,
-          "previous": 1.0,
+          "actual": 1.0,
+          "forecast": 1.0,
+          "previous": 0.4,
           "surprise_diff": 0.0,
-          "event_name": "Retail Sales MoM (Jun)",
+          "event_name": "Retail Sales MoM (May)",
           "release_date": "2026-07-23",
           "impact": "high"
         },
         "INTEREST_RATE": {
           "indicator": "INTEREST_RATE",
-          "display_name": "Interest Rate",
-          "tooltip": "Central bank benchmark interest rate",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 1.0,
@@ -3588,23 +3273,19 @@
         },
         "PPI": {
           "indicator": "PPI",
-          "display_name": "PPI",
-          "tooltip": "Producer Price Index — upstream inflation",
           "signal": "bearish",
-          "signal_value": -0.667,
+          "signal_value": -1.0,
           "ind_weight": 1.0,
-          "actual": 12.4,
-          "forecast": 12.8,
-          "previous": 13.6,
-          "surprise_diff": -0.4,
-          "event_name": "Producer Price Index YoY (Jun)",
+          "actual": -1.4,
+          "forecast": -0.4,
+          "previous": 1.2,
+          "surprise_diff": -1.0,
+          "event_name": "Producer Price Index MoM (Jun)",
           "release_date": "2026-07-24",
           "impact": "medium"
         },
         "CURRENT_ACCOUNT": {
           "indicator": "CURRENT_ACCOUNT",
-          "display_name": "Current Account",
-          "tooltip": "Broadest measure of trade and transfers",
           "signal": "bearish",
           "signal_value": -1.0,
           "ind_weight": 0.05,
@@ -3626,20 +3307,18 @@
       "bull_count": 5,
       "bear_count": 2,
       "neutral_count": 1,
-      "model_coverage": 0.9,
+      "model_coverage": 0.828,
       "categories": [
         {
           "category": "GDP",
           "label": "GDP Growth",
-          "weight_orig": 0.2,
-          "weight_eff": 0.2,
+          "weight_orig": 0.184,
+          "weight_eff": 0.184,
           "signal": "bearish",
           "signal_value": -0.333,
           "factors": [
             {
               "indicator": "GDP",
-              "display_name": "GDP Growth",
-              "tooltip": "Gross Domestic Product growth rate",
               "signal": "bearish",
               "signal_value": -0.333,
               "ind_weight": 1.0,
@@ -3661,23 +3340,21 @@
         {
           "category": "CPI",
           "label": "Inflation",
-          "weight_orig": 0.15,
-          "weight_eff": 0.15,
+          "weight_orig": 0.138,
+          "weight_eff": 0.138,
           "signal": "bearish",
           "signal_value": -0.667,
           "factors": [
             {
               "indicator": "CPI",
-              "display_name": "CPI",
-              "tooltip": "Consumer Price Index — headline inflation",
               "signal": "bearish",
               "signal_value": -0.667,
               "ind_weight": 1.0,
-              "actual": 3.9,
-              "forecast": 4.1,
-              "previous": 4.1,
+              "actual": 3.8,
+              "forecast": 4.0,
+              "previous": 4.0,
               "surprise_diff": -0.2,
-              "event_name": "Inflation Rate YoY (Q2)",
+              "event_name": "Inflation Rate YoY (Jun)",
               "release_date": "2026-07-29",
               "impact": "high"
             }
@@ -3685,21 +3362,19 @@
           "freshness": {
             "event_date": "2026-07-29",
             "age_days": 7,
-            "indicator": "Inflation Rate YoY (Q2)"
+            "indicator": "Inflation Rate YoY (Jun)"
           }
         },
         {
           "category": "EMPLOYMENT",
           "label": "Employment",
-          "weight_orig": 0.15,
-          "weight_eff": 0.15,
+          "weight_orig": 0.138,
+          "weight_eff": 0.138,
           "signal": "bullish",
           "signal_value": 0.6,
           "factors": [
             {
               "indicator": "EMPLOYMENT",
-              "display_name": "Employment",
-              "tooltip": "Employment change",
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 0.9,
@@ -3713,8 +3388,6 @@
             },
             {
               "indicator": "UNEMPLOYMENT",
-              "display_name": "Unemployment Rate",
-              "tooltip": "Headline unemployment rate (U-3)",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 0.6,
@@ -3736,15 +3409,13 @@
         {
           "category": "PMI_MFG",
           "label": "PMI Manufacturing",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
+          "weight_orig": 0.092,
+          "weight_eff": 0.092,
           "signal": "bullish",
           "signal_value": 0.333,
           "factors": [
             {
               "indicator": "PMI_MFG",
-              "display_name": "PMI Mfg",
-              "tooltip": "Manufacturing PMI — above 50 = expansion",
               "signal": "bullish",
               "signal_value": 0.333,
               "ind_weight": 1.0,
@@ -3766,15 +3437,13 @@
         {
           "category": "PMI_SVC",
           "label": "PMI Services",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
+          "weight_orig": 0.092,
+          "weight_eff": 0.092,
           "signal": "bullish",
           "signal_value": 0.667,
           "factors": [
             {
               "indicator": "PMI_SVC",
-              "display_name": "PMI Services",
-              "tooltip": "Services PMI — above 50 = expansion",
               "signal": "bullish",
               "signal_value": 0.667,
               "ind_weight": 1.0,
@@ -3788,8 +3457,6 @@
             },
             {
               "indicator": "PMI_COMP",
-              "display_name": "PMI Composite",
-              "tooltip": "Composite PMI (manufacturing + services)",
               "signal": "bullish",
               "signal_value": 0.667,
               "ind_weight": 0.6,
@@ -3811,15 +3478,13 @@
         {
           "category": "RATES",
           "label": "Interest Rate / Wages",
-          "weight_orig": 0.1,
-          "weight_eff": 0.03,
+          "weight_orig": 0.092,
+          "weight_eff": 0.028,
           "signal": "neutral",
           "signal_value": 0.0,
           "factors": [
             {
               "indicator": "INTEREST_RATE",
-              "display_name": "Interest Rate",
-              "tooltip": "Central bank benchmark interest rate",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 1.0,
@@ -3841,15 +3506,13 @@
         {
           "category": "PPI",
           "label": "PPI",
-          "weight_orig": 0.05,
-          "weight_eff": 0.05,
+          "weight_orig": 0.046,
+          "weight_eff": 0.046,
           "signal": "bullish",
           "signal_value": 1.0,
           "factors": [
             {
               "indicator": "PPI",
-              "display_name": "PPI",
-              "tooltip": "Producer Price Index — upstream inflation",
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 1.0,
@@ -3871,15 +3534,13 @@
         {
           "category": "CONFIDENCE",
           "label": "Confidence / Other",
-          "weight_orig": 0.05,
-          "weight_eff": 0.05,
+          "weight_orig": 0.046,
+          "weight_eff": 0.046,
           "signal": "bullish",
           "signal_value": 0.905,
           "factors": [
             {
               "indicator": "CONFIDENCE",
-              "display_name": "Confidence",
-              "tooltip": "Consumer or business confidence index",
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 1.0,
@@ -3893,8 +3554,6 @@
             },
             {
               "indicator": "CURRENT_ACCOUNT",
-              "display_name": "Current Account",
-              "tooltip": "Broadest measure of trade and transfers",
               "signal": "bearish",
               "signal_value": -1.0,
               "ind_weight": 0.05,
@@ -3923,8 +3582,6 @@
       "factors": {
         "GDP": {
           "indicator": "GDP",
-          "display_name": "GDP Growth",
-          "tooltip": "Gross Domestic Product growth rate",
           "signal": "bearish",
           "signal_value": -0.333,
           "ind_weight": 1.0,
@@ -3938,23 +3595,19 @@
         },
         "CPI": {
           "indicator": "CPI",
-          "display_name": "CPI",
-          "tooltip": "Consumer Price Index — headline inflation",
           "signal": "bearish",
           "signal_value": -0.667,
           "ind_weight": 1.0,
-          "actual": 3.9,
-          "forecast": 4.1,
-          "previous": 4.1,
+          "actual": 3.8,
+          "forecast": 4.0,
+          "previous": 4.0,
           "surprise_diff": -0.2,
-          "event_name": "Inflation Rate YoY (Q2)",
+          "event_name": "Inflation Rate YoY (Jun)",
           "release_date": "2026-07-29",
           "impact": "high"
         },
         "EMPLOYMENT": {
           "indicator": "EMPLOYMENT",
-          "display_name": "Employment",
-          "tooltip": "Employment change",
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 0.9,
@@ -3968,8 +3621,6 @@
         },
         "UNEMPLOYMENT": {
           "indicator": "UNEMPLOYMENT",
-          "display_name": "Unemployment Rate",
-          "tooltip": "Headline unemployment rate (U-3)",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 0.6,
@@ -3983,8 +3634,6 @@
         },
         "PMI_MFG": {
           "indicator": "PMI_MFG",
-          "display_name": "PMI Mfg",
-          "tooltip": "Manufacturing PMI — above 50 = expansion",
           "signal": "bullish",
           "signal_value": 0.333,
           "ind_weight": 1.0,
@@ -3998,8 +3647,6 @@
         },
         "PMI_SVC": {
           "indicator": "PMI_SVC",
-          "display_name": "PMI Services",
-          "tooltip": "Services PMI — above 50 = expansion",
           "signal": "bullish",
           "signal_value": 0.667,
           "ind_weight": 1.0,
@@ -4013,8 +3660,6 @@
         },
         "PMI_COMP": {
           "indicator": "PMI_COMP",
-          "display_name": "PMI Composite",
-          "tooltip": "Composite PMI (manufacturing + services)",
           "signal": "bullish",
           "signal_value": 0.667,
           "ind_weight": 0.6,
@@ -4028,8 +3673,6 @@
         },
         "INTEREST_RATE": {
           "indicator": "INTEREST_RATE",
-          "display_name": "Interest Rate",
-          "tooltip": "Central bank benchmark interest rate",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 1.0,
@@ -4043,8 +3686,6 @@
         },
         "PPI": {
           "indicator": "PPI",
-          "display_name": "PPI",
-          "tooltip": "Producer Price Index — upstream inflation",
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 1.0,
@@ -4058,8 +3699,6 @@
         },
         "CONFIDENCE": {
           "indicator": "CONFIDENCE",
-          "display_name": "Confidence",
-          "tooltip": "Consumer or business confidence index",
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 1.0,
@@ -4073,8 +3712,6 @@
         },
         "CURRENT_ACCOUNT": {
           "indicator": "CURRENT_ACCOUNT",
-          "display_name": "Current Account",
-          "tooltip": "Broadest measure of trade and transfers",
           "signal": "bearish",
           "signal_value": -1.0,
           "ind_weight": 0.05,
@@ -4090,26 +3727,24 @@
     },
     "NZD": {
       "ccy": "NZD",
-      "heatmap": 75,
-      "macro_score": 50,
+      "heatmap": 78,
+      "macro_score": 55,
       "bias": "bull",
       "bull_count": 6,
       "bear_count": 0,
       "neutral_count": 1,
-      "model_coverage": 0.8,
+      "model_coverage": 0.76,
       "categories": [
         {
           "category": "GDP",
           "label": "GDP Growth",
-          "weight_orig": 0.2,
-          "weight_eff": 0.06,
+          "weight_orig": 0.19,
+          "weight_eff": 0.057,
           "signal": "neutral",
           "signal_value": 0.0,
           "factors": [
             {
               "indicator": "GDP",
-              "display_name": "GDP Growth",
-              "tooltip": "Gross Domestic Product growth rate",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 1.0,
@@ -4131,15 +3766,13 @@
         {
           "category": "CPI",
           "label": "Inflation",
-          "weight_orig": 0.15,
-          "weight_eff": 0.15,
+          "weight_orig": 0.142,
+          "weight_eff": 0.142,
           "signal": "bullish",
           "signal_value": 0.333,
           "factors": [
             {
               "indicator": "CPI",
-              "display_name": "CPI",
-              "tooltip": "Consumer Price Index — headline inflation",
               "signal": "bullish",
               "signal_value": 0.333,
               "ind_weight": 1.0,
@@ -4161,15 +3794,13 @@
         {
           "category": "EMPLOYMENT",
           "label": "Employment",
-          "weight_orig": 0.15,
-          "weight_eff": 0.15,
+          "weight_orig": 0.142,
+          "weight_eff": 0.142,
           "signal": "bullish",
           "signal_value": 0.333,
           "factors": [
             {
               "indicator": "EMPLOYMENT",
-              "display_name": "Employment",
-              "tooltip": "Employment change",
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 0.9,
@@ -4183,8 +3814,6 @@
             },
             {
               "indicator": "UNEMPLOYMENT",
-              "display_name": "Unemployment Rate",
-              "tooltip": "Headline unemployment rate (U-3)",
               "signal": "bearish",
               "signal_value": -0.667,
               "ind_weight": 0.6,
@@ -4206,23 +3835,21 @@
         {
           "category": "RETAIL",
           "label": "Retail Sales",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
+          "weight_orig": 0.095,
+          "weight_eff": 0.095,
           "signal": "bullish",
-          "signal_value": 0.333,
+          "signal_value": 0.667,
           "factors": [
             {
               "indicator": "RETAIL_SALES",
-              "display_name": "Retail Sales",
-              "tooltip": "Monthly retail sales change",
               "signal": "bullish",
-              "signal_value": 0.333,
+              "signal_value": 0.667,
               "ind_weight": 1.0,
-              "actual": 1.0,
-              "forecast": 0.8,
-              "previous": 1.5,
-              "surprise_diff": 0.2,
-              "event_name": "Retail Sales QoQ",
+              "actual": 0.9,
+              "forecast": 0.5,
+              "previous": 0.9,
+              "surprise_diff": 0.4,
+              "event_name": "Retail Sales QoQ (Q1)",
               "release_date": "2026-05-21",
               "impact": "high"
             }
@@ -4230,21 +3857,19 @@
           "freshness": {
             "event_date": "2026-05-21",
             "age_days": 76,
-            "indicator": "Retail Sales QoQ"
+            "indicator": "Retail Sales QoQ (Q1)"
           }
         },
         {
           "category": "RATES",
           "label": "Interest Rate / Wages",
-          "weight_orig": 0.1,
-          "weight_eff": 0.1,
+          "weight_orig": 0.095,
+          "weight_eff": 0.095,
           "signal": "bullish",
           "signal_value": 1.0,
           "factors": [
             {
               "indicator": "INTEREST_RATE",
-              "display_name": "Interest Rate",
-              "tooltip": "Central bank benchmark interest rate",
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 1.0,
@@ -4266,15 +3891,13 @@
         {
           "category": "PPI",
           "label": "PPI",
-          "weight_orig": 0.05,
-          "weight_eff": 0.05,
+          "weight_orig": 0.048,
+          "weight_eff": 0.048,
           "signal": "bullish",
           "signal_value": 1.0,
           "factors": [
             {
               "indicator": "PPI",
-              "display_name": "PPI",
-              "tooltip": "Producer Price Index — upstream inflation",
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 1.0,
@@ -4296,15 +3919,13 @@
         {
           "category": "CONFIDENCE",
           "label": "Confidence / Other",
-          "weight_orig": 0.05,
-          "weight_eff": 0.05,
+          "weight_orig": 0.048,
+          "weight_eff": 0.048,
           "signal": "bullish",
           "signal_value": 0.952,
           "factors": [
             {
               "indicator": "CONFIDENCE",
-              "display_name": "Confidence",
-              "tooltip": "Consumer or business confidence index",
               "signal": "bullish",
               "signal_value": 1.0,
               "ind_weight": 1.0,
@@ -4318,8 +3939,6 @@
             },
             {
               "indicator": "CURRENT_ACCOUNT",
-              "display_name": "Current Account",
-              "tooltip": "Broadest measure of trade and transfers",
               "signal": "neutral",
               "signal_value": 0.0,
               "ind_weight": 0.05,
@@ -4348,8 +3967,6 @@
       "factors": {
         "GDP": {
           "indicator": "GDP",
-          "display_name": "GDP Growth",
-          "tooltip": "Gross Domestic Product growth rate",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 1.0,
@@ -4363,8 +3980,6 @@
         },
         "CPI": {
           "indicator": "CPI",
-          "display_name": "CPI",
-          "tooltip": "Consumer Price Index — headline inflation",
           "signal": "bullish",
           "signal_value": 0.333,
           "ind_weight": 1.0,
@@ -4378,8 +3993,6 @@
         },
         "EMPLOYMENT": {
           "indicator": "EMPLOYMENT",
-          "display_name": "Employment",
-          "tooltip": "Employment change",
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 0.9,
@@ -4393,8 +4006,6 @@
         },
         "UNEMPLOYMENT": {
           "indicator": "UNEMPLOYMENT",
-          "display_name": "Unemployment Rate",
-          "tooltip": "Headline unemployment rate (U-3)",
           "signal": "bearish",
           "signal_value": -0.667,
           "ind_weight": 0.6,
@@ -4408,23 +4019,19 @@
         },
         "RETAIL_SALES": {
           "indicator": "RETAIL_SALES",
-          "display_name": "Retail Sales",
-          "tooltip": "Monthly retail sales change",
           "signal": "bullish",
-          "signal_value": 0.333,
+          "signal_value": 0.667,
           "ind_weight": 1.0,
-          "actual": 1.0,
-          "forecast": 0.8,
-          "previous": 1.5,
-          "surprise_diff": 0.2,
-          "event_name": "Retail Sales QoQ",
+          "actual": 0.9,
+          "forecast": 0.5,
+          "previous": 0.9,
+          "surprise_diff": 0.4,
+          "event_name": "Retail Sales QoQ (Q1)",
           "release_date": "2026-05-21",
           "impact": "high"
         },
         "INTEREST_RATE": {
           "indicator": "INTEREST_RATE",
-          "display_name": "Interest Rate",
-          "tooltip": "Central bank benchmark interest rate",
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 1.0,
@@ -4438,8 +4045,6 @@
         },
         "PPI": {
           "indicator": "PPI",
-          "display_name": "PPI",
-          "tooltip": "Producer Price Index — upstream inflation",
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 1.0,
@@ -4453,8 +4058,6 @@
         },
         "CONFIDENCE": {
           "indicator": "CONFIDENCE",
-          "display_name": "Confidence",
-          "tooltip": "Consumer or business confidence index",
           "signal": "bullish",
           "signal_value": 1.0,
           "ind_weight": 1.0,
@@ -4468,8 +4071,6 @@
         },
         "CURRENT_ACCOUNT": {
           "indicator": "CURRENT_ACCOUNT",
-          "display_name": "Current Account",
-          "tooltip": "Broadest measure of trade and transfers",
           "signal": "neutral",
           "signal_value": 0.0,
           "ind_weight": 0.05,
