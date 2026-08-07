@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T17:48:26.496102+00:00",
+  "generatedAt": "2026-08-07T17:53:05.736340+00:00",
   "daysBack": 7,
   "news": [
     {
@@ -19,21 +19,6 @@
     },
     {
       "ccy": "USD",
-      "type": "UNEMPLOYMENT",
-      "eventName": "Unemployment Rate (Jul)",
-      "impact": "high",
-      "actual": 4.1,
-      "forecast": 4.2,
-      "previous": 4.2,
-      "date": "2026-08-07 12:30:00",
-      "daysAgo": 0,
-      "surpriseDiff": -0.1,
-      "impulseBase": 3.33,
-      "impulse": 3.33,
-      "decay": 1.0
-    },
-    {
-      "ccy": "USD",
       "type": "EMPLOYMENT",
       "eventName": "Non Farm Payrolls (Jul)",
       "impact": "high",
@@ -49,8 +34,23 @@
     },
     {
       "ccy": "USD",
+      "type": "UNEMPLOYMENT",
+      "eventName": "Unemployment Rate (Jul)",
+      "impact": "high",
+      "actual": 4.1,
+      "forecast": 4.2,
+      "previous": 4.2,
+      "date": "2026-08-07 12:30:00",
+      "daysAgo": 0,
+      "surpriseDiff": -0.1,
+      "impulseBase": 3.33,
+      "impulse": 3.33,
+      "decay": 1.0
+    },
+    {
+      "ccy": "USD",
       "type": "PMI",
-      "eventName": "ISM Services PMI (Jul)",
+      "eventName": "ISM Non-Manufacturing PMI (Jul)",
       "impact": "high",
       "actual": 54.1,
       "forecast": 54.5,
@@ -65,7 +65,7 @@
     {
       "ccy": "USD",
       "type": "PMI",
-      "eventName": "ISM Non-Manufacturing PMI (Jul)",
+      "eventName": "ISM Services PMI (Jul)",
       "impact": "high",
       "actual": 54.1,
       "forecast": 54.5,
