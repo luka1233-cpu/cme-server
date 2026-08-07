@@ -1,21 +1,36 @@
 {
-  "generatedAt": "2026-08-06T15:27:52.062433+00:00",
+  "generatedAt": "2026-08-07T12:55:40.529397+00:00",
   "daysBack": 7,
   "news": [
     {
       "ccy": "USD",
-      "type": "PMI",
-      "eventName": "ISM Services PMI (Jul)",
+      "type": "EMPLOYMENT",
+      "eventName": "Non Farm Payrolls (Jul)",
       "impact": "high",
-      "actual": 54.1,
-      "forecast": 54.5,
-      "previous": 54.0,
-      "date": "2026-08-05 14:00:00",
-      "daysAgo": 1,
-      "surpriseDiff": -0.4,
-      "impulseBase": -4.44,
-      "impulse": -3.33,
-      "decay": 0.75
+      "actual": -23.0,
+      "forecast": 80.0,
+      "previous": 20.0,
+      "date": "2026-08-07 12:30:00",
+      "daysAgo": 0,
+      "surpriseDiff": -103.0,
+      "impulseBase": -4.29,
+      "impulse": -4.29,
+      "decay": 1.0
+    },
+    {
+      "ccy": "USD",
+      "type": "UNEMPLOYMENT",
+      "eventName": "Unemployment Rate (Jul)",
+      "impact": "high",
+      "actual": 4.1,
+      "forecast": 4.2,
+      "previous": 4.2,
+      "date": "2026-08-07 12:30:00",
+      "daysAgo": 0,
+      "surpriseDiff": -0.1,
+      "impulseBase": 3.33,
+      "impulse": 3.33,
+      "decay": 1.0
     },
     {
       "ccy": "USD",
@@ -26,26 +41,26 @@
       "forecast": 54.5,
       "previous": 54.0,
       "date": "2026-08-05 14:00:00",
-      "daysAgo": 1,
+      "daysAgo": 2,
       "surpriseDiff": -0.4,
       "impulseBase": -4.44,
-      "impulse": -3.33,
-      "decay": 0.75
+      "impulse": -2.22,
+      "decay": 0.5
     },
     {
       "ccy": "USD",
       "type": "PMI",
-      "eventName": "ISM Manufacturing PMI (Jul)",
+      "eventName": "ISM Services PMI (Jul)",
       "impact": "high",
-      "actual": 55.6,
-      "forecast": 54.0,
-      "previous": 53.3,
-      "date": "2026-08-03 14:00:00",
-      "daysAgo": 3,
-      "surpriseDiff": 1.6,
-      "impulseBase": 10.0,
-      "impulse": 2.5,
-      "decay": 0.25
+      "actual": 54.1,
+      "forecast": 54.5,
+      "previous": 54.0,
+      "date": "2026-08-05 14:00:00",
+      "daysAgo": 2,
+      "surpriseDiff": -0.4,
+      "impulseBase": -4.44,
+      "impulse": -2.22,
+      "decay": 0.5
     }
   ]
 }
