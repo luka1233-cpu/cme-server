@@ -4,8 +4,8 @@
   "build": "2026-07-12",
   "status": "complete",
   "date": "2026-08-07",
-  "datasetId": "2026-08-07T17:48:29.924576+00:00",
-  "generatedAt": "2026-08-07T17:48:46.722Z",
+  "datasetId": "2026-08-07T17:53:09.554408+00:00",
+  "generatedAt": "2026-08-07T17:53:26.720Z",
   "cotReportDate": "2026-07-28",
   "newsLoaded": true,
   "heatmapLoaded": true,
@@ -84,24 +84,6 @@
           {
             "item": {
               "ccy": "USD",
-              "type": "UNEMPLOYMENT",
-              "eventName": "Unemployment Rate (Jul)",
-              "impact": "high",
-              "actual": 4.1,
-              "forecast": 4.2,
-              "previous": 4.2,
-              "date": "2026-08-07 12:30:00",
-              "daysAgo": 0,
-              "surpriseDiff": -0.1,
-              "impulseBase": 3.33,
-              "impulse": 3.33,
-              "decay": 1
-            },
-            "pts": 3.33
-          },
-          {
-            "item": {
-              "ccy": "USD",
               "type": "EMPLOYMENT",
               "eventName": "Non Farm Payrolls (Jul)",
               "impact": "high",
@@ -120,8 +102,26 @@
           {
             "item": {
               "ccy": "USD",
+              "type": "UNEMPLOYMENT",
+              "eventName": "Unemployment Rate (Jul)",
+              "impact": "high",
+              "actual": 4.1,
+              "forecast": 4.2,
+              "previous": 4.2,
+              "date": "2026-08-07 12:30:00",
+              "daysAgo": 0,
+              "surpriseDiff": -0.1,
+              "impulseBase": 3.33,
+              "impulse": 3.33,
+              "decay": 1
+            },
+            "pts": 3.33
+          },
+          {
+            "item": {
+              "ccy": "USD",
               "type": "PMI",
-              "eventName": "ISM Services PMI (Jul)",
+              "eventName": "ISM Non-Manufacturing PMI (Jul)",
               "impact": "high",
               "actual": 54.1,
               "forecast": 54.5,
@@ -139,7 +139,7 @@
             "item": {
               "ccy": "USD",
               "type": "PMI",
-              "eventName": "ISM Non-Manufacturing PMI (Jul)",
+              "eventName": "ISM Services PMI (Jul)",
               "impact": "high",
               "actual": 54.1,
               "forecast": 54.5,
@@ -177,10 +177,10 @@
       "weeklyScore": -30,
       "heatmapScore": 5,
       "newsScore": 0,
-      "penalty": -5,
+      "penalty": 0,
       "finalScore": -53,
       "finalBias": "wbear",
-      "conf": 80,
+      "conf": 95,
       "inputs": {
         "cotLongPct": 42.5,
         "cotLongPct6w": 54.1,
@@ -234,13 +234,13 @@
           "opposed": false,
           "gap": 5
         },
-        "heatmapPercent": 59,
+        "heatmapPercent": 52,
         "heatmapCoverage": 0.98,
         "newsImpulse": 0,
         "newsContrib": [],
         "cotBias": "Bearish",
         "weeklyBias": "Bearish",
-        "heatmapBias": "Bullish",
+        "heatmapBias": "Neutral",
         "tqBias": "Strong",
         "cotMomentumScore": -19,
         "cotLevelScore": -56,
@@ -250,7 +250,7 @@
       "score": -53,
       "bias": "wbear",
       "coverage": 0.98,
-      "heatmap": 59,
+      "heatmap": 52,
       "cot_longPct": 42.5,
       "cot_deltaPct6w": -12,
       "cot_tq": 5
@@ -318,7 +318,7 @@
           "opposed": true,
           "gap": 14
         },
-        "heatmapPercent": 49,
+        "heatmapPercent": 47,
         "heatmapCoverage": 1,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -334,7 +334,7 @@
       "score": -2,
       "bias": "neut",
       "coverage": 1,
-      "heatmap": 49,
+      "heatmap": 47,
       "cot_longPct": 32.7,
       "cot_deltaPct6w": 6,
       "cot_tq": 3
@@ -402,7 +402,7 @@
           "opposed": false,
           "gap": 3
         },
-        "heatmapPercent": 53,
+        "heatmapPercent": 54,
         "heatmapCoverage": 0.98,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -418,7 +418,7 @@
       "score": -34,
       "bias": "wbear",
       "coverage": 0.98,
-      "heatmap": 53,
+      "heatmap": 54,
       "cot_longPct": 27.7,
       "cot_deltaPct6w": -3,
       "cot_tq": 4
@@ -486,7 +486,7 @@
           "opposed": true,
           "gap": 12
         },
-        "heatmapPercent": 26,
+        "heatmapPercent": 25,
         "heatmapCoverage": 0.9,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -502,7 +502,7 @@
       "score": 9,
       "bias": "neut",
       "coverage": 0.9,
-      "heatmap": 26,
+      "heatmap": 25,
       "cot_longPct": 18.8,
       "cot_deltaPct6w": 5,
       "cot_tq": 5
@@ -513,10 +513,10 @@
       "weeklyScore": -20,
       "heatmapScore": 5,
       "newsScore": -4,
-      "penalty": 0,
+      "penalty": -5,
       "finalScore": -42,
       "finalBias": "wbear",
-      "conf": 95,
+      "conf": 80,
       "inputs": {
         "cotLongPct": 10.2,
         "cotLongPct6w": 18.7,
@@ -570,7 +570,7 @@
           "opposed": false,
           "gap": 1
         },
-        "heatmapPercent": 54,
+        "heatmapPercent": 58,
         "heatmapCoverage": 0.898,
         "newsImpulse": -4,
         "newsContrib": [
@@ -595,7 +595,7 @@
         ],
         "cotBias": "Bearish",
         "weeklyBias": "Bearish",
-        "heatmapBias": "Neutral",
+        "heatmapBias": "Bullish",
         "tqBias": "Strong",
         "cotMomentumScore": -18,
         "cotLevelScore": -84,
@@ -605,7 +605,7 @@
       "score": -42,
       "bias": "wbear",
       "coverage": 0.898,
-      "heatmap": 54,
+      "heatmap": 58,
       "cot_longPct": 10.2,
       "cot_deltaPct6w": -9,
       "cot_tq": 6
@@ -757,7 +757,7 @@
           "opposed": false,
           "gap": 8
         },
-        "heatmapPercent": 63,
+        "heatmapPercent": 64,
         "heatmapCoverage": 0.734,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -773,7 +773,7 @@
       "score": 11,
       "bias": "neut",
       "coverage": 0.734,
-      "heatmap": 63,
+      "heatmap": 64,
       "cot_longPct": 11.2,
       "cot_deltaPct6w": -3,
       "cot_tq": 4
@@ -841,7 +841,7 @@
       "finalScore": -64,
       "spread": -64,
       "finalBias": "bear",
-      "confidence": 73,
+      "confidence": 80,
       "alignment": "Aligned",
       "quality": "good",
       "conflictCount": 0,
@@ -857,7 +857,7 @@
       "finalScore": -62,
       "spread": -62,
       "finalBias": "bear",
-      "confidence": 50,
+      "confidence": 58,
       "alignment": "Aligned",
       "quality": "moderate",
       "conflictCount": 2,
@@ -905,7 +905,7 @@
       "finalScore": -58,
       "spread": -58,
       "finalBias": "wbear",
-      "confidence": 55,
+      "confidence": 63,
       "alignment": "Aligned",
       "quality": "moderate",
       "conflictCount": 2,
@@ -937,7 +937,7 @@
       "finalScore": 53,
       "spread": 53,
       "finalBias": "wbull",
-      "confidence": 80,
+      "confidence": 73,
       "alignment": "Aligned",
       "quality": "moderate",
       "conflictCount": 0,
@@ -953,7 +953,7 @@
       "finalScore": -51,
       "spread": -51,
       "finalBias": "wbear",
-      "confidence": 53,
+      "confidence": 60,
       "alignment": "Opposed",
       "quality": "moderate",
       "conflictCount": 2,
@@ -969,7 +969,7 @@
       "finalScore": -51,
       "spread": -51,
       "finalBias": "wbear",
-      "confidence": 58,
+      "confidence": 50,
       "alignment": "Aligned",
       "quality": "moderate",
       "conflictCount": 2,
@@ -1001,7 +1001,7 @@
       "finalScore": 47,
       "spread": 47,
       "finalBias": "wbull",
-      "confidence": 63,
+      "confidence": 55,
       "alignment": "Aligned",
       "quality": "moderate",
       "conflictCount": 2,
@@ -1049,7 +1049,7 @@
       "finalScore": 40,
       "spread": 40,
       "finalBias": "wbull",
-      "confidence": 60,
+      "confidence": 53,
       "alignment": "Opposed",
       "quality": "moderate",
       "conflictCount": 2,
@@ -1113,7 +1113,7 @@
       "finalScore": -19,
       "spread": -19,
       "finalBias": "noedge",
-      "confidence": 55,
+      "confidence": 63,
       "alignment": "Opposed",
       "quality": "watch",
       "conflictCount": 1,
@@ -1193,7 +1193,7 @@
       "finalScore": -8,
       "spread": -8,
       "finalBias": "noedge",
-      "confidence": 63,
+      "confidence": 55,
       "alignment": "Opposed",
       "quality": "watch",
       "conflictCount": 1,
@@ -1209,7 +1209,7 @@
       "finalScore": -8,
       "spread": -8,
       "finalBias": "noedge",
-      "confidence": 70,
+      "confidence": 63,
       "alignment": "Opposed",
       "quality": "watch",
       "conflictCount": 0,
@@ -1273,7 +1273,7 @@
       "finalScore": -3,
       "spread": -3,
       "finalBias": "noedge",
-      "confidence": 38,
+      "confidence": 45,
       "alignment": "Opposed",
       "quality": "watch",
       "conflictCount": 2,
@@ -1313,7 +1313,7 @@
     "USD": {
       "bias": "bear",
       "heatmap": 33,
-      "macro_score": -35,
+      "macro_score": -34,
       "bull_count": 3,
       "bear_count": 5,
       "coverage": 0.98,
@@ -1340,7 +1340,7 @@
           "category": "GROWTH",
           "label": "Growth / Investment",
           "signal": "bearish",
-          "signal_value": -0.565
+          "signal_value": -0.474
         },
         {
           "category": "PMI_MFG",
@@ -1381,11 +1381,11 @@
       ]
     },
     "EUR": {
-      "bias": "wbull",
-      "heatmap": 59,
-      "macro_score": 19,
-      "bull_count": 4,
-      "bear_count": 1,
+      "bias": "neut",
+      "heatmap": 52,
+      "macro_score": 4,
+      "bull_count": 3,
+      "bear_count": 2,
       "coverage": 0.98,
       "categories": [
         {
@@ -1397,8 +1397,8 @@
         {
           "category": "CPI",
           "label": "Inflation",
-          "signal": "bullish",
-          "signal_value": 0.214
+          "signal": "bearish",
+          "signal_value": -0.429
         },
         {
           "category": "EMPLOYMENT",
@@ -1452,8 +1452,8 @@
     },
     "GBP": {
       "bias": "neut",
-      "heatmap": 49,
-      "macro_score": -1,
+      "heatmap": 47,
+      "macro_score": -6,
       "bull_count": 3,
       "bear_count": 4,
       "coverage": 1.0,
@@ -1510,13 +1510,13 @@
           "category": "PPI",
           "label": "PPI",
           "signal": "bearish",
-          "signal_value": -0.263
+          "signal_value": -1.0
         },
         {
           "category": "CONFIDENCE",
           "label": "Confidence / Sentiment",
           "signal": "bullish",
-          "signal_value": 0.681
+          "signal_value": 0.677
         },
         {
           "category": "COMMUNICATION",
@@ -1528,9 +1528,9 @@
     },
     "JPY": {
       "bias": "neut",
-      "heatmap": 53,
+      "heatmap": 54,
       "macro_score": 7,
-      "bull_count": 3,
+      "bull_count": 4,
       "bear_count": 2,
       "coverage": 0.98,
       "categories": [
@@ -1585,8 +1585,8 @@
         {
           "category": "PPI",
           "label": "PPI",
-          "signal": "neutral",
-          "signal_value": 0.0
+          "signal": "bullish",
+          "signal_value": 0.158
         },
         {
           "category": "CONFIDENCE",
@@ -1598,10 +1598,10 @@
     },
     "CHF": {
       "bias": "bear",
-      "heatmap": 26,
-      "macro_score": -48,
+      "heatmap": 25,
+      "macro_score": -50,
       "bull_count": 0,
-      "bear_count": 4,
+      "bear_count": 3,
       "coverage": 0.9,
       "categories": [
         {
@@ -1649,8 +1649,8 @@
         {
           "category": "PPI",
           "label": "PPI",
-          "signal": "bearish",
-          "signal_value": -0.158
+          "signal": "neutral",
+          "signal_value": 0.105
         },
         {
           "category": "CONFIDENCE",
@@ -1661,9 +1661,9 @@
       ]
     },
     "CAD": {
-      "bias": "neut",
-      "heatmap": 54,
-      "macro_score": 9,
+      "bias": "wbull",
+      "heatmap": 58,
+      "macro_score": 16,
       "bull_count": 3,
       "bear_count": 3,
       "coverage": 0.898,
@@ -1678,7 +1678,7 @@
           "category": "CPI",
           "label": "Inflation",
           "signal": "bearish",
-          "signal_value": -0.63
+          "signal_value": -0.333
         },
         {
           "category": "EMPLOYMENT",
@@ -1796,9 +1796,9 @@
     },
     "NZD": {
       "bias": "wbull",
-      "heatmap": 63,
+      "heatmap": 64,
       "macro_score": 27,
-      "bull_count": 6,
+      "bull_count": 5,
       "bear_count": 1,
       "coverage": 0.734,
       "categories": [
@@ -1823,8 +1823,8 @@
         {
           "category": "RETAIL",
           "label": "Retail Sales",
-          "signal": "bullish",
-          "signal_value": 0.16
+          "signal": "neutral",
+          "signal_value": 0.08
         },
         {
           "category": "RATES",
@@ -1853,6 +1853,6 @@
       ]
     }
   },
-  "fundamentalsGeneratedAt": "2026-08-07T17:48:29.924576+00:00",
+  "fundamentalsGeneratedAt": "2026-08-07T17:53:09.554408+00:00",
   "schemaVersion": 2
 }

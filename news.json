@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T17:53:05.736340+00:00",
+  "generatedAt": "2026-08-08T16:18:04.930102+00:00",
   "daysBack": 7,
   "news": [
     {
@@ -11,26 +11,11 @@
       "forecast": 55.5,
       "previous": 56.2,
       "date": "2026-08-07 14:00:00",
-      "daysAgo": 0,
+      "daysAgo": 1,
       "surpriseDiff": -0.4,
       "impulseBase": -4.44,
-      "impulse": -4.44,
-      "decay": 1.0
-    },
-    {
-      "ccy": "USD",
-      "type": "EMPLOYMENT",
-      "eventName": "Non Farm Payrolls (Jul)",
-      "impact": "high",
-      "actual": -23.0,
-      "forecast": 80.0,
-      "previous": 20.0,
-      "date": "2026-08-07 12:30:00",
-      "daysAgo": 0,
-      "surpriseDiff": -103.0,
-      "impulseBase": -4.29,
-      "impulse": -4.29,
-      "decay": 1.0
+      "impulse": -3.33,
+      "decay": 0.75
     },
     {
       "ccy": "USD",
@@ -41,26 +26,26 @@
       "forecast": 4.2,
       "previous": 4.2,
       "date": "2026-08-07 12:30:00",
-      "daysAgo": 0,
+      "daysAgo": 1,
       "surpriseDiff": -0.1,
       "impulseBase": 3.33,
-      "impulse": 3.33,
-      "decay": 1.0
+      "impulse": 2.5,
+      "decay": 0.75
     },
     {
       "ccy": "USD",
-      "type": "PMI",
-      "eventName": "ISM Non-Manufacturing PMI (Jul)",
+      "type": "EMPLOYMENT",
+      "eventName": "Non Farm Payrolls (Jul)",
       "impact": "high",
-      "actual": 54.1,
-      "forecast": 54.5,
-      "previous": 54.0,
-      "date": "2026-08-05 14:00:00",
-      "daysAgo": 2,
-      "surpriseDiff": -0.4,
-      "impulseBase": -4.44,
-      "impulse": -2.22,
-      "decay": 0.5
+      "actual": -23.0,
+      "forecast": 80.0,
+      "previous": 20.0,
+      "date": "2026-08-07 12:30:00",
+      "daysAgo": 1,
+      "surpriseDiff": -103.0,
+      "impulseBase": -4.29,
+      "impulse": -3.22,
+      "decay": 0.75
     },
     {
       "ccy": "USD",
@@ -71,11 +56,26 @@
       "forecast": 54.5,
       "previous": 54.0,
       "date": "2026-08-05 14:00:00",
-      "daysAgo": 2,
+      "daysAgo": 3,
       "surpriseDiff": -0.4,
       "impulseBase": -4.44,
-      "impulse": -2.22,
-      "decay": 0.5
+      "impulse": -1.11,
+      "decay": 0.25
+    },
+    {
+      "ccy": "USD",
+      "type": "PMI",
+      "eventName": "ISM Non-Manufacturing PMI (Jul)",
+      "impact": "high",
+      "actual": 54.1,
+      "forecast": 54.5,
+      "previous": 54.0,
+      "date": "2026-08-05 14:00:00",
+      "daysAgo": 3,
+      "surpriseDiff": -0.4,
+      "impulseBase": -4.44,
+      "impulse": -1.11,
+      "decay": 0.25
     }
   ]
 }

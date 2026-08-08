@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-07T17:53:24.424180+00:00",
-  "heatmap": 82,
-  "score": 64,
+  "generatedAt": "2026-08-08T16:19:05.656150+00:00",
+  "heatmap": 95,
+  "score": 90,
   "bias": "sbull",
   "engines": {
     "macro": {
-      "score": 60,
+      "score": 80,
       "signal": "bullish",
       "factors": [
         {
@@ -28,29 +28,29 @@
         },
         {
           "factor": "YIELD_2Y",
-          "detail": "2Y 4.1->4.25 (+0.15pp, rising)",
-          "gold_signal": "bearish",
+          "detail": "2Y 4.1->4.19 (+0.09pp, flat)",
+          "gold_signal": "neutral",
           "weight": 0.2
         }
       ]
     },
     "cot": {
-      "score": 67,
+      "score": 100,
       "signal": "bullish",
       "factors": [
         {
           "factor": "NET_POSITIONING",
-          "detail": "Long 85.4%",
+          "detail": "Long 88.5%",
           "gold_signal": "bullish"
         },
         {
           "factor": "LATEST_FLOW",
-          "detail": "dLong -5163, dShort -3323",
-          "gold_signal": "neutral"
+          "detail": "dLong +7391, dShort -8173",
+          "gold_signal": "bullish"
         },
         {
           "factor": "EXTREME",
-          "detail": "Long 85.4% = crowded_long",
+          "detail": "Long 88.5% = crowded_long",
           "gold_signal": "caution"
         }
       ],
@@ -59,7 +59,7 @@
     }
   },
   "narrative": {
-    "sr": "USD makro je bullish za zlato, 2Y prinos raste (dodatni bearish pritisak). COT to potvrdjuje (bullish) — makro i institucije poravnati. Napomena: Long% na ekstremu — oprez od preokreta.",
-    "en": "USD macro is bullish for gold, 2Y yield rising (added bearish pressure). COT confirms this (bullish) — macro and institutions aligned. Note: Long% at extreme — caution on reversal."
+    "sr": "USD makro je bullish za zlato. COT to potvrdjuje (bullish) — makro i institucije poravnati. Napomena: Long% na ekstremu — oprez od preokreta.",
+    "en": "USD macro is bullish for gold. COT confirms this (bullish) — macro and institutions aligned. Note: Long% at extreme — caution on reversal."
   }
 }
