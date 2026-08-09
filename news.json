@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T16:18:04.930102+00:00",
+  "generatedAt": "2026-08-09T16:34:03.191161+00:00",
   "daysBack": 7,
   "news": [
     {
@@ -11,26 +11,11 @@
       "forecast": 55.5,
       "previous": 56.2,
       "date": "2026-08-07 14:00:00",
-      "daysAgo": 1,
+      "daysAgo": 2,
       "surpriseDiff": -0.4,
       "impulseBase": -4.44,
-      "impulse": -3.33,
-      "decay": 0.75
-    },
-    {
-      "ccy": "USD",
-      "type": "UNEMPLOYMENT",
-      "eventName": "Unemployment Rate (Jul)",
-      "impact": "high",
-      "actual": 4.1,
-      "forecast": 4.2,
-      "previous": 4.2,
-      "date": "2026-08-07 12:30:00",
-      "daysAgo": 1,
-      "surpriseDiff": -0.1,
-      "impulseBase": 3.33,
-      "impulse": 2.5,
-      "decay": 0.75
+      "impulse": -2.22,
+      "decay": 0.5
     },
     {
       "ccy": "USD",
@@ -41,41 +26,26 @@
       "forecast": 80.0,
       "previous": 20.0,
       "date": "2026-08-07 12:30:00",
-      "daysAgo": 1,
+      "daysAgo": 2,
       "surpriseDiff": -103.0,
       "impulseBase": -4.29,
-      "impulse": -3.22,
-      "decay": 0.75
+      "impulse": -2.15,
+      "decay": 0.5
     },
     {
       "ccy": "USD",
-      "type": "PMI",
-      "eventName": "ISM Services PMI (Jul)",
+      "type": "UNEMPLOYMENT",
+      "eventName": "Unemployment Rate (Jul)",
       "impact": "high",
-      "actual": 54.1,
-      "forecast": 54.5,
-      "previous": 54.0,
-      "date": "2026-08-05 14:00:00",
-      "daysAgo": 3,
-      "surpriseDiff": -0.4,
-      "impulseBase": -4.44,
-      "impulse": -1.11,
-      "decay": 0.25
-    },
-    {
-      "ccy": "USD",
-      "type": "PMI",
-      "eventName": "ISM Non-Manufacturing PMI (Jul)",
-      "impact": "high",
-      "actual": 54.1,
-      "forecast": 54.5,
-      "previous": 54.0,
-      "date": "2026-08-05 14:00:00",
-      "daysAgo": 3,
-      "surpriseDiff": -0.4,
-      "impulseBase": -4.44,
-      "impulse": -1.11,
-      "decay": 0.25
+      "actual": 4.1,
+      "forecast": 4.2,
+      "previous": 4.2,
+      "date": "2026-08-07 12:30:00",
+      "daysAgo": 2,
+      "surpriseDiff": -0.1,
+      "impulseBase": 3.33,
+      "impulse": 1.67,
+      "decay": 0.5
     }
   ]
 }
