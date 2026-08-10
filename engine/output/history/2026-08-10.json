@@ -4,8 +4,8 @@
   "build": "2026-07-12",
   "status": "complete",
   "date": "2026-08-10",
-  "datasetId": "2026-08-10T10:04:16.297099+00:00",
-  "generatedAt": "2026-08-10T10:04:33.694Z",
+  "datasetId": "2026-08-10T13:45:22.939730+00:00",
+  "generatedAt": "2026-08-10T13:45:43.766Z",
   "cotReportDate": "2026-08-04",
   "newsLoaded": true,
   "heatmapLoaded": true,
@@ -77,7 +77,7 @@
           "opposed": false,
           "gap": 12
         },
-        "heatmapPercent": 34,
+        "heatmapPercent": 33,
         "heatmapCoverage": 0.98,
         "newsImpulse": 0,
         "newsContrib": [
@@ -130,7 +130,7 @@
       "score": 39,
       "bias": "wbull",
       "coverage": 0.98,
-      "heatmap": 34,
+      "heatmap": 33,
       "cot_longPct": 73.4,
       "cot_deltaPct6w": 12,
       "cot_tq": 6
@@ -141,10 +141,10 @@
       "weeklyScore": 10,
       "heatmapScore": 5,
       "newsScore": 0,
-      "penalty": 0,
+      "penalty": -5,
       "finalScore": -8,
       "finalBias": "neut",
-      "conf": 80,
+      "conf": 65,
       "inputs": {
         "cotLongPct": 43.7,
         "cotLongPct6w": 53.2,
@@ -198,13 +198,13 @@
           "opposed": false,
           "gap": 4
         },
-        "heatmapPercent": 52,
+        "heatmapPercent": 59,
         "heatmapCoverage": 0.98,
         "newsImpulse": 0,
         "newsContrib": [],
         "cotBias": "Bearish",
         "weeklyBias": "Bullish",
-        "heatmapBias": "Neutral",
+        "heatmapBias": "Bullish",
         "tqBias": "Strong",
         "cotMomentumScore": -8,
         "cotLevelScore": -49,
@@ -214,7 +214,7 @@
       "score": -8,
       "bias": "neut",
       "coverage": 0.98,
-      "heatmap": 52,
+      "heatmap": 59,
       "cot_longPct": 43.7,
       "cot_deltaPct6w": -10,
       "cot_tq": 4
@@ -223,11 +223,11 @@
       "cotScore": 22,
       "tqScore": 3,
       "weeklyScore": 30,
-      "heatmapScore": -5,
+      "heatmapScore": 5,
       "newsScore": 0,
       "penalty": 0,
-      "finalScore": 50,
-      "finalBias": "wbull",
+      "finalScore": 60,
+      "finalBias": "bull",
       "conf": 90,
       "inputs": {
         "cotLongPct": 32.8,
@@ -282,7 +282,7 @@
           "opposed": false,
           "gap": 15
         },
-        "heatmapPercent": 49,
+        "heatmapPercent": 51,
         "heatmapCoverage": 1,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -295,10 +295,10 @@
         "cotDeltaScore": 27.5,
         "cotTqFactor": 0.8333333333333333
       },
-      "score": 50,
-      "bias": "wbull",
+      "score": 60,
+      "bias": "bull",
       "coverage": 1,
-      "heatmap": 49,
+      "heatmap": 51,
       "cot_longPct": 32.8,
       "cot_deltaPct6w": 11,
       "cot_tq": 4
@@ -366,7 +366,7 @@
           "opposed": false,
           "gap": 3
         },
-        "heatmapPercent": 54,
+        "heatmapPercent": 53,
         "heatmapCoverage": 0.98,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -382,7 +382,7 @@
       "score": 62,
       "bias": "bull",
       "coverage": 0.98,
-      "heatmap": 54,
+      "heatmap": 53,
       "cot_longPct": 43.3,
       "cot_deltaPct6w": 13,
       "cot_tq": 3
@@ -477,10 +477,10 @@
       "weeklyScore": -30,
       "heatmapScore": 5,
       "newsScore": -1,
-      "penalty": 0,
+      "penalty": -5,
       "finalScore": -53,
       "finalBias": "wbear",
-      "conf": 95,
+      "conf": 80,
       "inputs": {
         "cotLongPct": 6.6,
         "cotLongPct6w": 17.5,
@@ -534,7 +534,7 @@
           "opposed": false,
           "gap": 1
         },
-        "heatmapPercent": 52,
+        "heatmapPercent": 55,
         "heatmapCoverage": 0.898,
         "newsImpulse": -1,
         "newsContrib": [
@@ -559,7 +559,7 @@
         ],
         "cotBias": "Bearish",
         "weeklyBias": "Bearish",
-        "heatmapBias": "Neutral",
+        "heatmapBias": "Bullish",
         "tqBias": "Strong",
         "cotMomentumScore": -22,
         "cotLevelScore": -88,
@@ -569,7 +569,7 @@
       "score": -53,
       "bias": "wbear",
       "coverage": 0.898,
-      "heatmap": 52,
+      "heatmap": 55,
       "cot_longPct": 6.6,
       "cot_deltaPct6w": -11,
       "cot_tq": 6
@@ -805,7 +805,7 @@
       "finalScore": -115,
       "spread": -115,
       "finalBias": "sbear",
-      "confidence": 85,
+      "confidence": 78,
       "alignment": "Aligned",
       "quality": "good",
       "conflictCount": 1,
@@ -818,16 +818,16 @@
     "GBPCAD": {
       "base": "GBP",
       "quote": "CAD",
-      "finalScore": 103,
-      "spread": 103,
+      "finalScore": 113,
+      "spread": 113,
       "finalBias": "sbull",
-      "confidence": 68,
+      "confidence": 80,
       "alignment": "Aligned",
       "quality": "good",
-      "conflictCount": 2,
-      "baseScore": 50,
+      "conflictCount": 1,
+      "baseScore": 60,
       "quoteScore": -53,
-      "baseBias": "wbull",
+      "baseBias": "bull",
       "quoteBias": "wbear",
       "outcome": null
     },
@@ -837,7 +837,7 @@
       "finalScore": 92,
       "spread": 92,
       "finalBias": "bull",
-      "confidence": 63,
+      "confidence": 55,
       "alignment": "Aligned",
       "quality": "moderate",
       "conflictCount": 2,
@@ -853,7 +853,7 @@
       "finalScore": -74,
       "spread": -74,
       "finalBias": "bear",
-      "confidence": 58,
+      "confidence": 50,
       "alignment": "Aligned",
       "quality": "moderate",
       "conflictCount": 2,
@@ -885,7 +885,7 @@
       "finalScore": -70,
       "spread": -70,
       "finalBias": "bear",
-      "confidence": 78,
+      "confidence": 70,
       "alignment": "Aligned",
       "quality": "moderate",
       "conflictCount": 1,
@@ -898,17 +898,33 @@
     "GBPAUD": {
       "base": "GBP",
       "quote": "AUD",
-      "finalScore": 59,
-      "spread": 59,
-      "finalBias": "wbull",
-      "confidence": 83,
+      "finalScore": 69,
+      "spread": 69,
+      "finalBias": "bull",
+      "confidence": 88,
       "alignment": "Aligned",
-      "quality": "watch",
-      "conflictCount": 1,
-      "baseScore": 50,
+      "quality": "good",
+      "conflictCount": 0,
+      "baseScore": 60,
       "quoteScore": -9,
-      "baseBias": "wbull",
+      "baseBias": "bull",
       "quoteBias": "neut",
+      "outcome": null
+    },
+    "EURGBP": {
+      "base": "EUR",
+      "quote": "GBP",
+      "finalScore": -68,
+      "spread": -68,
+      "finalBias": "bear",
+      "confidence": 73,
+      "alignment": "Aligned",
+      "quality": "moderate",
+      "conflictCount": 1,
+      "baseScore": -8,
+      "quoteScore": 60,
+      "baseBias": "neut",
+      "quoteBias": "bull",
       "outcome": null
     },
     "NZDCAD": {
@@ -917,7 +933,7 @@
       "finalScore": 59,
       "spread": 59,
       "finalBias": "wbull",
-      "confidence": 83,
+      "confidence": 75,
       "alignment": "Aligned",
       "quality": "moderate",
       "conflictCount": 0,
@@ -925,22 +941,6 @@
       "quoteScore": -53,
       "baseBias": "neut",
       "quoteBias": "wbear",
-      "outcome": null
-    },
-    "EURGBP": {
-      "base": "EUR",
-      "quote": "GBP",
-      "finalScore": -58,
-      "spread": -58,
-      "finalBias": "wbear",
-      "confidence": 60,
-      "alignment": "Aligned",
-      "quality": "moderate",
-      "conflictCount": 2,
-      "baseScore": -8,
-      "quoteScore": 50,
-      "baseBias": "neut",
-      "quoteBias": "wbull",
       "outcome": null
     },
     "NZDJPY": {
@@ -957,6 +957,22 @@
       "quoteScore": 62,
       "baseBias": "neut",
       "quoteBias": "bull",
+      "outcome": null
+    },
+    "GBPNZD": {
+      "base": "GBP",
+      "quote": "NZD",
+      "finalScore": 54,
+      "spread": 54,
+      "finalBias": "wbull",
+      "confidence": 55,
+      "alignment": "Opposed",
+      "quality": "moderate",
+      "conflictCount": 2,
+      "baseScore": 60,
+      "quoteScore": 6,
+      "baseBias": "bull",
+      "quoteBias": "neut",
       "outcome": null
     },
     "AUDUSD": {
@@ -981,7 +997,7 @@
       "finalScore": -47,
       "spread": -47,
       "finalBias": "wbear",
-      "confidence": 55,
+      "confidence": 48,
       "alignment": "Aligned",
       "quality": "moderate",
       "conflictCount": 2,
@@ -997,7 +1013,7 @@
       "finalScore": 45,
       "spread": 45,
       "finalBias": "wbull",
-      "confidence": 83,
+      "confidence": 68,
       "alignment": "Opposed",
       "quality": "watch",
       "conflictCount": 1,
@@ -1007,29 +1023,13 @@
       "quoteBias": "wbear",
       "outcome": null
     },
-    "GBPNZD": {
-      "base": "GBP",
-      "quote": "NZD",
-      "finalScore": 44,
-      "spread": 44,
-      "finalBias": "wbull",
-      "confidence": 55,
-      "alignment": "Opposed",
-      "quality": "moderate",
-      "conflictCount": 2,
-      "baseScore": 50,
-      "quoteScore": 6,
-      "baseBias": "wbull",
-      "quoteBias": "neut",
-      "outcome": null
-    },
     "AUDCAD": {
       "base": "AUD",
       "quote": "CAD",
       "finalScore": 44,
       "spread": 44,
       "finalBias": "wbull",
-      "confidence": 65,
+      "confidence": 58,
       "alignment": "Opposed",
       "quality": "moderate",
       "conflictCount": 2,
@@ -1053,6 +1053,22 @@
       "quoteScore": 62,
       "baseBias": "wbull",
       "quoteBias": "bull",
+      "outcome": null
+    },
+    "GBPCHF": {
+      "base": "GBP",
+      "quote": "CHF",
+      "finalScore": 39,
+      "spread": 39,
+      "finalBias": "wbull",
+      "confidence": 80,
+      "alignment": "Opposed",
+      "quality": "moderate",
+      "conflictCount": 0,
+      "baseScore": 60,
+      "quoteScore": 21,
+      "baseBias": "bull",
+      "quoteBias": "wbull",
       "outcome": null
     },
     "NZDUSD": {
@@ -1103,22 +1119,6 @@
       "quoteBias": "wbull",
       "outcome": null
     },
-    "GBPCHF": {
-      "base": "GBP",
-      "quote": "CHF",
-      "finalScore": 29,
-      "spread": 29,
-      "finalBias": "wbull",
-      "confidence": 50,
-      "alignment": "Opposed",
-      "quality": "watch",
-      "conflictCount": 1,
-      "baseScore": 50,
-      "quoteScore": 21,
-      "baseBias": "wbull",
-      "quoteBias": "wbull",
-      "outcome": null
-    },
     "USDJPY": {
       "base": "USD",
       "quote": "JPY",
@@ -1133,6 +1133,22 @@
       "quoteScore": 62,
       "baseBias": "wbull",
       "quoteBias": "bull",
+      "outcome": null
+    },
+    "GBPUSD": {
+      "base": "GBP",
+      "quote": "USD",
+      "finalScore": 21,
+      "spread": 21,
+      "finalBias": "wbull",
+      "confidence": 35,
+      "alignment": "Opposed",
+      "quality": "watch",
+      "conflictCount": 2,
+      "baseScore": 60,
+      "quoteScore": 39,
+      "baseBias": "bull",
+      "quoteBias": "wbull",
       "outcome": null
     },
     "USDCHF": {
@@ -1205,7 +1221,7 @@
       "finalScore": -14,
       "spread": -14,
       "finalBias": "noedge",
-      "confidence": 50,
+      "confidence": 43,
       "alignment": "Aligned",
       "quality": "watch",
       "conflictCount": 0,
@@ -1218,33 +1234,17 @@
     "GBPJPY": {
       "base": "GBP",
       "quote": "JPY",
-      "finalScore": -12,
-      "spread": -12,
+      "finalScore": -2,
+      "spread": -2,
       "finalBias": "noedge",
-      "confidence": 63,
+      "confidence": 58,
       "alignment": "Opposed",
       "quality": "watch",
-      "conflictCount": 0,
-      "baseScore": 50,
+      "conflictCount": 1,
+      "baseScore": 60,
       "quoteScore": 62,
-      "baseBias": "wbull",
+      "baseBias": "bull",
       "quoteBias": "bull",
-      "outcome": null
-    },
-    "GBPUSD": {
-      "base": "GBP",
-      "quote": "USD",
-      "finalScore": 11,
-      "spread": 11,
-      "finalBias": "noedge",
-      "confidence": 35,
-      "alignment": "Opposed",
-      "quality": "watch",
-      "conflictCount": 2,
-      "baseScore": 50,
-      "quoteScore": 39,
-      "baseBias": "wbull",
-      "quoteBias": "wbull",
       "outcome": null
     },
     "EURAUD": {
@@ -1253,7 +1253,7 @@
       "finalScore": 1,
       "spread": 1,
       "finalBias": "noedge",
-      "confidence": 33,
+      "confidence": 30,
       "alignment": "Opposed",
       "quality": "watch",
       "conflictCount": 2,
@@ -1276,10 +1276,10 @@
   "fundamentals": {
     "USD": {
       "bias": "bear",
-      "heatmap": 34,
-      "macro_score": -31,
+      "heatmap": 33,
+      "macro_score": -34,
       "bull_count": 3,
-      "bear_count": 5,
+      "bear_count": 4,
       "coverage": 0.98,
       "categories": [
         {
@@ -1292,7 +1292,7 @@
           "category": "CPI",
           "label": "Inflation",
           "signal": "bearish",
-          "signal_value": -0.4
+          "signal_value": -0.613
         },
         {
           "category": "EMPLOYMENT",
@@ -1303,8 +1303,8 @@
         {
           "category": "GROWTH",
           "label": "Growth / Investment",
-          "signal": "bearish",
-          "signal_value": -0.565
+          "signal": "neutral",
+          "signal_value": -0.092
         },
         {
           "category": "PMI_MFG",
@@ -1334,7 +1334,7 @@
           "category": "PPI",
           "label": "PPI",
           "signal": "bearish",
-          "signal_value": -0.368
+          "signal_value": -0.965
         },
         {
           "category": "CONFIDENCE",
@@ -1345,11 +1345,11 @@
       ]
     },
     "EUR": {
-      "bias": "neut",
-      "heatmap": 52,
-      "macro_score": 4,
+      "bias": "wbull",
+      "heatmap": 59,
+      "macro_score": 17,
       "bull_count": 3,
-      "bear_count": 2,
+      "bear_count": 1,
       "coverage": 0.98,
       "categories": [
         {
@@ -1361,8 +1361,8 @@
         {
           "category": "CPI",
           "label": "Inflation",
-          "signal": "bearish",
-          "signal_value": -0.429
+          "signal": "neutral",
+          "signal_value": 0.095
         },
         {
           "category": "EMPLOYMENT",
@@ -1410,15 +1410,15 @@
           "category": "CONFIDENCE",
           "label": "Confidence / Sentiment",
           "signal": "bullish",
-          "signal_value": 0.159
+          "signal_value": 0.176
         }
       ]
     },
     "GBP": {
       "bias": "neut",
-      "heatmap": 49,
-      "macro_score": -2,
-      "bull_count": 3,
+      "heatmap": 51,
+      "macro_score": 2,
+      "bull_count": 2,
       "bear_count": 3,
       "coverage": 1.0,
       "categories": [
@@ -1431,8 +1431,8 @@
         {
           "category": "CPI",
           "label": "Inflation",
-          "signal": "bearish",
-          "signal_value": -0.185
+          "signal": "neutral",
+          "signal_value": -0.037
         },
         {
           "category": "EMPLOYMENT",
@@ -1443,8 +1443,8 @@
         {
           "category": "GROWTH",
           "label": "Growth / Investment",
-          "signal": "neutral",
-          "signal_value": -0.087
+          "signal": "bearish",
+          "signal_value": -0.174
         },
         {
           "category": "PMI_MFG",
@@ -1474,27 +1474,27 @@
           "category": "PPI",
           "label": "PPI",
           "signal": "bearish",
-          "signal_value": -1.0
+          "signal_value": -0.211
         },
         {
           "category": "CONFIDENCE",
           "label": "Confidence / Sentiment",
           "signal": "bullish",
-          "signal_value": 0.681
+          "signal_value": 0.677
         },
         {
           "category": "COMMUNICATION",
           "label": "Central Bank Communication",
-          "signal": "bullish",
-          "signal_value": 1.0
+          "signal": "neutral",
+          "signal_value": -0.059
         }
       ]
     },
     "JPY": {
       "bias": "neut",
-      "heatmap": 54,
-      "macro_score": 7,
-      "bull_count": 4,
+      "heatmap": 53,
+      "macro_score": 6,
+      "bull_count": 3,
       "bear_count": 2,
       "coverage": 0.98,
       "categories": [
@@ -1549,8 +1549,8 @@
         {
           "category": "PPI",
           "label": "PPI",
-          "signal": "bullish",
-          "signal_value": 0.158
+          "signal": "neutral",
+          "signal_value": 0.0
         },
         {
           "category": "CONFIDENCE",
@@ -1625,9 +1625,9 @@
       ]
     },
     "CAD": {
-      "bias": "neut",
-      "heatmap": 52,
-      "macro_score": 3,
+      "bias": "wbull",
+      "heatmap": 55,
+      "macro_score": 9,
       "bull_count": 2,
       "bear_count": 3,
       "coverage": 0.898,
@@ -1642,7 +1642,7 @@
           "category": "CPI",
           "label": "Inflation",
           "signal": "bearish",
-          "signal_value": -0.333
+          "signal_value": -0.185
         },
         {
           "category": "EMPLOYMENT",
@@ -1678,7 +1678,7 @@
           "category": "PPI",
           "label": "PPI",
           "signal": "bearish",
-          "signal_value": -0.526
+          "signal_value": -0.211
         },
         {
           "category": "CONFIDENCE",
@@ -1761,7 +1761,7 @@
     "NZD": {
       "bias": "wbull",
       "heatmap": 64,
-      "macro_score": 29,
+      "macro_score": 27,
       "bull_count": 5,
       "bear_count": 1,
       "coverage": 0.734,
@@ -1800,7 +1800,7 @@
           "category": "PPI",
           "label": "PPI",
           "signal": "bullish",
-          "signal_value": 0.316
+          "signal_value": 0.158
         },
         {
           "category": "CONFIDENCE",
@@ -1817,6 +1817,6 @@
       ]
     }
   },
-  "fundamentalsGeneratedAt": "2026-08-10T10:04:16.297099+00:00",
+  "fundamentalsGeneratedAt": "2026-08-10T13:45:22.939730+00:00",
   "schemaVersion": 2
 }
