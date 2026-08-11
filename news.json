@@ -1,51 +1,5 @@
 {
-  "generatedAt": "2026-08-10T17:29:51.779505+00:00",
+  "generatedAt": "2026-08-11T13:39:16.828397+00:00",
   "daysBack": 7,
-  "news": [
-    {
-      "ccy": "CAD",
-      "type": "PMI",
-      "eventName": "Ivey PMI (Jul)",
-      "impact": "high",
-      "actual": 55.1,
-      "forecast": 55.5,
-      "previous": 56.2,
-      "date": "2026-08-07 14:00:00",
-      "daysAgo": 3,
-      "surpriseDiff": -0.4,
-      "impulseBase": -4.44,
-      "impulse": -1.11,
-      "decay": 0.25
-    },
-    {
-      "ccy": "USD",
-      "type": "UNEMPLOYMENT",
-      "eventName": "Unemployment Rate (Jul)",
-      "impact": "high",
-      "actual": 4.1,
-      "forecast": 4.2,
-      "previous": 4.2,
-      "date": "2026-08-07 12:30:00",
-      "daysAgo": 3,
-      "surpriseDiff": -0.1,
-      "impulseBase": 3.33,
-      "impulse": 0.83,
-      "decay": 0.25
-    },
-    {
-      "ccy": "USD",
-      "type": "EMPLOYMENT",
-      "eventName": "Non Farm Payrolls (Jul)",
-      "impact": "high",
-      "actual": -23.0,
-      "forecast": 80.0,
-      "previous": 20.0,
-      "date": "2026-08-07 12:30:00",
-      "daysAgo": 3,
-      "surpriseDiff": -103.0,
-      "impulseBase": -4.29,
-      "impulse": -1.07,
-      "decay": 0.25
-    }
-  ]
+  "news": []
 }

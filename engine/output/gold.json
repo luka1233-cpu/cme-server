@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-10T17:30:13.825896+00:00",
-  "heatmap": 95,
-  "score": 90,
+  "generatedAt": "2026-08-11T13:39:39.005523+00:00",
+  "heatmap": 90,
+  "score": 80,
   "bias": "sbull",
   "engines": {
     "macro": {
-      "score": 80,
+      "score": 60,
       "signal": "bullish",
       "factors": [
         {
@@ -28,8 +28,8 @@
         },
         {
           "factor": "YIELD_2Y",
-          "detail": "2Y 4.17->4.19 (+0.02pp, flat)",
-          "gold_signal": "neutral",
+          "detail": "2Y 4.14->4.25 (+0.11pp, rising)",
+          "gold_signal": "bearish",
           "weight": 0.2
         }
       ]
@@ -59,7 +59,7 @@
     }
   },
   "narrative": {
-    "sr": "USD makro je bullish za zlato. COT to potvrdjuje (bullish) — makro i institucije poravnati. Napomena: Long% na ekstremu — oprez od preokreta.",
-    "en": "USD macro is bullish for gold. COT confirms this (bullish) — macro and institutions aligned. Note: Long% at extreme — caution on reversal."
+    "sr": "USD makro je bullish za zlato, 2Y prinos raste (dodatni bearish pritisak). COT to potvrdjuje (bullish) — makro i institucije poravnati. Napomena: Long% na ekstremu — oprez od preokreta.",
+    "en": "USD macro is bullish for gold, 2Y yield rising (added bearish pressure). COT confirms this (bullish) — macro and institutions aligned. Note: Long% at extreme — caution on reversal."
   }
 }
