@@ -4,8 +4,8 @@
   "build": "2026-07-12",
   "status": "complete",
   "date": "2026-08-12",
-  "datasetId": "2026-08-12T07:45:36.246153+00:00",
-  "generatedAt": "2026-08-12T07:45:53.051Z",
+  "datasetId": "2026-08-12T11:46:10.652658+00:00",
+  "generatedAt": "2026-08-12T11:46:27.711Z",
   "cotReportDate": "2026-08-04",
   "newsLoaded": true,
   "heatmapLoaded": true,
@@ -77,7 +77,7 @@
           "opposed": false,
           "gap": 12
         },
-        "heatmapPercent": 33,
+        "heatmapPercent": 34,
         "heatmapCoverage": 0.98,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -93,7 +93,7 @@
       "score": 39,
       "bias": "wbull",
       "coverage": 0.98,
-      "heatmap": 33,
+      "heatmap": 34,
       "cot_longPct": 73.4,
       "cot_deltaPct6w": 12,
       "cot_tq": 6
@@ -329,13 +329,13 @@
           "opposed": false,
           "gap": 3
         },
-        "heatmapPercent": 53,
+        "heatmapPercent": 59,
         "heatmapCoverage": 0.98,
         "newsImpulse": 0,
         "newsContrib": [],
         "cotBias": "Bullish",
         "weeklyBias": "Bullish",
-        "heatmapBias": "Neutral",
+        "heatmapBias": "Bullish",
         "tqBias": "Moderate",
         "cotMomentumScore": 12,
         "cotLevelScore": -10,
@@ -345,7 +345,7 @@
       "score": 62,
       "bias": "bull",
       "coverage": 0.98,
-      "heatmap": 53,
+      "heatmap": 59,
       "cot_longPct": 43.3,
       "cot_deltaPct6w": 13,
       "cot_tq": 3
@@ -665,7 +665,7 @@
           "opposed": true,
           "gap": 15
         },
-        "heatmapPercent": 64,
+        "heatmapPercent": 63,
         "heatmapCoverage": 0.734,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -681,7 +681,7 @@
       "score": 6,
       "bias": "neut",
       "coverage": 0.734,
-      "heatmap": 64,
+      "heatmap": 63,
       "cot_longPct": 10.7,
       "cot_deltaPct6w": -5,
       "cot_tq": 5
@@ -1220,10 +1220,10 @@
   "fundamentals": {
     "USD": {
       "bias": "bear",
-      "heatmap": 33,
-      "macro_score": -35,
+      "heatmap": 34,
+      "macro_score": -31,
       "bull_count": 3,
-      "bear_count": 5,
+      "bear_count": 4,
       "coverage": 0.98,
       "categories": [
         {
@@ -1247,8 +1247,8 @@
         {
           "category": "GROWTH",
           "label": "Growth / Investment",
-          "signal": "bearish",
-          "signal_value": -0.565
+          "signal": "neutral",
+          "signal_value": -0.092
         },
         {
           "category": "PMI_MFG",
@@ -1354,16 +1354,16 @@
           "category": "CONFIDENCE",
           "label": "Confidence / Sentiment",
           "signal": "neutral",
-          "signal_value": 0.083
+          "signal_value": 0.073
         }
       ]
     },
     "GBP": {
       "bias": "neut",
       "heatmap": 49,
-      "macro_score": -2,
-      "bull_count": 2,
-      "bear_count": 2,
+      "macro_score": -1,
+      "bull_count": 3,
+      "bear_count": 3,
       "coverage": 1.0,
       "categories": [
         {
@@ -1411,14 +1411,14 @@
         {
           "category": "RATES",
           "label": "Interest Rate / Wages",
-          "signal": "neutral",
-          "signal_value": 0.0
+          "signal": "bearish",
+          "signal_value": -0.25
         },
         {
           "category": "PPI",
           "label": "PPI",
           "signal": "bearish",
-          "signal_value": -1.0
+          "signal_value": -0.895
         },
         {
           "category": "CONFIDENCE",
@@ -1429,15 +1429,15 @@
         {
           "category": "COMMUNICATION",
           "label": "Central Bank Communication",
-          "signal": "neutral",
-          "signal_value": -0.059
+          "signal": "bullish",
+          "signal_value": 1.0
         }
       ]
     },
     "JPY": {
-      "bias": "neut",
-      "heatmap": 53,
-      "macro_score": 6,
+      "bias": "wbull",
+      "heatmap": 59,
+      "macro_score": 17,
       "bull_count": 3,
       "bear_count": 2,
       "coverage": 0.98,
@@ -1464,7 +1464,7 @@
           "category": "GROWTH",
           "label": "Growth / Investment",
           "signal": "bullish",
-          "signal_value": 0.261
+          "signal_value": 1.0
         },
         {
           "category": "PMI_MFG",
@@ -1622,7 +1622,7 @@
           "category": "PPI",
           "label": "PPI",
           "signal": "bearish",
-          "signal_value": -0.526
+          "signal_value": -0.211
         },
         {
           "category": "CONFIDENCE",
@@ -1634,7 +1634,7 @@
           "category": "COMMODITY",
           "label": "Commodity",
           "signal": "bullish",
-          "signal_value": 0.549
+          "signal_value": 0.478
         }
       ]
     },
@@ -1704,9 +1704,9 @@
     },
     "NZD": {
       "bias": "wbull",
-      "heatmap": 64,
+      "heatmap": 63,
       "macro_score": 27,
-      "bull_count": 5,
+      "bull_count": 6,
       "bear_count": 1,
       "coverage": 0.734,
       "categories": [
@@ -1731,8 +1731,8 @@
         {
           "category": "RETAIL",
           "label": "Retail Sales",
-          "signal": "neutral",
-          "signal_value": 0.08
+          "signal": "bullish",
+          "signal_value": 0.16
         },
         {
           "category": "RATES",
@@ -1761,6 +1761,6 @@
       ]
     }
   },
-  "fundamentalsGeneratedAt": "2026-08-12T07:45:36.246153+00:00",
+  "fundamentalsGeneratedAt": "2026-08-12T11:46:10.652658+00:00",
   "schemaVersion": 2
 }
