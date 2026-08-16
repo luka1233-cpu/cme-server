@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-15T19:37:16.840632+00:00",
-  "heatmap": 82,
-  "score": 65,
+  "generatedAt": "2026-08-16T15:49:27.401104+00:00",
+  "heatmap": 89,
+  "score": 78,
   "bias": "sbull",
   "engines": {
     "macro": {
-      "score": 30,
+      "score": 55,
       "signal": "bullish",
       "factors": [
         {
@@ -16,8 +16,8 @@
         },
         {
           "factor": "USD_INFLATION",
-          "usd_signal": "bullish",
-          "gold_signal": "bearish",
+          "usd_signal": "neutral",
+          "gold_signal": "neutral",
           "weight": 0.25
         },
         {
@@ -28,7 +28,7 @@
         },
         {
           "factor": "YIELD_2Y",
-          "detail": "2Y 4.13->4.17 (+0.04pp, flat)",
+          "detail": "2Y 4.19->4.17 (-0.02pp, flat)",
           "gold_signal": "neutral",
           "weight": 0.2
         }
