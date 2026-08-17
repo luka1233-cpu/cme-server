@@ -1,7 +1,22 @@
 {
-  "generatedAt": "2026-08-16T16:17:00.116254+00:00",
+  "generatedAt": "2026-08-17T07:11:03.266421+00:00",
   "daysBack": 7,
   "news": [
+    {
+      "ccy": "JPY",
+      "type": "GDP",
+      "eventName": "GDP Growth Rate QoQ (Q2)",
+      "impact": "high",
+      "actual": 0.3,
+      "forecast": 0.5,
+      "previous": 0.5,
+      "date": "2026-08-16 23:50:00",
+      "daysAgo": 1,
+      "surpriseDiff": -0.2,
+      "impulseBase": -3.33,
+      "impulse": -2.5,
+      "decay": 0.75
+    },
     {
       "ccy": "USD",
       "type": "RETAIL_SALES",
@@ -11,11 +26,11 @@
       "forecast": 0.1,
       "previous": 0.2,
       "date": "2026-08-14 12:30:00",
-      "daysAgo": 2,
+      "daysAgo": 3,
       "surpriseDiff": -0.7,
       "impulseBase": -10.0,
-      "impulse": -5.0,
-      "decay": 0.5
+      "impulse": -2.5,
+      "decay": 0.25
     }
   ]
 }
