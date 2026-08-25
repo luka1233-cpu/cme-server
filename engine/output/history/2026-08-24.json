@@ -4,8 +4,8 @@
   "build": "2026-07-12",
   "status": "complete",
   "date": "2026-08-24",
-  "datasetId": "2026-08-24T07:29:52.724090+00:00",
-  "generatedAt": "2026-08-24T07:30:11.978Z",
+  "datasetId": "2026-08-24T16:59:47.112065+00:00",
+  "generatedAt": "2026-08-24T17:00:07.965Z",
   "cotReportDate": "2026-08-18",
   "newsLoaded": true,
   "heatmapLoaded": true,
@@ -161,7 +161,7 @@
           "opposed": false,
           "gap": 2
         },
-        "heatmapPercent": 54,
+        "heatmapPercent": 52,
         "heatmapCoverage": 0.98,
         "newsImpulse": 3,
         "newsContrib": [
@@ -196,7 +196,7 @@
       "score": 7,
       "bias": "neut",
       "coverage": 0.98,
-      "heatmap": 54,
+      "heatmap": 52,
       "cot_longPct": 43.5,
       "cot_deltaPct6w": -5,
       "cot_tq": 3
@@ -1259,7 +1259,7 @@
     "USD": {
       "bias": "wbear",
       "heatmap": 39,
-      "macro_score": -21,
+      "macro_score": -22,
       "bull_count": 3,
       "bear_count": 4,
       "coverage": 0.98,
@@ -1304,7 +1304,7 @@
           "category": "RETAIL",
           "label": "Retail Sales",
           "signal": "bearish",
-          "signal_value": -0.28
+          "signal_value": -0.4
         },
         {
           "category": "RATES",
@@ -1328,9 +1328,9 @@
     },
     "EUR": {
       "bias": "neut",
-      "heatmap": 54,
-      "macro_score": 8,
-      "bull_count": 5,
+      "heatmap": 52,
+      "macro_score": 3,
+      "bull_count": 4,
       "bear_count": 2,
       "coverage": 0.98,
       "categories": [
@@ -1355,8 +1355,8 @@
         {
           "category": "GROWTH",
           "label": "Growth / Investment",
-          "signal": "bullish",
-          "signal_value": 0.391
+          "signal": "neutral",
+          "signal_value": 0.0
         },
         {
           "category": "PMI_MFG",
@@ -1386,20 +1386,20 @@
           "category": "PPI",
           "label": "PPI",
           "signal": "bullish",
-          "signal_value": 0.158
+          "signal_value": 0.211
         },
         {
           "category": "CONFIDENCE",
           "label": "Confidence / Sentiment",
           "signal": "bullish",
-          "signal_value": 0.335
+          "signal_value": 0.437
         }
       ]
     },
     "GBP": {
       "bias": "wbull",
       "heatmap": 56,
-      "macro_score": 12,
+      "macro_score": 13,
       "bull_count": 3,
       "bear_count": 1,
       "coverage": 1.0,
@@ -1450,7 +1450,7 @@
           "category": "RATES",
           "label": "Interest Rate / Wages",
           "signal": "neutral",
-          "signal_value": 0.0
+          "signal_value": 0.125
         },
         {
           "category": "PPI",
@@ -1609,7 +1609,7 @@
     "CAD": {
       "bias": "bull",
       "heatmap": 68,
-      "macro_score": 36,
+      "macro_score": 35,
       "bull_count": 5,
       "bear_count": 1,
       "coverage": 0.898,
@@ -1660,7 +1660,7 @@
           "category": "PPI",
           "label": "PPI",
           "signal": "bullish",
-          "signal_value": 0.526
+          "signal_value": 0.211
         },
         {
           "category": "CONFIDENCE",
@@ -1672,7 +1672,7 @@
           "category": "COMMODITY",
           "label": "Commodity",
           "signal": "bullish",
-          "signal_value": 0.66
+          "signal_value": 0.677
         }
       ]
     },
@@ -1799,6 +1799,6 @@
       ]
     }
   },
-  "fundamentalsGeneratedAt": "2026-08-24T07:29:52.724090+00:00",
+  "fundamentalsGeneratedAt": "2026-08-24T16:59:47.112065+00:00",
   "schemaVersion": 2
 }
