@@ -1,22 +1,7 @@
 {
-  "generatedAt": "2026-08-27T06:38:56.865285+00:00",
+  "generatedAt": "2026-08-27T08:07:43.626283+00:00",
   "daysBack": 7,
   "news": [
-    {
-      "ccy": "AUD",
-      "type": "CPI_MOM",
-      "eventName": "RBA Trimmed Mean CPI MoM (Jul)",
-      "impact": "high",
-      "actual": 0.5,
-      "forecast": 0.3,
-      "previous": 0.3,
-      "date": "2026-08-26 01:30:00",
-      "daysAgo": 1,
-      "surpriseDiff": 0.2,
-      "impulseBase": 6.67,
-      "impulse": 5.0,
-      "decay": 0.75
-    },
     {
       "ccy": "AUD",
       "type": "CPI_MOM",
@@ -45,6 +30,21 @@
       "surpriseDiff": 0.37,
       "impulseBase": 6.17,
       "impulse": 4.63,
+      "decay": 0.75
+    },
+    {
+      "ccy": "AUD",
+      "type": "CPI_MOM",
+      "eventName": "RBA Trimmed Mean CPI MoM (Jul)",
+      "impact": "high",
+      "actual": 0.5,
+      "forecast": 0.3,
+      "previous": 0.3,
+      "date": "2026-08-26 01:30:00",
+      "daysAgo": 1,
+      "surpriseDiff": 0.2,
+      "impulseBase": 6.67,
+      "impulse": 5.0,
       "decay": 0.75
     }
   ]
