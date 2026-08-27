@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-08-27T11:46:58.543982+00:00",
+  "generatedAt": "2026-08-27T12:54:47.864201+00:00",
   "daysBack": 7,
   "news": [
     {
       "ccy": "AUD",
-      "type": "CPI_YOY",
-      "eventName": "CPI (Jul)",
+      "type": "CPI_MOM",
+      "eventName": "Median CPI MoM (Jul)",
       "impact": "high",
-      "actual": 103.07,
-      "forecast": 102.7,
-      "previous": 102.03,
+      "actual": 0.4,
+      "forecast": 0.3,
+      "previous": 0.3,
       "date": "2026-08-26 01:30:00",
       "daysAgo": 1,
-      "surpriseDiff": 0.37,
-      "impulseBase": 6.17,
-      "impulse": 4.63,
+      "surpriseDiff": 0.1,
+      "impulseBase": 3.33,
+      "impulse": 2.5,
       "decay": 0.75
     },
     {
@@ -34,17 +34,17 @@
     },
     {
       "ccy": "AUD",
-      "type": "CPI_MOM",
-      "eventName": "Median CPI MoM (Jul)",
+      "type": "CPI_YOY",
+      "eventName": "CPI (Jul)",
       "impact": "high",
-      "actual": 0.4,
-      "forecast": 0.3,
-      "previous": 0.3,
+      "actual": 103.07,
+      "forecast": 102.7,
+      "previous": 102.03,
       "date": "2026-08-26 01:30:00",
       "daysAgo": 1,
-      "surpriseDiff": 0.1,
-      "impulseBase": 3.33,
-      "impulse": 2.5,
+      "surpriseDiff": 0.37,
+      "impulseBase": 6.17,
+      "impulse": 4.63,
       "decay": 0.75
     }
   ]
