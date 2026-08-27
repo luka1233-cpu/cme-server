@@ -4,8 +4,8 @@
   "build": "2026-07-12",
   "status": "complete",
   "date": "2026-08-27",
-  "datasetId": "2026-08-27T06:39:01.985204+00:00",
-  "generatedAt": "2026-08-27T06:39:18.933Z",
+  "datasetId": "2026-08-27T08:07:47.640286+00:00",
+  "generatedAt": "2026-08-27T08:08:04.715Z",
   "cotReportDate": "2026-08-18",
   "newsLoaded": true,
   "heatmapLoaded": true,
@@ -161,7 +161,7 @@
           "opposed": false,
           "gap": 2
         },
-        "heatmapPercent": 58,
+        "heatmapPercent": 56,
         "heatmapCoverage": 0.98,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -177,7 +177,7 @@
       "score": 4,
       "bias": "neut",
       "coverage": 0.98,
-      "heatmap": 58,
+      "heatmap": 56,
       "cot_longPct": 43.5,
       "cot_deltaPct6w": -5,
       "cot_tq": 3
@@ -245,7 +245,7 @@
           "opposed": false,
           "gap": 2
         },
-        "heatmapPercent": 54,
+        "heatmapPercent": 52,
         "heatmapCoverage": 1,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -261,7 +261,7 @@
       "score": 63,
       "bias": "bull",
       "coverage": 1,
-      "heatmap": 54,
+      "heatmap": 52,
       "cot_longPct": 37,
       "cot_deltaPct6w": 12,
       "cot_tq": 5
@@ -497,7 +497,7 @@
           "opposed": true,
           "gap": 8
         },
-        "heatmapPercent": 58,
+        "heatmapPercent": 57,
         "heatmapCoverage": 0.873,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -513,7 +513,7 @@
       "score": 7,
       "bias": "neut",
       "coverage": 0.873,
-      "heatmap": 58,
+      "heatmap": 57,
       "cot_longPct": 11.3,
       "cot_deltaPct6w": -2,
       "cot_tq": 5
@@ -589,24 +589,6 @@
             "item": {
               "ccy": "AUD",
               "type": "CPI_MOM",
-              "eventName": "RBA Trimmed Mean CPI MoM (Jul)",
-              "impact": "high",
-              "actual": 0.5,
-              "forecast": 0.3,
-              "previous": 0.3,
-              "date": "2026-08-26 01:30:00",
-              "daysAgo": 1,
-              "surpriseDiff": 0.2,
-              "impulseBase": 6.67,
-              "impulse": 5,
-              "decay": 0.75
-            },
-            "pts": 5
-          },
-          {
-            "item": {
-              "ccy": "AUD",
-              "type": "CPI_MOM",
               "eventName": "Median CPI MoM (Jul)",
               "impact": "high",
               "actual": 0.4,
@@ -638,6 +620,24 @@
               "decay": 0.75
             },
             "pts": 4.63
+          },
+          {
+            "item": {
+              "ccy": "AUD",
+              "type": "CPI_MOM",
+              "eventName": "RBA Trimmed Mean CPI MoM (Jul)",
+              "impact": "high",
+              "actual": 0.5,
+              "forecast": 0.3,
+              "previous": 0.3,
+              "date": "2026-08-26 01:30:00",
+              "daysAgo": 1,
+              "surpriseDiff": 0.2,
+              "impulseBase": 6.67,
+              "impulse": 5,
+              "decay": 0.75
+            },
+            "pts": 5
           }
         ],
         "cotBias": "Bearish",
@@ -720,7 +720,7 @@
           "opposed": true,
           "gap": 13
         },
-        "heatmapPercent": 64,
+        "heatmapPercent": 62,
         "heatmapCoverage": 0.734,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -736,7 +736,7 @@
       "score": 32,
       "bias": "wbull",
       "coverage": 0.734,
-      "heatmap": 64,
+      "heatmap": 62,
       "cot_longPct": 14,
       "cot_deltaPct6w": 1,
       "cot_tq": 2
@@ -1345,8 +1345,8 @@
     },
     "EUR": {
       "bias": "wbull",
-      "heatmap": 58,
-      "macro_score": 17,
+      "heatmap": 56,
+      "macro_score": 12,
       "bull_count": 4,
       "bear_count": 1,
       "coverage": 0.98,
@@ -1403,7 +1403,7 @@
           "category": "PPI",
           "label": "PPI",
           "signal": "bullish",
-          "signal_value": 1.0
+          "signal_value": 0.368
         },
         {
           "category": "CONFIDENCE",
@@ -1415,10 +1415,10 @@
     },
     "GBP": {
       "bias": "neut",
-      "heatmap": 54,
-      "macro_score": 7,
+      "heatmap": 52,
+      "macro_score": 4,
       "bull_count": 3,
-      "bear_count": 1,
+      "bear_count": 2,
       "coverage": 1.0,
       "categories": [
         {
@@ -1460,8 +1460,8 @@
         {
           "category": "RETAIL",
           "label": "Retail Sales",
-          "signal": "neutral",
-          "signal_value": 0.0
+          "signal": "bearish",
+          "signal_value": -0.16
         },
         {
           "category": "RATES",
@@ -1625,8 +1625,8 @@
     },
     "CAD": {
       "bias": "wbull",
-      "heatmap": 58,
-      "macro_score": 16,
+      "heatmap": 57,
+      "macro_score": 13,
       "bull_count": 4,
       "bear_count": 1,
       "coverage": 0.873,
@@ -1641,7 +1641,7 @@
           "category": "CPI",
           "label": "Inflation",
           "signal": "bullish",
-          "signal_value": 0.333
+          "signal_value": 0.185
         },
         {
           "category": "EMPLOYMENT",
@@ -1665,7 +1665,7 @@
           "category": "RETAIL",
           "label": "Retail Sales",
           "signal": "neutral",
-          "signal_value": -0.12
+          "signal_value": 0.08
         },
         {
           "category": "RATES",
@@ -1683,7 +1683,7 @@
           "category": "COMMODITY",
           "label": "Commodity",
           "signal": "bearish",
-          "signal_value": -0.372
+          "signal_value": -0.378
         }
       ]
     },
@@ -1735,7 +1735,7 @@
           "category": "PPI",
           "label": "PPI",
           "signal": "bullish",
-          "signal_value": 0.579
+          "signal_value": 0.526
         },
         {
           "category": "CONFIDENCE",
@@ -1753,10 +1753,10 @@
     },
     "NZD": {
       "bias": "wbull",
-      "heatmap": 64,
-      "macro_score": 28,
-      "bull_count": 6,
-      "bear_count": 1,
+      "heatmap": 62,
+      "macro_score": 24,
+      "bull_count": 5,
+      "bear_count": 2,
       "coverage": 0.734,
       "categories": [
         {
@@ -1780,8 +1780,8 @@
         {
           "category": "RETAIL",
           "label": "Retail Sales",
-          "signal": "bullish",
-          "signal_value": 0.16
+          "signal": "bearish",
+          "signal_value": -0.24
         },
         {
           "category": "RATES",
@@ -1810,6 +1810,6 @@
       ]
     }
   },
-  "fundamentalsGeneratedAt": "2026-08-27T06:39:01.985204+00:00",
+  "fundamentalsGeneratedAt": "2026-08-27T08:07:47.640286+00:00",
   "schemaVersion": 2
 }
