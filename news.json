@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T14:19:24.705645+00:00",
+  "generatedAt": "2026-09-01T15:17:46.929775+00:00",
   "daysBack": 7,
   "news": [
     {
@@ -65,21 +65,6 @@
     {
       "ccy": "EUR",
       "type": "RETAIL_SALES",
-      "eventName": "Retail Sales MoM (Jul)",
-      "impact": "high",
-      "actual": -3.4,
-      "forecast": 0.4,
-      "previous": 0.0,
-      "date": "2026-09-01 06:00:00",
-      "daysAgo": 0,
-      "surpriseDiff": -3.8,
-      "impulseBase": -10.0,
-      "impulse": -10.0,
-      "decay": 1.0
-    },
-    {
-      "ccy": "EUR",
-      "type": "RETAIL_SALES",
       "eventName": "Retail Sales YoY (Jul)",
       "impact": "high",
       "actual": -2.5,
@@ -95,6 +80,21 @@
     {
       "ccy": "EUR",
       "type": "RETAIL_SALES",
+      "eventName": "Retail Sales MoM (Jul)",
+      "impact": "high",
+      "actual": -3.4,
+      "forecast": 0.4,
+      "previous": 0.0,
+      "date": "2026-09-01 06:00:00",
+      "daysAgo": 0,
+      "surpriseDiff": -3.8,
+      "impulseBase": -10.0,
+      "impulse": -10.0,
+      "decay": 1.0
+    },
+    {
+      "ccy": "EUR",
+      "type": "RETAIL_SALES",
       "eventName": "Retail Sales YoY (Jun)",
       "impact": "high",
       "actual": 1.9,
@@ -103,6 +103,21 @@
       "date": "2026-08-31 09:00:00",
       "daysAgo": 1,
       "surpriseDiff": -2.8,
+      "impulseBase": -10.0,
+      "impulse": -7.5,
+      "decay": 0.75
+    },
+    {
+      "ccy": "EUR",
+      "type": "CPI_MOM",
+      "eventName": "Baden Wuerttemberg CPI MoM (Aug)",
+      "impact": "high",
+      "actual": 0.1,
+      "forecast": null,
+      "previous": 0.8,
+      "date": "2026-08-31 08:00:00",
+      "daysAgo": 1,
+      "surpriseDiff": -0.7,
       "impulseBase": -10.0,
       "impulse": -7.5,
       "decay": 0.75
@@ -133,36 +148,6 @@
       "date": "2026-08-31 08:00:00",
       "daysAgo": 1,
       "surpriseDiff": -0.4,
-      "impulseBase": -10.0,
-      "impulse": -7.5,
-      "decay": 0.75
-    },
-    {
-      "ccy": "EUR",
-      "type": "CPI_MOM",
-      "eventName": "Baden Wuerttemberg CPI MoM (Aug)",
-      "impact": "high",
-      "actual": 0.1,
-      "forecast": null,
-      "previous": 0.8,
-      "date": "2026-08-31 08:00:00",
-      "daysAgo": 1,
-      "surpriseDiff": -0.7,
-      "impulseBase": -10.0,
-      "impulse": -7.5,
-      "decay": 0.75
-    },
-    {
-      "ccy": "EUR",
-      "type": "CPI_MOM",
-      "eventName": "Saxony CPI MoM (Aug)",
-      "impact": "high",
-      "actual": 0.1,
-      "forecast": null,
-      "previous": 0.7,
-      "date": "2026-08-31 08:00:00",
-      "daysAgo": 1,
-      "surpriseDiff": -0.6,
       "impulseBase": -10.0,
       "impulse": -7.5,
       "decay": 0.75
@@ -223,6 +208,21 @@
       "date": "2026-08-31 08:00:00",
       "daysAgo": 1,
       "surpriseDiff": -0.4,
+      "impulseBase": -10.0,
+      "impulse": -7.5,
+      "decay": 0.75
+    },
+    {
+      "ccy": "EUR",
+      "type": "CPI_MOM",
+      "eventName": "Saxony CPI MoM (Aug)",
+      "impact": "high",
+      "actual": 0.1,
+      "forecast": null,
+      "previous": 0.7,
+      "date": "2026-08-31 08:00:00",
+      "daysAgo": 1,
+      "surpriseDiff": -0.6,
       "impulseBase": -10.0,
       "impulse": -7.5,
       "decay": 0.75
