@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T18:31:30.640397+00:00",
+  "generatedAt": "2026-09-01T18:55:24.480689+00:00",
   "daysBack": 7,
   "news": [
     {
@@ -65,21 +65,6 @@
     {
       "ccy": "EUR",
       "type": "RETAIL_SALES",
-      "eventName": "Retail Sales MoM (Jul)",
-      "impact": "high",
-      "actual": -3.4,
-      "forecast": 0.4,
-      "previous": 0.0,
-      "date": "2026-09-01 06:00:00",
-      "daysAgo": 0,
-      "surpriseDiff": -3.8,
-      "impulseBase": -10.0,
-      "impulse": -10.0,
-      "decay": 1.0
-    },
-    {
-      "ccy": "EUR",
-      "type": "RETAIL_SALES",
       "eventName": "Retail Sales YoY (Jul)",
       "impact": "high",
       "actual": -2.5,
@@ -88,6 +73,21 @@
       "date": "2026-09-01 06:00:00",
       "daysAgo": 0,
       "surpriseDiff": -2.7,
+      "impulseBase": -10.0,
+      "impulse": -10.0,
+      "decay": 1.0
+    },
+    {
+      "ccy": "EUR",
+      "type": "RETAIL_SALES",
+      "eventName": "Retail Sales MoM (Jul)",
+      "impact": "high",
+      "actual": -3.4,
+      "forecast": 0.4,
+      "previous": 0.0,
+      "date": "2026-09-01 06:00:00",
+      "daysAgo": 0,
+      "surpriseDiff": -3.8,
       "impulseBase": -10.0,
       "impulse": -10.0,
       "decay": 1.0
@@ -110,14 +110,14 @@
     {
       "ccy": "EUR",
       "type": "CPI_MOM",
-      "eventName": "Saxony CPI MoM (Aug)",
+      "eventName": "Brandenburg CPI MoM (Aug)",
       "impact": "high",
-      "actual": 0.1,
+      "actual": 0.3,
       "forecast": null,
       "previous": 0.7,
       "date": "2026-08-31 08:00:00",
       "daysAgo": 1,
-      "surpriseDiff": -0.6,
+      "surpriseDiff": -0.4,
       "impulseBase": -10.0,
       "impulse": -7.5,
       "decay": 0.75
@@ -140,21 +140,6 @@
     {
       "ccy": "EUR",
       "type": "CPI_MOM",
-      "eventName": "Brandenburg CPI MoM (Aug)",
-      "impact": "high",
-      "actual": 0.3,
-      "forecast": null,
-      "previous": 0.7,
-      "date": "2026-08-31 08:00:00",
-      "daysAgo": 1,
-      "surpriseDiff": -0.4,
-      "impulseBase": -10.0,
-      "impulse": -7.5,
-      "decay": 0.75
-    },
-    {
-      "ccy": "EUR",
-      "type": "CPI_MOM",
       "eventName": "North Rhine Westphalia CPI MoM (Aug)",
       "impact": "high",
       "actual": 0.2,
@@ -163,21 +148,6 @@
       "date": "2026-08-31 08:00:00",
       "daysAgo": 1,
       "surpriseDiff": -0.7,
-      "impulseBase": -10.0,
-      "impulse": -7.5,
-      "decay": 0.75
-    },
-    {
-      "ccy": "EUR",
-      "type": "CPI_MOM",
-      "eventName": "Hesse CPI MoM (Aug)",
-      "impact": "high",
-      "actual": 0.3,
-      "forecast": null,
-      "previous": 0.7,
-      "date": "2026-08-31 08:00:00",
-      "daysAgo": 1,
-      "surpriseDiff": -0.4,
       "impulseBase": -10.0,
       "impulse": -7.5,
       "decay": 0.75
@@ -200,11 +170,11 @@
     {
       "ccy": "EUR",
       "type": "CPI_MOM",
-      "eventName": "Bavaria CPI MoM (Aug)",
+      "eventName": "Hesse CPI MoM (Aug)",
       "impact": "high",
-      "actual": 0.2,
+      "actual": 0.3,
       "forecast": null,
-      "previous": 0.6,
+      "previous": 0.7,
       "date": "2026-08-31 08:00:00",
       "daysAgo": 1,
       "surpriseDiff": -0.4,
@@ -225,6 +195,36 @@
       "surpriseDiff": 0.4,
       "impulseBase": 6.67,
       "impulse": 5.0,
+      "decay": 0.75
+    },
+    {
+      "ccy": "EUR",
+      "type": "CPI_MOM",
+      "eventName": "Saxony CPI MoM (Aug)",
+      "impact": "high",
+      "actual": 0.1,
+      "forecast": null,
+      "previous": 0.7,
+      "date": "2026-08-31 08:00:00",
+      "daysAgo": 1,
+      "surpriseDiff": -0.6,
+      "impulseBase": -10.0,
+      "impulse": -7.5,
+      "decay": 0.75
+    },
+    {
+      "ccy": "EUR",
+      "type": "CPI_MOM",
+      "eventName": "Bavaria CPI MoM (Aug)",
+      "impact": "high",
+      "actual": 0.2,
+      "forecast": null,
+      "previous": 0.6,
+      "date": "2026-08-31 08:00:00",
+      "daysAgo": 1,
+      "surpriseDiff": -0.4,
+      "impulseBase": -10.0,
+      "impulse": -7.5,
       "decay": 0.75
     }
   ]
