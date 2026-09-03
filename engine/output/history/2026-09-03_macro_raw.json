@@ -1,0 +1,1118 @@
+{
+  "generatedAt": "2026-09-03T06:36:34.323049+00:00",
+  "daysBack": 90,
+  "data": {
+    "USD": {
+      "OIL_INVENTORIES": {
+        "actual": -0.079,
+        "forecast": null,
+        "previous": -0.161,
+        "surprise_diff": 0.082,
+        "event_name": "EIA Crude Oil Imports Change (Aug/28)",
+        "release_date": "2026-09-02",
+        "impact": "high"
+      },
+      "ADP": {
+        "actual": 38.0,
+        "forecast": 47.0,
+        "previous": 46.0,
+        "surprise_diff": -0.1915,
+        "event_name": "ADP Employment Change (Aug)",
+        "release_date": "2026-09-02",
+        "impact": "medium"
+      },
+      "JOLTS": {
+        "actual": 7.271,
+        "forecast": 7.3,
+        "previous": 7.182,
+        "surprise_diff": -0.029,
+        "event_name": "JOLTs Job Openings (Jul)",
+        "release_date": "2026-09-01",
+        "impact": "medium"
+      },
+      "PMI_MFG": {
+        "actual": 54.6,
+        "forecast": 55.2,
+        "previous": 55.6,
+        "surprise_diff": -0.6,
+        "event_name": "ISM Manufacturing PMI (Aug)",
+        "release_date": "2026-09-01",
+        "impact": "high"
+      },
+      "CONFIDENCE": {
+        "actual": 51.7,
+        "forecast": 51.0,
+        "previous": 55.2,
+        "surprise_diff": 0.7,
+        "event_name": "Michigan Consumer Sentiment (Aug)",
+        "release_date": "2026-08-28",
+        "impact": "medium"
+      },
+      "TRADE_BALANCE": {
+        "actual": -118.8,
+        "forecast": -99.0,
+        "previous": -101.41,
+        "surprise_diff": -19.8,
+        "event_name": "Goods Trade Balance (Jul)",
+        "release_date": "2026-08-27",
+        "impact": "medium"
+      },
+      "JOBLESS_CLAIMS": {
+        "actual": 203.0,
+        "forecast": 208.0,
+        "previous": 207.0,
+        "surprise_diff": -5.0,
+        "event_name": "Initial Jobless Claims (Aug/22)",
+        "release_date": "2026-08-27",
+        "impact": "medium"
+      },
+      "PCE": {
+        "actual": 3.7,
+        "forecast": 3.6,
+        "previous": 3.7,
+        "surprise_diff": 0.1,
+        "event_name": "PCE Price Index YoY (Jul)",
+        "release_date": "2026-08-26",
+        "impact": "high"
+      },
+      "GDP": {
+        "actual": 1.5,
+        "forecast": 1.5,
+        "previous": 2.1,
+        "surprise_diff": 0.0,
+        "event_name": "GDP Growth Rate QoQ (Q2)",
+        "release_date": "2026-08-26",
+        "impact": "high"
+      },
+      "DURABLE_GOODS": {
+        "actual": 0.4,
+        "forecast": 0.6,
+        "previous": 1.1,
+        "surprise_diff": -0.2,
+        "event_name": "Durable Goods Orders Ex Transp MoM (Jul)",
+        "release_date": "2026-08-26",
+        "impact": "high"
+      },
+      "PMI_SVC": {
+        "actual": 54.1,
+        "forecast": 54.5,
+        "previous": 54.0,
+        "surprise_diff": -0.4,
+        "event_name": "ISM Services PMI (Jul)",
+        "release_date": "2026-08-05",
+        "impact": "high"
+      },
+      "PMI_COMP": {
+        "actual": 56.0,
+        "forecast": 53.2,
+        "previous": 54.5,
+        "surprise_diff": 2.8,
+        "event_name": "S&P Global Composite PMI (Aug)",
+        "release_date": "2026-08-21",
+        "impact": "medium"
+      },
+      "INDUSTRIAL_PROD": {
+        "actual": 1.1,
+        "forecast": 1.0,
+        "previous": 1.29,
+        "surprise_diff": 0.1,
+        "event_name": "Industrial Production YoY (Jul)",
+        "release_date": "2026-08-18",
+        "impact": "medium"
+      },
+      "RETAIL_SALES": {
+        "actual": 5.0,
+        "forecast": 6.0,
+        "previous": 6.8,
+        "surprise_diff": -1.0,
+        "event_name": "Retail Sales YoY (Jul)",
+        "release_date": "2026-08-14",
+        "impact": "high"
+      },
+      "PPI": {
+        "actual": 4.7,
+        "forecast": 4.9,
+        "previous": 5.5,
+        "surprise_diff": -0.2,
+        "event_name": "Producer Price Index YoY (Jul)",
+        "release_date": "2026-08-13",
+        "impact": "medium"
+      },
+      "CORE_PPI": {
+        "actual": 0.2,
+        "forecast": 0.3,
+        "previous": 0.4,
+        "surprise_diff": -0.1,
+        "event_name": "Core PPI MoM (Jul)",
+        "release_date": "2026-08-13",
+        "impact": "medium"
+      },
+      "CPI": {
+        "actual": 3.4,
+        "forecast": 3.4,
+        "previous": 3.5,
+        "surprise_diff": 0.0,
+        "event_name": "Inflation Rate YoY (Jul)",
+        "release_date": "2026-08-12",
+        "impact": "high"
+      },
+      "CORE_CPI": {
+        "actual": 0.2,
+        "forecast": 0.2,
+        "previous": 0.0,
+        "surprise_diff": 0.0,
+        "event_name": "Core Inflation Rate MoM (Jul)",
+        "release_date": "2026-08-12",
+        "impact": "high"
+      },
+      "NFP": {
+        "actual": -23.0,
+        "forecast": 80.0,
+        "previous": 20.0,
+        "surprise_diff": -1.2875,
+        "event_name": "Non Farm Payrolls (Jul)",
+        "release_date": "2026-08-07",
+        "impact": "high"
+      },
+      "UNEMPLOYMENT": {
+        "actual": 4.1,
+        "forecast": 4.2,
+        "previous": 4.2,
+        "surprise_diff": -0.1,
+        "event_name": "Unemployment Rate (Jul)",
+        "release_date": "2026-08-07",
+        "impact": "high"
+      },
+      "WAGES": {
+        "actual": 0.9,
+        "forecast": 0.7,
+        "previous": 0.8,
+        "surprise_diff": 0.2,
+        "event_name": "Employment Cost - Wages QoQ (Q2)",
+        "release_date": "2026-07-31",
+        "impact": "medium"
+      },
+      "INTEREST_RATE": {
+        "actual": 3.75,
+        "forecast": 3.75,
+        "previous": 3.75,
+        "surprise_diff": 0.0,
+        "event_name": "Fed Interest Rate Decision",
+        "release_date": "2026-07-29",
+        "impact": "high"
+      },
+      "CURRENT_ACCOUNT": {
+        "actual": -226.8,
+        "forecast": -217.5,
+        "previous": -221.1,
+        "surprise_diff": -9.3,
+        "event_name": "Current Account (Q1)",
+        "release_date": "2026-06-24",
+        "impact": "medium"
+      },
+      "FED_SPEECH": {
+        "actual": 1.0,
+        "forecast": 0.0,
+        "previous": null,
+        "surprise_diff": null,
+        "event_name": "USD FED_SPEECH — Manual Override (Speech: Hawkish, jak)",
+        "release_date": "2026-08-28",
+        "impact": "high",
+        "source": "manual"
+      }
+    },
+    "EUR": {
+      "PPI": {
+        "actual": 7.8,
+        "forecast": 5.9,
+        "previous": 5.8,
+        "surprise_diff": 1.9,
+        "event_name": "Producer Price Index YoY (Jul)",
+        "release_date": "2026-09-02",
+        "impact": "medium"
+      },
+      "EMPLOYMENT": {
+        "actual": 44.419,
+        "forecast": 15.4,
+        "previous": 19.517,
+        "surprise_diff": 1.8844,
+        "event_name": "Employment Change (Aug)",
+        "release_date": "2026-09-02",
+        "impact": "high"
+      },
+      "CPI": {
+        "actual": 3.3,
+        "forecast": 3.3,
+        "previous": 2.9,
+        "surprise_diff": 0.0,
+        "event_name": "Inflation Rate YoY (Aug)",
+        "release_date": "2026-09-01",
+        "impact": "high"
+      },
+      "CORE_CPI": {
+        "actual": 2.4,
+        "forecast": 2.5,
+        "previous": 2.5,
+        "surprise_diff": -0.1,
+        "event_name": "Core Inflation Rate YoY (Aug)",
+        "release_date": "2026-09-01",
+        "impact": "high"
+      },
+      "UNEMPLOYMENT": {
+        "actual": 6.4,
+        "forecast": 6.3,
+        "previous": 6.4,
+        "surprise_diff": 0.1,
+        "event_name": "Unemployment Rate (Jul)",
+        "release_date": "2026-09-01",
+        "impact": "high"
+      },
+      "HICP": {
+        "actual": 0.2,
+        "forecast": null,
+        "previous": 0.0,
+        "surprise_diff": 0.2,
+        "event_name": "HICP MoM (Aug)",
+        "release_date": "2026-09-01",
+        "impact": "high"
+      },
+      "GDP": {
+        "actual": 0.2,
+        "forecast": 0.2,
+        "previous": 0.3,
+        "surprise_diff": 0.0,
+        "event_name": "GDP Growth Rate QoQ (Q2)",
+        "release_date": "2026-09-01",
+        "impact": "high"
+      },
+      "PMI_MFG": {
+        "actual": 52.7,
+        "forecast": 52.8,
+        "previous": 51.9,
+        "surprise_diff": -0.1,
+        "event_name": "S&P Global Manufacturing PMI (Aug)",
+        "release_date": "2026-09-01",
+        "impact": "high"
+      },
+      "RETAIL_SALES": {
+        "actual": -3.4,
+        "forecast": 0.4,
+        "previous": 0.0,
+        "surprise_diff": -3.8,
+        "event_name": "Retail Sales MoM (Jul)",
+        "release_date": "2026-09-01",
+        "impact": "high"
+      },
+      "CURRENT_ACCOUNT": {
+        "actual": 2.41,
+        "forecast": 3.6,
+        "previous": 1.84,
+        "surprise_diff": -1.19,
+        "event_name": "Current Account (Jun)",
+        "release_date": "2026-08-31",
+        "impact": "medium"
+      },
+      "CONFIDENCE": {
+        "actual": -3.9,
+        "forecast": -3.0,
+        "previous": -2.6,
+        "surprise_diff": -0.9,
+        "event_name": "Business Confidence (Aug)",
+        "release_date": "2026-08-28",
+        "impact": "medium"
+      },
+      "SENTIMENT": {
+        "actual": 88.8,
+        "forecast": 87.2,
+        "previous": 86.7,
+        "surprise_diff": 1.6,
+        "event_name": "Ifo Business Climate (Aug)",
+        "release_date": "2026-08-25",
+        "impact": "high"
+      },
+      "WAGES": {
+        "actual": 2.44,
+        "forecast": 2.5,
+        "previous": 2.56,
+        "surprise_diff": -0.06,
+        "event_name": "Negotiated Wage Growth (Q2)",
+        "release_date": "2026-08-21",
+        "impact": "medium"
+      },
+      "PMI_COMP": {
+        "actual": 52.1,
+        "forecast": 51.7,
+        "previous": 52.0,
+        "surprise_diff": 0.4,
+        "event_name": "S&P Global Composite PMI (Aug)",
+        "release_date": "2026-08-21",
+        "impact": "medium"
+      },
+      "PMI_SVC": {
+        "actual": 51.7,
+        "forecast": 51.5,
+        "previous": 51.7,
+        "surprise_diff": 0.2,
+        "event_name": "S&P Global Services PMI (Aug)",
+        "release_date": "2026-08-21",
+        "impact": "high"
+      },
+      "INDUSTRIAL_PROD": {
+        "actual": 0.0,
+        "forecast": -0.1,
+        "previous": 0.3,
+        "surprise_diff": 0.1,
+        "event_name": "Industrial Production MoM (Jun)",
+        "release_date": "2026-08-13",
+        "impact": "medium"
+      },
+      "INTEREST_RATE": {
+        "actual": 2.4,
+        "forecast": 2.4,
+        "previous": 2.4,
+        "surprise_diff": 0.0,
+        "event_name": "Interest Rate Decision (Jul)",
+        "release_date": "2026-07-23",
+        "impact": "high"
+      }
+    },
+    "GBP": {
+      "PMI_MFG": {
+        "actual": 51.7,
+        "forecast": 51.5,
+        "previous": 51.9,
+        "surprise_diff": 0.2,
+        "event_name": "S&P Global Manufacturing PMI (Aug)",
+        "release_date": "2026-09-01",
+        "impact": "high"
+      },
+      "PMI_SVC": {
+        "actual": 52.8,
+        "forecast": 51.8,
+        "previous": 52.1,
+        "surprise_diff": 1.0,
+        "event_name": "S&P Global Services PMI (Aug)",
+        "release_date": "2026-08-21",
+        "impact": "high"
+      },
+      "PMI_COMP": {
+        "actual": 52.5,
+        "forecast": 51.6,
+        "previous": 52.2,
+        "surprise_diff": 0.9,
+        "event_name": "S&P Global Composite PMI (Aug)",
+        "release_date": "2026-08-21",
+        "impact": "medium"
+      },
+      "RETAIL_SALES": {
+        "actual": -0.9,
+        "forecast": -0.5,
+        "previous": 0.9,
+        "surprise_diff": -0.4,
+        "event_name": "Retail Sales Ex Fuel MoM (Jul)",
+        "release_date": "2026-08-21",
+        "impact": "high"
+      },
+      "RBNZ_SPEECH": {
+        "actual": -1.8,
+        "forecast": null,
+        "previous": -12.8,
+        "surprise_diff": 11.0,
+        "event_name": "Public Sector Net Borrowing (Jul)",
+        "release_date": "2026-08-21",
+        "impact": "high"
+      },
+      "CONFIDENCE": {
+        "actual": -14.0,
+        "forecast": -18.0,
+        "previous": -17.0,
+        "surprise_diff": 4.0,
+        "event_name": "Consumer Confidence (Aug)",
+        "release_date": "2026-08-20",
+        "impact": "medium"
+      },
+      "PPI": {
+        "actual": 0.2,
+        "forecast": 0.2,
+        "previous": -0.1,
+        "surprise_diff": 0.0,
+        "event_name": "PPI Output MoM (Jul)",
+        "release_date": "2026-08-19",
+        "impact": "medium"
+      },
+      "CORE_CPI": {
+        "actual": 0.2,
+        "forecast": 0.1,
+        "previous": 0.3,
+        "surprise_diff": 0.1,
+        "event_name": "Core Inflation Rate MoM (Jul)",
+        "release_date": "2026-08-19",
+        "impact": "high"
+      },
+      "CPI": {
+        "actual": 2.9,
+        "forecast": 2.9,
+        "previous": 2.6,
+        "surprise_diff": 0.0,
+        "event_name": "Inflation Rate YoY (Jul)",
+        "release_date": "2026-08-19",
+        "impact": "high"
+      },
+      "UNEMPLOYMENT": {
+        "actual": 4.9,
+        "forecast": 4.8,
+        "previous": 4.9,
+        "surprise_diff": 0.1,
+        "event_name": "Unemployment Rate (Jun)",
+        "release_date": "2026-08-18",
+        "impact": "high"
+      },
+      "WAGES": {
+        "actual": 3.5,
+        "forecast": 3.4,
+        "previous": 3.4,
+        "surprise_diff": 0.1,
+        "event_name": "Average Earnings excl. Bonus (Jun)",
+        "release_date": "2026-08-18",
+        "impact": "medium"
+      },
+      "EMPLOYMENT": {
+        "actual": 83.0,
+        "forecast": 200.0,
+        "previous": 147.0,
+        "surprise_diff": -0.585,
+        "event_name": "Employment Change (Jun)",
+        "release_date": "2026-08-18",
+        "impact": "high"
+      },
+      "GDP": {
+        "actual": 0.4,
+        "forecast": 0.4,
+        "previous": 0.6,
+        "surprise_diff": 0.0,
+        "event_name": "GDP Growth Rate QoQ (Q2)",
+        "release_date": "2026-08-13",
+        "impact": "high"
+      },
+      "INDUSTRIAL_PROD": {
+        "actual": -0.2,
+        "forecast": 0.1,
+        "previous": -0.7,
+        "surprise_diff": -0.3,
+        "event_name": "Industrial Production MoM (Jun)",
+        "release_date": "2026-08-13",
+        "impact": "medium"
+      },
+      "TRADE_BALANCE": {
+        "actual": -23.01,
+        "forecast": -20.5,
+        "previous": -21.08,
+        "surprise_diff": -2.51,
+        "event_name": "Goods Trade Balance (Jun)",
+        "release_date": "2026-08-13",
+        "impact": "medium"
+      },
+      "INTEREST_RATE": {
+        "actual": 3.75,
+        "forecast": 3.75,
+        "previous": 3.75,
+        "surprise_diff": 0.0,
+        "event_name": "Interest Rate Decision (Jul)",
+        "release_date": "2026-07-30",
+        "impact": "high"
+      },
+      "BOE_VOTE": {
+        "actual": 39.0,
+        "forecast": 29.0,
+        "previous": 29.0,
+        "surprise_diff": 10.0,
+        "event_name": "BoE MPC Vote Hike",
+        "release_date": "2026-07-30",
+        "impact": "high"
+      },
+      "CURRENT_ACCOUNT": {
+        "actual": -22.1,
+        "forecast": -21.5,
+        "previous": -27.2,
+        "surprise_diff": -0.6,
+        "event_name": "Current Account (Q1)",
+        "release_date": "2026-06-30",
+        "impact": "medium"
+      }
+    },
+    "JPY": {
+      "PMI_COMP": {
+        "actual": 53.5,
+        "forecast": 53.4,
+        "previous": 52.7,
+        "surprise_diff": 0.1,
+        "event_name": "S&P Global Composite PMI (Aug)",
+        "release_date": "2026-09-03",
+        "impact": "medium"
+      },
+      "PMI_SVC": {
+        "actual": 52.5,
+        "forecast": 52.3,
+        "previous": 51.2,
+        "surprise_diff": 0.2,
+        "event_name": "S&P Global Services PMI (Aug)",
+        "release_date": "2026-09-03",
+        "impact": "high"
+      },
+      "CONFIDENCE": {
+        "actual": 35.5,
+        "forecast": 35.0,
+        "previous": 34.9,
+        "surprise_diff": 0.5,
+        "event_name": "Consumer Confidence (Aug)",
+        "release_date": "2026-09-01",
+        "impact": "medium"
+      },
+      "PMI_MFG": {
+        "actual": 54.9,
+        "forecast": 55.1,
+        "previous": 54.5,
+        "surprise_diff": -0.2,
+        "event_name": "S&P Global Manufacturing PMI (Aug)",
+        "release_date": "2026-09-01",
+        "impact": "high"
+      },
+      "INDUSTRIAL_PROD": {
+        "actual": 4.1,
+        "forecast": 3.0,
+        "previous": 4.9,
+        "surprise_diff": 1.1,
+        "event_name": "Industrial Production YoY (Jul)",
+        "release_date": "2026-08-30",
+        "impact": "medium"
+      },
+      "RETAIL_SALES": {
+        "actual": 4.0,
+        "forecast": 3.0,
+        "previous": 0.6,
+        "surprise_diff": 1.0,
+        "event_name": "Retail Sales YoY (Jul)",
+        "release_date": "2026-08-30",
+        "impact": "high"
+      },
+      "CPI": {
+        "actual": 1.9,
+        "forecast": 1.7,
+        "previous": 1.6,
+        "surprise_diff": 0.2,
+        "event_name": "Inflation Rate YoY (Jul)",
+        "release_date": "2026-08-20",
+        "impact": "high"
+      },
+      "CORE_CPI": {
+        "actual": 1.8,
+        "forecast": 1.7,
+        "previous": 1.7,
+        "surprise_diff": 0.1,
+        "event_name": "Core CPI YoY (Aug)",
+        "release_date": "2026-08-27",
+        "impact": "high"
+      },
+      "UNEMPLOYMENT": {
+        "actual": 2.4,
+        "forecast": 2.5,
+        "previous": 2.5,
+        "surprise_diff": -0.1,
+        "event_name": "Unemployment Rate (Jul)",
+        "release_date": "2026-08-27",
+        "impact": "high"
+      },
+      "TRADE_BALANCE": {
+        "actual": -0.69,
+        "forecast": -0.44,
+        "previous": -0.93,
+        "surprise_diff": -0.25,
+        "event_name": "Adjusted Trade Balance",
+        "release_date": "2026-08-19",
+        "impact": "medium"
+      },
+      "GDP": {
+        "actual": 0.3,
+        "forecast": 0.5,
+        "previous": 0.5,
+        "surprise_diff": -0.2,
+        "event_name": "GDP Growth Rate QoQ (Q2)",
+        "release_date": "2026-08-16",
+        "impact": "high"
+      },
+      "PPI": {
+        "actual": 0.1,
+        "forecast": 0.6,
+        "previous": 0.5,
+        "surprise_diff": -0.5,
+        "event_name": "Producer Price Index MoM (Jul)",
+        "release_date": "2026-08-12",
+        "impact": "medium"
+      },
+      "CURRENT_ACCOUNT": {
+        "actual": -923.0,
+        "forecast": 1512.0,
+        "previous": 3968.0,
+        "surprise_diff": -2435.0,
+        "event_name": "Current Account (Jun)",
+        "release_date": "2026-08-09",
+        "impact": "medium"
+      },
+      "INTEREST_RATE": {
+        "actual": 1.0,
+        "forecast": 1.0,
+        "previous": 1.0,
+        "surprise_diff": 0.0,
+        "event_name": "BoJ Interest Rate Decision",
+        "release_date": "2026-07-31",
+        "impact": "high"
+      }
+    },
+    "CHF": {
+      "CPI": {
+        "actual": 0.8,
+        "forecast": 0.5,
+        "previous": 0.4,
+        "surprise_diff": 0.3,
+        "event_name": "Inflation Rate YoY (Aug)",
+        "release_date": "2026-09-03",
+        "impact": "high"
+      },
+      "PMI_MFG": {
+        "actual": 57.1,
+        "forecast": 53.5,
+        "previous": 53.2,
+        "surprise_diff": 3.6,
+        "event_name": "procure.ch Manufacturing PMI (Aug)",
+        "release_date": "2026-09-01",
+        "impact": "high"
+      },
+      "RETAIL_SALES": {
+        "actual": 2.3,
+        "forecast": 1.3,
+        "previous": 1.9,
+        "surprise_diff": 1.0,
+        "event_name": "Retail Sales YoY (Jul)",
+        "release_date": "2026-09-01",
+        "impact": "high"
+      },
+      "SENTIMENT": {
+        "actual": 106.7,
+        "forecast": 103.3,
+        "previous": 104.2,
+        "surprise_diff": 3.4,
+        "event_name": "KOF Leading Indicators (Aug)",
+        "release_date": "2026-08-28",
+        "impact": "high"
+      },
+      "NFP": {
+        "actual": 5.698,
+        "forecast": 5.55,
+        "previous": 5.65,
+        "surprise_diff": 0.0267,
+        "event_name": "Non Farm Payrolls (Q2)",
+        "release_date": "2026-08-27",
+        "impact": "high"
+      },
+      "INDUSTRIAL_PROD": {
+        "actual": 5.5,
+        "forecast": -4.7,
+        "previous": -7.6,
+        "surprise_diff": 10.2,
+        "event_name": "Industrial Production YoY (Q2)",
+        "release_date": "2026-08-19",
+        "impact": "medium"
+      },
+      "GDP": {
+        "actual": 1.5,
+        "forecast": 0.5,
+        "previous": 0.4,
+        "surprise_diff": 1.0,
+        "event_name": "GDP Growth Rate QoQ (Q2)",
+        "release_date": "2026-08-14",
+        "impact": "high"
+      },
+      "PPI": {
+        "actual": -2.1,
+        "forecast": null,
+        "previous": -2.1,
+        "surprise_diff": 0.0,
+        "event_name": "Producer Price Index YoY (Jul)",
+        "release_date": "2026-08-13",
+        "impact": "medium"
+      },
+      "CONFIDENCE": {
+        "actual": -35.0,
+        "forecast": -34.0,
+        "previous": -36.0,
+        "surprise_diff": -1.0,
+        "event_name": "Consumer Confidence (Jul)",
+        "release_date": "2026-08-07",
+        "impact": "medium"
+      },
+      "UNEMPLOYMENT": {
+        "actual": 3.0,
+        "forecast": 2.9,
+        "previous": 2.9,
+        "surprise_diff": 0.1,
+        "event_name": "Unemployment Rate (Jul)",
+        "release_date": "2026-08-06",
+        "impact": "high"
+      },
+      "CURRENT_ACCOUNT": {
+        "actual": 15.5,
+        "forecast": 11.9,
+        "previous": 3.0,
+        "surprise_diff": 3.6,
+        "event_name": "Current Account (Q1)",
+        "release_date": "2026-06-23",
+        "impact": "medium"
+      },
+      "INTEREST_RATE": {
+        "actual": 0.0,
+        "forecast": null,
+        "previous": 0.0,
+        "surprise_diff": 0.0,
+        "event_name": "Interest Rate Decision (Q2)",
+        "release_date": "2026-06-18",
+        "impact": "high"
+      }
+    },
+    "CAD": {
+      "INTEREST_RATE": {
+        "actual": 2.25,
+        "forecast": 2.25,
+        "previous": 2.25,
+        "surprise_diff": 0.0,
+        "event_name": "BoC Interest Rate Decision",
+        "release_date": "2026-09-02",
+        "impact": "high"
+      },
+      "PMI_MFG": {
+        "actual": 53.0,
+        "forecast": 52.7,
+        "previous": 53.5,
+        "surprise_diff": 0.3,
+        "event_name": "S&P Global Manufacturing PMI (Aug)",
+        "release_date": "2026-09-01",
+        "impact": "high"
+      },
+      "GDP": {
+        "actual": 0.8,
+        "forecast": 0.8,
+        "previous": 0.1,
+        "surprise_diff": 0.0,
+        "event_name": "GDP Growth Rate QoQ (Q2)",
+        "release_date": "2026-08-28",
+        "impact": "high"
+      },
+      "CURRENT_ACCOUNT": {
+        "actual": 8.8,
+        "forecast": -2.0,
+        "previous": -8.3,
+        "surprise_diff": 10.8,
+        "event_name": "Current Account (Q2)",
+        "release_date": "2026-08-27",
+        "impact": "medium"
+      },
+      "RETAIL_SALES": {
+        "actual": -0.8,
+        "forecast": -0.5,
+        "previous": 1.0,
+        "surprise_diff": -0.3,
+        "event_name": "Retail Sales MoM (Jul)",
+        "release_date": "2026-08-21",
+        "impact": "high"
+      },
+      "PPI": {
+        "actual": 12.4,
+        "forecast": 12.0,
+        "previous": 12.4,
+        "surprise_diff": 0.4,
+        "event_name": "Producer Price Index YoY (Jul)",
+        "release_date": "2026-08-20",
+        "impact": "medium"
+      },
+      "CPI": {
+        "actual": 3.0,
+        "forecast": 2.9,
+        "previous": 2.8,
+        "surprise_diff": 0.1,
+        "event_name": "Inflation Rate YoY (Jul)",
+        "release_date": "2026-08-17",
+        "impact": "high"
+      },
+      "CORE_CPI": {
+        "actual": 2.3,
+        "forecast": 2.2,
+        "previous": 2.1,
+        "surprise_diff": 0.1,
+        "event_name": "Core Inflation Rate YoY (Jul)",
+        "release_date": "2026-08-17",
+        "impact": "high"
+      },
+      "UNEMPLOYMENT": {
+        "actual": 6.4,
+        "forecast": 6.5,
+        "previous": 6.5,
+        "surprise_diff": -0.1,
+        "event_name": "Unemployment Rate (Jul)",
+        "release_date": "2026-08-07",
+        "impact": "high"
+      },
+      "EMPLOYMENT": {
+        "actual": 75.1,
+        "forecast": 15.0,
+        "previous": 18.2,
+        "surprise_diff": 4.0067,
+        "event_name": "Employment Change (Jul)",
+        "release_date": "2026-08-07",
+        "impact": "high"
+      },
+      "PMI_COMP": {
+        "actual": 49.7,
+        "forecast": 49.0,
+        "previous": 47.9,
+        "surprise_diff": 0.7,
+        "event_name": "S&P Global Composite PMI (Jul)",
+        "release_date": "2026-08-06",
+        "impact": "medium"
+      },
+      "PMI_SVC": {
+        "actual": 49.1,
+        "forecast": 48.0,
+        "previous": 47.1,
+        "surprise_diff": 1.1,
+        "event_name": "S&P Global Services PMI (Jul)",
+        "release_date": "2026-08-06",
+        "impact": "high"
+      },
+      "WTI_TREND": {
+        "actual": 89.95,
+        "forecast": null,
+        "previous": 78.18,
+        "surprise_diff": 15.06,
+        "event_name": "WTI Crude Oil 20D ROC",
+        "release_date": "2026-09-03",
+        "impact": "high",
+        "wti_meta": {
+          "current": 89.95,
+          "price_20d": 78.18,
+          "avg_daily_move": 2.103
+        }
+      }
+    },
+    "AUD": {
+      "PMI_COMP": {
+        "actual": 52.7,
+        "forecast": 52.5,
+        "previous": 53.2,
+        "surprise_diff": 0.2,
+        "event_name": "S&P Global Composite PMI (Aug)",
+        "release_date": "2026-09-02",
+        "impact": "medium"
+      },
+      "PMI_SVC": {
+        "actual": 53.2,
+        "forecast": 52.9,
+        "previous": 53.6,
+        "surprise_diff": 0.3,
+        "event_name": "S&P Global Services PMI (Aug)",
+        "release_date": "2026-09-02",
+        "impact": "high"
+      },
+      "GDP": {
+        "actual": 0.4,
+        "forecast": 0.3,
+        "previous": 0.3,
+        "surprise_diff": 0.1,
+        "event_name": "GDP Growth Rate QoQ (Q2)",
+        "release_date": "2026-09-02",
+        "impact": "high"
+      },
+      "CURRENT_ACCOUNT": {
+        "actual": -27.2,
+        "forecast": -30.0,
+        "previous": -25.4,
+        "surprise_diff": 2.8,
+        "event_name": "Current Account (Q2)",
+        "release_date": "2026-09-01",
+        "impact": "medium"
+      },
+      "PMI_MFG": {
+        "actual": 52.0,
+        "forecast": 52.0,
+        "previous": 52.0,
+        "surprise_diff": 0.0,
+        "event_name": "S&P Global Manufacturing PMI (Aug)",
+        "release_date": "2026-08-31",
+        "impact": "high"
+      },
+      "CPI": {
+        "actual": 3.5,
+        "forecast": 3.3,
+        "previous": 3.8,
+        "surprise_diff": 0.2,
+        "event_name": "Inflation Rate YoY (Jul)",
+        "release_date": "2026-08-26",
+        "impact": "high"
+      },
+      "EMPLOYMENT": {
+        "actual": -15.8,
+        "forecast": 15.0,
+        "previous": 80.3,
+        "surprise_diff": -2.0533,
+        "event_name": "Employment Change (Jul)",
+        "release_date": "2026-08-20",
+        "impact": "high"
+      },
+      "UNEMPLOYMENT": {
+        "actual": 4.5,
+        "forecast": 4.4,
+        "previous": 4.4,
+        "surprise_diff": 0.1,
+        "event_name": "Unemployment Rate (Jul)",
+        "release_date": "2026-08-20",
+        "impact": "high"
+      },
+      "CONFIDENCE": {
+        "actual": 88.9,
+        "forecast": 81.7,
+        "previous": 83.9,
+        "surprise_diff": 7.2,
+        "event_name": "Westpac Consumer Confidence Index (Aug)",
+        "release_date": "2026-08-18",
+        "impact": "medium"
+      },
+      "INTEREST_RATE": {
+        "actual": 4.35,
+        "forecast": 4.35,
+        "previous": 4.35,
+        "surprise_diff": 0.0,
+        "event_name": "Interest Rate Decision (Aug)",
+        "release_date": "2026-08-11",
+        "impact": "high"
+      },
+      "PPI": {
+        "actual": 1.3,
+        "forecast": 0.3,
+        "previous": 0.4,
+        "surprise_diff": 1.0,
+        "event_name": "Producer Price Index QoQ (Q2)",
+        "release_date": "2026-07-31",
+        "impact": "medium"
+      },
+      "IRON_ORE": {
+        "actual": 97.72,
+        "forecast": null,
+        "previous": 95.28,
+        "surprise_diff": 2.56,
+        "event_name": "Iron Ore 20D ROC",
+        "release_date": "2026-09-03",
+        "impact": "high",
+        "wti_meta": {
+          "current": 97.72,
+          "price_20d": 95.28,
+          "avg_daily_move": 0.632
+        }
+      }
+    },
+    "NZD": {
+      "CONFIDENCE": {
+        "actual": 98.0,
+        "forecast": 98.7,
+        "previous": 99.3,
+        "surprise_diff": -0.7,
+        "event_name": "ANZ Roy Morgan Consumer Confidence (Aug)",
+        "release_date": "2026-09-02",
+        "impact": "medium"
+      },
+      "INTEREST_RATE": {
+        "actual": 2.75,
+        "forecast": 2.75,
+        "previous": 2.5,
+        "surprise_diff": 0.0,
+        "event_name": "RBNZ Interest Rate Decision",
+        "release_date": "2026-09-02",
+        "impact": "high"
+      },
+      "RETAIL_SALES": {
+        "actual": 0.7,
+        "forecast": 0.3,
+        "previous": 1.1,
+        "surprise_diff": 0.4,
+        "event_name": "Retail Sales QoQ",
+        "release_date": "2026-08-23",
+        "impact": "high"
+      },
+      "PPI": {
+        "actual": 2.9,
+        "forecast": 1.3,
+        "previous": 1.4,
+        "surprise_diff": 1.6,
+        "event_name": "Producer Price Index QoQ (Q2)",
+        "release_date": "2026-08-18",
+        "impact": "medium"
+      },
+      "UNEMPLOYMENT": {
+        "actual": 5.6,
+        "forecast": 5.4,
+        "previous": 5.4,
+        "surprise_diff": 0.2,
+        "event_name": "Unemployment Rate (Q2)",
+        "release_date": "2026-08-04",
+        "impact": "high"
+      },
+      "EMPLOYMENT": {
+        "actual": 0.5,
+        "forecast": 0.2,
+        "previous": 0.2,
+        "surprise_diff": 1.5,
+        "event_name": "Employment Change QoQ (Q2)",
+        "release_date": "2026-08-04",
+        "impact": "high"
+      },
+      "CPI": {
+        "actual": 4.1,
+        "forecast": 4.0,
+        "previous": 3.1,
+        "surprise_diff": 0.1,
+        "event_name": "Inflation Rate YoY (Q2)",
+        "release_date": "2026-07-20",
+        "impact": "high"
+      },
+      "GDP": {
+        "actual": 0.8,
+        "forecast": 0.9,
+        "previous": 0.5,
+        "surprise_diff": -0.1,
+        "event_name": "GDP Growth Rate QoQ (Q1)",
+        "release_date": "2026-06-17",
+        "impact": "high"
+      },
+      "CURRENT_ACCOUNT": {
+        "actual": -1.01,
+        "forecast": -1.01,
+        "previous": -5.64,
+        "surprise_diff": 0.0,
+        "event_name": "Current Account (Q1)",
+        "release_date": "2026-06-16",
+        "impact": "medium"
+      },
+      "DAIRY_FUTURES": {
+        "actual": 16.57,
+        "forecast": null,
+        "previous": 16.78,
+        "surprise_diff": -1.25,
+        "event_name": "Dairy Futures 20D ROC (DC=F)",
+        "release_date": "2026-09-03",
+        "impact": "high",
+        "wti_meta": {
+          "current": 16.57,
+          "price_20d": 16.78,
+          "avg_daily_move": 0.656
+        }
+      }
+    }
+  }
+}
