@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-04T12:39:42.348354+00:00",
-  "heatmap": 68,
-  "score": 35,
-  "bias": "bull",
+  "generatedAt": "2026-09-05T17:17:53.868195+00:00",
+  "heatmap": 51,
+  "score": 2,
+  "bias": "neut",
   "engines": {
     "macro": {
       "score": -30,
@@ -28,29 +28,29 @@
         },
         {
           "factor": "YIELD_2Y",
-          "detail": "2Y 4.31->4.34 (+0.03pp, flat)",
+          "detail": "2Y 4.31->4.37 (+0.06pp, flat)",
           "gold_signal": "neutral",
           "weight": 0.2
         }
       ]
     },
     "cot": {
-      "score": 100,
+      "score": 33,
       "signal": "bullish",
       "factors": [
         {
           "factor": "NET_POSITIONING",
-          "detail": "Long 89.1%",
+          "detail": "Long 88.9%",
           "gold_signal": "bullish"
         },
         {
           "factor": "LATEST_FLOW",
-          "detail": "dLong +20257, dShort -888",
-          "gold_signal": "bullish"
+          "detail": "dLong -16674, dShort -1464",
+          "gold_signal": "bearish"
         },
         {
           "factor": "EXTREME",
-          "detail": "Long 89.1% = crowded_long",
+          "detail": "Long 88.9% = crowded_long",
           "gold_signal": "caution"
         }
       ],
