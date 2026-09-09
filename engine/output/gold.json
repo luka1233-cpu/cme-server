@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-09T08:15:27.192960+00:00",
-  "heatmap": 46,
-  "score": -8,
-  "bias": "neut",
+  "generatedAt": "2026-09-09T08:19:41.345351+00:00",
+  "heatmap": 40,
+  "score": -21,
+  "bias": "wbear",
   "engines": {
     "macro": {
-      "score": -50,
+      "score": -75,
       "signal": "bearish",
       "factors": [
         {
@@ -16,8 +16,8 @@
         },
         {
           "factor": "USD_INFLATION",
-          "usd_signal": "neutral",
-          "gold_signal": "neutral",
+          "usd_signal": "bullish",
+          "gold_signal": "bearish",
           "weight": 0.25
         },
         {
