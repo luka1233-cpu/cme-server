@@ -1,7 +1,22 @@
 {
-  "generatedAt": "2026-09-16T15:21:31.727899+00:00",
+  "generatedAt": "2026-09-16T18:24:54.798146+00:00",
   "daysBack": 7,
   "news": [
+    {
+      "ccy": "USD",
+      "type": "RETAIL_SALES",
+      "eventName": "Retail Sales Ex Autos MoM (Aug)",
+      "impact": "high",
+      "actual": 1.4,
+      "forecast": 0.5,
+      "previous": -0.2,
+      "date": "2026-09-16 12:30:00",
+      "daysAgo": 0,
+      "surpriseDiff": 0.9,
+      "impulseBase": 10.0,
+      "impulse": 10.0,
+      "decay": 1.0
+    },
     {
       "ccy": "USD",
       "type": "RETAIL_SALES",
@@ -30,21 +45,6 @@
       "surpriseDiff": 0.4,
       "impulseBase": 6.67,
       "impulse": 6.67,
-      "decay": 1.0
-    },
-    {
-      "ccy": "USD",
-      "type": "RETAIL_SALES",
-      "eventName": "Retail Sales Ex Autos MoM (Aug)",
-      "impact": "high",
-      "actual": 1.4,
-      "forecast": 0.5,
-      "previous": -0.2,
-      "date": "2026-09-16 12:30:00",
-      "daysAgo": 0,
-      "surpriseDiff": 0.9,
-      "impulseBase": 10.0,
-      "impulse": 10.0,
       "decay": 1.0
     },
     {
