@@ -4,8 +4,8 @@
   "build": "2026-07-12",
   "status": "complete",
   "date": "2026-09-17",
-  "datasetId": "2026-09-17T07:23:02.921974+00:00",
-  "generatedAt": "2026-09-17T07:23:21.717Z",
+  "datasetId": "2026-09-17T11:01:43.079009+00:00",
+  "generatedAt": "2026-09-17T11:02:00.831Z",
   "cotReportDate": "2026-09-08",
   "newsLoaded": true,
   "heatmapLoaded": true,
@@ -85,24 +85,6 @@
             "item": {
               "ccy": "USD",
               "type": "RETAIL_SALES",
-              "eventName": "Retail Sales MoM (Aug)",
-              "impact": "high",
-              "actual": 1.2,
-              "forecast": 0.8,
-              "previous": -0.5,
-              "date": "2026-09-16 12:30:00",
-              "daysAgo": 1,
-              "surpriseDiff": 0.4,
-              "impulseBase": 6.67,
-              "impulse": 5,
-              "decay": 0.75
-            },
-            "pts": 5
-          },
-          {
-            "item": {
-              "ccy": "USD",
-              "type": "RETAIL_SALES",
               "eventName": "Retail Sales Ex Autos MoM (Aug)",
               "impact": "high",
               "actual": 1.4,
@@ -134,6 +116,24 @@
               "decay": 0.75
             },
             "pts": 7.5
+          },
+          {
+            "item": {
+              "ccy": "USD",
+              "type": "RETAIL_SALES",
+              "eventName": "Retail Sales MoM (Aug)",
+              "impact": "high",
+              "actual": 1.2,
+              "forecast": 0.8,
+              "previous": -0.5,
+              "date": "2026-09-16 12:30:00",
+              "daysAgo": 1,
+              "surpriseDiff": 0.4,
+              "impulseBase": 6.67,
+              "impulse": 5,
+              "decay": 0.75
+            },
+            "pts": 5
           },
           {
             "item": {
@@ -234,7 +234,7 @@
           "opposed": false,
           "gap": 4
         },
-        "heatmapPercent": 59,
+        "heatmapPercent": 56,
         "heatmapCoverage": 0.98,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -250,7 +250,7 @@
       "score": 4,
       "bias": "neut",
       "coverage": 0.98,
-      "heatmap": 59,
+      "heatmap": 56,
       "cot_longPct": 45.2,
       "cot_deltaPct6w": 3,
       "cot_tq": 4
@@ -318,7 +318,7 @@
           "opposed": true,
           "gap": 17
         },
-        "heatmapPercent": 55,
+        "heatmapPercent": 56,
         "heatmapCoverage": 1,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -334,7 +334,7 @@
       "score": 4,
       "bias": "neut",
       "coverage": 1,
-      "heatmap": 55,
+      "heatmap": 56,
       "cot_longPct": 35.7,
       "cot_deltaPct6w": 3,
       "cot_tq": 4
@@ -738,7 +738,7 @@
           "opposed": false,
           "gap": 43
         },
-        "heatmapPercent": 63,
+        "heatmapPercent": 61,
         "heatmapCoverage": 0.734,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -754,7 +754,7 @@
       "score": 83,
       "bias": "bull",
       "coverage": 0.734,
-      "heatmap": 63,
+      "heatmap": 61,
       "cot_longPct": 56.8,
       "cot_deltaPct6w": 46,
       "cot_tq": 4
@@ -1295,7 +1295,7 @@
       "bias": "wbull",
       "heatmap": 62,
       "macro_score": 24,
-      "bull_count": 6,
+      "bull_count": 7,
       "bear_count": 2,
       "coverage": 1.0,
       "categories": [
@@ -1320,8 +1320,8 @@
         {
           "category": "GROWTH",
           "label": "Growth / Investment",
-          "signal": "neutral",
-          "signal_value": 0.0
+          "signal": "bullish",
+          "signal_value": 0.189
         },
         {
           "category": "PMI_MFG",
@@ -1369,10 +1369,10 @@
     },
     "EUR": {
       "bias": "wbull",
-      "heatmap": 59,
-      "macro_score": 17,
+      "heatmap": 56,
+      "macro_score": 12,
       "bull_count": 4,
-      "bear_count": 1,
+      "bear_count": 2,
       "coverage": 0.98,
       "categories": [
         {
@@ -1384,8 +1384,8 @@
         {
           "category": "CPI",
           "label": "Inflation",
-          "signal": "neutral",
-          "signal_value": 0.0
+          "signal": "bearish",
+          "signal_value": -0.185
         },
         {
           "category": "EMPLOYMENT",
@@ -1433,14 +1433,14 @@
           "category": "CONFIDENCE",
           "label": "Confidence / Sentiment",
           "signal": "bullish",
-          "signal_value": 0.156
+          "signal_value": 0.453
         }
       ]
     },
     "GBP": {
       "bias": "wbull",
-      "heatmap": 55,
-      "macro_score": 10,
+      "heatmap": 56,
+      "macro_score": 11,
       "bull_count": 3,
       "bear_count": 1,
       "coverage": 1.0,
@@ -1497,7 +1497,7 @@
           "category": "PPI",
           "label": "PPI",
           "signal": "bullish",
-          "signal_value": 0.211
+          "signal_value": 0.368
         },
         {
           "category": "CONFIDENCE",
@@ -1683,7 +1683,7 @@
           "category": "RETAIL",
           "label": "Retail Sales",
           "signal": "neutral",
-          "signal_value": -0.12
+          "signal_value": 0.08
         },
         {
           "category": "RATES",
@@ -1777,10 +1777,10 @@
     },
     "NZD": {
       "bias": "wbull",
-      "heatmap": 63,
-      "macro_score": 26,
-      "bull_count": 5,
-      "bear_count": 2,
+      "heatmap": 61,
+      "macro_score": 21,
+      "bull_count": 4,
+      "bear_count": 3,
       "coverage": 0.734,
       "categories": [
         {
@@ -1804,8 +1804,8 @@
         {
           "category": "RETAIL",
           "label": "Retail Sales",
-          "signal": "bullish",
-          "signal_value": 0.16
+          "signal": "bearish",
+          "signal_value": -0.24
         },
         {
           "category": "RATES",
@@ -1834,6 +1834,6 @@
       ]
     }
   },
-  "fundamentalsGeneratedAt": "2026-09-17T07:23:02.921974+00:00",
+  "fundamentalsGeneratedAt": "2026-09-17T11:01:43.079009+00:00",
   "schemaVersion": 2
 }
