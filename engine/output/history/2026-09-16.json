@@ -4,8 +4,8 @@
   "build": "2026-07-12",
   "status": "complete",
   "date": "2026-09-16",
-  "datasetId": "2026-09-16T18:24:58.090873+00:00",
-  "generatedAt": "2026-09-16T18:25:18.626Z",
+  "datasetId": "2026-09-16T18:47:33.147401+00:00",
+  "generatedAt": "2026-09-16T18:47:51.668Z",
   "cotReportDate": "2026-09-08",
   "newsLoaded": true,
   "heatmapLoaded": true,
@@ -121,24 +121,6 @@
             "item": {
               "ccy": "USD",
               "type": "RETAIL_SALES",
-              "eventName": "Retail Sales MoM (Aug)",
-              "impact": "high",
-              "actual": 1.2,
-              "forecast": 0.8,
-              "previous": -0.5,
-              "date": "2026-09-16 12:30:00",
-              "daysAgo": 0,
-              "surpriseDiff": 0.4,
-              "impulseBase": 6.67,
-              "impulse": 6.67,
-              "decay": 1
-            },
-            "pts": 6.67
-          },
-          {
-            "item": {
-              "ccy": "USD",
-              "type": "RETAIL_SALES",
               "eventName": "Retail Sales YoY (Aug)",
               "impact": "high",
               "actual": 6,
@@ -152,6 +134,24 @@
               "decay": 1
             },
             "pts": 10
+          },
+          {
+            "item": {
+              "ccy": "USD",
+              "type": "RETAIL_SALES",
+              "eventName": "Retail Sales MoM (Aug)",
+              "impact": "high",
+              "actual": 1.2,
+              "forecast": 0.8,
+              "previous": -0.5,
+              "date": "2026-09-16 12:30:00",
+              "daysAgo": 0,
+              "surpriseDiff": 0.4,
+              "impulseBase": 6.67,
+              "impulse": 6.67,
+              "decay": 1
+            },
+            "pts": 6.67
           }
         ],
         "cotBias": "Bullish",
@@ -570,7 +570,7 @@
           "opposed": false,
           "gap": 10
         },
-        "heatmapPercent": 55,
+        "heatmapPercent": 56,
         "heatmapCoverage": 0.898,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -586,7 +586,7 @@
       "score": 78,
       "bias": "bull",
       "coverage": 0.898,
-      "heatmap": 55,
+      "heatmap": 56,
       "cot_longPct": 30.4,
       "cot_deltaPct6w": 20,
       "cot_tq": 4
@@ -738,7 +738,7 @@
           "opposed": false,
           "gap": 43
         },
-        "heatmapPercent": 62,
+        "heatmapPercent": 64,
         "heatmapCoverage": 0.563,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -754,7 +754,7 @@
       "score": 83,
       "bias": "bull",
       "coverage": 0.563,
-      "heatmap": 62,
+      "heatmap": 64,
       "cot_longPct": 56.8,
       "cot_deltaPct6w": 46,
       "cot_tq": 4
@@ -1370,7 +1370,7 @@
     "EUR": {
       "bias": "wbull",
       "heatmap": 59,
-      "macro_score": 19,
+      "macro_score": 17,
       "bull_count": 4,
       "bear_count": 1,
       "coverage": 0.98,
@@ -1433,7 +1433,7 @@
           "category": "CONFIDENCE",
           "label": "Confidence / Sentiment",
           "signal": "bullish",
-          "signal_value": 0.453
+          "signal_value": 0.156
         }
       ]
     },
@@ -1649,8 +1649,8 @@
     },
     "CAD": {
       "bias": "wbull",
-      "heatmap": 55,
-      "macro_score": 10,
+      "heatmap": 56,
+      "macro_score": 12,
       "bull_count": 3,
       "bear_count": 2,
       "coverage": 0.898,
@@ -1665,7 +1665,7 @@
           "category": "CPI",
           "label": "Inflation",
           "signal": "neutral",
-          "signal_value": -0.148
+          "signal_value": 0.148
         },
         {
           "category": "EMPLOYMENT",
@@ -1783,10 +1783,10 @@
     },
     "NZD": {
       "bias": "wbull",
-      "heatmap": 62,
-      "macro_score": 23,
-      "bull_count": 4,
-      "bear_count": 3,
+      "heatmap": 64,
+      "macro_score": 28,
+      "bull_count": 5,
+      "bear_count": 2,
       "coverage": 0.563,
       "categories": [
         {
@@ -1804,8 +1804,8 @@
         {
           "category": "RETAIL",
           "label": "Retail Sales",
-          "signal": "bearish",
-          "signal_value": -0.24
+          "signal": "bullish",
+          "signal_value": 0.16
         },
         {
           "category": "RATES",
@@ -1834,6 +1834,6 @@
       ]
     }
   },
-  "fundamentalsGeneratedAt": "2026-09-16T18:24:58.090873+00:00",
+  "fundamentalsGeneratedAt": "2026-09-16T18:47:33.147401+00:00",
   "schemaVersion": 2
 }
