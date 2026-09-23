@@ -1,5 +1,21 @@
 {
-  "generatedAt": "2026-09-23T08:15:56.719197+00:00",
+  "generatedAt": "2026-09-23T13:41:47.621789+00:00",
   "daysBack": 7,
-  "news": []
+  "news": [
+    {
+      "ccy": "GBP",
+      "type": "PMI",
+      "eventName": "S&P Global Manufacturing PMI (Sep)",
+      "impact": "high",
+      "actual": 52.0,
+      "forecast": 51.5,
+      "previous": 51.7,
+      "date": "2026-09-23 08:30:00",
+      "daysAgo": 0,
+      "surpriseDiff": 0.5,
+      "impulseBase": 5.56,
+      "impulse": 5.56,
+      "decay": 1.0
+    }
+  ]
 }
