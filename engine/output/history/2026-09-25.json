@@ -4,8 +4,8 @@
   "build": "2026-07-12",
   "status": "complete",
   "date": "2026-09-25",
-  "datasetId": "2026-09-25T13:13:35.896176+00:00",
-  "generatedAt": "2026-09-25T13:13:53.601Z",
+  "datasetId": "2026-09-25T16:20:11.324984+00:00",
+  "generatedAt": "2026-09-25T16:20:28.949Z",
   "cotReportDate": "2026-09-15",
   "newsLoaded": true,
   "heatmapLoaded": true,
@@ -77,7 +77,7 @@
           "opposed": false,
           "gap": 15
         },
-        "heatmapPercent": 63,
+        "heatmapPercent": 65,
         "heatmapCoverage": 1,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -93,7 +93,7 @@
       "score": -35,
       "bias": "wbear",
       "coverage": 1,
-      "heatmap": 63,
+      "heatmap": 65,
       "cot_longPct": 62.8,
       "cot_deltaPct6w": -11,
       "cot_tq": 4
@@ -161,7 +161,7 @@
           "opposed": false,
           "gap": 4
         },
-        "heatmapPercent": 59,
+        "heatmapPercent": 55,
         "heatmapCoverage": 0.98,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -177,7 +177,7 @@
       "score": 44,
       "bias": "wbull",
       "coverage": 0.98,
-      "heatmap": 59,
+      "heatmap": 55,
       "cot_longPct": 47,
       "cot_deltaPct6w": 3,
       "cot_tq": 4
@@ -516,7 +516,7 @@
           "opposed": false,
           "gap": 13
         },
-        "heatmapPercent": 59,
+        "heatmapPercent": 58,
         "heatmapCoverage": 0.898,
         "newsImpulse": -99,
         "newsContrib": [
@@ -569,7 +569,7 @@
       "score": -20,
       "bias": "wbear",
       "coverage": 0.898,
-      "heatmap": 59,
+      "heatmap": 58,
       "cot_longPct": 39.9,
       "cot_deltaPct6w": 33,
       "cot_tq": 5
@@ -1294,11 +1294,11 @@
   },
   "fundamentals": {
     "USD": {
-      "bias": "wbull",
-      "heatmap": 63,
-      "macro_score": 27,
-      "bull_count": 7,
-      "bear_count": 2,
+      "bias": "bull",
+      "heatmap": 65,
+      "macro_score": 30,
+      "bull_count": 6,
+      "bear_count": 1,
       "coverage": 1.0,
       "categories": [
         {
@@ -1322,8 +1322,8 @@
         {
           "category": "GROWTH",
           "label": "Growth / Investment",
-          "signal": "bullish",
-          "signal_value": 0.152
+          "signal": "neutral",
+          "signal_value": -0.069
         },
         {
           "category": "PMI_MFG",
@@ -1358,8 +1358,8 @@
         {
           "category": "CONFIDENCE",
           "label": "Confidence / Sentiment",
-          "signal": "bearish",
-          "signal_value": -0.544
+          "signal": "neutral",
+          "signal_value": 0.067
         },
         {
           "category": "COMMUNICATION",
@@ -1371,10 +1371,10 @@
     },
     "EUR": {
       "bias": "wbull",
-      "heatmap": 59,
-      "macro_score": 18,
+      "heatmap": 55,
+      "macro_score": 10,
       "bull_count": 3,
-      "bear_count": 2,
+      "bear_count": 3,
       "coverage": 0.98,
       "categories": [
         {
@@ -1386,8 +1386,8 @@
         {
           "category": "CPI",
           "label": "Inflation",
-          "signal": "neutral",
-          "signal_value": 0.0
+          "signal": "bearish",
+          "signal_value": -0.185
         },
         {
           "category": "EMPLOYMENT",
@@ -1435,14 +1435,14 @@
           "category": "CONFIDENCE",
           "label": "Confidence / Sentiment",
           "signal": "bearish",
-          "signal_value": -0.298
+          "signal_value": -0.303
         }
       ]
     },
     "GBP": {
       "bias": "wbull",
       "heatmap": 62,
-      "macro_score": 24,
+      "macro_score": 23,
       "bull_count": 6,
       "bear_count": 0,
       "coverage": 1.0,
@@ -1487,7 +1487,7 @@
           "category": "RETAIL",
           "label": "Retail Sales",
           "signal": "bullish",
-          "signal_value": 0.28
+          "signal_value": 0.32
         },
         {
           "category": "RATES",
@@ -1499,7 +1499,7 @@
           "category": "PPI",
           "label": "PPI",
           "signal": "bullish",
-          "signal_value": 0.368
+          "signal_value": 0.211
         },
         {
           "category": "CONFIDENCE",
@@ -1545,7 +1545,7 @@
           "category": "GROWTH",
           "label": "Growth / Investment",
           "signal": "neutral",
-          "signal_value": -0.087
+          "signal_value": -0.13
         },
         {
           "category": "PMI_MFG",
@@ -1651,8 +1651,8 @@
     },
     "CAD": {
       "bias": "wbull",
-      "heatmap": 59,
-      "macro_score": 17,
+      "heatmap": 58,
+      "macro_score": 15,
       "bull_count": 4,
       "bear_count": 2,
       "coverage": 0.898,
@@ -1715,7 +1715,7 @@
           "category": "COMMODITY",
           "label": "Commodity",
           "signal": "bullish",
-          "signal_value": 1.0
+          "signal_value": 0.927
         }
       ]
     },
@@ -1842,6 +1842,6 @@
       ]
     }
   },
-  "fundamentalsGeneratedAt": "2026-09-25T13:13:35.896176+00:00",
+  "fundamentalsGeneratedAt": "2026-09-25T16:20:11.324984+00:00",
   "schemaVersion": 2
 }
