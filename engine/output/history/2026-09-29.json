@@ -4,8 +4,8 @@
   "build": "2026-07-12",
   "status": "complete",
   "date": "2026-09-29",
-  "datasetId": "2026-09-29T16:22:39.221553+00:00",
-  "generatedAt": "2026-09-29T16:22:59.256Z",
+  "datasetId": "2026-09-29T18:46:53.932912+00:00",
+  "generatedAt": "2026-09-29T18:47:23.671Z",
   "cotReportDate": "2026-09-22",
   "newsLoaded": true,
   "heatmapLoaded": true,
@@ -516,7 +516,7 @@
           "opposed": false,
           "gap": 15
         },
-        "heatmapPercent": 44,
+        "heatmapPercent": 42,
         "heatmapCoverage": 0.898,
         "newsImpulse": 0,
         "newsContrib": [],
@@ -532,7 +532,7 @@
       "score": 29,
       "bias": "wbull",
       "coverage": 0.898,
-      "heatmap": 44,
+      "heatmap": 42,
       "cot_longPct": 38.2,
       "cot_deltaPct6w": 32,
       "cot_tq": 5
@@ -1261,7 +1261,7 @@
           "category": "GROWTH",
           "label": "Growth / Investment",
           "signal": "neutral",
-          "signal_value": -0.069
+          "signal_value": 0.092
         },
         {
           "category": "PMI_MFG",
@@ -1373,7 +1373,7 @@
           "category": "CONFIDENCE",
           "label": "Confidence / Sentiment",
           "signal": "bullish",
-          "signal_value": 0.247
+          "signal_value": 0.267
         }
       ]
     },
@@ -1483,7 +1483,7 @@
           "category": "GROWTH",
           "label": "Growth / Investment",
           "signal": "neutral",
-          "signal_value": -0.13
+          "signal_value": -0.087
         },
         {
           "category": "PMI_MFG",
@@ -1589,9 +1589,9 @@
     },
     "CAD": {
       "bias": "wbear",
-      "heatmap": 44,
-      "macro_score": -12,
-      "bull_count": 3,
+      "heatmap": 42,
+      "macro_score": -15,
+      "bull_count": 2,
       "bear_count": 2,
       "coverage": 0.898,
       "categories": [
@@ -1605,7 +1605,7 @@
           "category": "CPI",
           "label": "Inflation",
           "signal": "neutral",
-          "signal_value": -0.148
+          "signal_value": 0.148
         },
         {
           "category": "EMPLOYMENT",
@@ -1628,8 +1628,8 @@
         {
           "category": "RETAIL",
           "label": "Retail Sales",
-          "signal": "bullish",
-          "signal_value": 0.36
+          "signal": "neutral",
+          "signal_value": 0.0
         },
         {
           "category": "RATES",
@@ -1780,6 +1780,6 @@
       ]
     }
   },
-  "fundamentalsGeneratedAt": "2026-09-29T16:22:39.221553+00:00",
+  "fundamentalsGeneratedAt": "2026-09-29T18:46:53.932912+00:00",
   "schemaVersion": 2
 }
