@@ -4,8 +4,8 @@
   "build": "2026-07-12",
   "status": "complete",
   "date": "2026-10-02",
-  "datasetId": "2026-10-02T13:30:53.732205+00:00",
-  "generatedAt": "2026-10-02T13:31:15.689Z",
+  "datasetId": "2026-10-02T15:42:54.841384+00:00",
+  "generatedAt": "2026-10-02T15:43:14.739Z",
   "cotReportDate": "2026-09-22",
   "newsLoaded": true,
   "heatmapLoaded": true,
@@ -77,7 +77,7 @@
           "opposed": false,
           "gap": 18
         },
-        "heatmapPercent": 62,
+        "heatmapPercent": 63,
         "heatmapCoverage": 1,
         "newsImpulse": -2,
         "newsContrib": [
@@ -220,7 +220,7 @@
       "score": -32,
       "bias": "wbear",
       "coverage": 1,
-      "heatmap": 62,
+      "heatmap": 63,
       "cot_longPct": 61.4,
       "cot_deltaPct6w": -13,
       "cot_tq": 5
@@ -349,24 +349,6 @@
           {
             "item": {
               "ccy": "EUR",
-              "type": "UNEMPLOYMENT",
-              "eventName": "Unemployment Rate (Aug)",
-              "impact": "high",
-              "actual": 7.4,
-              "forecast": 8,
-              "previous": 7.9,
-              "date": "2026-09-30 09:00:00",
-              "daysAgo": 2,
-              "surpriseDiff": -0.6,
-              "impulseBase": 10,
-              "impulse": 5,
-              "decay": 0.5
-            },
-            "pts": 5
-          },
-          {
-            "item": {
-              "ccy": "EUR",
               "type": "RETAIL_SALES",
               "eventName": "Retail Sales YoY (Jul)",
               "impact": "high",
@@ -385,110 +367,38 @@
           {
             "item": {
               "ccy": "EUR",
-              "type": "CPI_YOY",
-              "eventName": "Baden Wuerttemberg CPI YoY (Sep)",
+              "type": "UNEMPLOYMENT",
+              "eventName": "Unemployment Rate (Aug)",
               "impact": "high",
-              "actual": 2.9,
-              "forecast": null,
-              "previous": 2.6,
-              "date": "2026-09-30 08:00:00",
+              "actual": 7.4,
+              "forecast": 8,
+              "previous": 7.9,
+              "date": "2026-09-30 09:00:00",
               "daysAgo": 2,
-              "surpriseDiff": 0.3,
-              "impulseBase": 5,
-              "impulse": 2.5,
+              "surpriseDiff": -0.6,
+              "impulseBase": 10,
+              "impulse": 5,
               "decay": 0.5
             },
-            "pts": 2.5
-          },
-          {
-            "item": {
-              "ccy": "EUR",
-              "type": "CPI_YOY",
-              "eventName": "Hesse CPI YoY (Sep)",
-              "impact": "high",
-              "actual": 3.4,
-              "forecast": null,
-              "previous": 3,
-              "date": "2026-09-30 08:00:00",
-              "daysAgo": 2,
-              "surpriseDiff": 0.4,
-              "impulseBase": 6.67,
-              "impulse": 3.33,
-              "decay": 0.5
-            },
-            "pts": 3.33
-          },
-          {
-            "item": {
-              "ccy": "EUR",
-              "type": "CPI_YOY",
-              "eventName": "North Rhine Westphalia CPI YoY (Sep)",
-              "impact": "high",
-              "actual": 3.3,
-              "forecast": null,
-              "previous": 2.9,
-              "date": "2026-09-30 08:00:00",
-              "daysAgo": 2,
-              "surpriseDiff": 0.4,
-              "impulseBase": 6.67,
-              "impulse": 3.33,
-              "decay": 0.5
-            },
-            "pts": 3.33
+            "pts": 5
           },
           {
             "item": {
               "ccy": "EUR",
               "type": "CPI_MOM",
-              "eventName": "Hesse CPI MoM (Sep)",
+              "eventName": "Bavaria CPI MoM (Sep)",
               "impact": "high",
-              "actual": 0.5,
+              "actual": 0.6,
               "forecast": null,
-              "previous": 0.3,
+              "previous": 0.2,
               "date": "2026-09-30 08:00:00",
               "daysAgo": 2,
-              "surpriseDiff": 0.2,
-              "impulseBase": 6.67,
-              "impulse": 3.33,
+              "surpriseDiff": 0.4,
+              "impulseBase": 10,
+              "impulse": 5,
               "decay": 0.5
             },
-            "pts": 3.33
-          },
-          {
-            "item": {
-              "ccy": "EUR",
-              "type": "CPI_YOY",
-              "eventName": "Saxony CPI YoY (Sep)",
-              "impact": "high",
-              "actual": 3.4,
-              "forecast": null,
-              "previous": 2.9,
-              "date": "2026-09-30 08:00:00",
-              "daysAgo": 2,
-              "surpriseDiff": 0.5,
-              "impulseBase": 8.33,
-              "impulse": 4.17,
-              "decay": 0.5
-            },
-            "pts": 4.17
-          },
-          {
-            "item": {
-              "ccy": "EUR",
-              "type": "CPI_MOM",
-              "eventName": "Brandenburg CPI MoM (Sep)",
-              "impact": "high",
-              "actual": 0.5,
-              "forecast": null,
-              "previous": 0.3,
-              "date": "2026-09-30 08:00:00",
-              "daysAgo": 2,
-              "surpriseDiff": 0.2,
-              "impulseBase": 6.67,
-              "impulse": 3.33,
-              "decay": 0.5
-            },
-            "pts": 3.33
+            "pts": 5
           },
           {
             "item": {
@@ -502,60 +412,6 @@
               "date": "2026-09-30 08:00:00",
               "daysAgo": 2,
               "surpriseDiff": 0.5,
-              "impulseBase": 10,
-              "impulse": 5,
-              "decay": 0.5
-            },
-            "pts": 5
-          },
-          {
-            "item": {
-              "ccy": "EUR",
-              "type": "CPI_YOY",
-              "eventName": "Brandenburg CPI YoY (Sep)",
-              "impact": "high",
-              "actual": 3.6,
-              "forecast": null,
-              "previous": 3.1,
-              "date": "2026-09-30 08:00:00",
-              "daysAgo": 2,
-              "surpriseDiff": 0.5,
-              "impulseBase": 8.33,
-              "impulse": 4.17,
-              "decay": 0.5
-            },
-            "pts": 4.17
-          },
-          {
-            "item": {
-              "ccy": "EUR",
-              "type": "CPI_MOM",
-              "eventName": "Saxony CPI MoM (Sep)",
-              "impact": "high",
-              "actual": 0.6,
-              "forecast": null,
-              "previous": 0.1,
-              "date": "2026-09-30 08:00:00",
-              "daysAgo": 2,
-              "surpriseDiff": 0.5,
-              "impulseBase": 10,
-              "impulse": 5,
-              "decay": 0.5
-            },
-            "pts": 5
-          },
-          {
-            "item": {
-              "ccy": "EUR",
-              "type": "CPI_MOM",
-              "eventName": "North Rhine Westphalia CPI MoM (Sep)",
-              "impact": "high",
-              "actual": 0.6,
-              "forecast": null,
-              "previous": 0.2,
-              "date": "2026-09-30 08:00:00",
-              "daysAgo": 2,
-              "surpriseDiff": 0.4,
               "impulseBase": 10,
               "impulse": 5,
               "decay": 0.5
@@ -584,7 +440,79 @@
             "item": {
               "ccy": "EUR",
               "type": "CPI_MOM",
-              "eventName": "Bavaria CPI MoM (Sep)",
+              "eventName": "Brandenburg CPI MoM (Sep)",
+              "impact": "high",
+              "actual": 0.5,
+              "forecast": null,
+              "previous": 0.3,
+              "date": "2026-09-30 08:00:00",
+              "daysAgo": 2,
+              "surpriseDiff": 0.2,
+              "impulseBase": 6.67,
+              "impulse": 3.33,
+              "decay": 0.5
+            },
+            "pts": 3.33
+          },
+          {
+            "item": {
+              "ccy": "EUR",
+              "type": "CPI_YOY",
+              "eventName": "Brandenburg CPI YoY (Sep)",
+              "impact": "high",
+              "actual": 3.6,
+              "forecast": null,
+              "previous": 3.1,
+              "date": "2026-09-30 08:00:00",
+              "daysAgo": 2,
+              "surpriseDiff": 0.5,
+              "impulseBase": 8.33,
+              "impulse": 4.17,
+              "decay": 0.5
+            },
+            "pts": 4.17
+          },
+          {
+            "item": {
+              "ccy": "EUR",
+              "type": "CPI_MOM",
+              "eventName": "Hesse CPI MoM (Sep)",
+              "impact": "high",
+              "actual": 0.5,
+              "forecast": null,
+              "previous": 0.3,
+              "date": "2026-09-30 08:00:00",
+              "daysAgo": 2,
+              "surpriseDiff": 0.2,
+              "impulseBase": 6.67,
+              "impulse": 3.33,
+              "decay": 0.5
+            },
+            "pts": 3.33
+          },
+          {
+            "item": {
+              "ccy": "EUR",
+              "type": "CPI_YOY",
+              "eventName": "Hesse CPI YoY (Sep)",
+              "impact": "high",
+              "actual": 3.4,
+              "forecast": null,
+              "previous": 3,
+              "date": "2026-09-30 08:00:00",
+              "daysAgo": 2,
+              "surpriseDiff": 0.4,
+              "impulseBase": 6.67,
+              "impulse": 3.33,
+              "decay": 0.5
+            },
+            "pts": 3.33
+          },
+          {
+            "item": {
+              "ccy": "EUR",
+              "type": "CPI_MOM",
+              "eventName": "North Rhine Westphalia CPI MoM (Sep)",
               "impact": "high",
               "actual": 0.6,
               "forecast": null,
@@ -597,6 +525,78 @@
               "decay": 0.5
             },
             "pts": 5
+          },
+          {
+            "item": {
+              "ccy": "EUR",
+              "type": "CPI_YOY",
+              "eventName": "North Rhine Westphalia CPI YoY (Sep)",
+              "impact": "high",
+              "actual": 3.3,
+              "forecast": null,
+              "previous": 2.9,
+              "date": "2026-09-30 08:00:00",
+              "daysAgo": 2,
+              "surpriseDiff": 0.4,
+              "impulseBase": 6.67,
+              "impulse": 3.33,
+              "decay": 0.5
+            },
+            "pts": 3.33
+          },
+          {
+            "item": {
+              "ccy": "EUR",
+              "type": "CPI_MOM",
+              "eventName": "Saxony CPI MoM (Sep)",
+              "impact": "high",
+              "actual": 0.6,
+              "forecast": null,
+              "previous": 0.1,
+              "date": "2026-09-30 08:00:00",
+              "daysAgo": 2,
+              "surpriseDiff": 0.5,
+              "impulseBase": 10,
+              "impulse": 5,
+              "decay": 0.5
+            },
+            "pts": 5
+          },
+          {
+            "item": {
+              "ccy": "EUR",
+              "type": "CPI_YOY",
+              "eventName": "Saxony CPI YoY (Sep)",
+              "impact": "high",
+              "actual": 3.4,
+              "forecast": null,
+              "previous": 2.9,
+              "date": "2026-09-30 08:00:00",
+              "daysAgo": 2,
+              "surpriseDiff": 0.5,
+              "impulseBase": 8.33,
+              "impulse": 4.17,
+              "decay": 0.5
+            },
+            "pts": 4.17
+          },
+          {
+            "item": {
+              "ccy": "EUR",
+              "type": "CPI_YOY",
+              "eventName": "Baden Wuerttemberg CPI YoY (Sep)",
+              "impact": "high",
+              "actual": 2.9,
+              "forecast": null,
+              "previous": 2.6,
+              "date": "2026-09-30 08:00:00",
+              "daysAgo": 2,
+              "surpriseDiff": 0.3,
+              "impulseBase": 5,
+              "impulse": 2.5,
+              "decay": 0.5
+            },
+            "pts": 2.5
           },
           {
             "item": {
@@ -927,24 +927,6 @@
             "item": {
               "ccy": "CHF",
               "type": "RETAIL_SALES",
-              "eventName": "Retail Sales YoY (Aug)",
-              "impact": "high",
-              "actual": 3.2,
-              "forecast": 2.2,
-              "previous": 2.6,
-              "date": "2026-10-01 06:30:00",
-              "daysAgo": 1,
-              "surpriseDiff": 1,
-              "impulseBase": 10,
-              "impulse": 7.5,
-              "decay": 0.75
-            },
-            "pts": 7.5
-          },
-          {
-            "item": {
-              "ccy": "CHF",
-              "type": "RETAIL_SALES",
               "eventName": "Retail Sales MoM (Aug)",
               "impact": "high",
               "actual": 0.4,
@@ -958,6 +940,24 @@
               "decay": 0.75
             },
             "pts": 6.25
+          },
+          {
+            "item": {
+              "ccy": "CHF",
+              "type": "RETAIL_SALES",
+              "eventName": "Retail Sales YoY (Aug)",
+              "impact": "high",
+              "actual": 3.2,
+              "forecast": 2.2,
+              "previous": 2.6,
+              "date": "2026-10-01 06:30:00",
+              "daysAgo": 1,
+              "surpriseDiff": 1,
+              "impulseBase": 10,
+              "impulse": 7.5,
+              "decay": 0.75
+            },
+            "pts": 7.5
           }
         ],
         "cotBias": "Bullish",
@@ -1040,8 +1040,8 @@
           "opposed": false,
           "gap": 15
         },
-        "heatmapPercent": 40,
-        "heatmapCoverage": 0.748,
+        "heatmapPercent": 41,
+        "heatmapCoverage": 0.898,
         "newsImpulse": 0,
         "newsContrib": [],
         "cotBias": "Bullish",
@@ -1055,8 +1055,8 @@
       },
       "score": 29,
       "bias": "wbull",
-      "coverage": 0.748,
-      "heatmap": 40,
+      "coverage": 0.898,
+      "heatmap": 41,
       "cot_longPct": 38.2,
       "cot_deltaPct6w": 32,
       "cot_tq": 5
@@ -1782,9 +1782,9 @@
   "fundamentals": {
     "USD": {
       "bias": "wbull",
-      "heatmap": 62,
-      "macro_score": 24,
-      "bull_count": 5,
+      "heatmap": 63,
+      "macro_score": 25,
+      "bull_count": 6,
       "bear_count": 4,
       "coverage": 1.0,
       "categories": [
@@ -1798,7 +1798,7 @@
           "category": "CPI",
           "label": "Inflation",
           "signal": "bearish",
-          "signal_value": -0.28
+          "signal_value": -0.173
         },
         {
           "category": "EMPLOYMENT",
@@ -1809,8 +1809,8 @@
         {
           "category": "GROWTH",
           "label": "Growth / Investment",
-          "signal": "neutral",
-          "signal_value": 0.092
+          "signal": "bullish",
+          "signal_value": 0.152
         },
         {
           "category": "PMI_MFG",
@@ -2138,11 +2138,11 @@
     },
     "CAD": {
       "bias": "wbear",
-      "heatmap": 40,
-      "macro_score": -20,
+      "heatmap": 41,
+      "macro_score": -18,
       "bull_count": 3,
       "bear_count": 3,
-      "coverage": 0.748,
+      "coverage": 0.898,
       "categories": [
         {
           "category": "GDP",
@@ -2197,6 +2197,12 @@
           "label": "Confidence / Sentiment",
           "signal": "bullish",
           "signal_value": 1.0
+        },
+        {
+          "category": "COMMODITY",
+          "label": "Commodity",
+          "signal": "neutral",
+          "signal_value": 0.0
         }
       ]
     },
@@ -2323,6 +2329,6 @@
       ]
     }
   },
-  "fundamentalsGeneratedAt": "2026-10-02T13:30:53.732205+00:00",
+  "fundamentalsGeneratedAt": "2026-10-02T15:42:54.841384+00:00",
   "schemaVersion": 2
 }
