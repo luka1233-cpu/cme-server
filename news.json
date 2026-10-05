@@ -1,7 +1,22 @@
 {
-  "generatedAt": "2026-10-04T09:26:24.417686+00:00",
+  "generatedAt": "2026-10-05T06:07:32.434943+00:00",
   "daysBack": 7,
   "news": [
+    {
+      "ccy": "USD",
+      "type": "UNEMPLOYMENT",
+      "eventName": "Unemployment Rate (Sep)",
+      "impact": "high",
+      "actual": 4.2,
+      "forecast": 4.1,
+      "previous": 4.1,
+      "date": "2026-10-02 12:30:00",
+      "daysAgo": 3,
+      "surpriseDiff": 0.1,
+      "impulseBase": -3.33,
+      "impulse": -0.83,
+      "decay": 0.25
+    },
     {
       "ccy": "USD",
       "type": "UNEMPLOYMENT",
@@ -11,11 +26,11 @@
       "forecast": 7.7,
       "previous": 7.7,
       "date": "2026-10-02 12:30:00",
-      "daysAgo": 2,
+      "daysAgo": 3,
       "surpriseDiff": -0.1,
       "impulseBase": 3.33,
-      "impulse": 1.67,
-      "decay": 0.5
+      "impulse": 0.83,
+      "decay": 0.25
     },
     {
       "ccy": "USD",
@@ -26,11 +41,11 @@
       "forecast": 85.0,
       "previous": 89.0,
       "date": "2026-10-02 12:30:00",
-      "daysAgo": 2,
+      "daysAgo": 3,
       "surpriseDiff": -39.0,
       "impulseBase": -1.53,
-      "impulse": -0.77,
-      "decay": 0.5
+      "impulse": -0.38,
+      "decay": 0.25
     },
     {
       "ccy": "USD",
@@ -41,26 +56,11 @@
       "forecast": 90.0,
       "previous": 133.0,
       "date": "2026-10-02 12:30:00",
-      "daysAgo": 2,
+      "daysAgo": 3,
       "surpriseDiff": -61.0,
       "impulseBase": -2.26,
-      "impulse": -1.13,
-      "decay": 0.5
-    },
-    {
-      "ccy": "USD",
-      "type": "UNEMPLOYMENT",
-      "eventName": "Unemployment Rate (Sep)",
-      "impact": "high",
-      "actual": 4.2,
-      "forecast": 4.1,
-      "previous": 4.1,
-      "date": "2026-10-02 12:30:00",
-      "daysAgo": 2,
-      "surpriseDiff": 0.1,
-      "impulseBase": -3.33,
-      "impulse": -1.67,
-      "decay": 0.5
+      "impulse": -0.56,
+      "decay": 0.25
     },
     {
       "ccy": "EUR",
@@ -71,11 +71,11 @@
       "forecast": -0.1,
       "previous": -0.4,
       "date": "2026-10-02 08:00:00",
-      "daysAgo": 2,
+      "daysAgo": 3,
       "surpriseDiff": 0.4,
       "impulseBase": 6.67,
-      "impulse": 3.33,
-      "decay": 0.5
+      "impulse": 1.67,
+      "decay": 0.25
     },
     {
       "ccy": "EUR",
@@ -86,85 +86,10 @@
       "forecast": 17.6,
       "previous": 44.419,
       "date": "2026-10-02 07:00:00",
-      "daysAgo": 2,
+      "daysAgo": 3,
       "surpriseDiff": 5.987,
       "impulseBase": 1.13,
-      "impulse": 0.56,
-      "decay": 0.5
-    },
-    {
-      "ccy": "USD",
-      "type": "PMI",
-      "eventName": "ISM Manufacturing PMI (Sep)",
-      "impact": "high",
-      "actual": 54.5,
-      "forecast": 55.0,
-      "previous": 54.6,
-      "date": "2026-10-01 14:00:00",
-      "daysAgo": 3,
-      "surpriseDiff": -0.5,
-      "impulseBase": -5.56,
-      "impulse": -1.39,
-      "decay": 0.25
-    },
-    {
-      "ccy": "EUR",
-      "type": "UNEMPLOYMENT",
-      "eventName": "Unemployment Rate (Aug)",
-      "impact": "high",
-      "actual": 6.2,
-      "forecast": 5.7,
-      "previous": 6.0,
-      "date": "2026-10-01 08:00:00",
-      "daysAgo": 3,
-      "surpriseDiff": 0.5,
-      "impulseBase": -10.0,
-      "impulse": -2.5,
-      "decay": 0.25
-    },
-    {
-      "ccy": "CHF",
-      "type": "PMI",
-      "eventName": "procure.ch Manufacturing PMI (Sep)",
-      "impact": "high",
-      "actual": 55.3,
-      "forecast": 56.0,
-      "previous": 57.1,
-      "date": "2026-10-01 07:30:00",
-      "daysAgo": 3,
-      "surpriseDiff": -0.7,
-      "impulseBase": -7.78,
-      "impulse": -1.95,
-      "decay": 0.25
-    },
-    {
-      "ccy": "CHF",
-      "type": "RETAIL_SALES",
-      "eventName": "Retail Sales YoY (Aug)",
-      "impact": "high",
-      "actual": 3.2,
-      "forecast": 2.2,
-      "previous": 2.6,
-      "date": "2026-10-01 06:30:00",
-      "daysAgo": 3,
-      "surpriseDiff": 1.0,
-      "impulseBase": 10.0,
-      "impulse": 2.5,
-      "decay": 0.25
-    },
-    {
-      "ccy": "CHF",
-      "type": "RETAIL_SALES",
-      "eventName": "Retail Sales MoM (Aug)",
-      "impact": "high",
-      "actual": 0.4,
-      "forecast": -0.1,
-      "previous": 0.1,
-      "date": "2026-10-01 06:30:00",
-      "daysAgo": 3,
-      "surpriseDiff": 0.5,
-      "impulseBase": 8.33,
-      "impulse": 2.08,
+      "impulse": 0.28,
       "decay": 0.25
     }
   ]
