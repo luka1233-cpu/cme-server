@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T11:53:43.272370+00:00",
+  "generatedAt": "2026-10-08T09:54:56.433752+00:00",
   "daysBack": 7,
   "news": [
     {
@@ -11,11 +11,11 @@
       "forecast": 65.2,
       "previous": 64.3,
       "date": "2026-10-06 14:00:00",
-      "daysAgo": 1,
+      "daysAgo": 2,
       "surpriseDiff": -7.0,
       "impulseBase": -10.0,
-      "impulse": -7.5,
-      "decay": 0.75
+      "impulse": -5.0,
+      "decay": 0.5
     },
     {
       "ccy": "CHF",
@@ -26,11 +26,11 @@
       "forecast": 2.8,
       "previous": 3.0,
       "date": "2026-10-06 07:00:00",
-      "daysAgo": 1,
+      "daysAgo": 2,
       "surpriseDiff": 0.2,
       "impulseBase": -6.67,
-      "impulse": -5.0,
-      "decay": 0.75
+      "impulse": -3.33,
+      "decay": 0.5
     }
   ]
 }
