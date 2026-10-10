@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T16:17:29.043816+00:00",
+  "generatedAt": "2026-10-10T09:55:45.583721+00:00",
   "daysBack": 7,
   "news": [
     {
@@ -11,41 +11,11 @@
       "forecast": 7.0,
       "previous": -41.7,
       "date": "2026-10-09 12:30:00",
-      "daysAgo": 0,
+      "daysAgo": 1,
       "surpriseDiff": -75.3,
       "impulseBase": -10.0,
-      "impulse": -10.0,
-      "decay": 1.0
-    },
-    {
-      "ccy": "CAD",
-      "type": "PMI",
-      "eventName": "Ivey PMI (Sep)",
-      "impact": "high",
-      "actual": 58.2,
-      "forecast": 65.2,
-      "previous": 64.3,
-      "date": "2026-10-06 14:00:00",
-      "daysAgo": 3,
-      "surpriseDiff": -7.0,
-      "impulseBase": -10.0,
-      "impulse": -2.5,
-      "decay": 0.25
-    },
-    {
-      "ccy": "CHF",
-      "type": "UNEMPLOYMENT",
-      "eventName": "Unemployment Rate (Sep)",
-      "impact": "high",
-      "actual": 3.0,
-      "forecast": 2.8,
-      "previous": 3.0,
-      "date": "2026-10-06 07:00:00",
-      "daysAgo": 3,
-      "surpriseDiff": 0.2,
-      "impulseBase": -6.67,
-      "impulse": -1.67,
-      "decay": 0.25
+      "impulse": -7.5,
+      "decay": 0.75
     }
   ]
 }
