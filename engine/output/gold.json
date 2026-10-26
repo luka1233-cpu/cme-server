@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-22T06:58:43.183756+00:00",
-  "heatmap": 55,
-  "score": 9,
+  "generatedAt": "2026-10-26T13:59:28.498944+00:00",
+  "heatmap": 60,
+  "score": 19,
   "bias": "wbull",
   "engines": {
     "macro": {
-      "score": -15,
-      "signal": "bearish",
+      "score": 5,
+      "signal": "neutral",
       "factors": [
         {
           "factor": "USD_GROWTH",
@@ -28,8 +28,8 @@
         },
         {
           "factor": "YIELD_2Y",
-          "detail": "2Y 4.65->4.81 (+0.16pp, rising)",
-          "gold_signal": "bearish",
+          "detail": "2Y 4.74->4.69 (-0.05pp, flat)",
+          "gold_signal": "neutral",
           "weight": 0.2
         }
       ]
@@ -40,17 +40,17 @@
       "factors": [
         {
           "factor": "NET_POSITIONING",
-          "detail": "Long 86.8%",
+          "detail": "Long 86.4%",
           "gold_signal": "bullish"
         },
         {
           "factor": "LATEST_FLOW",
-          "detail": "dLong -103, dShort +2353",
+          "detail": "dLong -8158, dShort -144",
           "gold_signal": "bearish"
         },
         {
           "factor": "EXTREME",
-          "detail": "Long 86.8% = crowded_long",
+          "detail": "Long 86.4% = crowded_long",
           "gold_signal": "caution"
         }
       ],
@@ -59,7 +59,7 @@
     }
   },
   "narrative": {
-    "sr": "USD makro je bearish za zlato, 2Y prinos raste (dodatni bearish pritisak). Ali institucionalni COT ostaje bullish. Dugorocno pozicioniranje u konfliktu sa makro slikom. Napomena: Long% na ekstremu — oprez od preokreta.",
-    "en": "USD macro is bearish for gold, 2Y yield rising (added bearish pressure). However institutional COT remains bullish. Long-term positioning conflicts with the macro picture. Note: Long% at extreme — caution on reversal."
+    "sr": "USD makro je neutralan za zlato. COT je bullish. Napomena: Long% na ekstremu — oprez od preokreta.",
+    "en": "USD macro is neutral for gold. COT is bullish. Note: Long% at extreme — caution on reversal."
   }
 }
