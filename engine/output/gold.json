@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-29T16:40:54.541488+00:00",
-  "heatmap": 53,
-  "score": 6,
-  "bias": "neut",
+  "generatedAt": "2026-10-30T12:28:25.460972+00:00",
+  "heatmap": 58,
+  "score": 16,
+  "bias": "wbull",
   "engines": {
     "macro": {
-      "score": -20,
-      "signal": "bearish",
+      "score": 0,
+      "signal": "neutral",
       "factors": [
         {
           "factor": "USD_GROWTH",
@@ -28,8 +28,8 @@
         },
         {
           "factor": "YIELD_2Y",
-          "detail": "2Y 4.76->4.67 (-0.09pp, flat)",
-          "gold_signal": "neutral",
+          "detail": "2Y 4.76->4.61 (-0.15pp, falling)",
+          "gold_signal": "bullish",
           "weight": 0.2
         }
       ]
@@ -59,7 +59,7 @@
     }
   },
   "narrative": {
-    "sr": "USD makro je bearish za zlato. Ali institucionalni COT ostaje bullish. Dugorocno pozicioniranje u konfliktu sa makro slikom. Napomena: Long% na ekstremu — oprez od preokreta.",
-    "en": "USD macro is bearish for gold. However institutional COT remains bullish. Long-term positioning conflicts with the macro picture. Note: Long% at extreme — caution on reversal."
+    "sr": "USD makro je neutralan za zlato, 2Y prinos pada (bullish podrska). COT je bullish. Napomena: Long% na ekstremu — oprez od preokreta.",
+    "en": "USD macro is neutral for gold, 2Y yield falling (bullish support). COT is bullish. Note: Long% at extreme — caution on reversal."
   }
 }
