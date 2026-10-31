@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T12:33:23.395334+00:00",
+  "generatedAt": "2026-10-31T22:08:37.415200+00:00",
   "heatmap": 58,
   "score": 16,
   "bias": "wbull",
@@ -28,7 +28,7 @@
         },
         {
           "factor": "YIELD_2Y",
-          "detail": "2Y 4.76->4.61 (-0.15pp, falling)",
+          "detail": "2Y 4.76->4.56 (-0.20pp, falling)",
           "gold_signal": "bullish",
           "weight": 0.2
         }
@@ -40,17 +40,17 @@
       "factors": [
         {
           "factor": "NET_POSITIONING",
-          "detail": "Long 86.4%",
+          "detail": "Long 85.7%",
           "gold_signal": "bullish"
         },
         {
           "factor": "LATEST_FLOW",
-          "detail": "dLong -8158, dShort -144",
+          "detail": "dLong -13418, dShort -4",
           "gold_signal": "bearish"
         },
         {
           "factor": "EXTREME",
-          "detail": "Long 86.4% = crowded_long",
+          "detail": "Long 85.7% = crowded_long",
           "gold_signal": "caution"
         }
       ],
