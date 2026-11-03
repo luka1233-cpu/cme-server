@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T06:37:55.206379+00:00",
+  "generatedAt": "2026-11-03T10:04:03.536773+00:00",
   "daysBack": 7,
   "news": [
     {
@@ -13,21 +13,6 @@
       "date": "2026-11-02 15:00:00",
       "daysAgo": 1,
       "surpriseDiff": 0.9,
-      "impulseBase": 10.0,
-      "impulse": 7.5,
-      "decay": 0.75
-    },
-    {
-      "ccy": "CHF",
-      "type": "PMI",
-      "eventName": "procure.ch Manufacturing PMI (Oct)",
-      "impact": "high",
-      "actual": 56.7,
-      "forecast": 55.3,
-      "previous": 55.3,
-      "date": "2026-11-02 08:30:00",
-      "daysAgo": 1,
-      "surpriseDiff": 1.4,
       "impulseBase": 10.0,
       "impulse": 7.5,
       "decay": 0.75
@@ -49,17 +34,17 @@
     },
     {
       "ccy": "CHF",
-      "type": "RETAIL_SALES",
-      "eventName": "Retail Sales MoM (Sep)",
+      "type": "PMI",
+      "eventName": "procure.ch Manufacturing PMI (Oct)",
       "impact": "high",
-      "actual": -0.7,
-      "forecast": 0.2,
-      "previous": 0.6,
-      "date": "2026-11-02 07:30:00",
+      "actual": 56.7,
+      "forecast": 55.3,
+      "previous": 55.3,
+      "date": "2026-11-02 08:30:00",
       "daysAgo": 1,
-      "surpriseDiff": -0.9,
-      "impulseBase": -10.0,
-      "impulse": -7.5,
+      "surpriseDiff": 1.4,
+      "impulseBase": 10.0,
+      "impulse": 7.5,
       "decay": 0.75
     },
     {
@@ -73,6 +58,21 @@
       "date": "2026-11-02 07:30:00",
       "daysAgo": 1,
       "surpriseDiff": -1.4,
+      "impulseBase": -10.0,
+      "impulse": -7.5,
+      "decay": 0.75
+    },
+    {
+      "ccy": "CHF",
+      "type": "RETAIL_SALES",
+      "eventName": "Retail Sales MoM (Sep)",
+      "impact": "high",
+      "actual": -0.7,
+      "forecast": 0.2,
+      "previous": 0.6,
+      "date": "2026-11-02 07:30:00",
+      "daysAgo": 1,
+      "surpriseDiff": -0.9,
       "impulseBase": -10.0,
       "impulse": -7.5,
       "decay": 0.75
