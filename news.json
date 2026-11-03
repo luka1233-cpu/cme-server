@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T10:04:03.536773+00:00",
+  "generatedAt": "2026-11-03T13:15:35.076941+00:00",
   "daysBack": 7,
   "news": [
     {
@@ -80,21 +80,6 @@
     {
       "ccy": "EUR",
       "type": "RETAIL_SALES",
-      "eventName": "Retail Sales MoM (Sep)",
-      "impact": "high",
-      "actual": -2.0,
-      "forecast": 0.4,
-      "previous": 1.2,
-      "date": "2026-11-02 07:00:00",
-      "daysAgo": 1,
-      "surpriseDiff": -2.4,
-      "impulseBase": -10.0,
-      "impulse": -7.5,
-      "decay": 0.75
-    },
-    {
-      "ccy": "EUR",
-      "type": "RETAIL_SALES",
       "eventName": "Retail Sales YoY (Sep)",
       "impact": "high",
       "actual": -2.3,
@@ -103,6 +88,21 @@
       "date": "2026-11-02 07:00:00",
       "daysAgo": 1,
       "surpriseDiff": -2.0,
+      "impulseBase": -10.0,
+      "impulse": -7.5,
+      "decay": 0.75
+    },
+    {
+      "ccy": "EUR",
+      "type": "RETAIL_SALES",
+      "eventName": "Retail Sales MoM (Sep)",
+      "impact": "high",
+      "actual": -2.0,
+      "forecast": 0.4,
+      "previous": 1.2,
+      "date": "2026-11-02 07:00:00",
+      "daysAgo": 1,
+      "surpriseDiff": -2.4,
       "impulseBase": -10.0,
       "impulse": -7.5,
       "decay": 0.75
