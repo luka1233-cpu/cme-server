@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T08:00:01.584744+00:00",
+  "generatedAt": "2026-11-18T17:34:07.839209+00:00",
   "daysBack": 7,
   "news": [
     {
@@ -34,21 +34,6 @@
     },
     {
       "ccy": "GBP",
-      "type": "UNEMPLOYMENT",
-      "eventName": "Unemployment Rate (Sep)",
-      "impact": "high",
-      "actual": 4.6,
-      "forecast": 4.7,
-      "previous": 4.7,
-      "date": "2026-11-17 07:00:00",
-      "daysAgo": 1,
-      "surpriseDiff": -0.1,
-      "impulseBase": 3.33,
-      "impulse": 2.5,
-      "decay": 0.75
-    },
-    {
-      "ccy": "GBP",
       "type": "EMPLOYMENT",
       "eventName": "Employment Change (Sep)",
       "impact": "high",
@@ -60,6 +45,21 @@
       "surpriseDiff": 131.0,
       "impulseBase": 10.0,
       "impulse": 7.5,
+      "decay": 0.75
+    },
+    {
+      "ccy": "GBP",
+      "type": "UNEMPLOYMENT",
+      "eventName": "Unemployment Rate (Sep)",
+      "impact": "high",
+      "actual": 4.6,
+      "forecast": 4.7,
+      "previous": 4.7,
+      "date": "2026-11-17 07:00:00",
+      "daysAgo": 1,
+      "surpriseDiff": -0.1,
+      "impulseBase": 3.33,
+      "impulse": 2.5,
       "decay": 0.75
     }
   ]
