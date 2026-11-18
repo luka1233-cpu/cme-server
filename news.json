@@ -1,7 +1,22 @@
 {
-  "generatedAt": "2026-11-17T13:34:21.323977+00:00",
+  "generatedAt": "2026-11-18T08:00:01.584744+00:00",
   "daysBack": 7,
   "news": [
+    {
+      "ccy": "USD",
+      "type": "RETAIL_SALES",
+      "eventName": "Retail Sales YoY (Oct)",
+      "impact": "high",
+      "actual": 6.8,
+      "forecast": 6.5,
+      "previous": 6.6,
+      "date": "2026-11-17 13:30:00",
+      "daysAgo": 1,
+      "surpriseDiff": 0.3,
+      "impulseBase": 5.0,
+      "impulse": 3.75,
+      "decay": 0.75
+    },
     {
       "ccy": "USD",
       "type": "RETAIL_SALES",
@@ -9,43 +24,13 @@
       "impact": "high",
       "actual": 0.5,
       "forecast": 0.3,
-      "previous": 0.2,
+      "previous": 0.5,
       "date": "2026-11-17 13:30:00",
-      "daysAgo": 0,
+      "daysAgo": 1,
       "surpriseDiff": 0.2,
       "impulseBase": 3.33,
-      "impulse": 3.33,
-      "decay": 1.0
-    },
-    {
-      "ccy": "USD",
-      "type": "RETAIL_SALES",
-      "eventName": "Retail Sales MoM (Oct)",
-      "impact": "high",
-      "actual": 0.6,
-      "forecast": 0.2,
-      "previous": 0.8,
-      "date": "2026-11-17 13:30:00",
-      "daysAgo": 0,
-      "surpriseDiff": 0.4,
-      "impulseBase": 6.67,
-      "impulse": 6.67,
-      "decay": 1.0
-    },
-    {
-      "ccy": "GBP",
-      "type": "EMPLOYMENT",
-      "eventName": "Employment Change (Sep)",
-      "impact": "high",
-      "actual": 156.0,
-      "forecast": 25.0,
-      "previous": 102.0,
-      "date": "2026-11-17 07:00:00",
-      "daysAgo": 0,
-      "surpriseDiff": 131.0,
-      "impulseBase": 10.0,
-      "impulse": 10.0,
-      "decay": 1.0
+      "impulse": 2.5,
+      "decay": 0.75
     },
     {
       "ccy": "GBP",
@@ -56,11 +41,26 @@
       "forecast": 4.7,
       "previous": 4.7,
       "date": "2026-11-17 07:00:00",
-      "daysAgo": 0,
+      "daysAgo": 1,
       "surpriseDiff": -0.1,
       "impulseBase": 3.33,
-      "impulse": 3.33,
-      "decay": 1.0
+      "impulse": 2.5,
+      "decay": 0.75
+    },
+    {
+      "ccy": "GBP",
+      "type": "EMPLOYMENT",
+      "eventName": "Employment Change (Sep)",
+      "impact": "high",
+      "actual": 156.0,
+      "forecast": 25.0,
+      "previous": 102.0,
+      "date": "2026-11-17 07:00:00",
+      "daysAgo": 1,
+      "surpriseDiff": 131.0,
+      "impulseBase": 10.0,
+      "impulse": 7.5,
+      "decay": 0.75
     }
   ]
 }
