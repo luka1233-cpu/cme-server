@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-19T16:05:52.301035+00:00",
-  "heatmap": 55,
-  "score": 10,
-  "bias": "wbull",
+  "generatedAt": "2026-11-23T16:58:35.120169+00:00",
+  "heatmap": 43,
+  "score": -14,
+  "bias": "wbear",
   "engines": {
     "macro": {
-      "score": -80,
+      "score": -60,
       "signal": "bearish",
       "factors": [
         {
@@ -28,38 +28,33 @@
         },
         {
           "factor": "YIELD_2Y",
-          "detail": "2Y 4.79->4.8 (+0.01pp, flat)",
-          "gold_signal": "neutral",
+          "detail": "2Y 4.82->4.63 (-0.19pp, falling)",
+          "gold_signal": "bullish",
           "weight": 0.2
         }
       ]
     },
     "cot": {
-      "score": 100,
+      "score": 33,
       "signal": "bullish",
       "factors": [
         {
           "factor": "NET_POSITIONING",
-          "detail": "Long 86.2%",
+          "detail": "Long 82.7%",
           "gold_signal": "bullish"
         },
         {
           "factor": "LATEST_FLOW",
-          "detail": "dLong +5704, dShort -4855",
-          "gold_signal": "bullish"
-        },
-        {
-          "factor": "EXTREME",
-          "detail": "Long 86.2% = crowded_long",
-          "gold_signal": "caution"
+          "detail": "dLong -16183, dShort +7792",
+          "gold_signal": "bearish"
         }
       ],
       "available": true,
-      "extreme": "crowded_long"
+      "extreme": null
     }
   },
   "narrative": {
-    "sr": "USD makro je bearish za zlato. Ali institucionalni COT ostaje bullish. Dugorocno pozicioniranje u konfliktu sa makro slikom. Napomena: Long% na ekstremu — oprez od preokreta.",
-    "en": "USD macro is bearish for gold. However institutional COT remains bullish. Long-term positioning conflicts with the macro picture. Note: Long% at extreme — caution on reversal."
+    "sr": "USD makro je bearish za zlato, 2Y prinos pada (bullish podrska). Ali institucionalni COT ostaje bullish. Dugorocno pozicioniranje u konfliktu sa makro slikom.",
+    "en": "USD macro is bearish for gold, 2Y yield falling (bullish support). However institutional COT remains bullish. Long-term positioning conflicts with the macro picture."
   }
 }
